@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라희의 영단어 마스터</title>
+    <!-- 폰트 적용 (도현체 & 나눔스퀘어라운드) -->
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #7c4dff; /* 활기찬 보라색 */
+            --secondary-color: #b388ff;
+            --accent-color: #ff4081; /* 포인트 핑크 */
+            --text-main: #333333;
+            --text-light: #777777;
+            --bg-color: #f7f9fc;
+            --card-front: #ffffff;
+            --card-back: #fff0f5; /* 뒷면은 약간 따뜻한 색 */
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+        }
+
+        body {
+            font-family: 'Nanum Square Round', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, .day-title {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        /* 헤더 영역 */
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: bold;
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 1. Day 선택 화면 */
+        #day-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            padding-bottom: 40px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid transparent;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(124, 77, 255, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .day-card.completed {
+            background-color: #f0fff0;
+            border-color: var(--success-color);
+        }
+
+        .day-card.completed::after {
+            content: '완료!';
+            position: absolute;
+            top: 10px;
+            right: -25px;
+            background: var(--success-color);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 25px;
+            transform: rotate(45deg);
+            font-weight: bold;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .day-progress {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: bold;
+        }
+
+        /* 2. 단어 학습 (플래시카드) 화면 */
+        #flashcard-view {
+            display: none; /* 초기에는 숨김 */
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 상단 네비게이션 & 프로그래스 */
+        .study-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #current-day-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        #return-btn {
+            background: #eee;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            color: var(--text-main);
+            transition: background 0.2s;
+        }
+
+        #return-btn:hover { background: #ddd; }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* 플래시카드 뒤집기 효과 */
+        .scene {
+            width: 100%;
+            height: 350px;
+            perspective: 1000px; /* 원근감 */
+            margin-bottom: 30px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* 뒷면일 때 숨김 */
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* 카드 앞면 (영어) */
+        .card-front {
+            background-color: var(--card-front);
+            border: 3px solid var(--primary-color);
+        }
+
+        .word-en {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            word-break: keep-all;
+            margin-bottom: 20px;
+        }
+
+        .hint-text {
+            color: #aaa;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 20px;
+        }
+
+        /* 카드 뒷면 (한글) */
+        .card-back {
+            background-color: var(--card-back);
+            transform: rotateY(180deg);
+            border: 3px solid var(--accent-color);
+        }
+
+        .word-ko {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .word-desc {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            word-break: keep-all;
+        }
+
+        .word-example {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+            background: rgba(255,255,255,0.7);
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        /* 하단 컨트롤 버튼 */
+        .controls {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .controls.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .action-btn {
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-fail {
+            background-color: var(--warning-color);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+        }
+
+        /* 로딩 화면 */
+        #loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: var(--primary-color);
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 완료 후 결과 화면 */
+        #result-view {
+            display: none;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        #result-view h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        #result-view p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        #result-view img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="back-btn"><i class="fas fa-chevron-left"></i> 수학 홈으로</a>
+        <h1>📖 라희의 영단어 마스터</h1>
+    </header>
+
+    <div class="container">
+        
+        <!-- 로딩 -->
+        <div id="loading">
+            <div class="spinner"></div>
+            단어 데이터를 불러오는 중입니다...
+        </div>
+
+        <!-- 1. Day 선택 화면 -->
+        <div id="day-selector">
+            <!-- 자바스크립트로 Day 박스들이 생성됨 -->
+        </div>
+
+        <!-- 2. 단어 학습 (플래시카드) 화면 -->
+        <div id="flashcard-view">
+            <div class="study-header">
+                <h2 id="current-day-title">Day ?</h2>
+                <button id="return-btn">목록으로</button>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="study-progress"></div>
+            </div>
+
+            <div class="scene">
+                <div class="card" id="flashcard">
+                    <div class="card-face card-front">
+                        <div class="word-en" id="word-en">Apple</div>
+                        <div class="hint-text">카드를 터치(클릭)하면 뜻이 보여요! <i class="fas fa-hand-pointer"></i></div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="word-ko" id="word-ko">사과</div>
+                        <div class="word-desc" id="word-desc">상세 설명이 들어갑니다.</div>
+                        <div class="word-example" id="word-example">I eat an apple.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls" id="card-controls">
+                <button class="action-btn btn-fail" id="btn-fail"><i class="fas fa-times"></i> 몰라요</button>
+                <button class="action-btn btn-success" id="btn-success"><i class="fas fa-check"></i> 다 외웠어요!</button>
+            </div>
+        </div>
+
+        <!-- 3. 결과 화면 -->
+        <div id="result-view">
+            <h2>🎉 수고했어요!</h2>
+            <p><span id="result-day">Day 1</span> 학습을 모두 마쳤습니다.</p>
+            <!-- 간단한 축하 아이콘/이미지 (이모지로 대체 가능) -->
+            <div style="font-size: 5rem; margin-bottom: 20px;">🤩🏅</div>
+            <button class="action-btn btn-success" id="btn-finish" style="width: 100%; margin: 0 auto;">다른 Day 학습하기</button>
+        </div>
+
+    </div>
+
+    <script>
+        // 전역 변수
+        let wordData = null; // 전체 JSON 데이터 보관
+        let currentDayKey = null; // 현재 선택된 Day (예: "day1")
+        let currentWordsList = []; // 현재 Day의 단어 배열
+        let currentWordIndex = 0; // 현재 진행중인 단어 인덱스
+        
+        const LOCAL_STORAGE_KEY_PREFIX = 'rahee_eng_status_'; // Day별 완료 여부 (true/false)
+
+        // DOM 요소 가져오기
+        const loadingEl = document.getElementById('loading');
+        const daySelectorEl = document.getElementById('day-selector');
+        const flashcardViewEl = document.getElementById('flashcard-view');
+        const resultViewEl = document.getElementById('result-view');
+        
+        const cardEl = document.getElementById('flashcard');
+        const controlsEl = document.getElementById('card-controls');
+        
+        // 초기화 (데이터 로딩)
+        async function initApp() {
+            try {
+                // 이 페이지(index.html) 기준으로 data/words.json 불러오기
+                const response = await fetch('./data/words.json');
+                wordData = await response.json();
+                
+                // 데이터 로딩 성공 시 로딩바 숨기고 Day 리스트 생성
+                loadingEl.style.display = 'none';
+                renderDaySelector();
+            } catch (error) {
+                console.error("단어 데이터를 불러오는 데 실패했습니다.", error);
+                loadingEl.innerHTML = "데이터를 불러올 수 없습니다. <br>인터넷 연결을 확인하거나 서버(로컬) 환경을 확인해 주세요.";
+            }
+        }
+
+        // Day 선택 목록 그리기
+        function renderDaySelector() {
+            daySelectorEl.innerHTML = '';
+            
+            // wordData의 키값들 (day1, day2...)을 기반으로 박스 생성
+            for (const dayKey in wordData) {
+                // day1 -> 1 추출
+                const dayNumber = dayKey.replace('day', '');
+                const totalWords = wordData[dayKey].length;
+                
+                // localStorage에서 진행 상태 확인
+                const isCompleted = localStorage.getItem(LOCAL_STORAGE_KEY_PREFIX + dayKey) === 'true';
+
+                const dayCard = document.createElement('div');
+                dayCard.className = `day-card ${isCompleted ? 'completed' : ''}`;
+                dayCard.innerHTML = `
+                    <div class="day-title">Day ${dayNumber}</div>
+                    <div class="day-progress">${totalWords} 단어</div>
+                `;
+                
+                // 클릭 이벤트 바인딩
+                dayCard.addEventListener('click', () => startStudy(dayKey, dayNumber));
+                
+                daySelectorEl.appendChild(dayCard);
+            }
+        }
+
+        // 특정 Day 학습 시작
+        function startStudy(dayKey, dayNumber) {
+            currentDayKey = dayKey;
+            currentWordsList = wordData[dayKey];
+            currentWordIndex = 0;
+
+            // UI 전환 (목록 숨기고 카드 표시)
+            daySelectorEl.style.display = 'none';
+            resultViewEl.style.display = 'none';
+            flashcardViewEl.style.display = 'flex';
+            
+            document.getElementById('current-day-title').innerText = `Day ${dayNumber}`;
+            document.getElementById('result-day').innerText = `Day ${dayNumber}`;
+            
+            // 진행도 초기 설정
+            document.getElementById('study-progress').style.width = `0%`;
+            showCurrentWord();
+        }
+
+        // 현재 인덱스의 단어 카드 세팅
+        function showCurrentWord() {
+            // 카드가 뒷면인 경우 앞면으로 리셋
+            if (cardEl.classList.contains('is-flipped')) {
+                cardEl.classList.remove('is-flipped');
+                // 카드가 뒤집히는 애니메이션을 기다린 후 텍스트를 변경합니다 (0.3초)
+                setTimeout(setCardText, 300);
+            } else {
+                setCardText();
+            }
+            // 버튼 숨기기
+            controlsEl.classList.remove('visible');
+        }
+
+        function setCardText() {
+            if (!currentWordsList || currentWordIndex >= currentWordsList.length) return;
+            const word = currentWordsList[currentWordIndex];
+            document.getElementById('word-en').innerText = word.en || "";
+            document.getElementById('word-ko').innerText = word.ko || "";
+            document.getElementById('word-desc').innerText = word.desc || "";
+            document.getElementById('word-example').innerText = word.example || "";
+        }
+
+        // 프로그래스 바 업데이트
+        function updateProgress() {
+            const percentage = ((currentWordIndex + 1) / currentWordsList.length) * 100;
+            document.getElementById('study-progress').style.width = `${percentage}%`;
+        }
+
+        // 카드 뒤집기 클릭 이벤트
+        cardEl.addEventListener('click', () => {
+            cardEl.classList.toggle('is-flipped');
+            
+            // 뒷면이 보일 때만버튼 활성화
+            if (cardEl.classList.contains('is-flipped')) {
+                controlsEl.classList.add('visible');
+                updateProgress(); // 뜻을 확인한 시점에 프로그래스바 증가
+            } else {
+                controlsEl.classList.remove('visible');
+            }
+        });
+
+        // [다 외웠어요] 버튼
+        document.getElementById('btn-success').addEventListener('click', (e) => {
+            e.stopPropagation(); // 카드 뒤집기 방지
+            nextWord();
+        });
+
+        // [몰라요] 버튼
+        document.getElementById('btn-fail').addEventListener('click', (e) => {
+            e.stopPropagation();
+            nextWord();
+        });
+
+        // 다음 단어로 진행
+        function nextWord() {
+            currentWordIndex++;
+
+            if (currentWordIndex < currentWordsList.length) {
+                // 아직 단어가 남음
+                showCurrentWord();
+            } else {
+                // 끝까지 다 봄! 완료 처리
+                setTimeout(finishStudy, 300); // 카드가 넘어가는 효과를 잠시 기다림
+            }
+        }
+
+        // 학습 완료 처리
+        function finishStudy() {
+            // localStorage에 완료 기록 (새로고침 해도 완료 표시 남음)
+            localStorage.setItem(LOCAL_STORAGE_KEY_PREFIX + currentDayKey, 'true');
+            
+            // UI 변경
+            flashcardViewEl.style.display = 'none';
+            resultViewEl.style.display = 'block';
+        }
+
+        // [목록으로] 돌아가기
+        function returnToMenu() {
+            flashcardViewEl.style.display = 'none';
+            resultViewEl.style.display = 'none';
+            daySelectorEl.style.display = 'grid'; // 목록 다시 보이기
+            renderDaySelector(); // 최신 완료 상태를 반영하여 다시 그림
+        }
+
+        document.getElementById('return-btn').addEventListener('click', returnToMenu);
+        document.getElementById('btn-finish').addEventListener('click', returnToMenu);
+
+        // 앱 구동 시작
+        initApp();
+    </script>
+</body>
+</html>
