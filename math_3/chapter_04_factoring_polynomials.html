@@ -159,55 +159,13 @@
         <div id="f3" class="feedback-area"></div>
       </div>
 
-    </section>
+        <a href="index.html" class="btn-return-home" id="btn-return-home">오늘도 해냈어! 목차로 돌아가기 🏃‍♀️</a>
+  </section>
 
   </div>
 
   <script>
     // Web Audio API for cute sound effects
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    function playCuteSound() {
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-      const osc = audioCtx.createOscillator();
-      const gainNode = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
-      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.1); // A5
-      gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
-      osc.connect(gainNode);
-      gainNode.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.15);
-    }
-
-    function reveal(el) {
-      const hint = el.querySelector('.tap-hint');
-      const content = el.querySelector('.hidden-content');
-      if (hint) hint.style.display = 'none';
-      if (content) content.style.display = 'block';
-      el.style.background = '#eff6ff';
-      el.style.borderStyle = 'solid';
-    }
-
-    function completeStep(currentStep) {
-      playCuteSound();
-      const currentCard = document.getElementById('step' + currentStep);
-      currentCard.classList.remove('active');
-      currentCard.classList.add('completed');
-
-      const btn = document.getElementById('btn-step' + currentStep);
-      btn.style.display = 'none';
-
-      const nextStep = currentStep + 1;
-      const nextCard = document.getElementById('step' + nextStep);
-      if (nextCard) {
-        nextCard.classList.add('active');
-        setTimeout(() => {
-          nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
-      }
-    }
 
     function checkAnswer(btn, isCorrect, feedbackId) {
       const feedback = document.getElementById(feedbackId);
@@ -232,7 +190,9 @@
 
         if (allCompleted && !window.confettiFired) {
           window.confettiFired = true;
+          localStorage.setItem('math_tutor_math_3_ch4', new Date().toISOString());
           fireConfetti();
+          document.getElementById('btn-return-home').style.display = 'block';
           feedback.innerHTML += "<br><span style='font-size:1.2rem; color:#2563eb; display:block; margin-top:8px;'>축하합니다! 제일 헷갈리는 4단원도 클리어! 🌟</span>";
         }
       } else {
@@ -241,24 +201,8 @@
         feedback.style.color = "#be123c";
       }
     }
-
-    function fireConfetti() {
-      var duration = 3 * 1000;
-      var animationEnd = Date.now() + duration;
-      var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-      function randomInRange(min, max) { return Math.random() * (max - min) + min; }
-
-      var interval = setInterval(function () {
-        var timeLeft = animationEnd - Date.now();
-        if (timeLeft <= 0) return clearInterval(interval);
-        var particleCount = 50 * (timeLeft / duration);
-        var colors = ['#2563eb', '#3b82f6', '#93c5fd', '#1e3a8a', '#1d4ed8'];
-        confetti(Object.assign({}, defaults, { particleCount, colors: colors, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-        confetti(Object.assign({}, defaults, { particleCount, colors: colors, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-      }, 250);
-    }
   </script>
+    <script src="../math_common.js"></script>
 </body>
 
 </html>
