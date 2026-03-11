@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1단원: 제곱근과 실수 | 기초 정복 수학</title>
+  <!-- Confetti Library for final step -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+      color: #1f2937;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .hero {
+      background: #fff;
+      border-radius: 24px;
+      padding: 30px 24px;
+      box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .hero .pill {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e3a8a;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #4b5563;
+    }
+
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #1d4ed8;
+      font-weight: 700;
+      background: #e5eefc;
+      padding: 8px 16px;
+      border-radius: 12px;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+      margin-bottom: 20px;
+      position: relative;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      display: none;
+      /* Hidden by default, managed by JS */
+    }
+
+    .step-card.active {
+      display: block;
+      animation: slideUp 0.5s ease;
+      border-color: #60a5fa;
+    }
+
+    .step-card.completed {
+      display: block;
+      opacity: 0.7;
+      border-color: #e5e7eb;
+    }
+
+    .step-card.completed::after {
+      content: '완료 😊';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e5eefc;
+      color: #1d4ed8;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .step-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .step-title {
+      margin: 0 0 16px 0;
+      font-size: 1.4rem;
+      color: #1e3a8a;
+      font-weight: 800;
+    }
+
+    .explain-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-left: 5px solid #3b82f6;
+      color: #334155;
+    }
+
+    .highlight {
+      background: #fef08a;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #b45309;
+    }
+
+    .interactive-box {
+      background: #f8fbff;
+      border: 2px dashed #93c5fd;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 16px;
+    }
+
+    .interactive-box:hover {
+      background: #eff6ff;
+      border-color: #60a5fa;
+    }
+
+    .hidden-content {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #2563eb;
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .tap-hint {
+      font-size: 0.9rem;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .example-item {
+      background: #f8fbff;
+      border: 2px solid #dbeafe;
+      padding: 14px;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    .action-btn {
+      display: block;
+      width: 100%;
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+      box-shadow: 0 4px 0 #1d4ed8;
+    }
+
+    .action-btn:active {
+      transform: translateY(4px);
+      box-shadow: none;
+    }
+
+    .action-btn:disabled {
+      background: #cbd5e1;
+      box-shadow: 0 4px 0 #94a3b8;
+      cursor: not-allowed;
+    }
+
+    /* Quiz Styles */
+    .option-btn {
+      display: block;
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #334155;
+      transition: all 0.2s;
+    }
+
+    .option-btn:hover {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+
+    .option-btn.correct {
+      background: #ecfdf5;
+      border-color: #10b981;
+      color: #047857;
+    }
+
+    .option-btn.wrong {
+      background: #fff1f2;
+      border-color: #e11d48;
+      color: #be123c;
+    }
+
+    .feedback-area {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.1rem;
+      min-height: 28px;
+    }
+
+    /* Flashcard Styles */
+    .flashcard-container {
+      perspective: 1000px;
+      margin: 0 auto 24px;
+      width: 100%;
+      height: 200px;
+    }
+
+    .flashcard {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 2px solid #93c5fd;
+    }
+
+    .flashcard-front {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+
+    .flashcard-back {
+      background: #1e3a8a;
+      color: white;
+      transform: rotateY(180deg);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+    }
+
+    .flashcard-hint {
+      position: absolute;
+      bottom: 12px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header-nav">
+      <a href="index.html" class="back-btn">⬅ 메인으로</a>
+    </div>
+
+    <header class="hero">
+      <div class="pill">1단원 시작!</div>
+      <h1>제곱근과 실수</h1>
+      <p>수학, 절대 어렵지 않아요!<br>5단계를 클리어하고 마스터가 되어보세요 👑</p>
+    </header>
+
+    <!-- Step 1 -->
+    <section class="step-card active" id="step1">
+      <div class="step-badge">1단계: 이것만은 기억하자! 🌱</div>
+      <h2 class="step-title">거듭제곱, 기억나나요?</h2>
+      <div class="explain-box">
+        어떤 수를 <span class="highlight">두 번 곱하는 것</span>을 '제곱'이라고 해요.<br>
+        정사각형의 넓이를 구할 때 똑같은 길이를 두 번 곱했죠!
+      </div>
+
+      <div class="interactive-box" onclick="reveal(this)">
+        <p>3을 두 번 곱하면(제곱하면) 얼마일까요?</p>
+        <div class="tap-hint">👉 여기를 톡 눌러서 정답 확인!</div>
+        <div class="hidden-content">3 × 3 = 9 </div>
+      </div>
+
+      <div class="interactive-box" onclick="reveal(this)">
+        <p>이번엔 5를 제곱해볼까요?</p>
+        <div class="tap-hint">👉 여기를 톡 눌러서 정답 확인!</div>
+        <div class="hidden-content">5 × 5 = 25 </div>
+      </div>
+
+      <button class="action-btn" id="btn-step1" onclick="completeStep(1)">다 기억났어요! 다음 단계로 고고 🚀</button>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="step-card" id="step2">
+      <div class="step-badge">2단계: 개념 쏙쏙! 💡</div>
+      <h2 class="step-title">제곱근의 진짜 의미!</h2>
+      <div class="explain-box">
+        방금 <strong>"3을 제곱하면 9"</strong>가 된다고 배웠죠?<br>
+        거꾸로 생각해보는 거예요!<br><br>
+        <strong><span class="highlight">"무엇을 제곱해야 9가 될까?"</span></strong><br>
+        이 질문의 답이 바로 <strong>'9의 제곱근'</strong>이랍니다.
+      </div>
+
+      <div class="example-grid">
+        <div class="example-item">
+          3 × 3 = 9<br>
+          <span style="color:#2563eb; font-size:0.9rem">(3은 9의 제곱근)</span>
+        </div>
+        <div class="example-item">
+          (-3) × (-3) = 9<br>
+          <span style="color:#e11d48; font-size:0.9rem">(-3도 9의 제곱근)</span>
+        </div>
+      </div>
+
+      <p
+        style="text-align:center; font-weight:700; background:#f8fafc; padding:12px; border-radius:12px; border:1px solid #e2e8f0;">
+        앗! 음수를 두 번 곱해도 양수가 되니까,<br>양수의 제곱근은 <span class="highlight">항상 2개(양수, 음수)</span>예요!</p>
+
+      <button class="action-btn" id="btn-step2" onclick="completeStep(2)">오호, 쉽네! 3단계로 갈래요 🏃‍♂️</button>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="step-card" id="step3">
+      <div class="step-badge">3단계: 한 걸음 더! 👟</div>
+      <h2 class="step-title">루트(√)는 왜 귀찮게 생겼을까?</h2>
+      <div class="explain-box">
+        25의 제곱근은? (5랑 -5요!)<br>
+        그럼 <strong>2의 제곱근</strong>은 뭘까요?<br><br>
+        "어? 똑같은 수 두 개를 곱해서 2가 되는 숫자가 있나?"<br>
+        1.414어쩌고... 너무너무 긴 소수예요!<br>그래서 수학자들이 편리한 지붕을 하나 만들었는데, 그게 바로 <span class="highlight">루트(근호, √)</span> 입니다.
+      </div>
+
+      <div class="example-grid">
+        <div class="example-item">
+          <strong>2의 제곱근 (2개)</strong><br>
+          <span style="color:#2563eb;">√2 그리고 -√2</span>
+        </div>
+        <div class="example-item">
+          <strong>5의 제곱근 (2개)</strong><br>
+          <span style="color:#2563eb;">√5 그리고 -√5</span>
+        </div>
+      </div>
+
+      <button class="action-btn" id="btn-step3" onclick="completeStep(3)">기호(√) 쓰는 법도 완벽해요! ✍️</button>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="step-card" id="step4">
+      <div class="step-badge">4단계: 나도 할 수 있다! 💪</div>
+      <h2 class="step-title">실수 = 진짜 존재하는 수</h2>
+      <div class="explain-box">
+        우리가 배운 <strong>유리수</strong>(분수로 나타낼 수 있는 수, 예: 1, 0.5, 1/3)와<br>
+        방금 배운 루트(√)가 안 벗겨지는 무한소수 같은 <strong>무리수</strong>를 합쳐서!<br><br>
+        이 세상에 진짜로 존재하는 수, <span class="highlight">실수(Real Number)</span>라고 불러요.
+      </div>
+
+      <div
+        style="background:#f8fbff; border:2px solid #dbeafe; border-radius:16px; padding:16px; font-weight:700; text-align:center; margin-bottom:16px; color:#1e3a8a;">
+        "수직선 위는 모든 실수들로 빈틈없이 채워져 있어요!"
+      </div>
+
+      <button class="action-btn" id="btn-step4" onclick="completeStep(4)">이제 마지막 관문으로! 🔥</button>
+    </section>
+
+    <!-- Step 5 -->
+    <section class="step-card" id="step5">
+      <div class="step-badge">5단계: 자신감 뿜뿜! 👑</div>
+      <h2 class="step-title">마무리 핵심 퀴즈</h2>
+      <p style="color:#1e3a8a; font-weight:800; margin-bottom:10px;">👇 퀴즈를 풀기 전 개념 카드를 뒤집어 복습해보세요!</p>
+      <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+          <div class="flashcard-face flashcard-front">
+            <div>
+              "양수의 제곱근은 몇 개일까요?"<br>
+              <span class="flashcard-hint">카드를 터치해서 뒤집기 🔄</span>
+            </div>
+          </div>
+          <div class="flashcard-face flashcard-back">
+            <div>
+              항상 2개(양수, 음수) 입니다!<br><br>
+              예: 9의 제곱근은 3과 -3<br>
+              2의 제곱근은 √2와 -√2
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="color:#4b5563; font-weight:700; margin-bottom:20px;">틀려도 괜찮아요. 한 번 더 생각해보면 되니까요!</p>
+
+      <div class="quiz-container" style="margin-bottom: 24px;">
+        <p style="font-weight:800; font-size:1.15rem; color:#1e3a8a;">Q1. 16의 제곱근은 무엇일까요?</p>
+        <button class="option-btn" onclick="checkAnswer(this, false, 'f1')">4 한 개만 있어요.</button>
+        <button class="option-btn" onclick="checkAnswer(this, true, 'f1')">4 와 -4 총 두 개가 있어요.</button>
+        <button class="option-btn" onclick="checkAnswer(this, false, 'f1')">√16 이에요. (이것도 4라서 -4가 빠졌죠!)</button>
+        <div id="f1" class="feedback-area"></div>
+      </div>
+
+      <div class="quiz-container" style="margin-bottom: 24px;">
+        <p style="font-weight:800; font-size:1.15rem; color:#1e3a8a;">Q2. 다음 중 무리수(끝없이 계속되는 소수)는 무엇일까요?</p>
+        <button class="option-btn" onclick="checkAnswer(this, false, 'f2')">√4 (자연수 2로 바꿀 수 있어요!)</button>
+        <button class="option-btn" onclick="checkAnswer(this, false, 'f2')">0.5 (딱 끊어지는 유리수예요!)</button>
+        <button class="option-btn" onclick="checkAnswer(this, true, 'f2')">√3 (루트를 벗을 수 없는 무리수예요!)</button>
+        <div id="f2" class="feedback-area"></div>
+      </div>
+
+      <div class="quiz-container" style="margin-bottom: 24px;">
+        <p style="font-weight:800; font-size:1.15rem; color:#1e3a8a;">Q3. '실수'의 올바른 뜻은 무엇일까요?</p>
+        <button class="option-btn" onclick="checkAnswer(this, false, 'f3')">유리수만 부르는 말</button>
+        <button class="option-btn" onclick="checkAnswer(this, false, 'f3')">무리수만 부르는 말</button>
+        <button class="option-btn" onclick="checkAnswer(this, true, 'f3')">유리수와 무리수를 모두 합쳐서 부르는 말</button>
+        <div id="f3" class="feedback-area"></div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    // Web Audio API for cute sound effects
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playCuteSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+      gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
+      osc.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.15);
+    }
+
+    // Reveal hidden answers
+    function reveal(el) {
+      const hint = el.querySelector('.tap-hint');
+      const content = el.querySelector('.hidden-content');
+      if (hint) hint.style.display = 'none';
+      if (content) content.style.display = 'block';
+      el.style.background = '#eff6ff';
+      el.style.borderStyle = 'solid';
+    }
+
+    // Handle step progression
+    function completeStep(currentStep) {
+      playCuteSound();
+      // Mark current as completed
+      const currentCard = document.getElementById('step' + currentStep);
+      currentCard.classList.remove('active');
+      currentCard.classList.add('completed');
+
+      const btn = document.getElementById('btn-step' + currentStep);
+      btn.style.display = 'none'; // hide button after completion
+
+      // Show next step
+      const nextStep = currentStep + 1;
+      const nextCard = document.getElementById('step' + nextStep);
+      if (nextCard) {
+        nextCard.classList.add('active');
+        // Scroll to the new card
+        setTimeout(() => {
+          nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+
+    // Quiz logic
+    function checkAnswer(btn, isCorrect, feedbackId) {
+      const feedback = document.getElementById(feedbackId);
+      const parent = btn.parentElement;
+
+      if (parent.dataset.completed === 'true') return;
+
+      const buttons = parent.querySelectorAll('.option-btn');
+      buttons.forEach(b => {
+        b.classList.remove('correct', 'wrong');
+      });
+
+      if (isCorrect) {
+        playCuteSound();
+        btn.classList.add('correct');
+        feedback.textContent = "🎉 정답입니다! 완벽하게 이해했네요!";
+        feedback.style.color = "#047857";
+        parent.dataset.completed = 'true';
+
+        const allQuestions = document.querySelectorAll('.quiz-container');
+        const allCompleted = Array.from(allQuestions).every(q => q.dataset.completed === 'true');
+
+        if (allCompleted && !window.confettiFired) {
+          window.confettiFired = true;
+          fireConfetti();
+          feedback.innerHTML += "<br><span style='font-size:1.2rem; color:#2563eb; display:block; margin-top:8px;'>축하합니다! 1단원을 무사히 마스터했어요! 🌟</span>";
+        }
+      } else {
+        btn.classList.add('wrong');
+        feedback.textContent = "아쉽지만 다시 한 번 천천히 생각해볼까요?";
+        feedback.style.color = "#be123c";
+      }
+    }
+
+    function fireConfetti() {
+      var duration = 3 * 1000;
+      var animationEnd = Date.now() + duration;
+      var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      var interval = setInterval(function () {
+        var timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        var particleCount = 50 * (timeLeft / duration);
+
+        // Blue/purple color palette to match the original design
+        var colors = ['#2563eb', '#3b82f6', '#93c5fd', '#1e3a8a', '#1d4ed8'];
+
+        confetti(Object.assign({}, defaults, { particleCount, colors: colors, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+        confetti(Object.assign({}, defaults, { particleCount, colors: colors, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+      }, 250);
+    }
+  </script>
+</body>
+
+</html>
