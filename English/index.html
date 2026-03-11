@@ -712,14 +712,42 @@
         }
 
         // --- TTS (Text to Speech) 기능 ---
+        let englishVoice = null;
+
+        // 브라우저에 설치된 목소리 목록을 불러와서 가장 자연스러운 영어 목소리 찾기
+        function loadVoices() {
+            const voices = window.speechSynthesis.getVoices();
+            if(voices.length === 0) return;
+            
+            // 선호하는 목소리 순위 (크롬의 Google US English나 맥의 Samantha 권장)
+            englishVoice = voices.find(v => v.name.includes('Google US English')) 
+                        || voices.find(v => v.name.includes('Samantha') || v.name.includes('Alex'))
+                        || voices.find(v => v.lang === 'en-US')
+                        || voices.find(v => v.lang.startsWith('en'));
+        }
+
+        // 음성 목록이 비동기로 로드될 수 있으므로 이벤트 리스너 등록
+        if ('speechSynthesis' in window && speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+        // 즉시 로드 시도
+        loadVoices();
+
         function playTTS(text) {
-            // 브라우저가 SpeechSynthesis API를 지원하는지 확인
             if ('speechSynthesis' in window) {
                 // 이전 음성이 재생 중이면 취소
                 window.speechSynthesis.cancel();
                 
                 const utterance = new SpeechSynthesisUtterance(text);
+                
+                // 찾은 영어 원어민 목소리가 있다면 적용
+                if (englishVoice) {
+                    utterance.voice = englishVoice;
+                }
+                
                 utterance.lang = 'en-US'; // 영어(미국) 설정
+                utterance.rate = 0.9;     // 학생들이 듣기 좋게 말하는 속도를 아주 살짝 늦춤 (기본 1.0)
+                
                 window.speechSynthesis.speak(utterance);
             } else {
                 console.warn("이 브라우저에서는 TTS 기능을 지원하지 않습니다.");
