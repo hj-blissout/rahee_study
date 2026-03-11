@@ -340,11 +340,37 @@
             border: 3px solid var(--primary-color);
         }
 
+        .word-en-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
         #word-en {
             font-size: 3rem;
             font-weight: 800;
             color: var(--primary-color);
-            margin-bottom: 10px;
+        }
+
+        .btn-tts {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            transition: color 0.2s, transform 0.1s;
+            margin-left: 15px;
+            padding: 5px;
+            outline: none;
+        }
+        .btn-tts:hover { color: var(--primary-color); transform: scale(1.1); }
+        .btn-tts:active { transform: scale(0.9); }
+
+        .highlight-success {
+            color: var(--success-color);
+            font-weight: bold;
+            text-decoration: underline;
         }
 
         .hint-text {
@@ -588,7 +614,10 @@
                     <div class="scene">
                         <div class="card" id="flashcard">
                             <div class="card-face card-front">
-                                <div id="word-en">Apple</div>
+                                <div class="word-en-container">
+                                    <div id="word-en">Apple</div>
+                                    <button class="btn-tts" id="btn-tts-flashcard" title="발음 듣기"><i class="fas fa-volume-up"></i></button>
+                                </div>
                                 <div class="hint-text">카드를 터치(클릭)하면 뜻이 보여요! <i class="fas fa-hand-pointer"></i></div>
                             </div>
                             <div class="card-face card-back">
@@ -681,6 +710,28 @@
                 console.error("Fetch Error:", error);
             }
         }
+
+        // --- TTS (Text to Speech) 기능 ---
+        function playTTS(text) {
+            // 브라우저가 SpeechSynthesis API를 지원하는지 확인
+            if ('speechSynthesis' in window) {
+                // 이전 음성이 재생 중이면 취소
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US'; // 영어(미국) 설정
+                window.speechSynthesis.speak(utterance);
+            } else {
+                console.warn("이 브라우저에서는 TTS 기능을 지원하지 않습니다.");
+            }
+        }
+
+        // 플래시카드 발음 듣기 이벤트
+        document.getElementById('btn-tts-flashcard').addEventListener('click', (e) => {
+            e.stopPropagation(); // 카드 뒤집기 방지
+            const word = currentWordsList[currentWordIndex].en;
+            playTTS(word);
+        });
 
         // 1. Day 선택기 렌더링
         function renderDaySelector() {
@@ -929,6 +980,16 @@
                 testInputEl.disabled = true;
                 testFeedbackEl.innerHTML = '<span class="feedback-success">✅ 정답입니다! 훌륭해요!</span>';
                 document.getElementById('btn-test-submit').style.display = 'none';
+                
+                // 예문 빈칸을 정답 단어로 교체 (초록색 강조)
+                const wordObj = testQuestionsList[currentTestIndex];
+                const regex = new RegExp(`\\b${wordObj.en}\\b`, 'gi');
+                let highlightExample = wordObj.example.replace(regex, `<span class="highlight-success">${wordObj.en}</span>`);
+                document.getElementById('test-example').innerHTML = highlightExample;
+                
+                // 정답 단어 TTS로 읽어주기
+                playTTS(wordObj.en);
+
                 btnTestNextEl.style.display = 'block';
                 btnTestNextEl.focus();
             } else {
