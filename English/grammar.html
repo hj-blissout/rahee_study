@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기초 영문법 (Basic Grammar in Use)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./grammar.css">
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="back-btn"><i class="fas fa-home"></i> 홈으로</a>
+        <h1>📖 라희의 기초 영문법 (Grammar in Use)</h1>
+    </header>
+
+    <div class="container">
+        <!-- 진행도 표시기 -->
+        <div class="progress-box">
+            <div class="progress-header">
+                <div>
+                    <i class="fas fa-medal" style="color: #ffd700;"></i> 라희의 영문법 진도율
+                </div>
+                <div class="progress-count"><span id="completed-count">0</span> / 113 완료</div>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+            <div class="progress-msg" id="progress-msg">시작이 반이에요! 오빠랑 같이 화이팅! 🚀</div>
+        </div>
+
+        <div class="pdf-btn-container">
+            <a href="./data/BGIU_schoollife_final_fixed.pdf" download="라희의_기초_영문법_교재.pdf" class="pdf-btn">
+                <i class="fas fa-file-pdf"></i> 오프라인 교재 다운로드 (PDF)
+            </a>
+        </div>
+
+        <div id="loading">목차를 불러오는 중입니다... 📚</div>
+        <div id="toc-container"></div>
+    </div>
+
+    <script>
+        // 마크다운 텍스트를 파싱해서 HTML로 그려주는 스크립트
+        async function loadGrammarData() {
+            try {
+                const response = await fetch('./data/Basic Grammar in Use.md');
+                const text = await response.text();
+                parseAndRender(text);
+            } catch (error) {
+                console.error("데이터를 불러오지 못했습니다.", error);
+                document.getElementById('loading').innerText = "데이터를 불러오는데 실패했습니다 😢";
+            }
+        }
+
+        function parseAndRender(markdownText) {
+            const lines = markdownText.split('\n');
+            const tocContainer = document.getElementById('toc-container');
+            tocContainer.innerHTML = '';
+            
+            let currentCategoryDiv = null;
+            let currentGrid = null;
+
+            // 로컬 스토리지에서 진행도 불러오기 (나중에 구현을 위해)
+            const completedItems = JSON.parse(localStorage.getItem('rahee_grammar_completed') || '[]');
+
+            lines.forEach(line => {
+                line = line.trim();
+                
+                // 새로운 카테고리 (## CATEGORY)
+                if (line.startsWith('## ')) {
+                    const categoryName = line.replace('## ', '');
+                    
+                    currentCategoryDiv = document.createElement('div');
+                    currentCategoryDiv.className = 'category-section';
+                    
+                    const title = document.createElement('h2');
+                    title.className = 'category-title';
+                    title.innerHTML = `<i class="fas fa-bookmark"></i> ${categoryName}`;
+                    
+                    currentGrid = document.createElement('div');
+                    currentGrid.className = 'chapter-grid';
+                    
+                    currentCategoryDiv.appendChild(title);
+                    currentCategoryDiv.appendChild(currentGrid);
+                    tocContainer.appendChild(currentCategoryDiv);
+                }
+                // 챕터 내용 (1. Chapter title)
+                else if (/^\d+\./.test(line)) {
+                    const match = line.match(/^(\d+)\.\s*(.+)/);
+                    if (match && currentGrid) {
+                        const chapterNum = match[1];
+                        const chapterTitleText = match[2];
+                        
+                        const card = document.createElement('div');
+                        card.className = 'chapter-card';
+                        
+                        // 완료 여부 확인
+                        if (completedItems.includes(chapterNum)) {
+                            card.classList.add('completed');
+                        }
+
+                        card.innerHTML = `
+                            <div class="chapter-number">${chapterNum}</div>
+                            <div class="chapter-title">${chapterTitleText}</div>
+                        `;
+                        
+                        // 상세 학습 페이지로 이동 (URL 파라미터로 정보 전달)
+                        card.addEventListener('click', () => {
+                            window.location.href = `grammar_detail.html?unit=${chapterNum}&title=${encodeURIComponent(chapterTitleText)}`;
+                        });
+
+                        currentGrid.appendChild(card);
+                    }
+                }
+            });
+
+            document.getElementById('loading').style.display = 'none';
+
+            // --- 진행도 계산 및 UI 업데이트 ---
+            const totalUnits = 113; // 전체 챕터 개수 (예상)
+            const completedCount = completedItems.length;
+            const percentage = Math.round((completedCount / totalUnits) * 100) || 0;
+            
+            document.getElementById('completed-count').innerText = completedCount;
+            document.getElementById('progress-bar-fill').style.width = percentage + '%';
+            
+            const msgEl = document.getElementById('progress-msg');
+            if (completedCount === 0) {
+                msgEl.innerText = "시작이 반이에요! 오빠랑 같이 화이팅! 🚀";
+            } else if (percentage < 30) {
+                msgEl.innerText = `벌써 ${completedCount}개나 했네! 라희 대단해! 👍`;
+            } else if (percentage < 60) {
+                msgEl.innerText = "절반을 향해 가고 있어! 조금만 더 힘내자! 🔥";
+            } else if (percentage < 90) {
+                msgEl.innerText = "우와, 많이 왔어! 영문법 실력이 쑥쑥 크는 중! 🌟";
+            } else if (percentage < 100) {
+                msgEl.innerText = "고지가 눈앞이야! 마지막까지 화이팅! 🏆";
+            } else {
+                msgEl.innerText = "113개 완전 정복! 라희가 최고야! 🎉🎉🎉";
+            }
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', loadGrammarData);
+    </script>
+</body>
+</html>

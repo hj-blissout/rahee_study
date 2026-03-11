@@ -4,188 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기초 정복 수학 홈</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
-            background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
-            color: #1f2937;
-            line-height: 1.7;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 16px;
-        }
-
-        .wrap {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-            border-radius: 24px;
-            padding: 40px 24px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 12px 30px rgba(29, 78, 216, 0.2);
-            margin-bottom: 30px;
-        }
-
-        .hero .pill {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 999px;
-            font-weight: 700;
-            font-size: 0.92rem;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 {
-            margin: 0 0 12px;
-            font-size: 2.2rem;
-            font-weight: 800;
-        }
-
-        .hero p {
-            margin: 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .tutor-box {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .tutor-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fff;
-            flex-shrink: 0;
-        }
-
-        .tutor-msg {
-            background: #fff;
-            padding: 16px;
-            border-radius: 0 16px 16px 16px;
-            color: #1e293b;
-            font-size: 1.05rem;
-            position: relative;
-        }
-
-        .tutor-msg b {
-            color: #1d4ed8;
-        }
-
-        .grade-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .grade-link {
-            display: flex;
-            align-items: center;
-            background: #fff;
-            border-radius: 20px;
-            padding: 24px;
-            text-decoration: none;
-            color: #1e3a8a;
-            font-weight: 800;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            border: 2px solid transparent;
-            transition: all 0.2s ease;
-        }
-
-        .grade-link:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
-            border-color: #93c5fd;
-        }
-
-        .grade-icon {
-            background: #e5eefc;
-            color: #2563eb;
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-right: 20px;
-        }
-
-        .grade-desc {
-            color: #4b5563;
-            font-size: 1rem;
-            font-weight: 500;
-            margin-top: 4px;
-        }
-    </style>
+    <title>라희의 프리미엄 학습 홈</title>
+    <!-- 폰트 적용 -->
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./main_style.css">
 </head>
 
 <body>
     <div class="wrap">
         <header class="hero">
-            <div class="pill">포기하지 마! 오빠가 있잖아!</div>
-            <h1>수학 기초 정복 홈</h1>
-            <p>우리 라희를 위한 가장 쉬운 수학 첫걸음 👣</p>
+            <h1 class="hero-title">라희의 프리미엄 학습 룸 🌟</h1>
+            <p class="hero-subtitle">가장 쉽고 재미있게, 기초부터 탄탄하게!</p>
             <div class="tutor-box">
                 <img class="tutor-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png" alt="박지훈">
                 <div class="tutor-msg">
-                    안녕! <b>라희야!</b> 오빠랑 같이 시작하면 수학도 엄청 재밌어질 거야.<br>
+                    안녕! <b>라희야!</b> 오빠랑 같이 시작하면 수학도 영어도 엄청 재밌어질 거야.<br>
                     오늘도 <b>내 마음속에 저장~ 📸</b> 할 준비 됐지? 얼른 들어와!
                 </div>
             </div>
         </header>
 
-        <div class="grade-list">
-            <a href="math_1/index.html" class="grade-link subject-card">
-                <div class="grade-icon subject-icon">📝</div>
-                <div>
-                    중1 수학
-                    <div class="grade-desc">소인수분해부터 그래프까지 기초 튼튼!</div>
-                </div>
-            </a>
+        <section class="section-container">
+            <h2 class="section-title eng"><i class="fas fa-book-open"></i> 스마트 영어 학습관</h2>
+            <div class="card-grid">
+                <!-- 영어 단어장 카드 -->
+                <a href="English/index.html" class="subject-card eng">
+                    <div class="card-icon" style="color: var(--primary-eng)">📝</div>
+                    <div class="card-content">
+                        <div class="card-title">중학 영단어 마스터</div>
+                        <div class="card-desc">필수 단어 600개를 매일매일 플래시카드로 재밌게 외워보자! 뜻을 보고 단어를 맞추는 테스트 기능도 있어!</div>
+                    </div>
+                </a>
 
-            <!-- 새로 추가된 영어 단어장 카드 -->
-            <a href="English/index.html" class="grade-link subject-card" style="border-left: 5px solid #7c4dff;">
-                <div class="grade-icon subject-icon">📖</div>
-                <div>
-                    중학 영단어 마스터
-                    <div class="grade-desc">필수 단어 600개를 매일매일 플래시카드로 외워보자!</div>
-                </div>
-            </a>
+                <!-- 기초 영문법 카드 -->
+                <a href="English/grammar.html" class="subject-card eng">
+                    <div class="card-icon" style="color: var(--primary-eng)">🖋️</div>
+                    <div class="card-content">
+                        <div class="card-title">기초 영문법 (Grammar in Use)</div>
+                        <div class="card-desc">가장 유명한 영문법, 113개의 핵심 패턴을 기초부터 심화까지 깔끔하게 정리했어!</div>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-            <a href="math_3/index.html" class="grade-link subject-card">
-                <div class="grade-icon subject-icon">📐</div>
-                <div>
-                    중3 수학 1학기
-                    <div class="grade-desc">제곱근부터 이차함수까지 완벽 마스터!</div>
-                </div>
-            </a>
-        </div>
+        <section class="section-container">
+            <h2 class="section-title math"><i class="fas fa-calculator"></i> 체계적인 수학 로드맵</h2>
+            <div class="card-grid">
+                <!-- 중1 수학 -->
+                <a href="math_1/index.html" class="subject-card math">
+                    <div class="card-icon" style="color: var(--primary-math)">📊</div>
+                    <div class="card-content">
+                        <div class="card-title">중1 수학</div>
+                        <div class="card-desc">소인수분해부터 좌표평면과 그래프까지. 수학의 기초 체력을 가장 쉽게 기르는 과정!</div>
+                    </div>
+                </a>
+
+                <!-- 중3 수학 -->
+                <a href="math_3/index.html" class="subject-card math">
+                    <div class="card-icon" style="color: var(--primary-math)">📐</div>
+                    <div class="card-content">
+                        <div class="card-title">중3 수학 1학기</div>
+                        <div class="card-desc">제곱근, 다항식의 곱셈부터 이차함수까지. 고등학교 수학을 위한 완벽한 대비!</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
     </div>
 </body>
 
