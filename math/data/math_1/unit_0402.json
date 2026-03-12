@@ -1,0 +1,201 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0402",
+  "title": "작도와 합동",
+  "lessons": [
+    {
+      "lesson_id": "0402-01",
+      "title": "기본 작도",
+      "goal": "선분의 길이 옮기기와 각의 작도를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "작도 도구",
+          "prompt": "작도할 때 주로 쓰는 두 도구는?",
+          "reveal_answer": "자와 컴퍼스"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "작도는 자와 컴퍼스를 이용해 도형을 그리는 것",
+            "길이 옮기기, 각 옮기기, 수직이등분선, 각의 이등분선이 기본이다"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "작도 흐름 익히기",
+          "examples": [
+            {
+              "task": "선분의 길이 옮기기",
+              "idea": "컴퍼스로 길이를 잡아 옮긴다"
+            },
+            {
+              "task": "각의 이등분선",
+              "idea": "같은 반지름의 호를 이용해 반으로 나눈다"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 생각하기",
+          "problem": "선분 AB와 같은 길이의 선분을 한 점 O에서 시작해 만들려면?",
+          "hint": "컴퍼스로 AB의 길이를 잡아 O에서 옮겨.",
+          "solution": "컴퍼스로 AB 길이를 재고, O를 중심으로 같은 길이를 표시해 선분을 만든다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "작도에 쓰는 도구는?",
+              "choices": [
+                "자와 각도기",
+                "자와 컴퍼스",
+                "컴퍼스와 계산기"
+              ],
+              "answer": 1,
+              "feedback_correct": "기본 작도 도구는 자와 컴퍼스야.",
+              "feedback_wrong": "작도 도구를 구분하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0402-02",
+      "title": "수직이등분선과 각의 이등분선",
+      "goal": "수직이등분선과 각의 이등분선의 뜻과 성질을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "반으로 나누기",
+          "prompt": "선분을 정확히 반으로 나누고 직각으로 만나는 선을 무엇이라고 할까?",
+          "reveal_answer": "수직이등분선"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "수직이등분선: 선분을 수직으로 반씩 나누는 직선",
+            "각의 이등분선: 각을 크기가 같은 두 각으로 나누는 반직선"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "성질 보기",
+          "examples": [
+            {
+              "object": "수직이등분선 위의 점",
+              "property": "선분의 양 끝점에서 거리가 같다"
+            },
+            {
+              "object": "각의 이등분선 위의 점",
+              "property": "각의 두 변까지의 거리가 같다"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 이해하기",
+          "problem": "선분 AB의 수직이등분선 위의 점 P에 대해 PA와 PB의 길이는 어떨까?",
+          "hint": "수직이등분선의 대표 성질을 떠올려 봐.",
+          "solution": "PA = PB"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "각의 이등분선의 뜻으로 맞는 것은?",
+              "choices": [
+                "각을 직각으로 만드는 선",
+                "각을 두 개의 같은 크기 각으로 나누는 반직선",
+                "선을 반으로 나누는 직선"
+              ],
+              "answer": 1,
+              "feedback_correct": "각을 정확히 반으로 나누는 반직선이야.",
+              "feedback_wrong": "수직이등분선과 헷갈리지 말자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0402-03",
+      "title": "합동",
+      "goal": "합동의 뜻을 알고 합동인 도형의 대응점을 찾는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "완전히 포개지는가",
+          "prompt": "두 도형을 포갰을 때 정확히 겹치면 어떤 관계일까?",
+          "reveal_answer": "합동"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "모양과 크기가 모두 같은 두 도형을 합동이라고 한다.",
+            "합동인 도형에서는 대응하는 변의 길이와 각의 크기가 각각 같다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "기호와 대응",
+          "examples": [
+            {
+              "notation": "△ABC ≡ △DEF",
+              "meaning": "A↔D, B↔E, C↔F가 대응"
+            },
+            {
+              "property": "AB=DE, BC=EF, ∠A=∠D"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 찾기",
+          "problem": "△ABC ≡ △PQR일 때 대응점과 대응변을 써보자.",
+          "hint": "기호의 순서를 그대로 보자.",
+          "solution": {
+            "대응점": "A↔P, B↔Q, C↔R",
+            "대응변": "AB↔PQ, BC↔QR, AC↔PR"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "합동인 두 도형에 대해 항상 같은 것은?",
+              "choices": [
+                "넓이만 같다",
+                "모양만 같다",
+                "모양과 크기가 모두 같다"
+              ],
+              "answer": 2,
+              "feedback_correct": "합동은 모양과 크기가 모두 같은 거야.",
+              "feedback_wrong": "닮음과 합동을 구분하자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

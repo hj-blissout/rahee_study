@@ -1,0 +1,225 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0401",
+  "title": "기본 도형",
+  "lessons": [
+    {
+      "lesson_id": "0401-01",
+      "title": "점, 선, 면, 각",
+      "goal": "기본 도형의 뜻과 표현을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "도형의 기본 재료",
+          "prompt": "끝이 없는 곧은 선을 무엇이라고 할까?",
+          "reveal_answer": "직선"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "점: 위치만 나타냄",
+            "직선: 양쪽 끝없이 곧게 뻗음",
+            "반직선: 한쪽으로만 끝없이 뻗음",
+            "선분: 양 끝이 정해진 부분",
+            "각: 한 점에서 나온 두 반직선이 이루는 도형"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "표현 익히기",
+          "examples": [
+            {
+              "name": "선분 AB",
+              "notation": "AB 위에 선"
+            },
+            {
+              "name": "반직선 OA",
+              "notation": "OA 한쪽 화살표"
+            },
+            {
+              "name": "각 AOB",
+              "notation": "∠AOB"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구별하기",
+          "problem": "AB, OA, ∠AOB를 각각 선분/반직선/각으로 나누자.",
+          "hint": "끝이 몇 개인지, 화살표가 있는지 보자.",
+          "solution": {
+            "AB": "선분",
+            "OA": "반직선",
+            "∠AOB": "각"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "양쪽으로 끝없이 뻗는 것은?",
+              "choices": [
+                "선분",
+                "반직선",
+                "직선"
+              ],
+              "answer": 2,
+              "feedback_correct": "직선은 양쪽으로 계속 뻗어.",
+              "feedback_wrong": "선분, 반직선, 직선을 비교해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0401-02",
+      "title": "평행선과 교선",
+      "goal": "평행, 교차, 수직 관계를 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "만나지 않는 두 선",
+          "prompt": "같은 평면 위에서 아무리 늘려도 만나지 않는 두 직선을 뭐라고 할까?",
+          "reveal_answer": "평행선"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "평행선: 같은 평면에서 만나지 않는 두 직선",
+            "교선: 만나는 두 직선",
+            "수직: 서로 직각으로 만나는 관계"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "관계 보기",
+          "examples": [
+            {
+              "pair": "철길",
+              "relation": "평행"
+            },
+            {
+              "pair": "십자가 모양 선",
+              "relation": "수직"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "두 선이 만나면서 90°를 이루면 어떤 관계일까?",
+          "hint": "직각이라는 말을 떠올려 봐.",
+          "solution": "수직 관계"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인",
+          "items": [
+            {
+              "q": "평행선에 대한 설명으로 맞는 것은?",
+              "choices": [
+                "언젠가 만난다",
+                "같은 평면에서 만나지 않는다",
+                "항상 직각으로 만난다"
+              ],
+              "answer": 1,
+              "feedback_correct": "평행선은 만나지 않아.",
+              "feedback_wrong": "평행의 뜻을 다시 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0401-03",
+      "title": "각의 크기와 종류",
+      "goal": "각의 크기를 비교하고 예각, 직각, 둔각 등을 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "직각 기준",
+          "prompt": "90°인 각을 무엇이라고 할까?",
+          "reveal_answer": "직각"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "예각: 90°보다 작은 각",
+            "직각: 90°인 각",
+            "둔각: 90°보다 크고 180°보다 작은 각",
+            "평각: 180°인 각"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "각 분류하기",
+          "examples": [
+            {
+              "angle": "35°",
+              "type": "예각"
+            },
+            {
+              "angle": "90°",
+              "type": "직각"
+            },
+            {
+              "angle": "120°",
+              "type": "둔각"
+            },
+            {
+              "angle": "180°",
+              "type": "평각"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 분류하기",
+          "problem": "70°, 95°, 180°를 분류하자.",
+          "hint": "90°와 180°를 기준으로 비교해.",
+          "solution": {
+            "70°": "예각",
+            "95°": "둔각",
+            "180°": "평각"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "다음 중 둔각은?",
+              "choices": [
+                "45°",
+                "90°",
+                "120°"
+              ],
+              "answer": 2,
+              "feedback_correct": "120°는 90°보다 크고 180°보다 작아.",
+              "feedback_wrong": "둔각의 범위를 다시 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

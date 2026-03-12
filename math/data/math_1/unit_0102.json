@@ -1,0 +1,319 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0102",
+  "title": "정수와 유리수",
+  "lessons": [
+    {
+      "lesson_id": "0102-01",
+      "title": "정수와 유리수",
+      "goal": "양수, 음수, 정수, 유리수를 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "생활 속 수 떠올리기",
+          "prompt": "영상 5도, 영하 3도, +1000원, -1000원 중 음수는?",
+          "reveal_answer": "영하 3도, -1000원"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "양수: 0보다 큰 수",
+            "음수: 0보다 작은 수",
+            "정수: ..., -2, -1, 0, 1, 2, ...",
+            "유리수: 정수와 분수 형태로 나타낼 수 있는 수"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "분류 익히기",
+          "examples": [
+            {
+              "value": "-3",
+              "group": [
+                "정수",
+                "유리수"
+              ]
+            },
+            {
+              "value": "0",
+              "group": [
+                "정수",
+                "유리수"
+              ]
+            },
+            {
+              "value": "2/5",
+              "group": [
+                "유리수"
+              ]
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 분류해보기",
+          "problem": "-7, 0, 4, -3/2를 정수/유리수로 나누자.",
+          "hint": "정수는 소수점 없는 수들이야.",
+          "solution": {
+            "정수": [
+              "-7",
+              "0",
+              "4"
+            ],
+            "유리수만": [
+              "-3/2"
+            ]
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "다음 중 정수가 아닌 것은?",
+              "choices": [
+                "-2",
+                "0",
+                "1/2"
+              ],
+              "answer": 2,
+              "feedback_correct": "1/2는 유리수지만 정수는 아니야.",
+              "feedback_wrong": "정수는 분수가 아닌 수들이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0102-02",
+      "title": "수직선과 절댓값",
+      "goal": "수직선에서 수의 위치를 이해하고 절댓값을 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "위치로 생각하기",
+          "prompt": "0에서 -4까지의 거리는 얼마일까?",
+          "reveal_answer": "4"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "수직선에서 오른쪽일수록 큰 수",
+            "절댓값: 0에서 떨어진 거리"
+          ],
+          "misconceptions": [
+            "|-5| = -5로 착각"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "절댓값 익히기",
+          "examples": [
+            {
+              "expr": "|3|",
+              "value": "3"
+            },
+            {
+              "expr": "|-3|",
+              "value": "3"
+            },
+            {
+              "expr": "|0|",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "-2와 5 중 어느 수가 더 큰지 수직선으로 설명해보자.",
+          "hint": "오른쪽에 있는 수가 더 커.",
+          "solution": "5가 더 크다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "|-7|의 값은?",
+              "choices": [
+                "-7",
+                "7",
+                "0"
+              ],
+              "answer": 1,
+              "feedback_correct": "절댓값은 거리라서 항상 0 이상이야.",
+              "feedback_wrong": "부호를 떼고 거리로 생각해봐."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0102-03",
+      "title": "정수와 유리수의 덧셈과 뺄셈",
+      "goal": "부호가 있는 수의 덧셈과 뺄셈을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "부호 감각 깨우기",
+          "prompt": "-3에서 2만큼 더 가면 어디일까?",
+          "reveal_answer": "-1"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "같은 부호끼리 더하면 절댓값을 더하고 부호는 그대로",
+            "다른 부호끼리 더하면 절댓값의 차를 구하고 큰 쪽 부호를 따른다",
+            "뺄셈은 더하기로 바꾼다"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "규칙 익히기",
+          "examples": [
+            {
+              "expr": "(-2)+(-5)",
+              "value": "-7"
+            },
+            {
+              "expr": "(-7)+3",
+              "value": "-4"
+            },
+            {
+              "expr": "4-(-2)",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "(-8)+5, 6-(-4)를 계산해보자.",
+          "hint": "뺄셈은 더하기로 바꿔.",
+          "solution": {
+            "(-8)+5": "-3",
+            "6-(-4)": "10"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "(-5)+2의 값은?",
+              "choices": [
+                "-3",
+                "3",
+                "-7"
+              ],
+              "answer": 0,
+              "feedback_correct": "절댓값 큰 쪽이 -5라서 음수야.",
+              "feedback_wrong": "부호와 절댓값을 같이 봐야 해."
+            },
+            {
+              "q": "3-(-4)의 값은?",
+              "choices": [
+                "-1",
+                "7",
+                "1"
+              ],
+              "answer": 1,
+              "feedback_correct": "빼기 음수는 더하기 양수로 바뀌어.",
+              "feedback_wrong": "3+4로 바꿔 생각해봐."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0102-04",
+      "title": "정수와 유리수의 곱셈과 나눗셈",
+      "goal": "부호가 있는 수의 곱셈과 나눗셈을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "부호 규칙 예상하기",
+          "prompt": "음수×양수는 결과가 양수일까, 음수일까?",
+          "reveal_answer": "음수"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "같은 부호끼리 곱하거나 나누면 양수",
+            "다른 부호끼리 곱하거나 나누면 음수"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "부호 규칙 익히기",
+          "examples": [
+            {
+              "expr": "(-3)×2",
+              "value": "-6"
+            },
+            {
+              "expr": "(-4)×(-2)",
+              "value": "8"
+            },
+            {
+              "expr": "12÷(-3)",
+              "value": "-4"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "(-5)×(-6), (-18)÷3을 계산하자.",
+          "hint": "부호 먼저, 숫자 계산은 나중.",
+          "solution": {
+            "(-5)×(-6)": "30",
+            "(-18)÷3": "-6"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "(-2)×(-7)의 값은?",
+              "choices": [
+                "-14",
+                "14",
+                "9"
+              ],
+              "answer": 1,
+              "feedback_correct": "같은 부호끼리는 양수야.",
+              "feedback_wrong": "음수×음수는 양수야."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

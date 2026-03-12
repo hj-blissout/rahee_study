@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | 가족 공부방</title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nanum Square Round', 'Noto Sans KR', sans-serif;
+            padding: 20px;
+        }
+        .login-card {
+            background: white;
+            border-radius: 32px;
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 160px; height: 160px;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+        .brand {
+            text-align: center;
+            margin-bottom: 32px;
+            position: relative;
+        }
+        .brand-icon {
+            width: 72px; height: 72px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        .brand-icon i { color: white; font-size: 2rem; }
+        .brand h1 {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+        }
+        .brand p { color: #64748b; font-size: 0.95rem; }
+
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .input-wrap { position: relative; }
+        .input-wrap i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 14px 16px 14px 44px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #1e293b;
+            transition: border-color 0.2s;
+            outline: none;
+            background: #f8fafc;
+        }
+        .form-control:focus {
+            border-color: #2563eb;
+            background: white;
+        }
+        .form-control.signup-only { display: none; }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 4px 0 #1e40af;
+            transition: transform 0.1s, box-shadow 0.1s;
+            margin-top: 8px;
+        }
+        .btn-submit:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        .btn-submit:disabled {
+            background: #cbd5e1;
+            box-shadow: 0 4px 0 #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .alert {
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 16px;
+            display: none;
+        }
+        .alert.error { background: #fff1f2; color: #be123c; border: 1px solid #fda4af; }
+        .alert.success { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+        .alert.show { display: block; }
+
+        .divider { text-align: center; color: #94a3b8; font-size: 0.85rem; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="brand">
+            <div class="brand-icon"><i class="fas fa-book-open"></i></div>
+            <h1>가족 공부방</h1>
+            <p>함께 공부하고, 함께 성장해요 📚</p>
+        </div>
+
+
+        <form id="auth-form" onsubmit="submitForm(event)">
+
+            <div class="form-group">
+                <label>아이디</label>
+                <div class="input-wrap">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" class="form-control" placeholder="예: rahee, mom, dad" required autocomplete="username">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>비밀번호</label>
+                <div class="input-wrap">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" class="form-control" placeholder="비밀번호 (6자 이상)" required minlength="6">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">
+                <i class="fas fa-sign-in-alt"></i> 로그인
+            </button>
+        </form>
+
+        <div class="alert error" id="alert-error"></div>
+        <div class="alert success" id="alert-success"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://gvgarbiuzgxppbhenhxj.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd2Z2FyYml1emd4cHBiaGVuaHhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyODM5NzEsImV4cCI6MjA4ODg1OTk3MX0.knjJf3RP6uSxaRRhpA4q1CCglRqfQKje1uROhLuK7yI';
+
+        const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+            auth: { persistSession: true, autoRefreshToken: true }
+        });
+
+        let currentTab = 'login';
+
+        // 이미 로그인된 경우 리디렉트
+        sbClient.auth.getSession().then(({ data }) => {
+            if (data.session) {
+                redirectAfterLogin();
+            }
+        });
+
+        // 아이디 → 내부 이메일 변환 (Supabase Auth는 이메일 필요)
+        function toEmail(username) {
+            return `${username.toLowerCase()}@study.local`;
+        }
+
+        async function submitForm(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const email = toEmail(username);
+            const btn = document.getElementById('submit-btn');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
+            hideAlerts();
+
+            try {
+                const { data, error } = await sbClient.auth.signInWithPassword({ email, password });
+                if (error) throw error;
+                showAlert('success', `환영해요, ${username}! 🎉 공부방으로 이동 중...`);
+                setTimeout(redirectAfterLogin, 1000);
+            } catch (error) {
+                const msg = translateError(error.message);
+                showAlert('error', msg);
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> 로그인';
+            }
+        }
+
+        function redirectAfterLogin() {
+            // 돌아갈 URL이 있으면 그쪽으로, 없으면 기본 수학 페이지
+            const returnTo = new URLSearchParams(window.location.search).get('returnTo') || 'math/math_1/index.html';
+            window.location.href = returnTo;
+        }
+
+        function translateError(msg) {
+            if (msg.includes('Invalid login credentials')) return '❌ 아이디 또는 비밀번호가 틀렸어요.';
+            if (msg.includes('Password should be at least')) return '❌ 비밀번호는 6자 이상이어야 해요.';
+            return '❌ 오류가 발생했어요: ' + msg;
+        }
+
+        function showAlert(type, msg) {
+            hideAlerts();
+            const el = document.getElementById(`alert-${type}`);
+            el.textContent = msg;
+            el.classList.add('show');
+        }
+        function hideAlerts() {
+            document.querySelectorAll('.alert').forEach(el => el.classList.remove('show'));
+        }
+    </script>
+</body>
+</html>

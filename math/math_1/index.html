@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중1 수학 | 전체 차례</title>
+    <link rel="stylesheet" href="../../math_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== 쾘린더 패널 ===== */
+        .cal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+
+        .cal-overlay.open {
+            display: block;
+        }
+
+        .cal-panel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(420px, 100%);
+            height: 100vh;
+            background: white;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.35s cubic-bezier(.4, 0, .2, 1);
+            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cal-panel.open {
+            right: 0;
+        }
+
+        .cal-header {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            padding: 20px 20px 16px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .cal-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .cal-header h2 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .cal-close {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cal-month-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cal-month-nav button {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        #cal-month-label {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .cal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .cal-day-row {
+            margin-bottom: 12px;
+            border-left: 3px solid #e2e8f0;
+            padding-left: 12px;
+        }
+
+        .cal-day-row.has-activity {
+            border-left-color: #2563eb;
+        }
+
+        .cal-day-row.today {
+            border-left-color: #f59e0b;
+        }
+
+        .cal-date-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .cal-day-row.has-activity .cal-date-label {
+            color: #2563eb;
+        }
+
+        .cal-day-row.today .cal-date-label {
+            color: #f59e0b;
+        }
+
+        .cal-empty {
+            color: #cbd5e1;
+            font-size: 0.8rem;
+            padding: 2px 0;
+        }
+
+        .cal-lesson-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f9ff;
+            border-radius: 8px;
+            padding: 6px 10px;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .cal-lesson-item i {
+            color: #3b82f6;
+        }
+
+        .cal-loading {
+            text-align: center;
+            color: #94a3b8;
+            padding: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== 소단원 리스트 스타일 ===== */
+        .lesson-list {
+            margin: 15px 0;
+            padding: 0;
+        }
+
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .lesson-item:hover {
+            background: #f1f5f9;
+        }
+
+        .lesson-item.completed {
+            background: #f0fdf4;
+            border-color: #dcfce7;
+        }
+
+        .lesson-item span {
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .lesson-item.completed span {
+            color: #166534;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="header-nav" style="justify-content: space-between; align-items: center;">
+            <a href="../../index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 학년 선택으로 돌아가기</a>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:0.9rem; color:#64748b; font-weight:700;">
+                    <i class="fas fa-user-circle" style="color:#2563eb;"></i>
+                    <span id="current-user-name">가져오는 중...</span>
+                </span>
+                <button onclick="signOut()"
+                    style="background:#f1f5f9; border:none; padding:8px 14px; border-radius:10px; cursor:pointer; font-weight:700; color:#64748b; font-size:0.85rem;">
+                    <i class="fas fa-sign-out-alt"></i> 로그아웃
+                </button>
+                <button onclick="openCalendar()" title="공부 히스토리"
+                    style="background:#f1f5f9; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; color:#2563eb; font-size:1rem;">
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <section class="hero" style="margin-bottom: 16px;">
+            <div class="pill">중1 수학</div>
+            <h1>중학교 수학의 기초, 여기서부터!</h1>
+            <p>초등학교 때 배운 내용을 바탕으로 새로운 개념을 차근차근 익혀보아요.</p>
+            <div class="tutor-box">
+                <img class="tutor-img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png"
+                    alt="박지훈">
+                <div class="tutor-msg">
+                    <b>라희야!</b> 중1 수학 차례야. 첫 단추가 진짜 중요하거든!<br>
+                    오빠가 끝까지 옆에서 응원할게! 어떤 단원부터 시작해볼까?
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-text" id="progress-text">아직 시작 안 했네? 오빠랑 첫 단추부터 잘 꿰어보자! 💪</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                <img class="progress-icon" id="progress-icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png"
+                    alt="박지훈 진행도" style="left: 0%;">
+            </div>
+        </div>
+
+        <div class="card" id="chapterCard1" data-unit="0101" data-total-lessons="4">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>1. 소인수분해</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0101">1단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard2" data-unit="0102" data-total-lessons="4">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>2. 정수와 유리수</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0102">2단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard3" data-unit="0201" data-total-lessons="3">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>3. 문자와 식</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0201">3단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard4" data-unit="0202" data-total-lessons="4">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>4. 일차방정식</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0202">4단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard5" data-unit="0301" data-total-lessons="4">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>5. 좌표평면과 그래프</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0301">5단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard6" data-unit="0302" data-total-lessons="4">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>6. 정비례와 반비례</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0302">6단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard7" data-unit="0401" data-total-lessons="3">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>7. 기본 도형</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0401">7단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard8" data-unit="0402" data-total-lessons="3">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>8. 작도와 합동</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0402">8단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard9" data-unit="0501" data-total-lessons="3">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>9. 다각형</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0501">9단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard10" data-unit="0502" data-total-lessons="3">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>10. 원과 부채꼴</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0502">10단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard11" data-unit="0601" data-total-lessons="3">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>11. 다면체와 회전체</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0601">11단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard12" data-unit="0602" data-total-lessons="2">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>12. 입체도형의 겉넓이와 부피</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0602">12단원 시작하기 🚀</a>
+        </div>
+        <div class="card" id="chapterCard13" data-unit="0701" data-total-lessons="4">
+            <div class="status-badge not-started">아직 안 했어 💤</div>
+            <h2>13. 자료의 정리와 해석</h2>
+            <div class="completed-date"></div>
+            <div class="lesson-list"></div>
+            <a class="chapter" href="viewer.html?unit=0701">13단원 시작하기 🚀</a>
+        </div>
+    </div>
+
+    <!-- Calendar Panel -->
+    <div id="cal-overlay" class="cal-overlay" onclick="closeCalendar()"></div>
+    <div id="cal-panel" class="cal-panel">
+        <div class="cal-header">
+            <div class="cal-header-top">
+                <h2>공부 히스토리</h2>
+                <button class="cal-close" onclick="closeCalendar()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cal-month-nav">
+                <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                <span id="cal-month-label"></span>
+                <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div id="cal-body" class="cal-body">
+            <!-- Calendar days will be rendered here -->
+        </div>
+    </div> <!-- /cal-panel -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../math_common.js"></script>
+    <script>
+        // 인증 체크 후 사용자 이름 표시
+        requireAuth();
+
+        // ===== 캘린더 로직 =====
+        let calYear = new Date().getFullYear();
+        let calMonth = new Date().getMonth(); // 0-based
+
+        function openCalendar(date) {
+            if (date) {
+                calYear = date.getFullYear();
+                calMonth = date.getMonth();
+            }
+            document.getElementById('cal-overlay').classList.add('open');
+            document.getElementById('cal-panel').classList.add('open');
+            renderCalendar();
+        }
+        function closeCalendar() {
+            document.getElementById('cal-overlay').classList.remove('open');
+            document.getElementById('cal-panel').classList.remove('open');
+        }
+        function changeMonth(dir) {
+            calMonth += dir;
+            if (calMonth < 0) { calMonth = 11; calYear--; }
+            if (calMonth > 11) { calMonth = 0; calYear++; }
+            renderCalendar();
+        }
+
+        // localStorage에서 해당 월 데이터 수집 (구/신 형식 모두 지원)
+        function getActivitiesByDay() {
+            const activities = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (!key.startsWith('math_tutor_math_')) continue;
+                const dateStr = localStorage.getItem(key);
+                if (!dateStr || !dateStr.includes('T')) continue; // 날짜 아닌 값 스킵
+                const date = new Date(dateStr);
+                if (isNaN(date.getTime())) continue;
+                if (date.getFullYear() !== calYear || date.getMonth() !== calMonth) continue;
+                const day = date.getDate();
+                if (!activities[day]) activities[day] = [];
+
+                // 신 형식: math_tutor_math_1_unit0701_lesson0701-01
+                const newMatch = key.match(/math_tutor_math_(\d+)_unit(\w+)_lesson([\w-]+)/);
+                if (newMatch) {
+                    activities[day].push({
+                        type: 'lesson',
+                        grade: newMatch[1], unitId: newMatch[2], lessonId: newMatch[3],
+                        completedAt: date
+                    });
+                    continue;
+                }
+
+                // 구 형식: math_tutor_math_3_ch6 또는 math_tutor_math_1_unit0101
+                const oldChMatch = key.match(/math_tutor_math_(\d+)_ch(\d+)/);
+                if (oldChMatch) {
+                    activities[day].push({
+                        type: 'chapter',
+                        grade: oldChMatch[1], chapter: oldChMatch[2],
+                        label: `${oldChMatch[2]}단원 완료 (중${oldChMatch[1]})`,
+                        completedAt: date
+                    });
+                    continue;
+                }
+
+                // 구 형식 unit만: math_tutor_math_1_unit0101  
+                const oldUnitMatch = key.match(/math_tutor_math_(\d+)_unit(\w+)$/);
+                if (oldUnitMatch) {
+                    activities[day].push({
+                        type: 'unit',
+                        grade: oldUnitMatch[1], unitId: oldUnitMatch[2],
+                        completedAt: date
+                    });
+                }
+            }
+            return activities;
+        }
+
+        // 구 형식 localStorage 데이터를 Supabase로 마이그레이션 (최초 1회)
+        async function migrateOldDataToSupabase() {
+            const sb = getSupabase();
+            if (!sb) return;
+            const userId = await getCurrentUserId();
+            if (!userId) return;
+
+            const migKey = 'supabase_migrated_v1';
+            if (localStorage.getItem(migKey)) return; // 이미 마이그레이션 완료
+
+            const toMigrate = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (!key.startsWith('math_tutor_math_')) continue;
+                const dateStr = localStorage.getItem(key);
+                if (!dateStr || !dateStr.includes('T')) continue;
+                toMigrate.push({ storage_key: key, completed_at: dateStr, user_id: userId });
+            }
+
+            if (toMigrate.length > 0) {
+                const { error } = await sb.from('rahee_progress').upsert(toMigrate, {
+                    onConflict: 'user_id,storage_key'
+                });
+                if (!error) {
+                    localStorage.setItem(migKey, 'done');
+                    console.log(`☁️ 기존 ${toMigrate.length}개 데이터 Supabase 마이그레이션 완료`);
+                }
+            } else {
+                localStorage.setItem(migKey, 'done');
+            }
+        }
+
+        async function renderCalendar() {
+            // 헤더 레이블
+            const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+            document.getElementById('cal-month-label').textContent = `${calYear}년 ${monthNames[calMonth]}`;
+
+            const body = document.getElementById('cal-body');
+            body.innerHTML = '<div class="cal-loading"><i class="fas fa-spinner fa-spin"></i> 불러오는 중...</div>';
+
+            const activities = getActivitiesByDay();
+            const today = new Date();
+            const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+            // 해당 월에 있는 단원 정보 미리 가져오기 (lesson 타입만)
+            const unitKeys = new Set();
+            Object.values(activities).flat()
+                .filter(a => a.type === 'lesson' && a.unitId)
+                .forEach(a => unitKeys.add(`${a.grade}_${a.unitId}`));
+            await Promise.all([...unitKeys].map(k => {
+                const parts = k.split('_');
+                return getUnitInfo(parts[0], parts[1]);
+            }));
+
+            let html = '';
+            for (let d = 1; d <= daysInMonth; d++) {
+                const dayActivities = activities[d] || [];
+                const dayDate = new Date(calYear, calMonth, d);
+                const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+                const dayName = dayNames[dayDate.getDay()];
+                const isToday = today.getDate() === d && today.getMonth() === calMonth && today.getFullYear() === calYear;
+                const hasDot = dayActivities.length > 0;
+
+                let rowClass = 'cal-day-row';
+                if (hasDot) rowClass += ' has-activity';
+                if (isToday) rowClass += ' today';
+
+                html += `<div class="${rowClass}">`;
+                html += `<div class="cal-date-label">${calMonth + 1}/${d} (${dayName})${isToday ? ' ★ 오늘' : ''}</div>`;
+
+                if (dayActivities.length === 0) {
+                    html += `<div class="cal-empty">공부 없는 날</div>`;
+                } else {
+                    for (const a of dayActivities) {
+                        let label = '';
+                        if (a.type === 'lesson') {
+                            const info = unitTitleCache[`${a.grade}_${a.unitId}`];
+                            const lessonInfo = info?.lessons?.find(l => l.lesson_id === a.lessonId);
+                            const unitLabel = info?.unitTitle || `단원 ${a.unitId}`;
+                            const lessonLabel = lessonInfo?.title || `소단원 ${a.lessonId}`;
+                            label = `${unitLabel} > ${lessonLabel}`;
+                        } else if (a.type === 'chapter') {
+                            label = a.label;
+                        } else if (a.type === 'unit') {
+                            const info = unitTitleCache[`${a.grade}_${a.unitId}`];
+                            label = info?.unitTitle ? `${info.unitTitle} 완료` : `단원 ${a.unitId} 완료`;
+                        }
+                        html += `<div class="cal-lesson-item"><i class="fas fa-book-open"></i><span>${label}</span></div>`;
+                    }
+                }
+                html += `</div>`;
+            }
+
+            body.innerHTML = html;
+        }
+        // 인증 후 마이그레이션 실행
+        requireAuth().then(() => {
+            migrateOldDataToSupabase();
+        });
+
+        // 날짜 클릭 → 캘린더 열기 (이벤트 위임)
+        document.addEventListener('click', (e) => {
+            const dateEl = e.target.closest('.completed-date');
+            if (dateEl && dateEl.dataset.completionDate) {
+                const date = new Date(dateEl.dataset.completionDate);
+                openCalendar(date);
+            }
+        });
+    </script>
+</body>
+
+</html>

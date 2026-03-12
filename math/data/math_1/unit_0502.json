@@ -1,0 +1,212 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0502",
+  "title": "원과 부채꼴",
+  "lessons": [
+    {
+      "lesson_id": "0502-01",
+      "title": "원의 기본 요소",
+      "goal": "원, 반지름, 지름, 현, 호를 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "원에서 가장 먼저",
+          "prompt": "원의 한가운데 점을 뭐라고 할까?",
+          "reveal_answer": "중심"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "중심에서 원 위의 한 점까지 이은 선분은 반지름",
+            "중심을 지나는 현은 지름",
+            "원 위의 두 점을 잇는 선분은 현",
+            "원 위의 두 점 사이의 곡선 부분은 호"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "용어 구별",
+          "examples": [
+            {
+              "term": "반지름",
+              "feature": "중심에서 원까지"
+            },
+            {
+              "term": "지름",
+              "feature": "중심을 지나는 가장 긴 현"
+            },
+            {
+              "term": "호",
+              "feature": "곡선 부분"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구분하기",
+          "problem": "중심 O를 지나는 선분 AB와 원 위 두 점을 잇는 곡선 AB는 각각 무엇일까?",
+          "hint": "직선인지 곡선인지 먼저 보자.",
+          "solution": {
+            "선분 AB": "지름",
+            "곡선 AB": "호"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "중심을 지나는 현을 무엇이라 할까?",
+              "choices": [
+                "반지름",
+                "지름",
+                "호"
+              ],
+              "answer": 1,
+              "feedback_correct": "지름은 중심을 지나는 현이야.",
+              "feedback_wrong": "현 중에서도 중심을 지나면 지름이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0502-02",
+      "title": "중심각과 호",
+      "goal": "중심각과 호의 관계를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "중심에서 만든 각",
+          "prompt": "꼭짓점이 중심에 있는 각을 뭐라고 할까?",
+          "reveal_answer": "중심각"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "중심각의 크기가 같으면 대응하는 호의 크기도 같다.",
+            "큰 중심각일수록 대응하는 호도 길어진다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "관계 익히기",
+          "examples": [
+            {
+              "central_angle": "60°",
+              "arc": "작은 호"
+            },
+            {
+              "central_angle": "180°",
+              "arc": "반원"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 비교하기",
+          "problem": "중심각이 40°인 호와 100°인 호 중 어느 쪽이 더 길까?",
+          "hint": "중심각이 큰 쪽을 봐.",
+          "solution": "100°에 대응하는 호가 더 길다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인",
+          "items": [
+            {
+              "q": "중심각이 커질수록 대응하는 호는?",
+              "choices": [
+                "짧아진다",
+                "길어진다",
+                "항상 같다"
+              ],
+              "answer": 1,
+              "feedback_correct": "중심각이 크면 호도 더 길어.",
+              "feedback_wrong": "중심각과 호는 함께 커져."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0502-03",
+      "title": "부채꼴",
+      "goal": "부채꼴의 뜻과 구성 요소를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "원에서 떼어낸 조각",
+          "prompt": "두 반지름과 그 사이의 호로 둘러싸인 도형을 뭐라고 할까?",
+          "reveal_answer": "부채꼴"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "부채꼴은 두 반지름과 호로 이루어진 도형이다.",
+            "중심각이 클수록 부채꼴도 커진다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "구성 요소 보기",
+          "examples": [
+            {
+              "part": "반지름 2개",
+              "role": "부채꼴의 양쪽 변"
+            },
+            {
+              "part": "호",
+              "role": "부채꼴의 굽은 변"
+            },
+            {
+              "part": "중심각",
+              "role": "부채꼴 크기 결정"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "같은 원에서 중심각이 30°인 부채꼴과 90°인 부채꼴 중 어느 것이 더 클까?",
+          "hint": "중심각이 큰 쪽을 보자.",
+          "solution": "90°인 부채꼴"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "부채꼴을 이루는 것은?",
+              "choices": [
+                "두 반지름과 호",
+                "지름과 현",
+                "호와 현만"
+              ],
+              "answer": 0,
+              "feedback_correct": "부채꼴은 두 반지름과 호야.",
+              "feedback_wrong": "부채꼴의 경계를 떠올려 봐."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

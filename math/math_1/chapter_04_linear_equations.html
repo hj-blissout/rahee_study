@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4단원: 일차방정식 | 중1 수학</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <link rel="stylesheet" href="../math_style.css">
+    <link rel="stylesheet" href="../../math_style.css">
 </head>
 
 <body>
@@ -169,47 +169,9 @@
     </div>
 
     <script>
-        // Web Audio API for cute sound effects
-
-        // Quiz logic
-        function checkAnswer(btn, isCorrect, feedbackId) {
-            const feedback = document.getElementById(feedbackId);
-            const parent = btn.parentElement;
-
-            if (parent.dataset.completed === 'true') return;
-
-            const buttons = parent.querySelectorAll('.option-btn');
-            buttons.forEach(b => {
-                b.classList.remove('correct', 'wrong');
-            });
-
-            if (isCorrect) {
-                playCuteSound();
-                btn.classList.add('correct');
-                feedback.textContent = "🎉 정답! 완전 대단한데 우리 라희? 오빠 놀랐어!";
-                feedback.style.color = "#047857";
-                parent.dataset.completed = 'true';
-
-                const allQuestions = document.querySelectorAll('.quiz-container');
-                const allCompleted = Array.from(allQuestions).every(q => q.dataset.completed === 'true');
-
-                if (allCompleted && !window.confettiFired) {
-                    window.confettiFired = true;
-                    // Save to localStorage!
-                    localStorage.setItem('math_tutor_math_1_ch4', new Date().toISOString());
-
-                    fireConfetti();
-          document.getElementById('btn-return-home').style.display = 'block';
-                    feedback.innerHTML += "<br><span style='font-size:1.2rem; color:#2563eb; display:block; margin-top:8px;'>축하해! 수학의 꽃 일차방정식도 무사히 마스터 완료! 최고야! 🌟</span>";
-                }
-            } else {
-                btn.classList.add('wrong');
-                feedback.textContent = "아고 아쉬워라! 라희야 오빠랑 다시 천천히 고민해보자.";
-                feedback.style.color = "#be123c";
-            }
-        }
+        // 공통 로직 사용 (math_common.js)
     </script>
-    <script src="../math_common.js"></script>
+    <script src="../../math_common.js"></script>
 </body>
 
 </html>

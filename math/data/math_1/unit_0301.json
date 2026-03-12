@@ -1,0 +1,293 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0301",
+  "title": "좌표평면과 그래프",
+  "lessons": [
+    {
+      "lesson_id": "0301-01",
+      "title": "수직선 위의 점과 좌표",
+      "goal": "수직선 위의 점을 수로 나타내고 위치를 읽는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "수직선 다시 보기",
+          "prompt": "0의 오른쪽으로 3칸 가면 어떤 수일까?",
+          "reveal_answer": "3"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "수직선 위의 한 점은 하나의 수로 나타낼 수 있다.",
+            "오른쪽으로 갈수록 큰 수, 왼쪽으로 갈수록 작은 수"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "위치 읽기",
+          "examples": [
+            {
+              "point": "A",
+              "position": "2",
+              "description": "0의 오른쪽 2칸"
+            },
+            {
+              "point": "B",
+              "position": "-3",
+              "description": "0의 왼쪽 3칸"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "점 P가 -4에 있고 점 Q가 1에 있을 때, 어느 점이 더 오른쪽일까?",
+          "hint": "수직선에서 오른쪽에 있는 점이 더 커.",
+          "solution": "Q가 더 오른쪽이다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "수직선에서 0의 왼쪽 5칸에 있는 수는?",
+              "choices": [
+                "5",
+                "-5",
+                "0"
+              ],
+              "answer": 1,
+              "feedback_correct": "왼쪽은 음수야.",
+              "feedback_wrong": "수직선에서 왼쪽은 음수 방향이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-02",
+      "title": "좌표평면과 순서쌍",
+      "goal": "좌표평면에서 점의 위치를 순서쌍으로 나타낸다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "가로와 세로",
+          "prompt": "오른쪽으로 2, 위로 3 이동한 점은 어떻게 나타낼까?",
+          "reveal_answer": "(2, 3)"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "가로축은 x축, 세로축은 y축",
+            "점의 위치는 (x좌표, y좌표) 순서로 나타낸다"
+          ],
+          "misconceptions": [
+            "순서를 바꾸어 (y, x)로 씀"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "읽는 순서 익히기",
+          "examples": [
+            {
+              "point": "A",
+              "coord": "(3, 1)",
+              "meaning": "오른쪽 3, 위 1"
+            },
+            {
+              "point": "B",
+              "coord": "(-2, 4)",
+              "meaning": "왼쪽 2, 위 4"
+            },
+            {
+              "point": "C",
+              "coord": "(0, -3)",
+              "meaning": "x축 위가 아닌 y축 아래"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 찍어보기",
+          "problem": "점 (-1, 2), (4, -2)를 좌표평면에서 설명해보자.",
+          "hint": "가로 먼저, 세로 나중.",
+          "solution": {
+            "(-1, 2)": "왼쪽 1, 위 2",
+            "(4, -2)": "오른쪽 4, 아래 2"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "오른쪽 5, 아래 1인 점의 좌표는?",
+              "choices": [
+                "(5, 1)",
+                "(1, 5)",
+                "(5, -1)"
+              ],
+              "answer": 2,
+              "feedback_correct": "아래는 y좌표가 음수야.",
+              "feedback_wrong": "순서쌍은 (가로, 세로)야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-03",
+      "title": "사분면",
+      "goal": "점이 어느 사분면에 속하는지 판단한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "부호 먼저 보기",
+          "prompt": "(2, 3)은 x와 y가 각각 어떤 부호일까?",
+          "reveal_answer": "둘 다 양수"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "제1사분면: x>0, y>0",
+            "제2사분면: x<0, y>0",
+            "제3사분면: x<0, y<0",
+            "제4사분면: x>0, y<0"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "사분면 찾기",
+          "examples": [
+            {
+              "coord": "(3, 2)",
+              "quadrant": "제1사분면"
+            },
+            {
+              "coord": "(-2, 4)",
+              "quadrant": "제2사분면"
+            },
+            {
+              "coord": "(-1, -5)",
+              "quadrant": "제3사분면"
+            },
+            {
+              "coord": "(4, -3)",
+              "quadrant": "제4사분면"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 분류하기",
+          "problem": "점 A(-3, 1), B(2, -4), C(0, 5)를 분류하자.",
+          "hint": "축 위의 점은 사분면에 속하지 않아.",
+          "solution": {
+            "A": "제2사분면",
+            "B": "제4사분면",
+            "C": "y축 위"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "점 (-4, -2)는 어디에 있을까?",
+              "choices": [
+                "제2사분면",
+                "제3사분면",
+                "제4사분면"
+              ],
+              "answer": 1,
+              "feedback_correct": "x와 y가 모두 음수면 제3사분면이야.",
+              "feedback_wrong": "x, y의 부호를 같이 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-04",
+      "title": "그래프 읽기",
+      "goal": "점과 선그래프에서 정보를 읽어낸다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "축 읽기",
+          "prompt": "그래프에서 가로축과 세로축은 각각 무엇을 뜻할까?",
+          "reveal_answer": "상황에 따라 다르지만, 보통 원인-결과나 시간-양을 나타내."
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "그래프는 두 양 사이의 관계를 한눈에 보여준다.",
+            "점의 좌표를 읽으면 상황 정보를 알 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "정보 찾기",
+          "examples": [
+            {
+              "reading": "x가 2일 때 y값 찾기"
+            },
+            {
+              "reading": "y가 가장 큰 점 찾기"
+            },
+            {
+              "reading": "두 점 사이의 증가/감소 보기"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 읽기",
+          "problem": "점 (1, 3), (2, 5), (3, 7)이 있는 그래프에서 x가 2일 때 y는?",
+          "hint": "x좌표가 2인 점을 찾아.",
+          "solution": "y=5"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "점 (4, 6)은 무엇을 뜻할까?",
+              "choices": [
+                "x=6, y=4",
+                "x=4, y=6",
+                "x+y=10"
+              ],
+              "answer": 1,
+              "feedback_correct": "순서쌍은 항상 (x, y)야.",
+              "feedback_wrong": "좌표 읽는 순서를 확인하자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

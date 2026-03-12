@@ -1,0 +1,273 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0701",
+  "title": "자료의 정리와 해석",
+  "lessons": [
+    {
+      "lesson_id": "0701-01",
+      "title": "자료의 정리",
+      "goal": "자료를 조사하고 표로 정리한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "자료란 뭘까",
+          "prompt": "학급 친구들이 좋아하는 과일을 조사한 결과는 무엇이라고 부를까?",
+          "reveal_answer": "자료"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "자료는 조사나 관찰로 얻은 값이다.",
+            "자료는 표로 정리하면 비교하기 쉬워진다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "표로 정리하기",
+          "examples": [
+            {
+              "item": "사과",
+              "count": 8
+            },
+            {
+              "item": "바나나",
+              "count": 5
+            },
+            {
+              "item": "포도",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 정리하기",
+          "problem": "점수 자료 3, 4, 4, 5, 5, 5를 표로 정리해보자.",
+          "hint": "같은 값끼리 묶어 개수를 세어.",
+          "solution": {
+            "3": 1,
+            "4": 2,
+            "5": 3
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "자료를 정리할 때 가장 먼저 할 일은?",
+              "choices": [
+                "그림부터 그리기",
+                "값을 모으고 분류하기",
+                "평균 먼저 구하기"
+              ],
+              "answer": 1,
+              "feedback_correct": "자료를 먼저 모아야 정리할 수 있어.",
+              "feedback_wrong": "기초는 자료 수집과 분류야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-02",
+      "title": "도수분포표",
+      "goal": "자료를 도수분포표로 정리한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "몇 번 나왔는지",
+          "prompt": "어떤 값이 나타난 횟수를 무엇이라고 할까?",
+          "reveal_answer": "도수"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "도수는 자료값이 나타난 횟수",
+            "도수분포표는 자료를 구간별로 나누어 도수를 정리한 표"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "표 읽기",
+          "examples": [
+            {
+              "class": "0~10",
+              "frequency": 3
+            },
+            {
+              "class": "10~20",
+              "frequency": 5
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 만들기",
+          "problem": "점수 자료를 0~4, 5~9 구간으로 나누어 도수분포표를 만들어보자.",
+          "hint": "각 자료가 어느 구간에 들어가는지 세어.",
+          "solution": "구간별 도수를 세어 표로 정리"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인",
+          "items": [
+            {
+              "q": "도수의 뜻은?",
+              "choices": [
+                "자료의 크기",
+                "자료가 나타난 횟수",
+                "자료의 평균"
+              ],
+              "answer": 1,
+              "feedback_correct": "도수는 횟수야.",
+              "feedback_wrong": "도수는 몇 번 나왔는지를 뜻해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-03",
+      "title": "히스토그램과 도수분포다각형",
+      "goal": "히스토그램과 도수분포다각형을 읽고 그린다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "막대 높이 의미",
+          "prompt": "히스토그램에서 막대의 높이는 무엇을 나타낼까?",
+          "reveal_answer": "도수"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "히스토그램은 도수분포표를 막대그래프로 나타낸 것",
+            "도수분포다각형은 각 계급의 중앙값을 점으로 찍어 이은 그래프"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "그래프 비교",
+          "examples": [
+            {
+              "graph": "히스토그램",
+              "feature": "직사각형 막대"
+            },
+            {
+              "graph": "도수분포다각형",
+              "feature": "점과 선으로 연결"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 읽기",
+          "problem": "가장 높은 막대가 뜻하는 것은 무엇일까?",
+          "hint": "도수가 가장 큰 계급이야.",
+          "solution": "가장 많이 나타난 구간"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "도수분포다각형은 무엇을 이은 그래프일까?",
+              "choices": [
+                "막대 윗변",
+                "계급값을 나타내는 점",
+                "모든 자료값"
+              ],
+              "answer": 1,
+              "feedback_correct": "계급값 점들을 이어 만든 그래프야.",
+              "feedback_wrong": "히스토그램과 비교해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-04",
+      "title": "상대도수",
+      "goal": "상대도수의 뜻을 알고 해석한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "전체 중 얼마인지",
+          "prompt": "20명 중 5명이 선택했다면 전체의 몇 부분일까?",
+          "reveal_answer": "5/20 = 1/4 = 0.25"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "상대도수 = 도수 ÷ 전체 자료 수",
+            "상대도수는 전체 중 차지하는 비율을 보여준다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "비율 읽기",
+          "examples": [
+            {
+              "frequency": 4,
+              "total": 20,
+              "relative": 0.2
+            },
+            {
+              "frequency": 15,
+              "total": 50,
+              "relative": 0.3
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "전체 40개 자료 중 어떤 계급의 도수가 8이면 상대도수는?",
+          "hint": "도수÷전체 자료 수",
+          "solution": "8/40 = 0.2"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "마무리 퀴즈",
+          "items": [
+            {
+              "q": "상대도수의 뜻으로 맞는 것은?",
+              "choices": [
+                "가장 큰 도수",
+                "도수를 전체 자료 수로 나눈 값",
+                "도수의 합"
+              ],
+              "answer": 1,
+              "feedback_correct": "상대도수는 비율이야.",
+              "feedback_wrong": "상대도수는 전체에 대한 비중을 뜻해."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

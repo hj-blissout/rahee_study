@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>라희의 영단어 마스터</title>
-    <!-- 폰트 적용 -->
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round&display=swap" rel="stylesheet">
+    <title>라희의 영단어 마스터 | Premium English</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Nanum+Square+Round:wght@400;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 외부 스타일시트 적용 -->
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./celebration.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
     <header>
-        <a href="../index.html" class="back-btn"><i class="fas fa-chevron-left"></i> 수학 홈으로</a>
-        <h1>📖 라희의 영단어 마스터</h1>
+        <a href="../index.html" class="back-btn"><i class="fas fa-chevron-left"></i> 학습 홈으로</a>
+        <h1>영단어 마스터 📖</h1>
     </header>
 
     <div class="container">
@@ -370,6 +372,8 @@
         }
 
         function showCompleteView() {
+            playCuteSound();
+            fireConfetti();
             studyContainerEl.style.display = 'none';
             resultViewEl.style.display = 'block';
         }
@@ -436,8 +440,11 @@
         function checkAnswer() {
             if (testInputEl.disabled) return;
             
-            const answer = testInputEl.value.trim().toLowerCase();
-            const correctWord = testQuestionsList[currentTestIndex].en.toLowerCase();
+            // 아이폰 자동 변환(스마트 쿼트) 대처: 둥근 따옴표를 일반 따옴표로 변경
+            const normalize = (text) => text.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"').trim();
+
+            const answer = normalize(testInputEl.value).toLowerCase();
+            const correctWord = normalize(testQuestionsList[currentTestIndex].en).toLowerCase();
             
             if (answer === correctWord) {
                 // 정답
@@ -493,5 +500,6 @@
         // 앱 구동 시작
         initApp();
     </script>
+    <script src="./celebration.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3단원: 다항식의 곱셈 | 기초 정복 수학</title>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <link rel="stylesheet" href="../math_style.css">
+    <link rel="stylesheet" href="../../math_style.css">
 </head>
 
 <body>
@@ -156,41 +156,10 @@
 
   </div>
 
-  <script>
-    // Web Audio API for cute sound effects
-
-    let quizCompleted = false;
-    function checkAnswer(btn, isCorrect, feedbackId, isFinal = false) {
-      if (quizCompleted) return;
-
-      const feedback = document.getElementById(feedbackId);
-      const parent = btn.parentElement;
-
-      const buttons = parent.querySelectorAll('.option-btn');
-      buttons.forEach(b => {
-        b.classList.remove('correct', 'wrong');
-      });
-
-      if (isCorrect) {
-        playCuteSound();
-        btn.classList.add('correct');
-        feedback.textContent = "🎉 정답입니다! 전개를 완벽히 이해했네요!";
-        feedback.style.color = "#047857";
-
-        if (isFinal) {
-          quizCompleted = true;
-          fireConfetti();
-          document.getElementById('btn-return-home').style.display = 'block';
-          feedback.innerHTML += "<br><span style='font-size:1.2rem; color:#2563eb; display:block; margin-top:8px;'>축하합니다! 3단원도 무사히 마스터! 🌟</span>";
-        }
-      } else {
-        btn.classList.add('wrong');
-        feedback.textContent = "아쉽네요! x랑 5가 만난 5x, 2랑 x가 만난 2x를 합쳐보세요!";
-        feedback.style.color = "#be123c";
-      }
-    }
-  </script>
-    <script src="../math_common.js"></script>
+    <script>
+        // 공통 로직 사용 (math_common.js)
+    </script>
+    <script src="../../math_common.js"></script>
 </body>
 
 </html>

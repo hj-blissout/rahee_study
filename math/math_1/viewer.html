@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학 학습 뷰어 | Rahee's Premium Study</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Nanum+Square+Round:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../math_style.css">
+    <style>
+        /* 스마트 뷰어 전용 추가 스타일 및 레이아웃 보정 */
+        .step-card {
+            display: none; /* 기본적으로 숨김 */
+        }
+        .step-card.active {
+            display: block; /* 활성화된 카드만 표시 */
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .lesson-nav {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0 30px;
+            overflow-x: auto;
+            padding: 5px 5px 15px;
+            scrollbar-width: none; /* Firefox */
+        }
+        .lesson-nav::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+        
+        .nav-item {
+            padding: 12px 24px;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px solid #f1f5f9;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #64748b;
+        }
+        .nav-item.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: #eff6ff;
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* 퀴즈 박스 스타일 강화 */
+        .quiz-container {
+            transition: all 0.3s;
+        }
+        .quiz-container:hover {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+        }
+
+        /* 탭 힌트 스타일링 */
+        .interactive-box {
+            cursor: pointer;
+            padding: 20px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.2s;
+            background: #f8fafc;
+        }
+        .interactive-box:hover {
+            border-color: var(--primary-color);
+            background: #f0f7ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="math-header">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 목록으로</a>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="font-size:0.85rem; color:#64748b; font-weight:700;">
+                        <i class="fas fa-user-circle" style="color:#2563eb;"></i>
+                        <span id="current-user-name">사용자</span>
+                    </span>
+                    <button onclick="signOut()" style="background:#f1f5f9; border:none; padding:6px 12px; border-radius:8px; cursor:pointer; font-weight:700; color:#64748b; font-size:0.8rem;">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="unit-title" class="math-unit-title">로딩 중...</div>
+            <h1 id="lesson-title" class="math-lesson-title">준비 중이에요...</h1>
+            <div class="progress-container" style="background: white; padding: 10px; border-radius: 12px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="progress-bar" style="margin: 0; height: 8px;">
+                    <div class="progress-fill" id="main-progress" style="width: 20%;"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- 레슨 네비게이션 (소단원 선택) -->
+            <div class="lesson-nav" id="lesson-nav"></div>
+
+            <div id="loading" style="text-align: center; padding: 50px;">
+                <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--primary-color);"></i>
+                <p style="margin-top: 15px;">라희를 위한 공부 내용을 불러오고 있어요!</p>
+            </div>
+
+            <div id="lesson-content">
+                <!-- 1단계: 기억 깨우기 -->
+                <section id="step1" class="step-card active">
+                    <div class="step-badge">1단계: 기억 깨우기 🧠</div>
+                    <div id="recall-content"></div>
+                    <button class="action-btn" onclick="completeStep(1)" id="btn-step1">기억났어! 다음으로 🏃</button>
+                </section>
+
+                <!-- 2단계: 핵심 개념 -->
+                <section id="step2" class="step-card">
+                    <div class="step-badge">2단계: 핵심 개념 💡</div>
+                    <div id="concept-content"></div>
+                    <button class="action-btn" onclick="completeStep(2)" id="btn-step2">이해 완료! 다음으로 🚀</button>
+                </section>
+
+                <!-- 3단계: 표현/규칙 익히기 -->
+                <section id="step3" class="step-card">
+                    <div class="step-badge">3단계: 규칙 익히기 ✍️</div>
+                    <div id="pattern-content"></div>
+                    <button class="action-btn" onclick="completeStep(3)" id="btn-step3">익히기 성공! 확인하러 가자 🏁</button>
+                </section>
+
+                <!-- 4단계: 같이 풀기 -->
+                <section id="step4" class="step-card">
+                    <div class="step-badge">4단계: 같이 풀기 🤝</div>
+                    <div id="guided-content"></div>
+                    <button class="action-btn" onclick="completeStep(4)" id="btn-step4">이제 혼자서도 할 수 있어! 🌟</button>
+                </section>
+
+                <!-- 5단계: 확인 퀴즈 -->
+                <section id="step5" class="step-card">
+                    <div class="step-badge">5단계: 확인 퀴즈 ✅</div>
+                    <div id="quiz-content"></div>
+                    
+                    <!-- 완료 후 나타나는 버튼들 -->
+                    <div id="completion-nav" style="display:none; margin-top:40px; border-top:2px dashed #e2e8f0; padding-top:30px;">
+                        <div style="text-align:center; margin-bottom:20px; font-weight:800; color:var(--primary-color);">
+                            🎉 이 단원의 모든 내용을 마스터했어!
+                        </div>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;" id="completion-buttons">
+                            <!-- 버튼들이 동적으로 생성됨 -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- 팝업 및 효과용 -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../math_common.js"></script>
+    <script>
+        requireAuth();
+
+        window.fullData = null;
+        window.currentUnit = null;
+        window.currentLesson = null;
+
+        // URL 파라미터에서 unit_id 시도
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetUnitId = urlParams.get('unit') || '0101';
+
+        async function init() {
+            try {
+                const response = await fetch(`../data/math_1/unit_${targetUnitId}.json`);
+                const unitData = await response.json();
+                window.fullData = unitData;
+                window.currentUnit = unitData; 
+
+                document.getElementById('unit-title').innerText = `${unitData.curriculum} > ${unitData.title}`;
+                
+                renderLessonNav();
+                loadLesson(0);
+                updateViewerProgress(1);
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('lesson-content').style.display = 'block';
+            } catch (error) {
+                console.error(error);
+                document.getElementById('loading').innerHTML = `
+                    <div style="color: #be123c; font-weight: bold;">
+                        <i class="fas fa-exclamation-triangle"></i> 데이터를 불러오지 못했어요.<br>
+                        파일 경로를 확인해주세요!
+                    </div>
+                `;
+            }
+        }
+
+        function renderLessonNav() {
+            const nav = document.getElementById('lesson-nav');
+            nav.innerHTML = '';
+            currentUnit.lessons.forEach((lesson, idx) => {
+                const isDone = isLessonComplete(currentUnit.unit_id, lesson.lesson_id);
+                const item = document.createElement('div');
+                item.className = 'nav-item' + (idx === 0 ? ' active' : '');
+                
+                // 완료 여부에 따른 체크마크 추가
+                const checkMark = isDone ? ' <i class="fas fa-check-circle" style="color:var(--secondary-color); margin-left:5px;"></i>' : '';
+                item.innerHTML = `${lesson.title}${checkMark}`;
+                
+                item.onclick = () => {
+                    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+                    item.classList.add('active');
+                    loadLesson(idx);
+                    updateViewerProgress(1);
+                };
+                nav.appendChild(item);
+            });
+        }
+
+        function loadLesson(index) {
+            window.currentLesson = window.currentUnit.lessons[index];
+            document.getElementById('lesson-title').innerText = window.currentLesson.title;
+            window.confettiFired = false;
+            
+            // 모든 스텝 초기화
+            for(let i=1; i<=5; i++) {
+                const card = document.getElementById('step'+i);
+                card.classList.remove('active', 'completed');
+                if(i === 1) card.classList.add('active');
+                const btn = document.getElementById('btn-step'+i);
+                if(btn) btn.style.display = 'block';
+            }
+            const completionNav = document.getElementById('completion-nav');
+            if (completionNav) completionNav.style.display = 'none';
+
+            // 데이터 바인딩
+            renderRecall(currentLesson.steps.find(s => s.type === 'recall'));
+            renderConcept(currentLesson.steps.find(s => s.type === 'concept'));
+            renderPattern(currentLesson.steps.find(s => s.type === 'pattern'));
+            renderGuided(currentLesson.steps.find(s => s.type === 'guided_example'));
+            renderQuiz(currentLesson.steps.find(s => s.type === 'quiz'));
+
+            // 모든 단계의 인터랙티브 요소 체크 및 버튼 잠금 초기화
+            for(let i=1; i<=5; i++) {
+                initStepLock(i);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderRecall(step) {
+            if(!step) return;
+            const container = document.getElementById('recall-content');
+            container.innerHTML = `
+                <h2 class="math-question">${step.prompt}</h2>
+                <div class="interactive-box" onclick="reveal(this)">
+                    <div class="tap-hint">터치해서 정답 확인 👀</div>
+                    <div class="hidden-content" style="display:none">
+                        <div class="answer-box">정답은 <b>${step.reveal_answer}</b>!</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderConcept(step) {
+            if(!step) return;
+            const container = document.getElementById('concept-content');
+            let conceptsHtml = step.concepts.map(c => `<li><i class="fas fa-check" style="color:var(--primary-color)"></i> ${c}</li>`).join('');
+            let misconceptionsHtml = step.misconceptions ? 
+                `<div class="tip-box" style="margin-top:20px; background:#fff1f2; border-color:#fda4af;">
+                    <strong>⚠️ 라희야, 이건 조심해!</strong><br>
+                    ${step.misconceptions.join(', ')}
+                </div>` : '';
+            
+            container.innerHTML = `
+                <ul class="concept-list" style="list-style:none; padding:0; font-size:1.1rem; line-height:1.8;">
+                    ${conceptsHtml}
+                </ul>
+                ${misconceptionsHtml}
+            `;
+        }
+
+        function renderPattern(step) {
+            if(!step) return;
+            const container = document.getElementById('pattern-content');
+            let examplesHtml = step.examples.map(ex => {
+                // Generalized rendering based on available keys
+                if (ex.expr && ex.value) { // Expression Evaluation
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.expr} = <b>${ex.value}</b></div>`;
+                } else if (ex.from && ex.to) { // Transformation
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.from} <i class="fas fa-arrow-right"></i> <b>${ex.to}</b></div>`;
+                } else if (ex.point && ex.coord) { // Coordinate Points
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.point}: <b>${ex.coord}</b> <small>(${ex.meaning})</small></div>`;
+                } else if (ex.point && ex.position) { // Number Line Points
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.point}: <b>${ex.position}</b> <small>(${ex.description})</small></div>`;
+                } else if (ex.coord && ex.quadrant) { // Quadrants
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.coord} <i class="fas fa-map-marker-alt"></i> <b>${ex.quadrant}</b></div>`;
+                } else if (ex.situation && ex.expression) { // Proportions
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.situation} <i class="fas fa-equals"></i> <b>${ex.expression}</b></div>`;
+                } else if (ex.expression && ex.feature) { // Graph features
+                    return `<div class="answer-box" style="margin-bottom:10px"><code>${ex.expression}</code> <br> <span style="font-size:0.9rem">${ex.feature}</span></div>`;
+                } else if (ex.name && ex.notation) { // Geometric Notation
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.name} <i class="fas fa-pen-nib"></i> <b>${ex.notation}</b></div>`;
+                } else if (ex.task && ex.idea) { // Construction
+                    return `<div class="answer-box" style="margin-bottom:10px"><strong>${ex.task}</strong>: ${ex.idea}</div>`;
+                } else if (ex.object && ex.property) { // Geometric Properties
+                    return `<div class="answer-box" style="margin-bottom:10px"><strong>${ex.object}</strong>: ${ex.property}</div>`;
+                } else if (ex.pair && ex.gcd) { // Number Theory (Original GCD/LCM)
+                    return `
+                        <div style="background:#f8fafc; padding:15px; border-radius:15px; margin-bottom:10px; width:100%;">
+                            <strong>${ex.pair}</strong><br>
+                            최대공약수: <b>${ex.gcd}</b>, 최소공배수: <b>${ex.lcm}</b>
+                        </div>`;
+                } else if (ex.value && ex.classification) { // Classification (Original Flashcard)
+                    return `
+                        <div class="flashcard-container">
+                            <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                                <div class="flashcard-face flashcard-front"><b>${ex.value}</b></div>
+                                <div class="flashcard-face flashcard-back">${ex.classification}<br><small>${ex.reason || ''}</small></div>
+                            </div>
+                        </div>`;
+                } else if (ex.reading) { // Simple reading
+                    return `<div class="answer-box" style="margin-bottom:10px; width:100%;"><i class="fas fa-search-plus"></i> ${ex.reading}</div>`;
+                } else if (ex.sides && ex.name) { // Polygon names
+                    return `<div class="answer-box" style="margin-bottom:10px">변 ${ex.sides}개 <i class="fas fa-arrow-right"></i> <b>${ex.name}</b></div>`;
+                } else if (ex.polygon && ex.diagonals !== undefined) { // Diagonals
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.polygon}: <b>${ex.diagonals}개</b></div>`;
+                } else if (ex.shape && ex.interior_sum) { // Interior Sums
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.shape}: <b>${ex.interior_sum}</b></div>`;
+                } else if (ex.term && ex.feature) { // Circle elements
+                    return `<div class="answer-box" style="margin-bottom:10px"><strong>${ex.term}</strong>: ${ex.feature}</div>`;
+                } else if (ex.central_angle && ex.arc) { // Arc vs Angle
+                    return `<div class="answer-box" style="margin-bottom:10px">중심각 <b>${ex.central_angle}</b> <i class="fas fa-long-arrow-alt-right"></i> ${ex.arc}</div>`;
+                } else if (ex.part && ex.role) { // Sector elements
+                    return `<div class="answer-box" style="margin-bottom:10px"><b>${ex.part}</b>: <small>${ex.role}</small></div>`;
+                } else if (ex.shape && ex.faces) { // Polyhedron counts
+                    const extra = ex.edges ? `<br>모서리: ${ex.edges}, 꼭짓점: ${ex.vertices}` : '';
+                    return `<div class="answer-box" style="margin-bottom:10px"><strong>${ex.shape}</strong>: 면 <b>${ex.faces}개</b>${extra}</div>`;
+                } else if (ex.rotate && ex.solid) { // Solids of revolution
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.shape} 회전 (${ex.rotate}) <i class="fas fa-sync"></i> <b>${ex.solid}</b></div>`;
+                } else if (ex.shape && ex.rule) { // Surface area rules
+                    return `<div class="answer-box" style="margin-bottom:10px; width:100%; text-align:left;"><b>${ex.shape}</b>: ${ex.rule}</div>`;
+                } else if (ex.shape && ex.net) { // Nets
+                    return `<div class="answer-box" style="margin-bottom:10px; width:100%;"><b>${ex.shape}</b> 전개도: <br> ${ex.net}</div>`;
+                } else if (ex.shape && ex.volume) { // Volume formulas
+                    return `<div class="answer-box" style="margin-bottom:10px"><b>${ex.shape}</b> 부피: <br> <b>${ex.volume}</b></div>`;
+                } else if (ex.item && ex.count) { // Data categories
+                    return `<div class="answer-box" style="margin-bottom:10px">${ex.item}: <b>${ex.count}개</b></div>`;
+                } else if (ex.class && ex.frequency) { // Frequency table
+                    return `<div class="answer-box" style="margin-bottom:10px">계급 <b>${ex.class}</b>: <b>${ex.frequency}명/개</b></div>`;
+                } else if (ex.graph && ex.feature) { // Graph types
+                    return `<div class="answer-box" style="margin-bottom:10px; width:100%;"><strong>${ex.graph}</strong>: ${ex.feature}</div>`;
+                } else if (ex.frequency && ex.relative) { // Relative frequency
+                    return `<div class="answer-box" style="margin-bottom:10px">도수 ${ex.frequency} (전체 ${ex.total}) <i class="fas fa-percentage"></i> <b>${ex.relative}</b></div>`;
+                }
+                
+                // Catch-all for other simple structures
+                const keys = Object.keys(ex);
+                if (keys.length >= 2) {
+                    return `<div class="answer-box" style="margin-bottom:10px; width:100%;">${ex[keys[0]]}: <b>${ex[keys[1]]}</b></div>`;
+                }
+                return '';
+            }).join('');
+
+            container.innerHTML = `<div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; width:100%;">${examplesHtml}</div>`;
+        }
+
+        function renderGuided(step) {
+            if(!step) return;
+            const container = document.getElementById('guided-content');
+            let solText = typeof step.solution === 'object' ? 
+                Object.entries(step.solution).map(([k,v]) => `${k}: ${v}`).join(', ') : step.solution;
+
+            container.innerHTML = `
+                <div class="step-desc">${step.problem}</div>
+                <div class="interactive-box" onclick="reveal(this)">
+                    <div class="tap-hint"><i class="fas fa-lightbulb"></i> 힌트 보기</div>
+                    <div class="hidden-content" style="display:none; color:var(--primary-color); font-weight:bold;">${step.hint}</div>
+                </div>
+                <div class="interactive-box" onclick="reveal(this)" style="margin-top:10px; border-color:#10b981;">
+                    <div class="tap-hint" style="color:#10b981;">풀이 확인 👀</div>
+                    <div class="hidden-content" style="display:none">
+                        <div class="answer-box" style="border-color:#10b981">${solText}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderQuiz(step) {
+            if(!step) return;
+            const container = document.getElementById('quiz-content');
+            container.innerHTML = step.items.map((item, qIdx) => {
+                const optionsHtml = item.choices.map((choice, cIdx) => `
+                    <button class="option-btn" onclick="checkAnswer(this, ${cIdx === item.answer}, 'feedback-${qIdx}')">${choice}</button>
+                `).join('');
+
+                return `
+                    <div class="quiz-container" data-quiz-q="${qIdx}" style="margin-bottom: 30px; background:#fff; padding:20px; border-radius:20px; box-shadow:0 4px 6px rgba(0,0,0,0.02); border:1px solid #f1f5f9;">
+                        <h3 class="quiz-question">${qIdx+1}. ${item.q}</h3>
+                        <div class="options-grid" style="display:grid; grid-template-columns: 1fr; gap:10px;">
+                            ${optionsHtml}
+                        </div>
+                        <div id="feedback-${qIdx}" class="feedback-msg"></div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 단원 완료 이벤트 수신 (math_common.js에서 발생)
+        window.addEventListener('mathLessonComplete', () => {
+            const completionNav = document.getElementById('completion-nav');
+            const btnContainer = document.getElementById('completion-buttons');
+            if (!completionNav || !btnContainer) return;
+
+            const lessonIdx = currentUnit.lessons.findIndex(l => l.lesson_id === currentLesson.lesson_id);
+            const hasNextLesson = lessonIdx !== -1 && lessonIdx < currentUnit.lessons.length - 1;
+
+            let buttonsHtml = '';
+            if (hasNextLesson) {
+                buttonsHtml += `
+                    <button class="action-btn" style="background:#2563eb;" onclick="handleLessonNavigation('next')">다음 소단원 공부하기 🏃</button>
+                `;
+            }
+            buttonsHtml += `
+                <button class="action-btn" style="background:#059669; grid-column: ${hasNextLesson ? 'auto' : 'span 2'};" onclick="handleLessonNavigation('home')">학습 완료! 목록으로 🏁</button>
+            `;
+
+            btnContainer.innerHTML = buttonsHtml;
+            completionNav.style.display = 'block';
+            
+            // 네비게이션 바 체크마크 업데이트
+            renderLessonNav();
+            
+            setTimeout(() => {
+                completionNav.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        });
+
+        function handleLessonNavigation(type) {
+            if (type === 'next') {
+                const lessonIdx = window.currentUnit.lessons.findIndex(l => l.lesson_id === window.currentLesson.lesson_id);
+                if (lessonIdx !== -1 && lessonIdx < window.currentUnit.lessons.length - 1) {
+                    // 네비게이션 아이템 업데이트 및 다음 레슨 로드
+                    const navItems = document.querySelectorAll('.nav-item');
+                    navItems.forEach(el => el.classList.remove('active'));
+                    navItems[lessonIdx + 1].classList.add('active');
+                    
+                    loadLesson(lessonIdx + 1);
+                    updateViewerProgress(1);
+                    
+                    // 컴플리션 내비 숨김
+                    document.getElementById('completion-nav').style.display = 'none';
+                }
+            } else {
+                location.href = 'index.html';
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>

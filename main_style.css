@@ -45,7 +45,20 @@ body {
 .hero-subtitle {
     font-size: 1.2rem;
     color: var(--text-light);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.date-badge {
+    display: inline-block;
+    background: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    color: #e52e71;
+    font-weight: 700;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #ffeef4;
 }
 
 .tutor-box {

@@ -1,0 +1,356 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0101",
+  "title": "소인수분해",
+  "lessons": [
+    {
+      "lesson_id": "0101-01",
+      "title": "소수와 합성수",
+      "goal": "소수, 합성수, 1의 성질을 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "이것만 기억하자",
+          "prompt": "2, 3, 4, 5 중 약수가 딱 2개인 수를 골라볼까?",
+          "reveal_answer": "2, 3, 5",
+          "teacher_note": "약수 개수로 소수를 판단하게 유도"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "소수: 약수가 1과 자기 자신뿐인 수",
+            "합성수: 1보다 크고 소수가 아닌 수",
+            "1은 소수도 합성수도 아님"
+          ],
+          "misconceptions": [
+            "1을 소수라고 착각",
+            "2를 합성수라고 착각"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "구별하는 법",
+          "examples": [
+            {
+              "value": "7",
+              "classification": "소수",
+              "reason": "약수는 1, 7"
+            },
+            {
+              "value": "9",
+              "classification": "합성수",
+              "reason": "3으로 나누어짐"
+            },
+            {
+              "value": "1",
+              "classification": "둘 다 아님",
+              "reason": "약수가 1개"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "11, 15, 17을 소수/합성수로 나누어 보자.",
+          "hint": "1과 자기 자신 말고 다른 약수가 있는지 찾아봐.",
+          "solution": {
+            "11": "소수",
+            "15": "합성수",
+            "17": "소수"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "다음 중 소수는?",
+              "choices": [
+                "1",
+                "4",
+                "7"
+              ],
+              "answer": 2,
+              "feedback_correct": "7은 약수가 1과 7뿐이야.",
+              "feedback_wrong": "소수는 약수가 딱 2개인 수야."
+            },
+            {
+              "q": "1은 어디에 속할까?",
+              "choices": [
+                "소수",
+                "합성수",
+                "둘 다 아님"
+              ],
+              "answer": 2,
+              "feedback_correct": "맞아. 1은 특별한 수야.",
+              "feedback_wrong": "1은 약수가 1개뿐이라 소수도 합성수도 아니야."
+            },
+            {
+              "q": "다음 중 합성수는?",
+              "choices": [
+                "2",
+                "3",
+                "9"
+              ],
+              "answer": 2,
+              "feedback_correct": "9는 3×3이라 합성수야.",
+              "feedback_wrong": "합성수는 소수보다 약수가 더 많아."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0101-02",
+      "title": "거듭제곱",
+      "goal": "같은 수의 곱을 거듭제곱으로 나타낸다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "곱셈을 짧게 쓰기",
+          "prompt": "2×2×2를 더 짧게 쓰면?",
+          "reveal_answer": "2³"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "같은 수를 여러 번 곱하면 거듭제곱으로 쓴다.",
+            "2³에서 2는 밑, 3은 지수"
+          ],
+          "misconceptions": [
+            "2³을 2×3으로 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "표현 익히기",
+          "examples": [
+            {
+              "from": "3×3",
+              "to": "3²"
+            },
+            {
+              "from": "5×5×5",
+              "to": "5³"
+            },
+            {
+              "from": "2×2×3",
+              "to": "2²×3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "3×3×3×2를 거듭제곱을 써서 나타내자.",
+          "hint": "같은 수끼리 먼저 묶어봐.",
+          "solution": "3³×2"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "2×2×2×2를 거듭제곱으로 나타내면?",
+              "choices": [
+                "2²",
+                "2³",
+                "2⁴"
+              ],
+              "answer": 2,
+              "feedback_correct": "2가 4번 곱해졌어.",
+              "feedback_wrong": "지수는 곱한 횟수야."
+            },
+            {
+              "q": "3³의 뜻은?",
+              "choices": [
+                "3×3×3",
+                "3+3+3",
+                "3×3"
+              ],
+              "answer": 0,
+              "feedback_correct": "맞아. 3을 세 번 곱한 거야.",
+              "feedback_wrong": "거듭제곱은 덧셈이 아니라 같은 수의 곱이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0101-03",
+      "title": "소인수분해",
+      "goal": "합성수를 소수의 곱으로 나타낸다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "준비하기",
+          "prompt": "12를 두 수의 곱으로 나타내면 뭐가 있을까?",
+          "reveal_answer": "1×12, 2×6, 3×4"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "소인수: 어떤 수를 이루는 소수인 약수",
+            "소인수분해: 합성수를 소수의 곱으로 나타내기"
+          ],
+          "misconceptions": [
+            "4×5를 소인수분해라고 생각함",
+            "1을 소인수에 넣음"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "끝까지 쪼개기",
+          "examples": [
+            {
+              "value": "12",
+              "factorization": "2²×3"
+            },
+            {
+              "value": "18",
+              "factorization": "2×3²"
+            },
+            {
+              "value": "20",
+              "factorization": "2²×5"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "24를 소인수분해하자.",
+          "hint": "2로 계속 나누면 빨라.",
+          "solution": "24 = 2×12 = 2×2×6 = 2×2×2×3 = 2³×3"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "마무리 퀴즈",
+          "items": [
+            {
+              "q": "20의 소인수분해는?",
+              "choices": [
+                "4×5",
+                "2²×5",
+                "2×10"
+              ],
+              "answer": 1,
+              "feedback_correct": "소수만 남겨야 진짜 소인수분해야.",
+              "feedback_wrong": "소인수분해는 끝까지 소수로 쪼개야 해."
+            },
+            {
+              "q": "다음 중 소인수분해가 아닌 것은?",
+              "choices": [
+                "2×3²",
+                "2²×5",
+                "3×6"
+              ],
+              "answer": 2,
+              "feedback_correct": "6은 소수가 아니야.",
+              "feedback_wrong": "곱에 들어 있는 수가 모두 소수여야 해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0101-04",
+      "title": "최대공약수와 최소공배수",
+      "goal": "공약수, 공배수, 최대공약수, 최소공배수를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "약수와 배수 떠올리기",
+          "prompt": "12의 약수와 18의 약수 중 공통인 수를 찾아볼까?",
+          "reveal_answer": "1, 2, 3, 6"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "공약수: 두 수의 공통인 약수",
+            "최대공약수: 공약수 중 가장 큰 수",
+            "공배수: 두 수의 공통인 배수",
+            "최소공배수: 공배수 중 가장 작은 수"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "소인수분해로 구하기",
+          "examples": [
+            {
+              "pair": "12, 18",
+              "gcd": "2×3 = 6",
+              "lcm": "2²×3² = 36"
+            }
+          ],
+          "rules": [
+            "최대공약수: 공통인 소인수만 곱하기",
+            "최소공배수: 모자라지 않게 모두 포함하기"
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "8과 12의 최대공약수와 최소공배수를 구하자.",
+          "hint": "8=2³, 12=2²×3",
+          "solution": {
+            "gcd": "2² = 4",
+            "lcm": "2³×3 = 24"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "12와 18의 최대공약수는?",
+              "choices": [
+                "3",
+                "6",
+                "36"
+              ],
+              "answer": 1,
+              "feedback_correct": "공통인 소인수만 곱하면 6이야.",
+              "feedback_wrong": "최대공약수와 최소공배수를 헷갈리지 말자."
+            },
+            {
+              "q": "6과 8의 최소공배수는?",
+              "choices": [
+                "24",
+                "12",
+                "48"
+              ],
+              "answer": 0,
+              "feedback_correct": "6=2×3, 8=2³ → 2³×3=24",
+              "feedback_wrong": "최소공배수는 둘 다 나누어떨어져야 해."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

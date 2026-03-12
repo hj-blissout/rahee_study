@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>제곱근과 근호를 포함한 식의 계산 - 쉬운 버전 / 중3 버전</title>
-    <link rel="stylesheet" href="../math_style.css">
+    <link rel="stylesheet" href="../../math_style.css">
 </head>
 <body>
   <div class="wrap">
@@ -239,48 +239,9 @@
     <p class="footer-note">핵심은 하나예요. 같은 근호끼리만 더하고 뺄 수 있어요.</p>
   </div>
 
-  <script>
-    function showTab(id, btn) {
-      document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-    function showEasyCalc(no) {
-      const box = document.getElementById('easyCalcResult');
-      if (no === 1) { box.innerHTML = `<strong>√16 = 4</strong><br>왜냐하면 4 × 4 = 16 이기 때문이에요.`; }
-      else if (no === 2) { box.innerHTML = `<strong>2√3 + 3√3 = 5√3</strong><br>같은 √3끼리 모아서 2개 + 3개 = 5개예요.`; }
-      else if (no === 3) { box.innerHTML = `<strong>4√5 - √5 = 3√5</strong><br>같은 √5끼리 빼면 돼요.`; }
-    }
-    function clearEasyCalc() { document.getElementById('easyCalcResult').textContent = '버튼을 눌러보세요.'; }
-    function checkEasyQuiz(no, answer) {
-      const map = {
-        1: { correct: '5', text: '정답! √25 = 5예요.' },
-        2: { correct: '5sqrt3', text: '정답! 같은 √3끼리 더해서 5√3이에요.' },
-        3: { correct: '3sqrt5', text: '정답! 4√5 - 1√5 = 3√5예요.' }
-      };
-      const fb = document.getElementById('easyFb' + no);
-      if (answer === map[no].correct) { fb.textContent = map[no].text; fb.style.color = '#047857'; }
-      else { fb.textContent = '한 번 더! 같은 근호인지 먼저 보고, 앞 숫자만 계산해보세요.'; fb.style.color = '#b45309'; }
-    }
-    function showM3Calc(no) {
-      const box = document.getElementById('m3CalcResult');
-      if (no === 1) { box.innerHTML = `<strong>3√2 + 2√2 = 5√2</strong><br>같은 근호 √2이므로 계수 3과 2를 더해요.`; }
-      else if (no === 2) { box.innerHTML = `<strong>5√7 - 2√7 = 3√7</strong><br>같은 근호 √7이므로 계수 5와 2를 빼요.`; }
-      else if (no === 3) { box.innerHTML = `<strong>2√3 + 3√5</strong>는 더할 수 없어요.<br>근호 안의 수가 서로 달라서 같은 항이 아니에요.`; }
-    }
-    function clearM3Calc() { document.getElementById('m3CalcResult').textContent = '버튼을 눌러보세요.'; }
-    function checkM3Quiz(no, answer) {
-      const map = {
-        1: { correct: '7sqrt2', text: '정답! 같은 √2끼리 더해서 7√2예요.' },
-        2: { correct: '4sqrt5', text: '정답! 같은 √5끼리 빼서 4√5예요.' },
-        3: { correct: 'cant', text: '정답! √3과 √5는 달라서 바로 계산할 수 없어요.' }
-      };
-      const fb = document.getElementById('m3Fb' + no);
-      if (answer === map[no].correct) { fb.textContent = map[no].text; fb.style.color = '#047857'; }
-      else { fb.textContent = '다시 확인해보세요. 근호 안의 수가 같아야 더하고 뺄 수 있어요.'; fb.style.color = '#b45309'; }
-    }
-  </script>
-    <script src="../math_common.js"></script>
+    <script>
+        // 공통 로직 사용 (math_common.js)
+    </script>
+    <script src="../../math_common.js"></script>
 </body>
 </html>

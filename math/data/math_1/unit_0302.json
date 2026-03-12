@@ -1,0 +1,280 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0302",
+  "title": "정비례와 반비례",
+  "lessons": [
+    {
+      "lesson_id": "0302-01",
+      "title": "정비례",
+      "goal": "두 양의 관계가 정비례인지 판단하고 식으로 나타낸다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "함께 늘어나는 관계",
+          "prompt": "사과 1개에 500원이라면 2개, 3개의 가격은?",
+          "reveal_answer": "1000원, 1500원"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "한 양이 2배, 3배 되면 다른 양도 2배, 3배 되는 관계를 정비례라고 한다.",
+            "정비례 관계는 y=ax 꼴로 나타낸다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "식 세우기",
+          "examples": [
+            {
+              "situation": "개당 500원",
+              "expression": "y=500x"
+            },
+            {
+              "situation": "1분에 60m 이동",
+              "expression": "y=60x"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "x가 1,2,3일 때 y가 4,8,12라면 정비례일까?",
+          "hint": "y÷x가 일정한지 봐.",
+          "solution": "정비례, 식은 y=4x"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "정비례 관계를 나타내는 식은?",
+              "choices": [
+                "y=ax",
+                "y=a+x",
+                "xy=a"
+              ],
+              "answer": 0,
+              "feedback_correct": "정비례는 y=ax 꼴이야.",
+              "feedback_wrong": "정비례와 반비례 식을 구분하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0302-02",
+      "title": "반비례",
+      "goal": "두 양의 관계가 반비례인지 판단하고 식으로 나타낸다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "하나는 커지고 하나는 작아짐",
+          "prompt": "같은 거리를 갈 때 속력이 빨라지면 시간은 어떻게 될까?",
+          "reveal_answer": "짧아진다"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "한 양이 2배, 3배 되면 다른 양이 1/2배, 1/3배 되는 관계를 반비례라고 한다.",
+            "반비례 관계는 y=a/x 꼴로 나타낸다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "판단하는 법",
+          "examples": [
+            {
+              "x": [
+                1,
+                2,
+                4
+              ],
+              "y": [
+                12,
+                6,
+                3
+              ],
+              "result": "반비례"
+            },
+            {
+              "check": "x×y가 일정하면 반비례"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "x와 y가 반비례하고 x=3일 때 y=4이면 식을 구하자.",
+          "hint": "x×y의 값을 먼저 구해.",
+          "solution": "a=12, 따라서 y=12/x"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "반비례 관계를 나타내는 식은?",
+              "choices": [
+                "y=3x",
+                "y=3/x",
+                "y=x+3"
+              ],
+              "answer": 1,
+              "feedback_correct": "반비례는 y=a/x 꼴이야.",
+              "feedback_wrong": "정비례와 반비례 식을 다시 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0302-03",
+      "title": "정비례 그래프",
+      "goal": "정비례 관계를 그래프로 나타내고 읽는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "점 만들기",
+          "prompt": "y=2x에서 x=1,2,3일 때 y값은?",
+          "reveal_answer": "2, 4, 6"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "정비례 y=ax의 그래프는 원점을 지나는 직선이다."
+          ],
+          "misconceptions": [
+            "원점을 지나지 않아도 정비례라고 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "그래프 특징",
+          "examples": [
+            {
+              "expression": "y=x",
+              "feature": "기울기 1의 직선"
+            },
+            {
+              "expression": "y=2x",
+              "feature": "더 가파른 직선"
+            },
+            {
+              "expression": "y=-x",
+              "feature": "오른쪽으로 갈수록 내려감"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 그리기",
+          "problem": "y=3x의 그래프를 그릴 점 3개를 잡아보자.",
+          "hint": "x에 0,1,2를 넣어도 좋아.",
+          "solution": "(0,0), (1,3), (2,6)"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "정비례 그래프의 공통 특징은?",
+              "choices": [
+                "원점을 지난다",
+                "곡선이다",
+                "항상 y축과 평행하다"
+              ],
+              "answer": 0,
+              "feedback_correct": "정비례 그래프는 원점을 지나는 직선이야.",
+              "feedback_wrong": "정비례 y=ax를 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0302-04",
+      "title": "반비례 그래프",
+      "goal": "반비례 관계를 그래프로 나타내고 읽는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "값 표 만들기",
+          "prompt": "y=6/x에서 x=1,2,3일 때 y값은?",
+          "reveal_answer": "6, 3, 2"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "반비례 y=a/x의 그래프는 직선이 아니라 휘어진 모양의 곡선이다.",
+            "x=0에서는 값이 정해지지 않는다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "그래프 읽기",
+          "examples": [
+            {
+              "expression": "y=6/x",
+              "points": [
+                "(1,6)",
+                "(2,3)",
+                "(3,2)"
+              ]
+            },
+            {
+              "feature": "x가 커질수록 y는 작아진다"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 찾기",
+          "problem": "y=12/x에서 x=4일 때 y는?",
+          "hint": "12를 x로 나누자.",
+          "solution": "y=3"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "반비례 그래프에 대한 설명으로 옳은 것은?",
+              "choices": [
+                "원점을 지난다",
+                "직선이다",
+                "곡선 모양이다"
+              ],
+              "answer": 2,
+              "feedback_correct": "반비례 그래프는 곡선이야.",
+              "feedback_wrong": "정비례 그래프와 비교해 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./grammar_detail.css">
+    <link rel="stylesheet" href="./celebration.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
@@ -233,7 +235,12 @@
             const val = e.target.value;
             const feedback = document.getElementById('typing-feedback');
             
-            if (val === currentTargetText) {
+            // 아이폰 스마트 쿼트 대처
+            const normalize = (text) => text.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"').trim();
+            const normalizedVal = normalize(val);
+            const normalizedTarget = normalize(currentTargetText);
+            
+            if (normalizedVal === normalizedTarget) {
                 e.target.classList.add('correct');
                 e.target.classList.remove('wrong');
                 feedback.innerText = "정확해요! 👏";
@@ -251,7 +258,7 @@
                         checkAllComplete();
                     }, 800);
                 }
-            } else if (currentTargetText.startsWith(val)) {
+            } else if (normalizedTarget.startsWith(normalizedVal)) {
                 e.target.classList.remove('correct', 'wrong');
                 feedback.innerText = "계속 타이핑하세요...";
                 feedback.style.color = "var(--text-light)";
@@ -286,11 +293,17 @@
                 localStorage.setItem('rahee_grammar_completed', JSON.stringify(completed));
             }
 
-            alert(`Unit ${unitNum} 완료! 고생했어 라희야! 👏`);
+            playCuteSound();
+            fireConfetti();
             
-            // 목차 페이지로 돌아가기
-            window.location.href = 'grammar.html';
+            // 팝업이 뜬 뒤에 사용자가 [다음에 또 만나요] 버튼을 누르면 인덱스로 이동하게 하고 싶지만,
+            // 여기서는 기존 alert과 이동 로직도 유지하되, 버튼 클릭 시 이동하도록 유도
+            setTimeout(() => {
+                alert(`Unit ${unitNum} 완료! 고생했어 라희야! 👏`);
+                window.location.href = 'grammar.html';
+            }, 5000); // 팝업 애니메이션 등을 고려하여 넉넉히 대기 후 이동 (수동 제어 위해)
         });
     </script>
+    <script src="./celebration.js"></script>
 </body>
 </html>

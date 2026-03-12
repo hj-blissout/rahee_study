@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2단원: 근호를 포함한 식의 계산 | 기초 정복 수학</title>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <link rel="stylesheet" href="../math_style.css">
+    <link rel="stylesheet" href="../../math_style.css">
 </head>
 
 <body>
@@ -171,45 +171,10 @@
 
   </div>
 
-  <script>
-    // Web Audio API for cute sound effects
-
-    function checkAnswer(btn, isCorrect, feedbackId) {
-      const feedback = document.getElementById(feedbackId);
-      const parent = btn.parentElement;
-
-      if (parent.dataset.completed === 'true') return;
-
-      const buttons = parent.querySelectorAll('.option-btn');
-      buttons.forEach(b => {
-        b.classList.remove('correct', 'wrong');
-      });
-
-      if (isCorrect) {
-        playCuteSound();
-        btn.classList.add('correct');
-        feedback.textContent = "🎉 정답입니다! 정말 잘했어요!";
-        feedback.style.color = "#047857";
-        parent.dataset.completed = 'true';
-
-        const allQuestions = document.querySelectorAll('.quiz-container');
-        const allCompleted = Array.from(allQuestions).every(q => q.dataset.completed === 'true');
-
-        if (allCompleted && !window.confettiFired) {
-          window.confettiFired = true;
-          localStorage.setItem('math_tutor_math_3_ch2', new Date().toISOString());
-          fireConfetti();
-          document.getElementById('btn-return-home').style.display = 'block';
-          feedback.innerHTML += "<br><span style='font-size:1.2rem; color:#2563eb; display:block; margin-top:8px;'>축하합니다! 2단원도 완벽하게 클리어! 🌟</span>";
-        }
-      } else {
-        btn.classList.add('wrong');
-        feedback.textContent = "아쉽지만 다시 생각해볼까요? 루트 모양을 확인해보세요!";
-        feedback.style.color = "#be123c";
-      }
-    }
-  </script>
-    <script src="../math_common.js"></script>
+    <script>
+        // 공통 로직 사용 (math_common.js)
+    </script>
+    <script src="../../math_common.js"></script>
 </body>
 
 </html>

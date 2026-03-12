@@ -1,0 +1,215 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0601",
+  "title": "다면체와 회전체",
+  "lessons": [
+    {
+      "lesson_id": "0601-01",
+      "title": "다면체",
+      "goal": "다면체의 뜻과 구성 요소를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "평면으로 둘러싸인 입체",
+          "prompt": "평평한 면들로만 둘러싸인 입체도형을 뭐라고 할까?",
+          "reveal_answer": "다면체"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "다면체는 평면인 면들로 둘러싸인 입체도형이다.",
+            "구성 요소는 면, 모서리, 꼭짓점이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "구성 요소 보기",
+          "examples": [
+            {
+              "shape": "정육면체",
+              "faces": 6,
+              "edges": 12,
+              "vertices": 8
+            },
+            {
+              "shape": "삼각기둥",
+              "faces": 5
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 세어보기",
+          "problem": "정육면체의 면, 모서리, 꼭짓점 수를 말해보자.",
+          "hint": "주사위를 떠올려 봐.",
+          "solution": {
+            "면": 6,
+            "모서리": 12,
+            "꼭짓점": 8
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "다면체의 면은 어떤 모양일까?",
+              "choices": [
+                "곡면",
+                "평면",
+                "둘 다 가능"
+              ],
+              "answer": 1,
+              "feedback_correct": "다면체는 평면으로 둘러싸여.",
+              "feedback_wrong": "곡면이 있으면 회전체 쪽에 가까워."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0601-02",
+      "title": "기둥과 뿔",
+      "goal": "각기둥과 각뿔의 차이를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "윗면과 아랫면",
+          "prompt": "서로 평행하고 합동인 두 밑면이 있는 입체는?",
+          "reveal_answer": "각기둥"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "각기둥은 두 밑면이 서로 평행하고 합동이다.",
+            "각뿔은 밑면과 하나의 꼭짓점을 잇는 모양이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "비교하기",
+          "examples": [
+            {
+              "shape": "삼각기둥",
+              "feature": "합동인 삼각형 밑면 2개"
+            },
+            {
+              "shape": "사각뿔",
+              "feature": "사각형 밑면 1개와 꼭짓점 1개"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 분류하기",
+          "problem": "우유갑과 피라미드 모형은 각각 각기둥/각뿔 중 무엇일까?",
+          "hint": "윗면과 아랫면의 모양이 같은지 보자.",
+          "solution": {
+            "우유갑": "각기둥",
+            "피라미드": "각뿔"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인",
+          "items": [
+            {
+              "q": "각뿔의 특징은?",
+              "choices": [
+                "합동인 밑면 2개",
+                "밑면 1개와 꼭짓점 1개",
+                "모든 면이 곡면"
+              ],
+              "answer": 1,
+              "feedback_correct": "각뿔은 꼭짓점 하나로 모여.",
+              "feedback_wrong": "각기둥과 비교해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0601-03",
+      "title": "회전체",
+      "goal": "회전체의 뜻과 원기둥, 원뿔, 구를 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "돌려서 만드는 입체",
+          "prompt": "직사각형을 한 변을 축으로 돌리면 어떤 입체가 될까?",
+          "reveal_answer": "원기둥"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "평면도형을 한 직선을 축으로 회전시켜 만든 입체를 회전체라고 한다.",
+            "대표적인 회전체는 원기둥, 원뿔, 구이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "회전과 결과",
+          "examples": [
+            {
+              "shape": "직사각형",
+              "rotate": "한 변 축",
+              "solid": "원기둥"
+            },
+            {
+              "shape": "직각삼각형",
+              "rotate": "한 변 축",
+              "solid": "원뿔"
+            },
+            {
+              "shape": "반원",
+              "rotate": "지름 축",
+              "solid": "구"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 연결하기",
+          "problem": "직각삼각형을 한 직각변을 축으로 돌리면 무엇이 될까?",
+          "hint": "뾰족한 꼭짓점이 생기는지 생각해.",
+          "solution": "원뿔"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "바로 확인",
+          "items": [
+            {
+              "q": "회전체가 아닌 것은?",
+              "choices": [
+                "원기둥",
+                "원뿔",
+                "정육면체"
+              ],
+              "answer": 2,
+              "feedback_correct": "정육면체는 회전해서 만든 대표 도형이 아니야.",
+              "feedback_wrong": "회전체의 대표 예를 떠올려 봐."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

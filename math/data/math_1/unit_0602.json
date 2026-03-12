@@ -1,0 +1,198 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0602",
+  "title": "입체도형의 겉넓이와 부피",
+  "lessons": [
+    {
+      "lesson_id": "0602-01",
+      "title": "각기둥의 겉넓이",
+      "goal": "전개도를 이용해 각기둥의 겉넓이를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "겉넓이 뜻",
+          "prompt": "입체도형의 바깥을 모두 펼쳤을 때 면의 넓이 합을 뭐라고 할까?",
+          "reveal_answer": "겉넓이"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "겉넓이는 모든 면의 넓이의 합이다.",
+            "전개도로 펼쳐서 생각하면 계산이 쉬워진다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "계산 흐름",
+          "examples": [
+            {
+              "shape": "직육면체",
+              "rule": "윗면+아랫면+옆면 4개의 넓이 합"
+            },
+            {
+              "shape": "삼각기둥",
+              "rule": "두 밑면과 옆면들의 넓이 합"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "가로 3, 세로 2, 높이 4인 직육면체의 겉넓이를 구하자.",
+          "hint": "같은 모양 면이 2개씩 있어.",
+          "solution": "2×(3×2 + 3×4 + 2×4) = 52"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "겉넓이를 구할 때 필요한 것은?",
+              "choices": [
+                "한 면의 넓이만",
+                "모든 면의 넓이 합",
+                "부피 공식만"
+              ],
+              "answer": 1,
+              "feedback_correct": "겉넓이는 바깥 모든 면의 넓이 합이야.",
+              "feedback_wrong": "겉넓이와 부피를 구분하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0602-02",
+      "title": "원기둥과 원뿔의 겉넓이",
+      "goal": "원기둥, 원뿔의 겉넓이 구성을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "원기둥 펼치기",
+          "prompt": "원기둥의 옆면을 펼치면 어떤 도형이 될까?",
+          "reveal_answer": "직사각형"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "원기둥의 겉넓이 = 두 밑면의 넓이 + 옆면의 넓이",
+            "원뿔의 겉넓이 = 밑면의 넓이 + 옆면(부채꼴)의 넓이"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "펼친 모양 보기",
+          "examples": [
+            {
+              "shape": "원기둥",
+              "net": "원 2개 + 직사각형 1개"
+            },
+            {
+              "shape": "원뿔",
+              "net": "원 1개 + 부채꼴 1개"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 이해하기",
+          "problem": "원기둥의 겉넓이를 구할 때 왜 원이 2개 들어갈까?",
+          "hint": "밑면이 위아래로 몇 개인지 생각해.",
+          "solution": "윗면과 아랫면 두 개의 원이 있기 때문"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "원뿔의 옆면을 펼친 모양은?",
+              "choices": [
+                "직사각형",
+                "삼각형",
+                "부채꼴"
+              ],
+              "answer": 2,
+              "feedback_correct": "원뿔의 옆면은 부채꼴이야.",
+              "feedback_wrong": "원기둥과 원뿔의 전개도를 비교해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0602-03",
+      "title": "부피",
+      "goal": "각기둥과 원기둥의 부피를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "부피 뜻",
+          "prompt": "입체도형이 차지하는 공간의 크기를 뭐라고 할까?",
+          "reveal_answer": "부피"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "각기둥, 원기둥의 부피 = 밑넓이 × 높이"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "공식 익히기",
+          "examples": [
+            {
+              "shape": "직육면체",
+              "volume": "가로×세로×높이"
+            },
+            {
+              "shape": "원기둥",
+              "volume": "πr²×높이"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "밑넓이가 12㎠이고 높이가 5cm인 각기둥의 부피는?",
+          "hint": "밑넓이×높이",
+          "solution": "60㎤"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "마무리 퀴즈",
+          "items": [
+            {
+              "q": "원기둥의 부피 공식은?",
+              "choices": [
+                "밑넓이+높이",
+                "밑넓이×높이",
+                "겉넓이×높이"
+              ],
+              "answer": 1,
+              "feedback_correct": "기둥도형의 부피는 밑넓이×높이야.",
+              "feedback_wrong": "겉넓이와 부피를 섞지 말자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

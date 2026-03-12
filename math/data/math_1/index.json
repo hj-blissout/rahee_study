@@ -1,0 +1,162 @@
+{
+  "curriculum": "중1 수학",
+  "version": "1.0",
+  "design_principles": {
+    "lesson_flow": [
+      "1단계 기억 깨우기",
+      "2단계 핵심 개념",
+      "3단계 표현/규칙 익히기",
+      "4단계 같이 풀기",
+      "5단계 확인 퀴즈"
+    ],
+    "ui_rules": {
+      "max_concepts_per_lesson": 2,
+      "max_quiz_per_lesson": 3,
+      "tone": "직관적, 짧은 문장, 즉시 피드백",
+      "interaction": [
+        "tap_to_reveal",
+        "multiple_choice",
+        "hint_box",
+        "flashcard"
+      ]
+    }
+  },
+  "units": [
+    {
+      "unit_id": "0101",
+      "title": "소인수분해",
+      "total_lessons": 4,
+      "lesson_ids": [
+        "0101-01",
+        "0101-02",
+        "0101-03",
+        "0101-04"
+      ]
+    },
+    {
+      "unit_id": "0102",
+      "title": "정수와 유리수",
+      "total_lessons": 4,
+      "lesson_ids": [
+        "0102-01",
+        "0102-02",
+        "0102-03",
+        "0102-04"
+      ]
+    },
+    {
+      "unit_id": "0201",
+      "title": "문자와 식",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0201-01",
+        "0201-02",
+        "0201-03"
+      ]
+    },
+    {
+      "unit_id": "0202",
+      "title": "일차방정식",
+      "total_lessons": 4,
+      "lesson_ids": [
+        "0202-01",
+        "0202-02",
+        "0202-03",
+        "0202-04"
+      ]
+    },
+    {
+      "unit_id": "0301",
+      "title": "좌표평면과 그래프",
+      "total_lessons": 4,
+      "lesson_ids": [
+        "0301-01",
+        "0301-02",
+        "0301-03",
+        "0301-04"
+      ]
+    },
+    {
+      "unit_id": "0302",
+      "title": "정비례와 반비례",
+      "total_lessons": 4,
+      "lesson_ids": [
+        "0302-01",
+        "0302-02",
+        "0302-03",
+        "0302-04"
+      ]
+    },
+    {
+      "unit_id": "0401",
+      "title": "기본 도형",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0401-01",
+        "0401-02",
+        "0401-03"
+      ]
+    },
+    {
+      "unit_id": "0402",
+      "title": "작도와 합동",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0402-01",
+        "0402-02",
+        "0402-03"
+      ]
+    },
+    {
+      "unit_id": "0501",
+      "title": "다각형",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0501-01",
+        "0501-02",
+        "0501-03"
+      ]
+    },
+    {
+      "unit_id": "0502",
+      "title": "원과 부채꼴",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0502-01",
+        "0502-02",
+        "0502-03"
+      ]
+    },
+    {
+      "unit_id": "0601",
+      "title": "다면체와 회전체",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0601-01",
+        "0601-02",
+        "0601-03"
+      ]
+    },
+    {
+      "unit_id": "0602",
+      "title": "입체도형의 겉넓이와 부피",
+      "total_lessons": 3,
+      "lesson_ids": [
+        "0602-01",
+        "0602-02",
+        "0602-03"
+      ]
+    },
+    {
+      "unit_id": "0701",
+      "title": "자료의 정리와 해석",
+      "total_lessons": 4,
+      "lesson_ids": [
+        "0701-01",
+        "0701-02",
+        "0701-03",
+        "0701-04"
+      ]
+    }
+  ]
+}

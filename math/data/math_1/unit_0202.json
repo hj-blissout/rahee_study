@@ -1,0 +1,288 @@
+{
+  "curriculum": "중1 수학",
+  "unit_id": "0202",
+  "title": "일차방정식",
+  "lessons": [
+    {
+      "lesson_id": "0202-01",
+      "title": "방정식과 그 해",
+      "goal": "방정식의 뜻과 해를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "등호가 맞아지는 순간",
+          "prompt": "x+3=7에서 x는 얼마일까?",
+          "reveal_answer": "4"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "문자가 들어 있는 등식 중, 참이 되도록 하는 값을 찾는 식이 방정식",
+            "방정식을 참이 되게 하는 값을 그 방정식의 해라고 한다"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "해 판별하기",
+          "examples": [
+            {
+              "expr": "x+2=5",
+              "candidate": "x=3",
+              "result": "해"
+            },
+            {
+              "expr": "2x=8",
+              "candidate": "x=3",
+              "result": "해 아님"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 확인하기",
+          "problem": "x-4=1의 해를 구하고, 대입해서 확인하자.",
+          "hint": "등호 양쪽을 같게 만드는 수를 찾아봐.",
+          "solution": "x=5, 대입하면 5-4=1"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "x+6=10의 해는?",
+              "choices": [
+                "4",
+                "16",
+                "-4"
+              ],
+              "answer": 0,
+              "feedback_correct": "4를 넣으면 10이 돼.",
+              "feedback_wrong": "대입해서 양쪽이 같은지 확인해봐."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0202-02",
+      "title": "등식의 성질",
+      "goal": "등식의 성질을 이용해 방정식을 변형한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "균형 생각하기",
+          "prompt": "저울 양쪽에 같은 무게를 더하면 여전히 균형일까?",
+          "reveal_answer": "그렇다"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "등식의 양변에 같은 수를 더하거나 빼어도 등식은 성립",
+            "등식의 양변에 같은 수를 곱하거나 나누어도 등식은 성립"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "식 옮기기 전에",
+          "examples": [
+            {
+              "from": "x+3=8",
+              "to": "x=5"
+            },
+            {
+              "from": "2x=10",
+              "to": "x=5"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 변형하기",
+          "problem": "x-7=2를 풀어보자.",
+          "hint": "양변에 7을 더해.",
+          "solution": "x=9"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인",
+          "items": [
+            {
+              "q": "2x=14일 때 x는?",
+              "choices": [
+                "7",
+                "12",
+                "16"
+              ],
+              "answer": 0,
+              "feedback_correct": "양변을 2로 나누면 돼.",
+              "feedback_wrong": "등식의 양변에 같은 연산을 해야 해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0202-03",
+      "title": "일차방정식 풀기",
+      "goal": "이항과 정리를 이용해 일차방정식을 푼다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "정리 연습",
+          "prompt": "3x+2=11에서 먼저 무엇을 없애면 좋을까?",
+          "reveal_answer": "+2"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "문자항은 한쪽, 숫자항은 다른 쪽으로 정리한다.",
+            "마지막에는 x의 계수를 1로 만든다."
+          ],
+          "misconceptions": [
+            "이항 시 부호를 바꾸지 않음"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "풀이 흐름",
+          "examples": [
+            {
+              "expr": "x+5=9",
+              "flow": "x=4"
+            },
+            {
+              "expr": "3x-2=10",
+              "flow": "3x=12 → x=4"
+            },
+            {
+              "expr": "2x+3=9",
+              "flow": "2x=6 → x=3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "4x+1=13을 풀자.",
+          "hint": "먼저 1을 없애고, 그다음 4로 나누자.",
+          "solution": "4x=12 → x=3"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "2x+5=13의 해는?",
+              "choices": [
+                "3",
+                "4",
+                "9"
+              ],
+              "answer": 1,
+              "feedback_correct": "2x=8이므로 x=4",
+              "feedback_wrong": "숫자항부터 먼저 정리하자."
+            },
+            {
+              "q": "3x-6=0의 해는?",
+              "choices": [
+                "-2",
+                "2",
+                "6"
+              ],
+              "answer": 1,
+              "feedback_correct": "3x=6 → x=2",
+              "feedback_wrong": "양변에 6을 더해봐."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0202-04",
+      "title": "일차방정식의 활용",
+      "goal": "문장제를 식으로 세우고 방정식으로 해결한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "문장제 해석",
+          "prompt": "어떤 수의 3배에 2를 더했더니 11이다. 식으로 쓰면?",
+          "reveal_answer": "3x+2=11"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "미지수를 정한다.",
+            "문장 속 관계를 식으로 세운다.",
+            "방정식을 풀고 뜻을 확인한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "문장제 공통 흐름",
+          "examples": [
+            {
+              "type": "나이",
+              "template": "현재 나이를 x로 두고, 몇 년 후/전 관계를 식으로 세운다."
+            },
+            {
+              "type": "길이/넓이",
+              "template": "가로를 x로 두고, 세로와의 관계를 식으로 세운다."
+            },
+            {
+              "type": "가격/개수",
+              "template": "한 개 가격 또는 개수를 x로 두고 총합 조건을 식으로 세운다."
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해결하기",
+          "problem": "어떤 수의 2배에서 3을 뺐더니 9가 되었다. 어떤 수를 구하자.",
+          "hint": "미지수를 x로 놓고 식을 세워.",
+          "solution": "2x-3=9 → 2x=12 → x=6"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "어떤 수의 4배가 20이다. 어떤 수는?",
+              "choices": [
+                "4",
+                "5",
+                "6"
+              ],
+              "answer": 1,
+              "feedback_correct": "4x=20 → x=5",
+              "feedback_wrong": "식부터 4x=20으로 세워봐."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
