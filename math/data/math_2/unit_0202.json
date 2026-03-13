@@ -1,0 +1,225 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0202",
+  "title": "다항식의 계산",
+  "lessons": [
+    {
+      "lesson_id": "0202-01",
+      "title": "동류항과 다항식의 덧셈",
+      "goal": "동류항을 찾아 다항식의 덧셈을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "같은 종류끼리",
+          "prompt": "3x와 5x는 더할 수 있을까?",
+          "reveal_answer": "응, 8x"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "문자와 차수가 같은 항을 동류항이라고 한다.",
+            "다항식의 덧셈은 동류항끼리만 계산한다."
+          ],
+          "misconceptions": [
+            "x항과 상수를 함께 계산함",
+            "x와 x²를 같은 항으로 봄"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "묶어서 계산하기",
+          "examples": [
+            {
+              "expr": "(2x+3)+(4x+1)",
+              "value": "6x+4"
+            },
+            {
+              "expr": "3a+2b+5a",
+              "value": "8a+2b"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 정리하기",
+          "problem": "(x+4)+(3x+2)를 계산하자.",
+          "hint": "x항끼리, 숫자끼리 묶어.",
+          "solution": "4x+6"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "(2x+1)+(5x+3)의 값은?",
+              "choices": [
+                "7x+4",
+                "7x+3",
+                "10x+4"
+              ],
+              "answer": 0,
+              "feedback_correct": "2x+5x=7x, 1+3=4",
+              "feedback_wrong": "동류항끼리 따로 계산하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0202-02",
+      "title": "다항식의 뺄셈",
+      "goal": "괄호 앞의 부호를 처리하여 다항식의 뺄셈을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "빼기는 부호 바꾸기",
+          "prompt": "(x+2) - (3x+1)에서 뒤 괄호를 풀면?",
+          "reveal_answer": "x+2-3x-1"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "다항식의 뺄셈은 뒤 식의 각 항의 부호를 바꾸어 더셈으로 고친다."
+          ],
+          "misconceptions": [
+            "첫 항만 부호를 바꾸고 나머지는 그대로 둠"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "괄호 풀기",
+          "examples": [
+            {
+              "expr": "(5x+2)-(2x+1)",
+              "value": "3x+1"
+            },
+            {
+              "expr": "(3a-4)-(a+2)",
+              "value": "2a-6"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "(4x+5)-(x+2)를 계산하자.",
+          "hint": "뒤 괄호의 부호를 모두 바꿔.",
+          "solution": "4x+5-x-2 = 3x+3"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "(6x+1)-(2x+4)의 값은?",
+              "choices": [
+                "4x-3",
+                "8x+5",
+                "4x+3"
+              ],
+              "answer": 0,
+              "feedback_correct": "6x-2x=4x, 1-4=-3",
+              "feedback_wrong": "뒤 괄호 부호를 먼저 바꾸자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0202-03",
+      "title": "단항식과 다항식의 곱셈",
+      "goal": "분배법칙을 이용해 단항식과 다항식의 곱셈을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "하나씩 모두 곱하기",
+          "prompt": "2(x+3)을 전개하면?",
+          "reveal_answer": "2x+6"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "단항식과 다항식의 곱셈은 분배법칙을 이용해 각 항에 모두 곱한다."
+          ],
+          "misconceptions": [
+            "첫 항에만 곱하고 끝냄"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "전개 익히기",
+          "examples": [
+            {
+              "expr": "3(a+2)",
+              "value": "3a+6"
+            },
+            {
+              "expr": "x(2x+5)",
+              "value": "2x²+5x"
+            },
+            {
+              "expr": "-2(3x-1)",
+              "value": "-6x+2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 전개하기",
+          "problem": "4(x+1), -3(2a-5)를 계산하자.",
+          "hint": "괄호 안의 모든 항에 곱해.",
+          "solution": {
+            "4(x+1)": "4x+4",
+            "-3(2a-5)": "-6a+15"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "2(3x+4)의 값은?",
+              "choices": [
+                "6x+8",
+                "6x+4",
+                "3x+8"
+              ],
+              "answer": 0,
+              "feedback_correct": "2를 두 항 모두에 곱해야 해.",
+              "feedback_wrong": "분배법칙을 떠올리자."
+            },
+            {
+              "q": "-x(x+2)의 값은?",
+              "choices": [
+                "-x²-2x",
+                "x²+2x",
+                "-x²+2x"
+              ],
+              "answer": 0,
+              "feedback_correct": "-x를 각 항에 곱하면 돼.",
+              "feedback_wrong": "부호까지 같이 곱하자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

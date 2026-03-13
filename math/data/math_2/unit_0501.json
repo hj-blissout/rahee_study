@@ -1,0 +1,202 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0501",
+  "title": "삼각형의 성질",
+  "lessons": [
+    {
+      "lesson_id": "0501-01",
+      "title": "이등변삼각형의 성질",
+      "goal": "이등변삼각형의 성질과 판별을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "같은 변 두 개",
+          "prompt": "두 변의 길이가 같은 삼각형을 무엇이라고 할까?",
+          "reveal_answer": "이등변삼각형"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "이등변삼각형의 밑각의 크기는 서로 같다.",
+            "두 내각의 크기가 같으면 그 삼각형은 이등변삼각형이다."
+          ],
+          "misconceptions": [
+            "변이 같아야만 이등변삼각형이라고 생각하고, 각으로는 판별하지 못함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "성질과 판별",
+          "examples": [
+            {
+              "case": "AB=AC",
+              "result": "∠B=∠C"
+            },
+            {
+              "case": "∠B=∠C",
+              "result": "AB=AC"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 보기",
+          "problem": "삼각형 ABC에서 AB=AC일 때, ∠B와 ∠C의 관계를 말해보자.",
+          "hint": "같은 변의 맞은편 각을 떠올려 봐.",
+          "solution": "∠B = ∠C"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "두 내각의 크기가 같은 삼각형은?",
+              "choices": [
+                "직각삼각형",
+                "이등변삼각형",
+                "정삼각형만 가능"
+              ],
+              "answer": 1,
+              "feedback_correct": "두 내각이 같으면 맞은편 변도 같아져.",
+              "feedback_wrong": "이등변삼각형의 판별을 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0501-02",
+      "title": "직각삼각형의 합동 조건",
+      "goal": "직각삼각형에서의 특별한 합동 조건을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "직각삼각형 떠올리기",
+          "prompt": "직각을 가진 삼각형을 무엇이라고 할까?",
+          "reveal_answer": "직각삼각형"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "직각삼각형은 빗변과 한 변의 길이가 각각 같으면 합동이다."
+          ],
+          "misconceptions": [
+            "아무 두 변만 같으면 된다고 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "조건 보기",
+          "examples": [
+            {
+              "condition": "직각 + 빗변 같음 + 다른 한 변 같음",
+              "result": "합동"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "두 직각삼각형의 빗변과 한 직각변의 길이가 각각 같을 때 두 삼각형은 어떤 관계일까?",
+          "hint": "직각삼각형의 특별한 합동 조건을 떠올려 봐.",
+          "solution": "합동이다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "직각삼각형의 합동 조건으로 옳은 것은?",
+              "choices": [
+                "빗변과 한 변이 각각 같다",
+                "내각 하나만 같다",
+                "넓이만 같다"
+              ],
+              "answer": 0,
+              "feedback_correct": "직각삼각형에서는 빗변과 한 변으로 합동을 판별할 수 있어.",
+              "feedback_wrong": "직각삼각형의 특별한 합동 조건을 다시 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0501-03",
+      "title": "삼각형의 외심과 내심",
+      "goal": "삼각형의 외심과 내심의 뜻과 성질을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "한 점에서 만남",
+          "prompt": "삼각형의 세 변의 수직이등분선은 한 점에서 만날까?",
+          "reveal_answer": "응, 한 점에서 만나"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "삼각형의 세 변의 수직이등분선의 교점을 외심이라고 한다.",
+            "외심은 세 꼭짓점에서 거리가 같다.",
+            "삼각형의 세 내각의 이등분선의 교점을 내심이라고 한다.",
+            "내심은 세 변에서 거리가 같다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "구별하기",
+          "examples": [
+            {
+              "point": "외심",
+              "meaning": "꼭짓점까지 거리 같음"
+            },
+            {
+              "point": "내심",
+              "meaning": "변까지 거리 같음"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 비교하기",
+          "problem": "삼각형의 한 점이 세 꼭짓점에서 같은 거리에 있다면 그 점은 무엇일까?",
+          "hint": "수직이등분선이 만나는 점을 떠올려 봐.",
+          "solution": "외심"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "삼각형의 내심에 대한 설명으로 맞는 것은?",
+              "choices": [
+                "세 꼭짓점에서 거리가 같다",
+                "세 변에서 거리가 같다",
+                "항상 삼각형 밖에 있다"
+              ],
+              "answer": 1,
+              "feedback_correct": "내심은 세 변까지의 거리가 같아.",
+              "feedback_wrong": "내심과 외심을 구분해 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

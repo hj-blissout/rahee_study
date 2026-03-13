@@ -1,84 +1,132 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>중3 수학 1학기 | 전체 차례</title>
-    <link rel="stylesheet" href="../../math_style.css">
+    <title>중3 수학 | 전체 차례</title>
+    <link rel="stylesheet" href="../../assets/css/math_common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
     <div class="wrap">
-
-        <div class="header-nav">
-            <a href="../../index.html" class="back-btn">⬅ 학년 선택으로 돌아가기</a>
+        <div class="header-nav" style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <a href="../../index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 학년 선택으로 돌아가기</a>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:0.9rem; color:#64748b; font-weight:700;">
+                    <i class="fas fa-user-circle" style="color:#2563eb;"></i>
+                    <span id="current-user-name">가져오는 중...</span>
+                </span>
+                <button onclick="signOut()" style="background:#f1f5f9; border:none; padding:8px 14px; border-radius:10px; cursor:pointer; font-weight:700; color:#64748b; font-size:0.85rem;">
+                    <i class="fas fa-sign-out-alt"></i> 로그아웃
+                </button>
+                <button onclick="openCalendar()" title="공부 히스토리" style="background:#f1f5f9; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; color:#2563eb; font-size:1rem;">
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
         </div>
 
         <section class="hero" style="margin-bottom: 16px;">
-            <div class="pill">중3 수학 1학기</div>
-            <h1>수학 기초 정복, 어렵지 않아요!</h1>
-            <p>가장 쉬운 중3 수학 첫걸음 👣 차근차근 밟아가볼까요?</p>
+            <div class="pill">중3 수학</div>
+            <h1>중학교 수학의 완성, 오빠랑 가보자!</h1>
+            <p>2학년 때 배운 내용를 탄탄히 해서, 중3 수학도 완벽하게 정복해봐요.</p>
             <div class="tutor-box">
                 <img class="tutor-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png" alt="박지훈">
                 <div class="tutor-msg">
-                    <b>라희야!</b> 안녕? 중3 수학도 오빠랑 같이 하면 진짜 재밌을 거야!<br>
-                    겁먹지 말고 천천히 하나씩 해보자구! 화이팅! 👑
+                    <b>라희야!</b> 중3 수학 차례야. 3학년 수학이 고등학교 수학의 기초거든!<br>
+                    오라버니가 딱 붙어서 도와줄게. 같이 시작해볼까?
                 </div>
             </div>
         </section>
 
         <!-- Progress Bar -->
         <div class="progress-container">
-            <div class="progress-text" id="progress-text">시작이 반! 1단원부터 당장 렛츠고! 👣</div>
+            <div class="progress-text" id="progress-text">중3 수학 시작! 오빠랑 한 걸음씩 가보자! 💪</div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
-                <img class="progress-icon" id="progress-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png" alt="박지훈 진행도" style="left: 5%;">
+                <img class="progress-icon" id="progress-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png" alt="박지훈 진행도" style="left: 0%;">
             </div>
         </div>
 
-        <div class="card" id="chapterCard1">
-            <div class="status-badge not-started">아직 안 했어 💤</div>
-            <h2>1. 제곱근과 실수</h2>
-            <div class="completed-date"></div>
-            <a class="chapter" href="chapter_01_square_root_and_real_numbers.html">1단원 시작하기 🚀</a>
-        </div>
-        <div class="card" id="chapterCard2">
-            <div class="status-badge not-started">아직 안 했어 💤</div>
-            <h2>2. 근호를 포함한 식의 계산</h2>
-            <div class="completed-date"></div>
-            <a class="chapter" href="chapter_02_radical_expressions.html">2단원 시작하기 🚀</a>
-        </div>
-        <div class="card" id="chapterCard3">
-            <div class="status-badge not-started">아직 안 했어 💤</div>
-            <h2>3. 다항식의 곱셈</h2>
-            <div class="completed-date"></div>
-            <a class="chapter" href="chapter_03_multiplication_of_polynomials.html">3단원 시작하기 🚀</a>
-        </div>
-        <div class="card" id="chapterCard4">
-            <div class="status-badge not-started">아직 안 했어 💤</div>
-            <h2>4. 다항식의 인수분해</h2>
-            <div class="completed-date"></div>
-            <a class="chapter" href="chapter_04_factoring_polynomials.html">4단원 시작하기 🚀</a>
-        </div>
-        <div class="card" id="chapterCard5">
-            <div class="status-badge not-started">아직 안 했어 💤</div>
-            <h2>5. 이차방정식 풀이</h2>
-            <div class="completed-date"></div>
-            <a class="chapter" href="chapter_05_solving_quadratic_equations.html">5단원 시작하기 🚀</a>
-        </div>
-        <div class="card" id="chapterCard6">
-            <div class="status-badge not-started">아직 안 했어 💤</div>
-            <h2>6. 이차함수와 그래프</h2>
-            <div class="completed-date"></div>
-            <a class="chapter" href="chapter_06_quadratic_functions_and_graphs.html">6단원 시작하기 🚀</a>
+        <div id="unit-cards">
+            <div class="card" data-unit="0101" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>1. 제곱근과 실수</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0101">1단원 시작하기 🚀</a>
+            </div>
+            <div class="card" data-unit="0201" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>2. 다항식의 곱셈과 인수분해</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0201">2단원 시작하기 🚀</a>
+            </div>
+            <div class="card" data-unit="0301" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>3. 이차방정식</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0301">3단원 시작하기 🚀</a>
+            </div>
+            <div class="card" data-unit="0401" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>4. 이차함수</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0401">4단원 시작하기 🚀</a>
+            </div>
+            <div class="card" data-unit="0501" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>5. 삼각비</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0501">5단원 시작하기 🚀</a>
+            </div>
+            <div class="card" data-unit="0601" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>6. 원의 성질</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0601">6단원 시작하기 🚀</a>
+            </div>
+            <div class="card" data-unit="0701" data-total-lessons="3">
+                <div class="status-badge not-started">아직 안 했어 💤</div>
+                <h2>7. 통계</h2>
+                <div class="completed-date"></div>
+                <div class="lesson-list"></div>
+                <a class="chapter" href="viewer.html?unit=0701">7단원 시작하기 🚀</a>
+            </div>
         </div>
     </div>
 
-    <script>
-        // 공통 로직 사용 (math_common.js)
-    </script>
-    <script src="../../math_common.js"></script>
-</body>
+    <!-- Calendar Panel -->
+    <div id="cal-overlay" class="cal-overlay" onclick="closeCalendar()"></div>
+    <div id="cal-panel" class="cal-panel">
+        <div class="cal-header">
+            <div class="cal-header-top">
+                <h2>공부 히스토리</h2>
+                <button class="cal-close" onclick="closeCalendar()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cal-month-nav">
+                <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                <span id="cal-month-label"></span>
+                <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div id="cal-body" class="cal-body"></div>
+    </div>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="../../env.js"></script>
+    <script src="../../assets/js/supabase_service.js"></script>
+    <script src="../../assets/js/app_utils.js"></script>
+    <script src="../../assets/js/calendar_module.js"></script>
+    <script src="../../assets/js/math_logic.js"></script>
+    <script>
+        window.currentGrade = "3";
+    </script>
+</body>
 </html>

@@ -1,0 +1,196 @@
+{
+  "unit_id": "0601",
+  "title": "원의 성질",
+  "source_file": "[신사고 김화경 중3] 06 원의 성질.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0601-01",
+      "title": "현과 중심각",
+      "goal": "현과 중심의 관계를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "원 속의 선분",
+          "prompt": "원 위의 두 점을 이은 선분을 무엇이라고 할까?",
+          "reveal_answer": "현"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "원의 중심에서 현에 내린 수선은 그 현을 이등분한다.",
+            "현의 수직이등분선은 원의 중심을 지난다.",
+            "중심에서 같은 거리에 있는 두 현의 길이는 같다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대표 성질",
+          "examples": [
+            {
+              "property": "중심→현 수선",
+              "result": "현 이등분"
+            },
+            {
+              "property": "같은 중심거리",
+              "result": "같은 현의 길이"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 보기",
+          "problem": "중심 O에서 현 AB에 내린 수선의 발을 M이라 할 때, AM과 MB의 관계를 말해보자.",
+          "hint": "수선은 현을 반으로 나눠.",
+          "solution": "AM = MB"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "원의 중심에서 현에 내린 수선은 그 현을 어떻게 할까?",
+              "choices": [
+                "평행하게 한다",
+                "이등분한다",
+                "연장한다"
+              ],
+              "answer": 1,
+              "feedback_correct": "원의 대표 성질이야.",
+              "feedback_wrong": "현과 중심의 관계를 다시 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0601-02",
+      "title": "접선의 성질",
+      "goal": "접선과 반지름의 관계, 두 접선의 길이 관계를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "한 점에서 만나는 직선",
+          "prompt": "원과 한 점에서만 만나는 직선을 무엇이라고 할까?",
+          "reveal_answer": "접선"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "접점에서 반지름과 접선은 서로 수직이다.",
+            "원 밖의 한 점에서 그은 두 접선의 길이는 같다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "성질 익히기",
+          "examples": [
+            {
+              "property": "반지름 ⟂ 접선"
+            },
+            {
+              "property": "PA = PB (원 밖 점 P에서 그은 접선)"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 생각하기",
+          "problem": "원 밖의 점 P에서 그은 두 접선의 접점을 A, B라 할 때 PA와 PB의 길이는?",
+          "hint": "두 접선의 길이는 같아.",
+          "solution": "PA = PB"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "접점에서 반지름과 접선의 관계는?",
+              "choices": [
+                "평행",
+                "수직",
+                "같은 방향"
+              ],
+              "answer": 1,
+              "feedback_correct": "반지름은 접선에 수직이야.",
+              "feedback_wrong": "접선의 기본 성질을 기억하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0601-03",
+      "title": "원주각과 내접사각형",
+      "goal": "원주각의 성질과 내접사각형의 성질을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "원의 둘레 위 각",
+          "prompt": "꼭짓점이 원 위에 있는 각을 무엇이라고 할까?",
+          "reveal_answer": "원주각"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "같은 호에 대한 원주각의 크기는 같다.",
+            "한 원에 내접하는 사각형에서 마주 보는 두 각의 합은 180°이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대표 성질",
+          "examples": [
+            {
+              "property": "같은 호 → 같은 원주각"
+            },
+            {
+              "property": "내접사각형 → 대각의 합 180°"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "내접사각형의 한 각이 70°이면 마주 보는 각은 몇 도일까?",
+          "hint": "두 각의 합은 180°",
+          "solution": "110°"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "마무리 퀴즈",
+          "items": [
+            {
+              "q": "원에 내접하는 사각형의 마주 보는 두 각의 합은?",
+              "choices": [
+                "90°",
+                "180°",
+                "360°"
+              ],
+              "answer": 1,
+              "feedback_correct": "내접사각형의 핵심 성질이야.",
+              "feedback_wrong": "대각의 합을 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

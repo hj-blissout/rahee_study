@@ -1,0 +1,261 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0302",
+  "title": "연립일차방정식",
+  "lessons": [
+    {
+      "lesson_id": "0302-01",
+      "title": "연립방정식의 뜻과 해",
+      "goal": "연립일차방정식의 뜻과 해를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "두 식을 함께 만족",
+          "prompt": "x+y=5와 x-y=1을 둘 다 만족하는 값을 찾는 식을 뭐라고 할까?",
+          "reveal_answer": "연립방정식"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "두 개 이상의 방정식을 한꺼번에 만족하는 값을 구하는 식을 연립방정식이라고 한다.",
+            "연립방정식의 해는 모든 식을 동시에 만족해야 한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "해 확인하기",
+          "examples": [
+            {
+              "system": [
+                "x+y=5",
+                "x-y=1"
+              ],
+              "solution": "(3, 2)"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 확인하기",
+          "problem": "x=2, y=3이 x+y=5와 x-y=1의 해인지 확인하자.",
+          "hint": "두 식에 모두 대입해 봐.",
+          "solution": "첫째 식은 만족하지만 둘째 식은 -1이므로 해가 아님"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "연립방정식의 해는 어떤 값일까?",
+              "choices": [
+                "한 식만 만족하는 값",
+                "모든 식을 동시에 만족하는 값",
+                "가장 큰 값"
+              ],
+              "answer": 1,
+              "feedback_correct": "연립은 동시에 만족해야 해.",
+              "feedback_wrong": "모든 식을 다 확인해야 해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0302-02",
+      "title": "가감법",
+      "goal": "가감법으로 연립일차방정식을 푼다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "없애고 싶은 문자",
+          "prompt": "두 식을 더하거나 빼서 한 문자를 없애는 방법을 뭐라고 할까?",
+          "reveal_answer": "가감법"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "계수를 맞춘 뒤 두 식을 더하거나 빼서 한 문자를 없앤다."
+          ],
+          "misconceptions": [
+            "부호를 잘못 더하거나 뺌",
+            "한 문자를 없앤 뒤 다른 문자를 대입하지 않음"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "풀이 흐름",
+          "examples": [
+            {
+              "system": [
+                "x+y=5",
+                "x-y=1"
+              ],
+              "flow": "두 식을 더해 2x=6 → x=3, y=2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "x+y=7, x-y=3을 가감법으로 풀어보자.",
+          "hint": "두 식을 더하면 y가 사라져.",
+          "solution": "2x=10 → x=5, y=2"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "x+y=6, x-y=2의 해는?",
+              "choices": [
+                "(4,2)",
+                "(2,4)",
+                "(3,3)"
+              ],
+              "answer": 0,
+              "feedback_correct": "더하면 2x=8이라 x=4, y=2",
+              "feedback_wrong": "두 식을 더해 한 문자를 먼저 없애 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0302-03",
+      "title": "대입법",
+      "goal": "대입법으로 연립일차방정식을 푼다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "한 식에서 먼저 정리",
+          "prompt": "x+y=5에서 x를 y로 나타내면?",
+          "reveal_answer": "x = 5-y"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "한 식을 한 문자에 대하여 정리한 뒤 다른 식에 대입한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대입 흐름",
+          "examples": [
+            {
+              "system": [
+                "x+y=5",
+                "2x-y=4"
+              ],
+              "flow": "x=5-y를 둘째 식에 대입"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "x+y=6, 2x-y=3을 대입법으로 풀자.",
+          "hint": "첫째 식에서 y=6-x로 정리해.",
+          "solution": "2x-(6-x)=3 → 3x=9 → x=3, y=3"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "대입법의 첫 단계로 알맞은 것은?",
+              "choices": [
+                "두 식을 곱한다",
+                "한 식을 한 문자에 대해 정리한다",
+                "두 식을 무조건 더한다"
+              ],
+              "answer": 1,
+              "feedback_correct": "먼저 한 문자로 정리해야 대입할 수 있어.",
+              "feedback_wrong": "대입법은 ‘정리 후 대입’이 핵심이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0302-04",
+      "title": "연립일차방정식의 활용",
+      "goal": "문장제를 연립일차방정식으로 해결한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "두 미지수 세우기",
+          "prompt": "사과 가격과 배 가격을 동시에 구할 때 보통 몇 개의 문자가 필요할까?",
+          "reveal_answer": "2개"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "서로 다른 두 양을 문자 2개로 두고 관계를 식 2개로 세운다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "활용 유형",
+          "examples": [
+            {
+              "type": "가격",
+              "template": "개수와 총액 관계 2개"
+            },
+            {
+              "type": "나이",
+              "template": "현재와 몇 년 후 관계"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해결하기",
+          "problem": "연필 2자루와 공책 1권의 가격 합이 2500원, 연필 1자루와 공책 2권의 가격 합이 3500원일 때 각각의 가격을 구하자.",
+          "hint": "연필 가격 x, 공책 가격 y로 두자.",
+          "solution": "2x+y=2500, x+2y=3500 → x=500, y=1500"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "두 미지수가 필요한 상황에 알맞은 방법은?",
+              "choices": [
+                "일차부등식",
+                "연립일차방정식",
+                "단항식 계산"
+              ],
+              "answer": 1,
+              "feedback_correct": "관계식이 두 개면 연립일차방정식이 잘 맞아.",
+              "feedback_wrong": "두 문자를 함께 구할 때를 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

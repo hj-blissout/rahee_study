@@ -1,0 +1,200 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0701",
+  "title": "피타고라스 정리",
+  "lessons": [
+    {
+      "lesson_id": "0701-01",
+      "title": "피타고라스 정리의 뜻",
+      "goal": "직각삼각형에서 피타고라스 정리를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "직각삼각형의 가장 긴 변",
+          "prompt": "직각삼각형에서 직각의 맞은편 변을 무엇이라고 할까?",
+          "reveal_answer": "빗변"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "직각삼각형에서 빗변의 제곱은 나머지 두 변의 제곱의 합과 같다.",
+            "a²+b²=c²"
+          ],
+          "misconceptions": [
+            "아무 삼각형에서나 성립한다고 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "식으로 보기",
+          "examples": [
+            {
+              "triangle": "3,4,5",
+              "check": "3²+4²=5²"
+            },
+            {
+              "triangle": "5,12,13",
+              "check": "5²+12²=13²"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 확인하기",
+          "problem": "직각삼각형의 두 직각변이 6, 8이면 빗변은 얼마일까?",
+          "hint": "6²+8²를 계산해.",
+          "solution": "c²=36+64=100, c=10"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "피타고라스 정리가 성립하는 도형은?",
+              "choices": [
+                "모든 삼각형",
+                "직각삼각형",
+                "이등변삼각형"
+              ],
+              "answer": 1,
+              "feedback_correct": "직각삼각형에서만 바로 적용해.",
+              "feedback_wrong": "직각 조건이 꼭 필요해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-02",
+      "title": "피타고라스 정리의 활용",
+      "goal": "피타고라스 정리로 변의 길이를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "거꾸로 생각하기",
+          "prompt": "빗변이 13이고 한 변이 5이면 다른 한 변의 제곱은 얼마일까?",
+          "reveal_answer": "13²-5² = 144"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "모르는 변을 x로 두고 피타고라스 정리를 이용해 구할 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "풀이 흐름",
+          "examples": [
+            {
+              "case": "빗변 구하기",
+              "formula": "c=√(a²+b²)"
+            },
+            {
+              "case": "직각변 구하기",
+              "formula": "a=√(c²-b²)"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "빗변이 10, 한 직각변이 6인 직각삼각형의 다른 변의 길이를 구하자.",
+          "hint": "10²-6²를 계산해.",
+          "solution": "x²=100-36=64, x=8"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "직각변이 9, 12인 직각삼각형의 빗변은?",
+              "choices": [
+                "15",
+                "18",
+                "21"
+              ],
+              "answer": 0,
+              "feedback_correct": "9²+12²=225, √225=15",
+              "feedback_wrong": "제곱해서 더한 뒤 제곱근을 구하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-03",
+      "title": "피타고라스 정리의 역",
+      "goal": "세 변의 길이로 직각삼각형인지 판단한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "식이 맞는지 보기",
+          "prompt": "3, 4, 5는 3²+4²=5²를 만족할까?",
+          "reveal_answer": "응, 만족해"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "삼각형의 세 변의 길이가 a²+b²=c²를 만족하면 그 삼각형은 직각삼각형이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "판별하기",
+          "examples": [
+            {
+              "lengths": "6,8,10",
+              "result": "직각삼각형"
+            },
+            {
+              "lengths": "4,5,6",
+              "result": "직각삼각형 아님"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "변의 길이가 8, 15, 17인 삼각형은 직각삼각형일까?",
+          "hint": "8²+15²와 17²를 비교해.",
+          "solution": "64+225=289=17² 이므로 직각삼각형"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "변의 길이가 5, 12, 13인 삼각형은?",
+              "choices": [
+                "직각삼각형",
+                "이등변삼각형",
+                "정삼각형"
+              ],
+              "answer": 0,
+              "feedback_correct": "5²+12²=13²이야.",
+              "feedback_wrong": "가장 긴 변을 c로 두고 확인하자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0802",
+  "title": "확률",
+  "lessons": [
+    {
+      "lesson_id": "0802-01",
+      "title": "확률의 뜻",
+      "goal": "확률의 뜻을 이해하고 기본값을 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "가능성 비교",
+          "prompt": "주사위를 한 번 던질 때 1이 나올 가능성과 짝수가 나올 가능성 중 어느 쪽이 더 클까?",
+          "reveal_answer": "짝수가 나올 가능성"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "확률은 어떤 일이 일어날 가능성을 수로 나타낸 것이다.",
+            "모든 경우가 equally likely일 때 확률 = 원하는 경우의 수 ÷ 전체 경우의 수"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "기본 계산",
+          "examples": [
+            {
+              "event": "주사위에서 1",
+              "probability": "1/6"
+            },
+            {
+              "event": "주사위에서 짝수",
+              "probability": "3/6=1/2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "동전 1개를 던질 때 앞면이 나올 확률을 구하자.",
+          "hint": "원하는 경우 1, 전체 경우 2",
+          "solution": "1/2"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "주사위를 한 번 던질 때 5가 나올 확률은?",
+              "choices": [
+                "1/2",
+                "1/6",
+                "5/6"
+              ],
+              "answer": 1,
+              "feedback_correct": "한 면만 해당하니 1/6이야.",
+              "feedback_wrong": "원하는 경우 수와 전체 경우 수를 따져 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0802-02",
+      "title": "확률의 계산",
+      "goal": "여러 상황에서 확률을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "경우의 수 먼저",
+          "prompt": "확률을 구하기 전에 먼저 알아야 하는 것은 무엇일까?",
+          "reveal_answer": "전체 경우의 수와 원하는 경우의 수"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "확률 문제는 먼저 경우의 수를 세고, 그다음 비로 나타낸다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "계산 흐름",
+          "examples": [
+            {
+              "event": "카드 4장 중 빨간 카드 1장 뽑기",
+              "probability": "1/4"
+            },
+            {
+              "event": "주사위에서 4보다 큰 수",
+              "probability": "2/6=1/3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "1부터 10까지 적힌 카드 중 한 장을 뽑을 때 홀수가 나올 확률은?",
+          "hint": "홀수 카드 수를 먼저 세자.",
+          "solution": "홀수는 1,3,5,7,9로 5장 → 5/10=1/2"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "주사위를 한 번 던질 때 3 이하의 수가 나올 확률은?",
+              "choices": [
+                "1/2",
+                "1/3",
+                "2/3"
+              ],
+              "answer": 0,
+              "feedback_correct": "1,2,3 세 가지라서 3/6=1/2",
+              "feedback_wrong": "해당하는 눈의 수를 세어 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0802-03",
+      "title": "확률의 활용",
+      "goal": "상황을 해석하여 확률을 비교하고 판단한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "가능성 비교",
+          "prompt": "확률이 1/4인 사건과 1/2인 사건 중 어느 쪽이 더 잘 일어날까?",
+          "reveal_answer": "1/2인 사건"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "확률이 클수록 그 사건이 일어날 가능성이 크다.",
+            "확률은 0 이상 1 이하의 값이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "값 해석하기",
+          "examples": [
+            {
+              "probability": "0",
+              "meaning": "일어날 수 없음"
+            },
+            {
+              "probability": "1",
+              "meaning": "반드시 일어남"
+            },
+            {
+              "probability": "1/2",
+              "meaning": "절반 정도의 가능성"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "A 사건의 확률이 0.7이고 B 사건의 확률이 0.4일 때, 어느 사건이 더 일어나기 쉬울까?",
+          "hint": "큰 수를 비교해.",
+          "solution": "A 사건"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "확률에 대한 설명으로 맞는 것은?",
+              "choices": [
+                "확률은 1보다 클 수 있다",
+                "확률은 0 이상 1 이하이다",
+                "확률은 항상 분수로만 나타낸다"
+              ],
+              "answer": 1,
+              "feedback_correct": "확률의 범위는 0 이상 1 이하야.",
+              "feedback_wrong": "확률의 기본 범위를 기억하자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

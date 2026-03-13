@@ -5,221 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>라희의 프리미엄 학습 룸 | Rahee's Study</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Nanum+Square+Round:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --primary: #0f172a;
-            --secondary: #475569;
-            --accent-eng: #f43f5e; /* Rose/Coral */
-            --accent-math: #0d9488; /* Teal */
-            --white: #ffffff;
-            --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-            --card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            background-color: var(--bg-color);
-            font-family: 'Nanum Square Round', 'Outfit', sans-serif;
-            color: var(--primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* ─── Hero Section ─── */
-        .hero {
-            background: var(--white);
-            border-bottom-left-radius: 48px;
-            border-bottom-right-radius: 48px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-
-        .hero-banner-box {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            position: relative;
-            background: #fff;
-        }
-
-        .hero-banner-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero-info {
-            padding: 32px 40px;
-        }
-
-        .hero-top-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .date-label {
-            background: #f1f5f9;
-            color: var(--secondary);
-            padding: 8px 18px;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 800;
-        }
-
-        .logout-link {
-            color: #94a3b8;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .logout-link:hover { color: #f43f5e; }
-
-        .footer-bar {
-            padding: 0 40px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        .hero-title-box h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -0.04em;
-        }
-
-        .hero-title-box p {
-            color: var(--secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-        }
-
-        /* ─── Subject Grid ─── */
-        .subject-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            padding: 0 40px 60px;
-        }
-
-        .subject-card {
-            background: var(--white);
-            border-radius: 32px;
-            padding: 40px 32px;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(0,0,0,0.03);
-            box-shadow: var(--card-shadow);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .subject-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--card-hover);
-        }
-
-        .icon-box {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        .icon-eng { background: #fff1f2; color: var(--accent-eng); }
-        .icon-math { background: #f0fdfa; color: var(--accent-math); }
-
-        .subject-card h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .subject-tagline {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .tagline-eng { color: var(--accent-eng); }
-        .tagline-math { color: var(--accent-math); }
-
-        .subject-desc {
-            font-size: 0.95rem;
-            color: var(--secondary);
-            line-height: 1.7;
-            margin-bottom: 32px;
-            flex-grow: 1;
-        }
-
-        .btn-enter {
-            width: 100%;
-            padding: 18px;
-            border-radius: 16px;
-            text-align: center;
-            font-weight: 800;
-            background: #f8fafc;
-            color: var(--primary);
-            transition: all 0.2s;
-            border: 1px solid #e2e8f0;
-        }
-
-        .subject-card:hover .btn-enter {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* ─── Quote Bottom ─── */
-        .bottom-quote {
-            text-align: center;
-            padding: 40px 20px;
-            color: #94a3b8;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-        .bottom-quote b { color: var(--primary); }
-
-        @media (max-width: 768px) {
-            .subject-grid { grid-template-columns: 1fr; padding: 0 20px 40px; }
-            .hero-info { padding: 32px 24px; }
-            .hero-banner-box { height: 240px; }
-            .hero-title-box h1 { font-size: 1.8rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Square+Round:wght@400;700;800&family=Do+Hyeon&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
     <div class="container">
         <header class="hero">
             <div class="hero-banner-box">
-                <img class="hero-banner-img" src="./premium_2d_edu_banner_v2_1773300025636.png" alt="Education Banner">
+                <img class="hero-banner-img" src="assets/images/growth_banner.png" alt="Education Banner">
             </div>
             <div class="hero-info">
                 <div class="hero-top-meta">
@@ -232,64 +28,170 @@
             </div>
         </header>
 
+        <!-- 학습 현황 -->
+        <section class="weekly-status-section">
+            <div class="weekly-card" onclick="openCalendar()">
+                <div class="weekly-header">
+                    <h3><i class="fas fa-calendar-check" style="color: var(--accent-math);"></i> 일주일 학습 현황</h3>
+                    <div class="streak-badge" id="streak-count">이번 주 0일 공부함</div>
+                </div>
+                <div class="week-grid" id="week-grid">
+                    <!-- JS로 채워짐 -->
+                </div>
+                <div class="weekly-summary" id="weekly-summary">
+                    아직 기록을 불러오는 중이에요...
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Panel -->
+        <div id="cal-overlay" class="cal-overlay" onclick="closeCalendar()"></div>
+        <div id="cal-panel" class="cal-panel">
+            <div class="cal-header">
+                <div class="cal-header-top">
+                    <h2>공부 히스토리</h2>
+                    <button class="cal-close" onclick="closeCalendar()"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="cal-month-nav">
+                    <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <span id="cal-month-label"></span>
+                    <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div id="cal-body" class="cal-body">
+                <!-- Calendar days will be rendered here -->
+            </div>
+        </div>
+
         <main class="subject-grid">
             <!-- 영어 -->
-            <div class="subject-card">
-                <div class="icon-box icon-eng">🌍</div>
+            <div class="subject-card eng">
+                <div class="icon-box icon-eng"><i class="fas fa-language" style="color: var(--primary-eng);"></i></div>
                 <h2>English</h2>
                 <div class="subject-tagline tagline-eng">글로벌 인싸가 되기 위한 첫걸음 ✈️</div>
                 <p class="subject-desc">
                     영어를 잘하면 전 세계가 내 무대! 자막 없이 드라마를 보고, 해외 어디를 가도 당당한 나의 모습. 
                     지금 시작하면 나중에 진짜 빛날 거예요.
                 </p>
-                <div style="display: flex; gap: 12px; width: 100%;">
-                    <a href="English/index.html" class="btn-enter" style="flex: 1;">단어 마스터 📝</a>
-                    <a href="English/grammar.html" class="btn-enter" style="flex: 1; border-color: var(--accent-eng); color: var(--accent-eng);">핵심 문법 🖋️</a>
+                <div class="btn-group">
+                    <a href="english/index.html" class="btn-enter" style="flex: 1; min-width: 120px;">단어 마스터 📝</a>
+                    <a href="english/grammar.html" class="btn-enter" style="flex: 1; min-width: 120px;">핵심 문법 🖋️</a>
                 </div>
             </div>
 
             <!-- 수학 -->
-            <div class="subject-card">
-                <div class="icon-box icon-math">🧮</div>
+            <div class="subject-card math">
+                <div class="icon-box icon-math"><i class="fas fa-calculator" style="color: var(--primary-math);"></i></div>
                 <h2>Mathematics</h2>
                 <div class="subject-tagline tagline-math">논리력 뇌 업그레이드의 비밀 무기 🧠</div>
                 <p class="subject-desc">
                     복잡한 문제를 해결할 때 느끼는 그 짜릿함! 수학은 단순히 숫자가 아니라, 
                     세상을 더 명쾌하게 보는 시야를 선물해줄 거예요.
                 </p>
-                <div style="display: flex; gap: 12px; width: 100%;">
-                    <a href="math/math_1/index.html" class="btn-enter" style="flex: 1;">중1 수학 📊</a>
-                    <a href="math/math_3/index.html" class="btn-enter" style="flex: 1; border-color: var(--accent-math); color: var(--accent-math);">중3 수학 📐</a>
+                <div class="btn-group">
+                    <a href="math/math_1/index.html" class="btn-enter" style="flex: 1; min-width: 80px;">중1 📊</a>
+                    <a href="math/math_2/index.html" class="btn-enter" style="flex: 1; min-width: 80px;">중2 📈</a>
+                    <a href="math/math_3/index.html" class="btn-enter" style="flex: 1; min-width: 80px;">중3 📐</a>
+                    <a href="math/math_drill.html" class="btn-enter" style="flex: 1; min-width: 140px; background: var(--primary-eng); border-color: var(--primary-eng);">연산 마스터 🔢</a>
                 </div>
             </div>
         </main>
 
         <div class="footer-bar">
-            <a href="#" onclick="handleLogout()" class="logout-link">
-                <i class="fas fa-sign-out-alt"></i> 로그아웃
-            </a>
-            <div class="bottom-quote">
-                "어제의 나보다 조금 더 성장한 오늘의 나를 응원해. <b>라희</b>는 충분히 잘하고 있어요!"
+            <span>&copy; 2026 Rahee's Premium Study Room</span>
+            <div class="footer-links">
+                <a href="#" onclick="logout()">로그아웃</a>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="env.js"></script>
+    <script src="assets/js/supabase_service.js"></script>
+    <script src="assets/js/app_utils.js"></script>
+    <script src="assets/js/calendar_module.js"></script>
     <script>
+        // 초기 인증 체크
+        getSession().then(session => {
+            if (!session) window.location.href = 'login.html';
+        });
+
         // 날짜 업데이트
         const now = new Date();
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        document.getElementById('date-label').textContent = 
-            `${now.getFullYear()}. ${now.getMonth()+1}. ${now.getDate()}. (${days[now.getDay()]})`;
-
-        // 로그아웃
-        async function handleLogout() {
-            const SUPABASE_URL = 'https://gvgarbiuzgxppbhenhxj.supabase.co';
-            const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd2Z2FyYml1emd4cHBiaGVuaHhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyODM5NzEsImV4cCI6MjA4ODg1OTk3MX0.knjJf3RP6uSxaRRhpA4q1CCglRqfQKje1uROhLuK7yI';
-            const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-            await sb.auth.signOut();
-            window.location.href = 'login.html';
+        const dateLabel = document.getElementById('date-label');
+        if (dateLabel) {
+            dateLabel.textContent = `${now.getFullYear()}. ${now.getMonth()+1}. ${now.getDate()}. (${days[now.getDay()]})`;
         }
+
+        // 주간 현황 업데이트
+        async function updateWeeklyStatus() {
+            const weekGrid = document.getElementById('week-grid');
+            const streakCountEl = document.getElementById('streak-count');
+            const summaryEl = document.getElementById('weekly-summary');
+            if (!weekGrid) return;
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            const dayOfWeek = today.getDay(); 
+            const diffToMonday = (dayOfWeek === 0 ? -6 : 1 - dayOfWeek);
+            const monday = new Date(today);
+            monday.setDate(today.getDate() + diffToMonday);
+
+            const weekDays = [];
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(monday);
+                d.setDate(monday.getDate() + i);
+                weekDays.push(d);
+            }
+
+            const studyDates = new Set();
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('math_tutor_') || key.startsWith('rahee_eng_learned_')) {
+                    const value = localStorage.getItem(key);
+                    try {
+                        const date = new Date(value);
+                        if (!isNaN(date.getTime())) {
+                            studyDates.add(date.toISOString().split('T')[0]);
+                        }
+                    } catch(e) {}
+                }
+            }
+
+            let activeDaysCount = 0;
+            let html = '';
+            const dayNamesShort = ['일', '월', '화', '수', '목', '금', '토'];
+
+            weekDays.forEach(date => {
+                const dateStr = date.toISOString().split('T')[0];
+                const isActive = studyDates.has(dateStr);
+                const isFuture = date > today;
+                const isToday = date.getTime() === today.getTime();
+                if (isActive) activeDaysCount++;
+
+                html += `
+                    <div class="day-column" style="${isFuture ? 'opacity: 0.4;' : ''}">
+                        <div class="day-box ${isActive ? 'active' : ''} ${isToday ? 'today' : ''}">
+                            ${isActive ? '<i class="fa-solid fa-circle-check"></i>' : (isToday ? '<i class="fa-solid fa-fire" style="color: white; font-size: 1rem;"></i>' : '<i class="fa-regular fa-circle"></i>')}
+                        </div>
+                        <span class="day-name" style="${isToday ? 'color: var(--primary-math); font-weight: 900;' : ''}">${dayNamesShort[date.getDay()]}</span>
+                        <span class="day-date" style="font-size: 0.75rem; color: ${isToday ? 'var(--primary-math)' : 'var(--text-light)'}; font-weight: ${isToday ? '800' : '500'};">${date.getDate()}</span>
+                    </div>
+                `;
+            });
+
+            weekGrid.innerHTML = html;
+            streakCountEl.textContent = `이번 주 ${activeDaysCount}일 공부함`;
+            
+            if (activeDaysCount >= 5) summaryEl.innerHTML = "와! 이번 주엔 거의 매일 공부했네요! 최고예요 라희야! 🏆";
+            else if (activeDaysCount >= 1) summaryEl.innerHTML = "오늘도 공부를 시작해볼까요? 라희의 꿈을 응원해요! ✨";
+            else summaryEl.innerHTML = "아직 이번 주 공부 기록이 없네요. 가볍게 단어 한 개부터 시작해볼까요? 😊";
+        }
+
+        // 초기화 시 실행
+        updateWeeklyStatus();
     </script>
 </body>
 </html>

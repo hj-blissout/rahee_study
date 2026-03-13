@@ -1,0 +1,202 @@
+{
+  "unit_id": "0301",
+  "title": "이차방정식",
+  "source_file": "[신사고 김화경 중3] 03 이차방정식.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0301-01",
+      "title": "이차방정식의 뜻",
+      "goal": "이차방정식의 뜻과 해를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "차수 보기",
+          "prompt": "x²-5x+6=0은 몇 차 방정식일까?",
+          "reveal_answer": "이차방정식"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "미지수의 최고차항이 2인 방정식을 이차방정식이라고 한다.",
+            "방정식을 참이 되게 하는 값을 해라고 한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "구별하기",
+          "examples": [
+            {
+              "expr": "x²+3x=4",
+              "type": "이차방정식"
+            },
+            {
+              "expr": "2x+1=0",
+              "type": "일차방정식"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "x²-9=0, 3x+2=0, x(x+1)=0을 분류해 보자.",
+          "hint": "최고차항의 차수를 보자.",
+          "solution": {
+            "x²-9=0": "이차방정식",
+            "3x+2=0": "일차방정식",
+            "x(x+1)=0": "이차방정식"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "다음 중 이차방정식은?",
+              "choices": [
+                "x+2=0",
+                "x²-4=0",
+                "2=0"
+              ],
+              "answer": 1,
+              "feedback_correct": "x²가 있으니 이차방정식이야.",
+              "feedback_wrong": "최고차항의 차수를 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-02",
+      "title": "인수분해를 이용한 풀이",
+      "goal": "인수분해하여 이차방정식을 푼다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "곱이 0",
+          "prompt": "ab=0이면 a와 b는 각각 어떻게 될까?",
+          "reveal_answer": "a=0 또는 b=0"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "이차방정식을 인수분해하여 (식)(식)=0 꼴로 만들면 각 인수를 0으로 두어 해를 구한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "풀이 흐름",
+          "examples": [
+            {
+              "expr": "x²-5x+6=0",
+              "flow": "(x-2)(x-3)=0 → x=2,3"
+            },
+            {
+              "expr": "x²-9=0",
+              "flow": "(x-3)(x+3)=0 → x=3,-3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "x²+7x+10=0을 풀자.",
+          "hint": "곱이 10, 합이 7인 수를 찾자.",
+          "solution": "(x+5)(x+2)=0 → x=-5, -2"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "x²-4x=0의 해는?",
+              "choices": [
+                "0,4",
+                "2,2",
+                "-4,0"
+              ],
+              "answer": 0,
+              "feedback_correct": "x(x-4)=0이야.",
+              "feedback_wrong": "공통인수 x를 묶어 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-03",
+      "title": "제곱근을 이용한 풀이와 활용",
+      "goal": "제곱근을 이용해 이차방정식을 풀고 문장제에 적용한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "x²=a 꼴",
+          "prompt": "x²=25이면 x는?",
+          "reveal_answer": "5와 -5"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "x²=a 꼴은 제곱근을 이용해 풀 수 있다.",
+            "문장제를 이차방정식으로 세워 해결할 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대표 풀이",
+          "examples": [
+            {
+              "expr": "x²=16",
+              "value": "x=±4"
+            },
+            {
+              "expr": "(x-1)²=9",
+              "value": "x=4,-2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해결하기",
+          "problem": "한 변의 길이가 x인 정사각형의 넓이가 49일 때 x를 구하자.",
+          "hint": "넓이식은 x²야.",
+          "solution": "x²=49 → x=7 (길이이므로 양수)"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "(x+2)²=16의 해는?",
+              "choices": [
+                "2, -6",
+                "4, -4",
+                "2, -2"
+              ],
+              "answer": 0,
+              "feedback_correct": "x+2=±4이므로 x=2,-6",
+              "feedback_wrong": "제곱근은 ±를 함께 생각해야 해."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

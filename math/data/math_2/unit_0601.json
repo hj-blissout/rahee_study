@@ -1,0 +1,205 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0601",
+  "title": "도형의 닮음",
+  "lessons": [
+    {
+      "lesson_id": "0601-01",
+      "title": "닮음의 뜻",
+      "goal": "닮음의 뜻과 닮음비를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "모양은 같고 크기만 다름",
+          "prompt": "모양은 같고 크기만 다른 두 도형의 관계를 뭐라고 할까?",
+          "reveal_answer": "닮음"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "대응하는 각의 크기가 각각 같고, 대응하는 변의 길이의 비가 모두 같으면 두 도형은 닮음이다.",
+            "대응하는 변의 길이의 비를 닮음비라고 한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "닮음비 보기",
+          "examples": [
+            {
+              "small_big": "2:3",
+              "meaning": "모든 대응변의 비가 2:3"
+            },
+            {
+              "triangle": "△ABC ∽ △DEF",
+              "meaning": "대응순서를 맞춰 읽기"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "두 삼각형의 대응각이 모두 같고 대응변의 비가 모두 1:2이면 두 삼각형은 어떤 관계일까?",
+          "hint": "닮음의 정의를 그대로 써 보자.",
+          "solution": "서로 닮음이다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "닮음인 두 도형에서 항상 같은 것은?",
+              "choices": [
+                "넓이",
+                "대응각의 크기",
+                "둘레"
+              ],
+              "answer": 1,
+              "feedback_correct": "닮음에서는 대응각이 각각 같아.",
+              "feedback_wrong": "닮음은 각과 변의 비를 함께 봐야 해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0601-02",
+      "title": "삼각형의 닮음 조건",
+      "goal": "삼각형의 닮음 조건을 이해하고 판별한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "합동과 닮음 구분",
+          "prompt": "크기가 달라도 모양이 같으면 합동일까, 닮음일까?",
+          "reveal_answer": "닮음"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "두 각의 크기가 각각 같으면 두 삼각형은 닮음이다.",
+            "끼인각이 같고 그 양옆 변의 비가 같으면 닮음이다.",
+            "세 변의 길이의 비가 각각 같으면 닮음이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "닮음 조건 정리",
+          "examples": [
+            {
+              "condition": "AA",
+              "meaning": "두 각이 각각 같음"
+            },
+            {
+              "condition": "SAS",
+              "meaning": "한 각과 그 양옆 변의 비"
+            },
+            {
+              "condition": "SSS",
+              "meaning": "세 변의 비"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판별하기",
+          "problem": "두 삼각형에서 두 각이 각각 같다면 두 삼각형은 어떤 관계일까?",
+          "hint": "삼각형 닮음 조건 중 가장 간단한 것을 떠올려 봐.",
+          "solution": "닮음이다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "삼각형의 닮음 조건이 아닌 것은?",
+              "choices": [
+                "두 각이 각각 같다",
+                "세 변의 비가 각각 같다",
+                "넓이가 같다"
+              ],
+              "answer": 2,
+              "feedback_correct": "넓이만 같다고 닮음은 아니야.",
+              "feedback_wrong": "닮음은 각과 변의 비가 핵심이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0601-03",
+      "title": "닮음비와 길이의 관계",
+      "goal": "닮음비를 이용해 대응변의 길이를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "비로 생각하기",
+          "prompt": "닮음비가 2:3일 때 작은 도형의 변이 4이면 큰 도형의 대응변은?",
+          "reveal_answer": "6"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "닮은 도형에서는 대응하는 길이들이 모두 같은 비를 이룬다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "길이 구하기",
+          "examples": [
+            {
+              "ratio": "2:3",
+              "small": 8,
+              "big": 12
+            },
+            {
+              "ratio": "3:5",
+              "small": 9,
+              "big": 15
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "닮음비가 3:4인 두 삼각형에서 작은 삼각형의 대응변 길이가 12일 때 큰 삼각형의 길이를 구하자.",
+          "hint": "12에 4/3을 곱해.",
+          "solution": "16"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "닮음비가 1:2일 때 작은 도형의 변 7에 대응하는 큰 도형의 변은?",
+              "choices": [
+                "3.5",
+                "7",
+                "14"
+              ],
+              "answer": 2,
+              "feedback_correct": "1이 2가 되니 길이도 2배야.",
+              "feedback_wrong": "닮음비를 그대로 길이에 적용해 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

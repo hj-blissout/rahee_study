@@ -7,9 +7,12 @@
     <!-- 폰트 적용 -->
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Square+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./grammar_detail.css">
-    <link rel="stylesheet" href="./celebration.css">
+    <link rel="stylesheet" href="../assets/css/english/grammar_detail.css">
+    <link rel="stylesheet" href="../assets/css/english/celebration.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase_service.js"></script>
+    <script src="../assets/js/app_utils.js"></script>
 </head>
 <body>
 
@@ -304,6 +307,11 @@
             }, 5000); // 팝업 애니메이션 등을 고려하여 넉넉히 대기 후 이동 (수동 제어 위해)
         });
     </script>
-    <script src="./celebration.js"></script>
+    <script>
+        if (typeof requireAuth !== 'undefined') {
+            requireAuth();
+        }
+    </script>
+    <script src="../assets/js/celebration.js"></script>
 </body>
 </html>

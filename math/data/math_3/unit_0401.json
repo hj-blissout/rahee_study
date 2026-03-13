@@ -1,0 +1,200 @@
+{
+  "unit_id": "0401",
+  "title": "이차함수",
+  "source_file": "[신사고 김화경 중3] 04 이차함수.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0401-01",
+      "title": "이차함수의 뜻과 그래프",
+      "goal": "이차함수 y=ax²의 뜻과 그래프 모양을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "함수 모양 비교",
+          "prompt": "y=2x와 y=2x² 중 x²가 들어간 식은 어느 쪽일까?",
+          "reveal_answer": "y=2x²"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "y=ax² 꼴의 함수를 이차함수라고 한다.",
+            "이차함수의 그래프는 포물선이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "그래프 특징",
+          "examples": [
+            {
+              "expr": "y=x²",
+              "feature": "위로 열린 포물선"
+            },
+            {
+              "expr": "y=-x²",
+              "feature": "아래로 열린 포물선"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 보기",
+          "problem": "y=x²와 y=-x²의 그래프는 어떻게 다를까?",
+          "hint": "a의 부호를 보자.",
+          "solution": "a>0이면 위로, a<0이면 아래로 열린다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "이차함수 y=-3x²의 그래프는?",
+              "choices": [
+                "위로 열린다",
+                "아래로 열린다",
+                "직선이다"
+              ],
+              "answer": 1,
+              "feedback_correct": "a가 음수라 아래로 열려.",
+              "feedback_wrong": "x² 앞의 부호를 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0401-02",
+      "title": "이차함수의 값과 변화",
+      "goal": "x값에 따른 함수값의 변화를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "값 넣기",
+          "prompt": "y=x²에서 x=2이면 y는?",
+          "reveal_answer": "4"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "이차함수는 x값에 따라 함수값이 대칭적으로 변한다.",
+            "x=0을 기준으로 좌우 대칭인 경우가 많다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "표 만들기",
+          "examples": [
+            {
+              "expr": "y=x²",
+              "table": "x=-2,-1,0,1,2 → y=4,1,0,1,4"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 표 채우기",
+          "problem": "y=2x²에서 x=-2,-1,0,1,2일 때 y값을 구하자.",
+          "hint": "먼저 x²을 구하고 2를 곱해.",
+          "solution": {
+            "0": "0",
+            "1": "2",
+            "2": "8",
+            "-2": "8",
+            "-1": "2"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "y=x²에서 x=-3일 때 y는?",
+              "choices": [
+                "-9",
+                "9",
+                "6"
+              ],
+              "answer": 1,
+              "feedback_correct": "(-3)²는 9야.",
+              "feedback_wrong": "제곱하면 양수가 된다는 점을 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0401-03",
+      "title": "이차함수의 활용",
+      "goal": "이차함수를 상황에 연결해 해석한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "넓이와 x²",
+          "prompt": "한 변의 길이가 x인 정사각형의 넓이는?",
+          "reveal_answer": "x²"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "넓이, 거리, 변화량 등 여러 상황이 이차함수로 표현될 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "상황 해석",
+          "examples": [
+            {
+              "situation": "정사각형 넓이",
+              "expression": "y=x²"
+            },
+            {
+              "situation": "가로 2배 확대",
+              "expression": "y=2x²"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 식 세우기",
+          "problem": "한 변의 길이가 x인 정사각형 2개의 넓이의 합을 y라 할 때 식을 세워보자.",
+          "hint": "정사각형 한 개 넓이는 x²",
+          "solution": "y=2x²"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "한 변의 길이가 x인 정사각형의 넓이 y를 나타내는 식은?",
+              "choices": [
+                "y=2x",
+                "y=x²",
+                "y=x+2"
+              ],
+              "answer": 1,
+              "feedback_correct": "넓이는 한 변×한 변이야.",
+              "feedback_wrong": "정사각형 넓이 공식을 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

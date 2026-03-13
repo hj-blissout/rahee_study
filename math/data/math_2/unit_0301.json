@@ -1,0 +1,221 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0301",
+  "title": "일차부등식",
+  "lessons": [
+    {
+      "lesson_id": "0301-01",
+      "title": "부등식의 뜻과 성질",
+      "goal": "부등식의 뜻을 이해하고 기본 성질을 안다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "크기 비교",
+          "prompt": "5가 3보다 크다는 것을 기호로 쓰면?",
+          "reveal_answer": "5 > 3"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "수나 식의 크기를 비교한 식을 부등식이라고 한다.",
+            "부등식의 양변에 같은 수를 더하거나 빼어도 부등호 방향은 바뀌지 않는다.",
+            "양변에 음수를 곱하거나 나누면 부등호 방향이 바뀐다."
+          ],
+          "misconceptions": [
+            "음수를 곱하거나 나눌 때도 부등호를 그대로 둠"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "성질 익히기",
+          "examples": [
+            {
+              "expr": "x+3 > 5",
+              "transform": "x > 2"
+            },
+            {
+              "expr": "-2x < 6",
+              "transform": "x > -3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 보기",
+          "problem": "2 < 5에서 양변에 3을 더하면 어떻게 될까?",
+          "hint": "같은 수를 더해도 크기 비교는 유지돼.",
+          "solution": "5 < 8"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "부등식 3 < 7의 양변에 -2를 곱하면?",
+              "choices": [
+                "-6 < -14",
+                "-6 > -14",
+                "6 > 14"
+              ],
+              "answer": 1,
+              "feedback_correct": "음수를 곱하면 부등호 방향이 바뀌어.",
+              "feedback_wrong": "음수를 곱하거나 나눌 때는 방향이 바뀐다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-02",
+      "title": "일차부등식 풀기",
+      "goal": "일차부등식을 풀어 해를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "등식처럼 정리하기",
+          "prompt": "x+4 > 7이면 x는 어떤 조건을 만족할까?",
+          "reveal_answer": "x > 3"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "일차부등식은 문자항과 수항을 정리해 해를 구한다.",
+            "계수를 1로 만들 때 음수로 나누면 부등호 방향을 바꾼다."
+          ],
+          "misconceptions": [
+            "-3x ≤ 9를 x ≤ -3으로 잘못 씀"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "풀이 흐름",
+          "examples": [
+            {
+              "expr": "x+5 < 9",
+              "value": "x < 4"
+            },
+            {
+              "expr": "3x-2 ≥ 7",
+              "value": "3x ≥ 9 → x ≥ 3"
+            },
+            {
+              "expr": "-2x < 8",
+              "value": "x > -4"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "2x+1 ≤ 7을 풀어보자.",
+          "hint": "먼저 1을 옮기고, 그다음 2로 나눠.",
+          "solution": "2x ≤ 6 → x ≤ 3"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "-4x > 12의 해는?",
+              "choices": [
+                "x > -3",
+                "x < -3",
+                "x > 3"
+              ],
+              "answer": 1,
+              "feedback_correct": "음수로 나누면 방향이 바뀌어 x < -3이야.",
+              "feedback_wrong": "음수로 나눌 때 부등호 방향을 바꿔야 해."
+            },
+            {
+              "q": "3x-5 < 4의 해는?",
+              "choices": [
+                "x < 3",
+                "x > 3",
+                "x < 9"
+              ],
+              "answer": 0,
+              "feedback_correct": "3x < 9 → x < 3",
+              "feedback_wrong": "수항부터 먼저 정리해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0301-03",
+      "title": "일차부등식의 활용",
+      "goal": "문장제를 일차부등식으로 나타내고 해결한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "조건을 식으로",
+          "prompt": "사탕 x개에 3개를 더한 수가 10보다 작다는 것을 식으로 쓰면?",
+          "reveal_answer": "x+3 < 10"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "조건을 읽고 부등식으로 세운 뒤 해를 구한다.",
+            "문제 상황에 맞게 자연수 해인지도 확인한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "활용 흐름",
+          "examples": [
+            {
+              "type": "개수",
+              "template": "합이 몇보다 크다/작다"
+            },
+            {
+              "type": "가격",
+              "template": "총액이 얼마 이하"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해결하기",
+          "problem": "노트 x권을 1200원씩 사는데 총금액이 10000원 이하일 때 x의 범위를 구하자.",
+          "hint": "총금액 식을 먼저 세워.",
+          "solution": "1200x ≤ 10000 → x ≤ 8.333... 이므로 자연수 해는 x ≤ 8"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "어떤 수의 2배에서 1을 뺀 값이 9보다 크다. 부등식은?",
+              "choices": [
+                "2x-1 > 9",
+                "2x+1 > 9",
+                "x-2 > 9"
+              ],
+              "answer": 0,
+              "feedback_correct": "말을 그대로 옮기면 2x-1 > 9야.",
+              "feedback_wrong": "‘2배’, ‘1을 뺀다’, ‘9보다 크다’를 순서대로 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

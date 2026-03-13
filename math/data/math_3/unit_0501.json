@@ -1,0 +1,213 @@
+{
+  "unit_id": "0501",
+  "title": "삼각비",
+  "source_file": "[신사고 김화경 중3] 05 삼각비.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0501-01",
+      "title": "삼각비의 뜻",
+      "goal": "직각삼각형에서 sin, cos, tan의 뜻을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "직각삼각형의 변",
+          "prompt": "직각삼각형에서 직각의 맞은편 변을 뭐라고 할까?",
+          "reveal_answer": "빗변"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "sin = 높이/빗변",
+            "cos = 밑변/빗변",
+            "tan = 높이/밑변"
+          ],
+          "misconceptions": [
+            "빗변, 밑변, 높이를 구분하지 못함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "기호 읽기",
+          "examples": [
+            {
+              "ratio": "sin A",
+              "meaning": "A의 맞은편 변 ÷ 빗변"
+            },
+            {
+              "ratio": "cos A",
+              "meaning": "A에 붙은 변 ÷ 빗변"
+            },
+            {
+              "ratio": "tan A",
+              "meaning": "A의 맞은편 변 ÷ A에 붙은 변"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 찾기",
+          "problem": "직각삼각형에서 각 A에 대하여 sin A는 어떤 두 변의 비일까?",
+          "hint": "각 A의 맞은편 변을 보자.",
+          "solution": "높이/빗변"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "tan A는 무엇의 비일까?",
+              "choices": [
+                "빗변/높이",
+                "높이/밑변",
+                "밑변/빗변"
+              ],
+              "answer": 1,
+              "feedback_correct": "tan은 높이/밑변이야.",
+              "feedback_wrong": "sin, cos, tan을 구분해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0501-02",
+      "title": "삼각비의 값",
+      "goal": "특별한 각의 삼각비 값을 구하고 활용한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "비 값 보기",
+          "prompt": "sin 값은 항상 0보다 크고 1보다 작거나 같을까?",
+          "reveal_answer": "응"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "직각삼각형에서 삼각비는 각의 크기에 따라 정해진다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대표 값",
+          "examples": [
+            {
+              "angle": "30°",
+              "sin": "1/2"
+            },
+            {
+              "angle": "45°",
+              "sin": "√2/2"
+            },
+            {
+              "angle": "60°",
+              "sin": "√3/2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 활용하기",
+          "problem": "sin 30°, cos 60°, tan 45°의 값을 말해보자.",
+          "hint": "대표 각의 삼각비를 떠올려.",
+          "solution": {
+            "sin 30°": "1/2",
+            "cos 60°": "1/2",
+            "tan 45°": "1"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "tan 45°의 값은?",
+              "choices": [
+                "1",
+                "√2",
+                "1/2"
+              ],
+              "answer": 0,
+              "feedback_correct": "45°-45°-90° 삼각형을 떠올리면 돼.",
+              "feedback_wrong": "대표각의 삼각비를 복습하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0501-03",
+      "title": "삼각비의 활용",
+      "goal": "삼각비를 이용해 길이와 높이를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "높이 구하기",
+          "prompt": "한 각과 한 변의 길이를 알 때 다른 변을 구하는 데 무엇을 쓸까?",
+          "reveal_answer": "삼각비"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "직각삼각형에서 각과 한 변의 길이를 알면 삼각비로 다른 변을 구할 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "활용 흐름",
+          "examples": [
+            {
+              "case": "높이 구하기",
+              "ratio": "tan"
+            },
+            {
+              "case": "빗변 구하기",
+              "ratio": "sin, cos"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "밑변이 5이고 각이 45°인 직각삼각형에서 높이를 구하자.",
+          "hint": "tan 45° = 높이/밑변",
+          "solution": "1 = 높이/5 이므로 높이 = 5"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "밑변과 높이의 비를 바로 이용하는 삼각비는?",
+              "choices": [
+                "sin",
+                "cos",
+                "tan"
+              ],
+              "answer": 2,
+              "feedback_correct": "tan은 높이/밑변이야.",
+              "feedback_wrong": "세 삼각비의 정의를 다시 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

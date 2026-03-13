@@ -1,0 +1,219 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0401",
+  "title": "일차함수와 그래프",
+  "lessons": [
+    {
+      "lesson_id": "0401-01",
+      "title": "일차함수의 뜻",
+      "goal": "일차함수의 뜻을 알고 식을 구분한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "함수 감각",
+          "prompt": "x값이 정해지면 y값이 하나로 정해지는 관계를 뭐라고 할까?",
+          "reveal_answer": "함수"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "일차함수는 y=ax+b 꼴의 함수이다.",
+            "a는 0이 아니어야 한다."
+          ],
+          "misconceptions": [
+            "y=b도 일차함수라고 생각함",
+            "ax+b 꼴만 보면 무조건 일차함수라고 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "식 구별하기",
+          "examples": [
+            {
+              "expr": "y=2x+1",
+              "type": "일차함수"
+            },
+            {
+              "expr": "y=-x+3",
+              "type": "일차함수"
+            },
+            {
+              "expr": "y=5",
+              "type": "일차함수 아님"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "y=3x-4, y=7, y=-2x를 일차함수인지 판단해보자.",
+          "hint": "y=ax+b 꼴인지, a가 0이 아닌지 봐.",
+          "solution": {
+            "y=3x-4": "일차함수",
+            "y=7": "아님",
+            "y=-2x": "일차함수"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "다음 중 일차함수는?",
+              "choices": [
+                "y=4",
+                "y=2x-3",
+                "xy=2"
+              ],
+              "answer": 1,
+              "feedback_correct": "y=2x-3은 y=ax+b 꼴이야.",
+              "feedback_wrong": "일차함수는 y=ax+b 꼴이야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0401-02",
+      "title": "일차함수의 그래프",
+      "goal": "일차함수의 그래프를 그리고 읽는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "점 두 개면 충분",
+          "prompt": "직선을 그리려면 최소 몇 개의 점이 필요할까?",
+          "reveal_answer": "2개"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "일차함수의 그래프는 직선이다.",
+            "표를 만들거나 절편을 이용해 점을 찍을 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "그래프 그리기",
+          "examples": [
+            {
+              "expr": "y=x+1",
+              "points": [
+                "(0,1)",
+                "(1,2)"
+              ]
+            },
+            {
+              "expr": "y=-2x+3",
+              "points": [
+                "(0,3)",
+                "(1,1)"
+              ]
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 그리기",
+          "problem": "y=2x-1의 그래프를 그릴 점 두 개를 구하자.",
+          "hint": "x에 0, 1을 넣어봐.",
+          "solution": "(0,-1), (1,1)"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "y=-x+2의 그래프가 지나는 점은?",
+              "choices": [
+                "(0,2)",
+                "(2,2)",
+                "(1,3)"
+              ],
+              "answer": 0,
+              "feedback_correct": "x=0이면 y=2야.",
+              "feedback_wrong": "식을 만족하는지 대입해 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0401-03",
+      "title": "기울기와 y절편",
+      "goal": "일차함수의 기울기와 y절편을 읽고 해석한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "y=ax+b에서 역할",
+          "prompt": "y=2x+3에서 2와 3은 각각 무엇일까?",
+          "reveal_answer": "2는 기울기, 3은 y절편"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "a는 기울기, b는 y절편이다.",
+            "기울기가 양수면 오른쪽으로 갈수록 올라가고, 음수면 내려간다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "의미 읽기",
+          "examples": [
+            {
+              "expr": "y=3x+1",
+              "slope": 3,
+              "y_intercept": 1
+            },
+            {
+              "expr": "y=-2x+4",
+              "slope": -2,
+              "y_intercept": 4
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해석하기",
+          "problem": "y=-x+5의 기울기와 y절편을 말해보자.",
+          "hint": "x 앞의 수와 뒤의 수를 보자.",
+          "solution": "기울기 -1, y절편 5"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "y=4x-2의 y절편은?",
+              "choices": [
+                "4",
+                "-2",
+                "2"
+              ],
+              "answer": 1,
+              "feedback_correct": "b값은 -2야.",
+              "feedback_wrong": "y=ax+b에서 b를 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

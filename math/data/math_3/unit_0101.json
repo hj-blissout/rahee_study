@@ -1,0 +1,238 @@
+{
+  "unit_id": "0101",
+  "title": "제곱근과 실수",
+  "source_file": "[신사고 김화경 중3] 01 제곱근과 실수.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0101-01",
+      "title": "제곱근의 뜻",
+      "goal": "제곱근의 뜻을 이해하고 제곱해서 주어진 수가 되는 수를 찾는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "제곱 복습",
+          "prompt": "어떤 수를 제곱해서 9가 되게 하는 수는?",
+          "reveal_answer": "3과 -3"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "a를 제곱하여 b가 되면 a는 b의 제곱근이다.",
+            "양수는 서로 부호가 반대인 두 개의 제곱근을 가진다.",
+            "0의 제곱근은 0이다."
+          ],
+          "misconceptions": [
+            "제곱근은 항상 하나라고 생각함",
+            "음수도 제곱근을 가진다고 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "제곱근 찾기",
+          "examples": [
+            {
+              "value": "16",
+              "roots": "4, -4"
+            },
+            {
+              "value": "25",
+              "roots": "5, -5"
+            },
+            {
+              "value": "0",
+              "roots": "0"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해보기",
+          "problem": "49의 제곱근과 1의 제곱근을 구해보자.",
+          "hint": "제곱해서 49, 1이 되는 수를 찾아.",
+          "solution": {
+            "1": "1, -1",
+            "49": "7, -7"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 퀴즈",
+          "items": [
+            {
+              "q": "36의 제곱근은?",
+              "choices": [
+                "6",
+                "-6",
+                "6과 -6"
+              ],
+              "answer": 2,
+              "feedback_correct": "제곱해서 36이 되는 수는 둘이야.",
+              "feedback_wrong": "양수의 제곱근은 보통 두 개야."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0101-02",
+      "title": "근호와 제곱근의 계산",
+      "goal": "√ 기호의 뜻을 알고 제곱근을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "√ 기호 읽기",
+          "prompt": "√9는 얼마일까?",
+          "reveal_answer": "3"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "√a는 a의 양의 제곱근을 뜻한다.",
+            "제곱근끼리의 계산은 제곱과 연결해서 생각한다."
+          ],
+          "misconceptions": [
+            "√9를 ±3으로 씀"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "기호 익히기",
+          "examples": [
+            {
+              "expr": "√4",
+              "value": "2"
+            },
+            {
+              "expr": "√25",
+              "value": "5"
+            },
+            {
+              "expr": "(-√3)²",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "√16, √49, (-√5)²를 계산하자.",
+          "hint": "√는 양의 제곱근이야.",
+          "solution": {
+            "√16": "4",
+            "√49": "7",
+            "(-√5)²": "5"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "√64의 값은?",
+              "choices": [
+                "8",
+                "-8",
+                "±8"
+              ],
+              "answer": 0,
+              "feedback_correct": "√는 양의 제곱근이야.",
+              "feedback_wrong": "√ 기호는 양수 쪽만 뜻해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0101-03",
+      "title": "무리수와 실수",
+      "goal": "유리수와 무리수를 구분하고 실수의 범위를 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "소수 복습",
+          "prompt": "0.333...은 유리수일까?",
+          "reveal_answer": "응, 유리수야"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "유리수로 나타낼 수 없는 수를 무리수라고 한다.",
+            "유리수와 무리수를 모두 합한 수를 실수라고 한다."
+          ],
+          "misconceptions": [
+            "끝없이 이어지는 소수는 모두 무리수라고 생각함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "분류하기",
+          "examples": [
+            {
+              "value": "1/2",
+              "type": "유리수"
+            },
+            {
+              "value": "√2",
+              "type": "무리수"
+            },
+            {
+              "value": "π",
+              "type": "무리수"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 나누기",
+          "problem": "3, -2/5, √3, 0.121212...를 유리수와 무리수로 분류하자.",
+          "hint": "분수로 나타낼 수 있는지 생각해.",
+          "solution": {
+            "유리수": [
+              "3",
+              "-2/5",
+              "0.121212..."
+            ],
+            "무리수": [
+              "√3"
+            ]
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "마무리 퀴즈",
+          "items": [
+            {
+              "q": "다음 중 무리수는?",
+              "choices": [
+                "0.5",
+                "√5",
+                "2/3"
+              ],
+              "answer": 1,
+              "feedback_correct": "√5는 분수로 딱 나타낼 수 없어.",
+              "feedback_wrong": "분수로 나타낼 수 있는지 생각해 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

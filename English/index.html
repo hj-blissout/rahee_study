@@ -9,9 +9,12 @@
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 외부 스타일시트 적용 -->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./celebration.css">
+    <link rel="stylesheet" href="../assets/css/english/style.css">
+    <link rel="stylesheet" href="../assets/css/english/celebration.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase_service.js"></script>
+    <script src="../assets/js/app_utils.js"></script>
 </head>
 <body>
 
@@ -68,7 +71,10 @@
                             <div class="card-face card-back">
                                 <div id="word-ko">사과</div>
                                 <div id="word-desc">상세 설명</div>
-                                <div id="word-example">I eat an apple.</div>
+                                <div class="example-container">
+                                    <div id="word-example">I eat an apple.</div>
+                                    <button class="btn-tts-small" id="btn-tts-example" title="예문 듣기"><i class="fas fa-volume-up"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -200,8 +206,18 @@
             playTTS(word);
         });
 
+        // 예문 발음 듣기 이벤트
+        document.getElementById('btn-tts-example').addEventListener('click', (e) => {
+            e.stopPropagation(); // 카드 뒤집기 방지
+            const example = currentWordsList[currentWordIndex].example;
+            playTTS(example);
+        });
+
         // 1. Day 선택기 렌더링
         function renderDaySelector() {
+            daySelectorEl.style.display = 'grid';
+            studyContainerEl.style.display = 'none';
+            resultViewEl.style.display = 'none';
             daySelectorEl.innerHTML = '';
             
             for (const dayKey in wordData) {
@@ -272,7 +288,10 @@
                     </div>
                 `;
                 
-                li.addEventListener('click', () => selectWord(index));
+                li.addEventListener('click', () => {
+                    selectWord(index);
+                    playTTS(word.en);
+                });
                 sidebarListEl.appendChild(li);
             });
             updateProgress();
@@ -408,14 +427,21 @@
             document.getElementById('test-ko').innerText = word.ko;
             document.getElementById('test-desc').innerText = word.desc;
             
-            // 예문에서 영어 단어 부분만 밑줄 처리 (대소문자 무시)
-            const regex = new RegExp(`\\b${word.en}\\b`, 'gi');
-            let blankExample = word.example;
+            // 예문에서 영어 단어 부분만 밑줄 처리
+            let blankExample = word.example || '';
             if (word.example) {
-                // 단어가 있으면 밑줄로 치환
-                blankExample = word.example.replace(regex, "________");
-            }
-            
+                const exactRegex = new RegExp(`\\b${word.en}\\b`, 'gi');
+                if (exactRegex.test(word.example)) {
+                    // 1. 정확히 일치하는 경우 (예: accept -> accept)
+                    blankExample = word.example.replace(exactRegex, "________");
+                } else if (word.en.length >= 3) {
+                    // 2. 어미 변화가 있는 경우 (예: achieve -> achieved, apply -> applied)
+                    // 앞부분(어근)이 70% 이상 일치하는 가장 비슷한 단어를 찾아 치환
+                    const stem = word.en.length > 4 ? word.en.slice(0, -2) : word.en.slice(0, -1);
+                    const fuzzyRegex = new RegExp(`\\b${stem}[a-z]{0,5}\\b`, 'gi');
+                    blankExample = word.example.replace(fuzzyRegex, "________");
+                }
+            }            
             document.getElementById('test-example').innerText = blankExample;
             
             // UI 리셋
@@ -500,6 +526,12 @@
         // 앱 구동 시작
         initApp();
     </script>
-    <script src="./celebration.js"></script>
+    <script>
+        // Check session
+        if (typeof requireAuth !== 'undefined') {
+            requireAuth();
+        }
+    </script>
+    <script src="../assets/js/celebration.js"></script>
 </body>
 </html>

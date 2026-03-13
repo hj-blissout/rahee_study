@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@supabase/supabase-js": "^2.99.1",
     "xlsx": "^0.18.5"
   }
 }

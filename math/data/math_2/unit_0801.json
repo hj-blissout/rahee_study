@@ -1,0 +1,211 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0801",
+  "title": "경우의 수",
+  "lessons": [
+    {
+      "lesson_id": "0801-01",
+      "title": "경우의 수의 뜻",
+      "goal": "가능한 모든 경우를 빠짐없이 찾는다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "가능한 방법 세기",
+          "prompt": "윗옷 2벌, 바지 3벌이 있으면 입을 수 있는 방법은 몇 가지일까?",
+          "reveal_answer": "6가지"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "어떤 일이 일어날 수 있는 모든 경우의 가짓수를 경우의 수라고 한다.",
+            "빠짐없이, 겹치지 않게 세는 것이 중요하다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "정리 방법",
+          "examples": [
+            {
+              "method": "표 만들기"
+            },
+            {
+              "method": "나무그림 그리기"
+            },
+            {
+              "method": "곱의 원리 사용하기"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 세기",
+          "problem": "동전 2개를 던질 때 나올 수 있는 결과를 모두 써 보자.",
+          "hint": "앞/뒤를 차례대로 적어 봐.",
+          "solution": [
+            "앞앞",
+            "앞뒤",
+            "뒤앞",
+            "뒤뒤"
+          ]
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "동전 1개를 던질 때 가능한 결과의 수는?",
+              "choices": [
+                "1",
+                "2",
+                "4"
+              ],
+              "answer": 1,
+              "feedback_correct": "앞면, 뒷면 두 가지야.",
+              "feedback_wrong": "가능한 결과를 직접 써 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0801-02",
+      "title": "곱의 원리",
+      "goal": "곱의 원리를 이용해 경우의 수를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "단계별 선택",
+          "prompt": "1단계가 2가지, 2단계가 3가지면 전체는 몇 가지일까?",
+          "reveal_answer": "2×3=6가지"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "한 일이 여러 단계로 이루어지고 각 단계의 선택 수가 정해져 있으면 전체 경우의 수는 곱으로 구한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "곱의 원리 적용",
+          "examples": [
+            {
+              "situation": "셔츠 3벌, 바지 2벌",
+              "cases": 6
+            },
+            {
+              "situation": "숫자 2개 선택",
+              "cases": "각 단계 선택 수를 곱함"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "아이스크림 맛 4가지와 토핑 3가지 중 하나씩 고를 때 경우의 수를 구하자.",
+          "hint": "맛 선택 × 토핑 선택",
+          "solution": "4×3=12"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "모자 2개, 신발 5개 중 하나씩 고르는 경우의 수는?",
+              "choices": [
+                "7",
+                "10",
+                "25"
+              ],
+              "answer": 1,
+              "feedback_correct": "2×5=10",
+              "feedback_wrong": "합이 아니라 곱으로 구해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0801-03",
+      "title": "순서쌍과 나무그림",
+      "goal": "순서가 있는 경우를 체계적으로 센다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "순서가 중요할까",
+          "prompt": "(1,2)와 (2,1)은 같은 걸까?",
+          "reveal_answer": "아니, 순서가 달라"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "순서가 있으면 다른 경우로 센다.",
+            "순서쌍과 나무그림을 이용하면 빠짐없이 셀 수 있다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "정리 방식",
+          "examples": [
+            {
+              "pair": "(앞,뒤)",
+              "meaning": "순서가 있는 결과"
+            },
+            {
+              "method": "나무그림",
+              "meaning": "선택 흐름을 한 번에 보기"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 정리하기",
+          "problem": "숫자 1,2,3 중에서 두 개를 차례로 뽑을 때 나올 수 있는 순서쌍을 써 보자.",
+          "hint": "첫 번째와 두 번째를 나눠서 생각해.",
+          "solution": [
+            "(1,2)",
+            "(1,3)",
+            "(2,1)",
+            "(2,3)",
+            "(3,1)",
+            "(3,2)"
+          ]
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "(a,b)와 (b,a)에 대한 설명으로 맞는 것은?",
+              "choices": [
+                "항상 같다",
+                "순서가 다르면 다른 경우다",
+                "둘 다 계산하지 않는다"
+              ],
+              "answer": 1,
+              "feedback_correct": "순서쌍은 순서가 중요해.",
+              "feedback_wrong": "순서가 있으면 다른 경우로 봐야 해."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

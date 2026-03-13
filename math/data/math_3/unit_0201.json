@@ -1,0 +1,220 @@
+{
+  "unit_id": "0201",
+  "title": "다항식의 곱셈과 인수분해",
+  "source_file": "[신사고 김화경 중3] 02 다항식의 곱셈과 인수분해.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0201-01",
+      "title": "다항식의 곱셈",
+      "goal": "분배법칙을 이용해 다항식의 곱셈을 계산한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "분배법칙 복습",
+          "prompt": "(x+2)·3을 전개하면?",
+          "reveal_answer": "3x+6"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "다항식의 곱셈은 각 항을 빠짐없이 곱한 뒤 동류항을 정리한다."
+          ],
+          "misconceptions": [
+            "첫 항끼리만 곱하고 끝냄"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "전개하기",
+          "examples": [
+            {
+              "expr": "(x+2)(x+3)",
+              "value": "x²+5x+6"
+            },
+            {
+              "expr": "(2x-1)(x+4)",
+              "value": "2x²+7x-4"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 전개하기",
+          "problem": "(x+1)(x+5)를 계산하자.",
+          "hint": "x와 1을 각각 x+5에 곱해.",
+          "solution": "x²+6x+5"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "(x+2)(x+4)의 결과는?",
+              "choices": [
+                "x²+6x+8",
+                "x²+8",
+                "2x²+6x+8"
+              ],
+              "answer": 0,
+              "feedback_correct": "모든 항을 곱해 정리하면 돼.",
+              "feedback_wrong": "가운데 항도 생긴다는 걸 잊지 말자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0201-02",
+      "title": "곱셈 공식",
+      "goal": "대표적인 곱셈 공식을 이해하고 활용한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "같은 식의 곱",
+          "prompt": "(x+3)²을 전개하면?",
+          "reveal_answer": "x²+6x+9"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "(a+b)²=a²+2ab+b²",
+            "(a-b)²=a²-2ab+b²",
+            "(a+b)(a-b)=a²-b²"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "공식 적용",
+          "examples": [
+            {
+              "expr": "(x+4)²",
+              "value": "x²+8x+16"
+            },
+            {
+              "expr": "(x-2)²",
+              "value": "x²-4x+4"
+            },
+            {
+              "expr": "(x+5)(x-5)",
+              "value": "x²-25"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 계산하기",
+          "problem": "(a+2b)²과 (m+3)(m-3)을 전개하자.",
+          "hint": "공식 모양을 먼저 찾자.",
+          "solution": {
+            "(a+2b)²": "a²+4ab+4b²",
+            "(m+3)(m-3)": "m²-9"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "핵심 퀴즈",
+          "items": [
+            {
+              "q": "(x-5)²의 전개식은?",
+              "choices": [
+                "x²-10x+25",
+                "x²-25",
+                "x²+10x+25"
+              ],
+              "answer": 0,
+              "feedback_correct": "가운데 항 부호가 음수야.",
+              "feedback_wrong": "(a-b)² 공식을 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0201-03",
+      "title": "인수분해",
+      "goal": "공통인수와 곱셈공식의 역을 이용해 인수분해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "거꾸로 보기",
+          "prompt": "x²+5x+6을 두 식의 곱으로 나타낼 수 있을까?",
+          "reveal_answer": "(x+2)(x+3)"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "인수분해는 다항식을 곱의 꼴로 나타내는 것이다.",
+            "공통인수로 묶거나 곱셈공식의 역을 이용한다."
+          ],
+          "misconceptions": [
+            "전개와 인수분해를 반대로 보지 못함"
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대표 형태",
+          "examples": [
+            {
+              "expr": "ax+ay",
+              "factor": "a(x+y)"
+            },
+            {
+              "expr": "x²+2x+1",
+              "factor": "(x+1)²"
+            },
+            {
+              "expr": "x²-9",
+              "factor": "(x+3)(x-3)"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 인수분해하기",
+          "problem": "x²+7x+12, 3x+3y, a²-16을 인수분해하자.",
+          "hint": "공통인수, 완전제곱식, 차의 제곱을 떠올려.",
+          "solution": {
+            "x²+7x+12": "(x+3)(x+4)",
+            "3x+3y": "3(x+y)",
+            "a²-16": "(a+4)(a-4)"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "마무리 퀴즈",
+          "items": [
+            {
+              "q": "x²-4의 인수분해 결과는?",
+              "choices": [
+                "(x-2)²",
+                "(x+2)(x-2)",
+                "x(x-4)"
+              ],
+              "answer": 1,
+              "feedback_correct": "차의 제곱 꼴이야.",
+              "feedback_wrong": "a²-b²=(a+b)(a-b)를 떠올려 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

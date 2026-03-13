@@ -1,0 +1,5 @@
+.env
+env.js
+node_modules/
+.DS_Store
+scripts/update_passwords.js

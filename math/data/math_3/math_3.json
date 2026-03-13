@@ -1,0 +1,1470 @@
+{
+    "units_append": [
+        {
+            "unit_id": "0101",
+            "title": "제곱근과 실수",
+            "source_file": "[신사고 김화경 중3] 01 제곱근과 실수.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0101-01",
+                    "title": "제곱근의 뜻",
+                    "goal": "제곱근의 뜻을 이해하고 제곱해서 주어진 수가 되는 수를 찾는다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "제곱 복습",
+                            "prompt": "어떤 수를 제곱해서 9가 되게 하는 수는?",
+                            "reveal_answer": "3과 -3"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "a를 제곱하여 b가 되면 a는 b의 제곱근이다.",
+                                "양수는 서로 부호가 반대인 두 개의 제곱근을 가진다.",
+                                "0의 제곱근은 0이다."
+                            ],
+                            "misconceptions": [
+                                "제곱근은 항상 하나라고 생각함",
+                                "음수도 제곱근을 가진다고 생각함"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "제곱근 찾기",
+                            "examples": [
+                                {
+                                    "value": "16",
+                                    "roots": "4, -4"
+                                },
+                                {
+                                    "value": "25",
+                                    "roots": "5, -5"
+                                },
+                                {
+                                    "value": "0",
+                                    "roots": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 해보기",
+                            "problem": "49의 제곱근과 1의 제곱근을 구해보자.",
+                            "hint": "제곱해서 49, 1이 되는 수를 찾아.",
+                            "solution": {
+                                "49": "7, -7",
+                                "1": "1, -1"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 퀴즈",
+                            "items": [
+                                {
+                                    "q": "36의 제곱근은?",
+                                    "choices": [
+                                        "6",
+                                        "-6",
+                                        "6과 -6"
+                                    ],
+                                    "answer": 2,
+                                    "feedback_correct": "제곱해서 36이 되는 수는 둘이야.",
+                                    "feedback_wrong": "양수의 제곱근은 보통 두 개야."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0101-02",
+                    "title": "근호와 제곱근의 계산",
+                    "goal": "√ 기호의 뜻을 알고 제곱근을 계산한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "√ 기호 읽기",
+                            "prompt": "√9는 얼마일까?",
+                            "reveal_answer": "3"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "√a는 a의 양의 제곱근을 뜻한다.",
+                                "제곱근끼리의 계산은 제곱과 연결해서 생각한다."
+                            ],
+                            "misconceptions": [
+                                "√9를 ±3으로 씀"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "기호 익히기",
+                            "examples": [
+                                {
+                                    "expr": "√4",
+                                    "value": "2"
+                                },
+                                {
+                                    "expr": "√25",
+                                    "value": "5"
+                                },
+                                {
+                                    "expr": "(-√3)²",
+                                    "value": "3"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 계산하기",
+                            "problem": "√16, √49, (-√5)²를 계산하자.",
+                            "hint": "√는 양의 제곱근이야.",
+                            "solution": {
+                                "√16": "4",
+                                "√49": "7",
+                                "(-√5)²": "5"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "확인 퀴즈",
+                            "items": [
+                                {
+                                    "q": "√64의 값은?",
+                                    "choices": [
+                                        "8",
+                                        "-8",
+                                        "±8"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "√는 양의 제곱근이야.",
+                                    "feedback_wrong": "√ 기호는 양수 쪽만 뜻해."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0101-03",
+                    "title": "무리수와 실수",
+                    "goal": "유리수와 무리수를 구분하고 실수의 범위를 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "소수 복습",
+                            "prompt": "0.333...은 유리수일까?",
+                            "reveal_answer": "응, 유리수야"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "유리수로 나타낼 수 없는 수를 무리수라고 한다.",
+                                "유리수와 무리수를 모두 합한 수를 실수라고 한다."
+                            ],
+                            "misconceptions": [
+                                "끝없이 이어지는 소수는 모두 무리수라고 생각함"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "분류하기",
+                            "examples": [
+                                {
+                                    "value": "1/2",
+                                    "type": "유리수"
+                                },
+                                {
+                                    "value": "√2",
+                                    "type": "무리수"
+                                },
+                                {
+                                    "value": "π",
+                                    "type": "무리수"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 나누기",
+                            "problem": "3, -2/5, √3, 0.121212...를 유리수와 무리수로 분류하자.",
+                            "hint": "분수로 나타낼 수 있는지 생각해.",
+                            "solution": {
+                                "유리수": [
+                                    "3",
+                                    "-2/5",
+                                    "0.121212..."
+                                ],
+                                "무리수": [
+                                    "√3"
+                                ]
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "마무리 퀴즈",
+                            "items": [
+                                {
+                                    "q": "다음 중 무리수는?",
+                                    "choices": [
+                                        "0.5",
+                                        "√5",
+                                        "2/3"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "√5는 분수로 딱 나타낼 수 없어.",
+                                    "feedback_wrong": "분수로 나타낼 수 있는지 생각해 보자."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "unit_id": "0201",
+            "title": "다항식의 곱셈과 인수분해",
+            "source_file": "[신사고 김화경 중3] 02 다항식의 곱셈과 인수분해.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0201-01",
+                    "title": "다항식의 곱셈",
+                    "goal": "분배법칙을 이용해 다항식의 곱셈을 계산한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "분배법칙 복습",
+                            "prompt": "(x+2)·3을 전개하면?",
+                            "reveal_answer": "3x+6"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "다항식의 곱셈은 각 항을 빠짐없이 곱한 뒤 동류항을 정리한다."
+                            ],
+                            "misconceptions": [
+                                "첫 항끼리만 곱하고 끝냄"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "전개하기",
+                            "examples": [
+                                {
+                                    "expr": "(x+2)(x+3)",
+                                    "value": "x²+5x+6"
+                                },
+                                {
+                                    "expr": "(2x-1)(x+4)",
+                                    "value": "2x²+7x-4"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 전개하기",
+                            "problem": "(x+1)(x+5)를 계산하자.",
+                            "hint": "x와 1을 각각 x+5에 곱해.",
+                            "solution": "x²+6x+5"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 확인",
+                            "items": [
+                                {
+                                    "q": "(x+2)(x+4)의 결과는?",
+                                    "choices": [
+                                        "x²+6x+8",
+                                        "x²+8",
+                                        "2x²+6x+8"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "모든 항을 곱해 정리하면 돼.",
+                                    "feedback_wrong": "가운데 항도 생긴다는 걸 잊지 말자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0201-02",
+                    "title": "곱셈 공식",
+                    "goal": "대표적인 곱셈 공식을 이해하고 활용한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "같은 식의 곱",
+                            "prompt": "(x+3)²을 전개하면?",
+                            "reveal_answer": "x²+6x+9"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "(a+b)²=a²+2ab+b²",
+                                "(a-b)²=a²-2ab+b²",
+                                "(a+b)(a-b)=a²-b²"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "공식 적용",
+                            "examples": [
+                                {
+                                    "expr": "(x+4)²",
+                                    "value": "x²+8x+16"
+                                },
+                                {
+                                    "expr": "(x-2)²",
+                                    "value": "x²-4x+4"
+                                },
+                                {
+                                    "expr": "(x+5)(x-5)",
+                                    "value": "x²-25"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 계산하기",
+                            "problem": "(a+2b)²과 (m+3)(m-3)을 전개하자.",
+                            "hint": "공식 모양을 먼저 찾자.",
+                            "solution": {
+                                "(a+2b)²": "a²+4ab+4b²",
+                                "(m+3)(m-3)": "m²-9"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "핵심 퀴즈",
+                            "items": [
+                                {
+                                    "q": "(x-5)²의 전개식은?",
+                                    "choices": [
+                                        "x²-10x+25",
+                                        "x²-25",
+                                        "x²+10x+25"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "가운데 항 부호가 음수야.",
+                                    "feedback_wrong": "(a-b)² 공식을 떠올려 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0201-03",
+                    "title": "인수분해",
+                    "goal": "공통인수와 곱셈공식의 역을 이용해 인수분해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "거꾸로 보기",
+                            "prompt": "x²+5x+6을 두 식의 곱으로 나타낼 수 있을까?",
+                            "reveal_answer": "(x+2)(x+3)"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "인수분해는 다항식을 곱의 꼴로 나타내는 것이다.",
+                                "공통인수로 묶거나 곱셈공식의 역을 이용한다."
+                            ],
+                            "misconceptions": [
+                                "전개와 인수분해를 반대로 보지 못함"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "대표 형태",
+                            "examples": [
+                                {
+                                    "expr": "ax+ay",
+                                    "factor": "a(x+y)"
+                                },
+                                {
+                                    "expr": "x²+2x+1",
+                                    "factor": "(x+1)²"
+                                },
+                                {
+                                    "expr": "x²-9",
+                                    "factor": "(x+3)(x-3)"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 인수분해하기",
+                            "problem": "x²+7x+12, 3x+3y, a²-16을 인수분해하자.",
+                            "hint": "공통인수, 완전제곱식, 차의 제곱을 떠올려.",
+                            "solution": {
+                                "x²+7x+12": "(x+3)(x+4)",
+                                "3x+3y": "3(x+y)",
+                                "a²-16": "(a+4)(a-4)"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "마무리 퀴즈",
+                            "items": [
+                                {
+                                    "q": "x²-4의 인수분해 결과는?",
+                                    "choices": [
+                                        "(x-2)²",
+                                        "(x+2)(x-2)",
+                                        "x(x-4)"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "차의 제곱 꼴이야.",
+                                    "feedback_wrong": "a²-b²=(a+b)(a-b)를 떠올려 보자."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "unit_id": "0301",
+            "title": "이차방정식",
+            "source_file": "[신사고 김화경 중3] 03 이차방정식.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0301-01",
+                    "title": "이차방정식의 뜻",
+                    "goal": "이차방정식의 뜻과 해를 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "차수 보기",
+                            "prompt": "x²-5x+6=0은 몇 차 방정식일까?",
+                            "reveal_answer": "이차방정식"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "미지수의 최고차항이 2인 방정식을 이차방정식이라고 한다.",
+                                "방정식을 참이 되게 하는 값을 해라고 한다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "구별하기",
+                            "examples": [
+                                {
+                                    "expr": "x²+3x=4",
+                                    "type": "이차방정식"
+                                },
+                                {
+                                    "expr": "2x+1=0",
+                                    "type": "일차방정식"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 판단하기",
+                            "problem": "x²-9=0, 3x+2=0, x(x+1)=0을 분류해 보자.",
+                            "hint": "최고차항의 차수를 보자.",
+                            "solution": {
+                                "x²-9=0": "이차방정식",
+                                "3x+2=0": "일차방정식",
+                                "x(x+1)=0": "이차방정식"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 확인",
+                            "items": [
+                                {
+                                    "q": "다음 중 이차방정식은?",
+                                    "choices": [
+                                        "x+2=0",
+                                        "x²-4=0",
+                                        "2=0"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "x²가 있으니 이차방정식이야.",
+                                    "feedback_wrong": "최고차항의 차수를 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0301-02",
+                    "title": "인수분해를 이용한 풀이",
+                    "goal": "인수분해하여 이차방정식을 푼다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "곱이 0",
+                            "prompt": "ab=0이면 a와 b는 각각 어떻게 될까?",
+                            "reveal_answer": "a=0 또는 b=0"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "이차방정식을 인수분해하여 (식)(식)=0 꼴로 만들면 각 인수를 0으로 두어 해를 구한다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "풀이 흐름",
+                            "examples": [
+                                {
+                                    "expr": "x²-5x+6=0",
+                                    "flow": "(x-2)(x-3)=0 → x=2,3"
+                                },
+                                {
+                                    "expr": "x²-9=0",
+                                    "flow": "(x-3)(x+3)=0 → x=3,-3"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 풀기",
+                            "problem": "x²+7x+10=0을 풀자.",
+                            "hint": "곱이 10, 합이 7인 수를 찾자.",
+                            "solution": "(x+5)(x+2)=0 → x=-5, -2"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "핵심 퀴즈",
+                            "items": [
+                                {
+                                    "q": "x²-4x=0의 해는?",
+                                    "choices": [
+                                        "0,4",
+                                        "2,2",
+                                        "-4,0"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "x(x-4)=0이야.",
+                                    "feedback_wrong": "공통인수 x를 묶어 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0301-03",
+                    "title": "제곱근을 이용한 풀이와 활용",
+                    "goal": "제곱근을 이용해 이차방정식을 풀고 문장제에 적용한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "x²=a 꼴",
+                            "prompt": "x²=25이면 x는?",
+                            "reveal_answer": "5와 -5"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "x²=a 꼴은 제곱근을 이용해 풀 수 있다.",
+                                "문장제를 이차방정식으로 세워 해결할 수 있다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "대표 풀이",
+                            "examples": [
+                                {
+                                    "expr": "x²=16",
+                                    "value": "x=±4"
+                                },
+                                {
+                                    "expr": "(x-1)²=9",
+                                    "value": "x=4,-2"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 해결하기",
+                            "problem": "한 변의 길이가 x인 정사각형의 넓이가 49일 때 x를 구하자.",
+                            "hint": "넓이식은 x²야.",
+                            "solution": "x²=49 → x=7 (길이이므로 양수)"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "적용 퀴즈",
+                            "items": [
+                                {
+                                    "q": "(x+2)²=16의 해는?",
+                                    "choices": [
+                                        "2, -6",
+                                        "4, -4",
+                                        "2, -2"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "x+2=±4이므로 x=2,-6",
+                                    "feedback_wrong": "제곱근은 ±를 함께 생각해야 해."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "unit_id": "0401",
+            "title": "이차함수",
+            "source_file": "[신사고 김화경 중3] 04 이차함수.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0401-01",
+                    "title": "이차함수의 뜻과 그래프",
+                    "goal": "이차함수 y=ax²의 뜻과 그래프 모양을 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "함수 모양 비교",
+                            "prompt": "y=2x와 y=2x² 중 x²가 들어간 식은 어느 쪽일까?",
+                            "reveal_answer": "y=2x²"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "y=ax² 꼴의 함수를 이차함수라고 한다.",
+                                "이차함수의 그래프는 포물선이다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "그래프 특징",
+                            "examples": [
+                                {
+                                    "expr": "y=x²",
+                                    "feature": "위로 열린 포물선"
+                                },
+                                {
+                                    "expr": "y=-x²",
+                                    "feature": "아래로 열린 포물선"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 보기",
+                            "problem": "y=x²와 y=-x²의 그래프는 어떻게 다를까?",
+                            "hint": "a의 부호를 보자.",
+                            "solution": "a>0이면 위로, a<0이면 아래로 열린다."
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 퀴즈",
+                            "items": [
+                                {
+                                    "q": "이차함수 y=-3x²의 그래프는?",
+                                    "choices": [
+                                        "위로 열린다",
+                                        "아래로 열린다",
+                                        "직선이다"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "a가 음수라 아래로 열려.",
+                                    "feedback_wrong": "x² 앞의 부호를 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0401-02",
+                    "title": "이차함수의 값과 변화",
+                    "goal": "x값에 따른 함수값의 변화를 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "값 넣기",
+                            "prompt": "y=x²에서 x=2이면 y는?",
+                            "reveal_answer": "4"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "이차함수는 x값에 따라 함수값이 대칭적으로 변한다.",
+                                "x=0을 기준으로 좌우 대칭인 경우가 많다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "표 만들기",
+                            "examples": [
+                                {
+                                    "expr": "y=x²",
+                                    "table": "x=-2,-1,0,1,2 → y=4,1,0,1,4"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 표 채우기",
+                            "problem": "y=2x²에서 x=-2,-1,0,1,2일 때 y값을 구하자.",
+                            "hint": "먼저 x²을 구하고 2를 곱해.",
+                            "solution": {
+                                "-2": "8",
+                                "-1": "2",
+                                "0": "0",
+                                "1": "2",
+                                "2": "8"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "확인 퀴즈",
+                            "items": [
+                                {
+                                    "q": "y=x²에서 x=-3일 때 y는?",
+                                    "choices": [
+                                        "-9",
+                                        "9",
+                                        "6"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "(-3)²는 9야.",
+                                    "feedback_wrong": "제곱하면 양수가 된다는 점을 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0401-03",
+                    "title": "이차함수의 활용",
+                    "goal": "이차함수를 상황에 연결해 해석한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "넓이와 x²",
+                            "prompt": "한 변의 길이가 x인 정사각형의 넓이는?",
+                            "reveal_answer": "x²"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "넓이, 거리, 변화량 등 여러 상황이 이차함수로 표현될 수 있다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "상황 해석",
+                            "examples": [
+                                {
+                                    "situation": "정사각형 넓이",
+                                    "expression": "y=x²"
+                                },
+                                {
+                                    "situation": "가로 2배 확대",
+                                    "expression": "y=2x²"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 식 세우기",
+                            "problem": "한 변의 길이가 x인 정사각형 2개의 넓이의 합을 y라 할 때 식을 세워보자.",
+                            "hint": "정사각형 한 개 넓이는 x²",
+                            "solution": "y=2x²"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "적용 퀴즈",
+                            "items": [
+                                {
+                                    "q": "한 변의 길이가 x인 정사각형의 넓이 y를 나타내는 식은?",
+                                    "choices": [
+                                        "y=2x",
+                                        "y=x²",
+                                        "y=x+2"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "넓이는 한 변×한 변이야.",
+                                    "feedback_wrong": "정사각형 넓이 공식을 떠올려 보자."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "unit_id": "0501",
+            "title": "삼각비",
+            "source_file": "[신사고 김화경 중3] 05 삼각비.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0501-01",
+                    "title": "삼각비의 뜻",
+                    "goal": "직각삼각형에서 sin, cos, tan의 뜻을 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "직각삼각형의 변",
+                            "prompt": "직각삼각형에서 직각의 맞은편 변을 뭐라고 할까?",
+                            "reveal_answer": "빗변"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "sin = 높이/빗변",
+                                "cos = 밑변/빗변",
+                                "tan = 높이/밑변"
+                            ],
+                            "misconceptions": [
+                                "빗변, 밑변, 높이를 구분하지 못함"
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "기호 읽기",
+                            "examples": [
+                                {
+                                    "ratio": "sin A",
+                                    "meaning": "A의 맞은편 변 ÷ 빗변"
+                                },
+                                {
+                                    "ratio": "cos A",
+                                    "meaning": "A에 붙은 변 ÷ 빗변"
+                                },
+                                {
+                                    "ratio": "tan A",
+                                    "meaning": "A의 맞은편 변 ÷ A에 붙은 변"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 찾기",
+                            "problem": "직각삼각형에서 각 A에 대하여 sin A는 어떤 두 변의 비일까?",
+                            "hint": "각 A의 맞은편 변을 보자.",
+                            "solution": "높이/빗변"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 확인",
+                            "items": [
+                                {
+                                    "q": "tan A는 무엇의 비일까?",
+                                    "choices": [
+                                        "빗변/높이",
+                                        "높이/밑변",
+                                        "밑변/빗변"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "tan은 높이/밑변이야.",
+                                    "feedback_wrong": "sin, cos, tan을 구분해 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0501-02",
+                    "title": "삼각비의 값",
+                    "goal": "특별한 각의 삼각비 값을 구하고 활용한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "비 값 보기",
+                            "prompt": "sin 값은 항상 0보다 크고 1보다 작거나 같을까?",
+                            "reveal_answer": "응"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "직각삼각형에서 삼각비는 각의 크기에 따라 정해진다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "대표 값",
+                            "examples": [
+                                {
+                                    "angle": "30°",
+                                    "sin": "1/2"
+                                },
+                                {
+                                    "angle": "45°",
+                                    "sin": "√2/2"
+                                },
+                                {
+                                    "angle": "60°",
+                                    "sin": "√3/2"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 활용하기",
+                            "problem": "sin 30°, cos 60°, tan 45°의 값을 말해보자.",
+                            "hint": "대표 각의 삼각비를 떠올려.",
+                            "solution": {
+                                "sin 30°": "1/2",
+                                "cos 60°": "1/2",
+                                "tan 45°": "1"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "확인 퀴즈",
+                            "items": [
+                                {
+                                    "q": "tan 45°의 값은?",
+                                    "choices": [
+                                        "1",
+                                        "√2",
+                                        "1/2"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "45°-45°-90° 삼각형을 떠올리면 돼.",
+                                    "feedback_wrong": "대표각의 삼각비를 복습하자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0501-03",
+                    "title": "삼각비의 활용",
+                    "goal": "삼각비를 이용해 길이와 높이를 구한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "높이 구하기",
+                            "prompt": "한 각과 한 변의 길이를 알 때 다른 변을 구하는 데 무엇을 쓸까?",
+                            "reveal_answer": "삼각비"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "직각삼각형에서 각과 한 변의 길이를 알면 삼각비로 다른 변을 구할 수 있다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "활용 흐름",
+                            "examples": [
+                                {
+                                    "case": "높이 구하기",
+                                    "ratio": "tan"
+                                },
+                                {
+                                    "case": "빗변 구하기",
+                                    "ratio": "sin, cos"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 풀기",
+                            "problem": "밑변이 5이고 각이 45°인 직각삼각형에서 높이를 구하자.",
+                            "hint": "tan 45° = 높이/밑변",
+                            "solution": "1 = 높이/5 이므로 높이 = 5"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "적용 퀴즈",
+                            "items": [
+                                {
+                                    "q": "밑변과 높이의 비를 바로 이용하는 삼각비는?",
+                                    "choices": [
+                                        "sin",
+                                        "cos",
+                                        "tan"
+                                    ],
+                                    "answer": 2,
+                                    "feedback_correct": "tan은 높이/밑변이야.",
+                                    "feedback_wrong": "세 삼각비의 정의를 다시 보자."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "unit_id": "0601",
+            "title": "원의 성질",
+            "source_file": "[신사고 김화경 중3] 06 원의 성질.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0601-01",
+                    "title": "현과 중심각",
+                    "goal": "현과 중심의 관계를 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "원 속의 선분",
+                            "prompt": "원 위의 두 점을 이은 선분을 무엇이라고 할까?",
+                            "reveal_answer": "현"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "원의 중심에서 현에 내린 수선은 그 현을 이등분한다.",
+                                "현의 수직이등분선은 원의 중심을 지난다.",
+                                "중심에서 같은 거리에 있는 두 현의 길이는 같다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "대표 성질",
+                            "examples": [
+                                {
+                                    "property": "중심→현 수선",
+                                    "result": "현 이등분"
+                                },
+                                {
+                                    "property": "같은 중심거리",
+                                    "result": "같은 현의 길이"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 보기",
+                            "problem": "중심 O에서 현 AB에 내린 수선의 발을 M이라 할 때, AM과 MB의 관계를 말해보자.",
+                            "hint": "수선은 현을 반으로 나눠.",
+                            "solution": "AM = MB"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 확인",
+                            "items": [
+                                {
+                                    "q": "원의 중심에서 현에 내린 수선은 그 현을 어떻게 할까?",
+                                    "choices": [
+                                        "평행하게 한다",
+                                        "이등분한다",
+                                        "연장한다"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "원의 대표 성질이야.",
+                                    "feedback_wrong": "현과 중심의 관계를 다시 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0601-02",
+                    "title": "접선의 성질",
+                    "goal": "접선과 반지름의 관계, 두 접선의 길이 관계를 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "한 점에서 만나는 직선",
+                            "prompt": "원과 한 점에서만 만나는 직선을 무엇이라고 할까?",
+                            "reveal_answer": "접선"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "접점에서 반지름과 접선은 서로 수직이다.",
+                                "원 밖의 한 점에서 그은 두 접선의 길이는 같다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "성질 익히기",
+                            "examples": [
+                                {
+                                    "property": "반지름 ⟂ 접선"
+                                },
+                                {
+                                    "property": "PA = PB (원 밖 점 P에서 그은 접선)"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 생각하기",
+                            "problem": "원 밖의 점 P에서 그은 두 접선의 접점을 A, B라 할 때 PA와 PB의 길이는?",
+                            "hint": "두 접선의 길이는 같아.",
+                            "solution": "PA = PB"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "확인 퀴즈",
+                            "items": [
+                                {
+                                    "q": "접점에서 반지름과 접선의 관계는?",
+                                    "choices": [
+                                        "평행",
+                                        "수직",
+                                        "같은 방향"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "반지름은 접선에 수직이야.",
+                                    "feedback_wrong": "접선의 기본 성질을 기억하자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0601-03",
+                    "title": "원주각과 내접사각형",
+                    "goal": "원주각의 성질과 내접사각형의 성질을 이해한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "원의 둘레 위 각",
+                            "prompt": "꼭짓점이 원 위에 있는 각을 무엇이라고 할까?",
+                            "reveal_answer": "원주각"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "같은 호에 대한 원주각의 크기는 같다.",
+                                "한 원에 내접하는 사각형에서 마주 보는 두 각의 합은 180°이다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "대표 성질",
+                            "examples": [
+                                {
+                                    "property": "같은 호 → 같은 원주각"
+                                },
+                                {
+                                    "property": "내접사각형 → 대각의 합 180°"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 구하기",
+                            "problem": "내접사각형의 한 각이 70°이면 마주 보는 각은 몇 도일까?",
+                            "hint": "두 각의 합은 180°",
+                            "solution": "110°"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "마무리 퀴즈",
+                            "items": [
+                                {
+                                    "q": "원에 내접하는 사각형의 마주 보는 두 각의 합은?",
+                                    "choices": [
+                                        "90°",
+                                        "180°",
+                                        "360°"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "내접사각형의 핵심 성질이야.",
+                                    "feedback_wrong": "대각의 합을 떠올려 보자."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "unit_id": "0701",
+            "title": "통계",
+            "source_file": "[신사고 김화경 중3] 07 통계.pdf",
+            "lessons": [
+                {
+                    "lesson_id": "0701-01",
+                    "title": "대푯값",
+                    "goal": "평균, 중앙값, 최빈값을 이해하고 구한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "평균 복습",
+                            "prompt": "3, 5, 7의 평균은?",
+                            "reveal_answer": "5"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "평균은 자료의 총합을 자료 수로 나눈 값이다.",
+                                "중앙값은 크기순으로 나열했을 때 가운데 값이다.",
+                                "최빈값은 가장 많이 나타나는 값이다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "구별하기",
+                            "examples": [
+                                {
+                                    "data": "1,2,2,5",
+                                    "mean": "2.5",
+                                    "median": "2",
+                                    "mode": "2"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 구하기",
+                            "problem": "2, 3, 3, 4, 8의 평균, 중앙값, 최빈값을 구하자.",
+                            "hint": "정렬된 상태라 가운데를 바로 볼 수 있어.",
+                            "solution": {
+                                "평균": "4",
+                                "중앙값": "3",
+                                "최빈값": "3"
+                            }
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "기초 확인",
+                            "items": [
+                                {
+                                    "q": "자료 1,2,2,4,9의 최빈값은?",
+                                    "choices": [
+                                        "2",
+                                        "4",
+                                        "9"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "가장 많이 나온 값이 2야.",
+                                    "feedback_wrong": "몇 번 나왔는지 세어 보자."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0701-02",
+                    "title": "산포도와 분산",
+                    "goal": "자료의 흩어진 정도를 이해하고 분산, 표준편차를 구한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "퍼짐 비교",
+                            "prompt": "평균이 같아도 자료가 더 퍼져 있을 수 있을까?",
+                            "reveal_answer": "응, 그럴 수 있어"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "자료가 평균 주변에 얼마나 흩어져 있는지를 산포도라고 한다.",
+                                "분산은 편차 제곱의 평균, 표준편차는 분산의 제곱근이다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "계산 흐름",
+                            "examples": [
+                                {
+                                    "step_flow": "평균 → 편차 → 편차 제곱 → 평균"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 보기",
+                            "problem": "자료 4, 4, 4는 산포가 클까, 작을까?",
+                            "hint": "모두 평균과 같은지 보자.",
+                            "solution": "아주 작다. 편차가 모두 0이다."
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "확인 퀴즈",
+                            "items": [
+                                {
+                                    "q": "표준편차가 크다는 뜻은?",
+                                    "choices": [
+                                        "자료가 평균 근처에 몰려 있다",
+                                        "자료가 더 넓게 퍼져 있다",
+                                        "자료 수가 많다"
+                                    ],
+                                    "answer": 1,
+                                    "feedback_correct": "표준편차가 클수록 퍼짐이 커.",
+                                    "feedback_wrong": "표준편차는 흩어진 정도를 말해."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "lesson_id": "0701-03",
+                    "title": "상자그림과 자료 해석",
+                    "goal": "상자그림과 산점도를 해석해 자료의 특징을 파악한다.",
+                    "steps": [
+                        {
+                            "step": 1,
+                            "type": "recall",
+                            "title": "중앙값 보기",
+                            "prompt": "상자그림의 가운데 선은 무엇을 나타낼까?",
+                            "reveal_answer": "중앙값"
+                        },
+                        {
+                            "step": 2,
+                            "type": "concept",
+                            "title": "핵심 개념",
+                            "concepts": [
+                                "상자그림은 자료의 분포를 사분위수와 중앙값으로 나타낸다.",
+                                "산점도는 두 자료 사이의 관계를 점으로 나타낸다."
+                            ]
+                        },
+                        {
+                            "step": 3,
+                            "type": "pattern",
+                            "title": "해석하기",
+                            "examples": [
+                                {
+                                    "chart": "상자그림",
+                                    "focus": "중앙값, 퍼짐"
+                                },
+                                {
+                                    "chart": "산점도",
+                                    "focus": "양의 상관, 음의 상관"
+                                }
+                            ]
+                        },
+                        {
+                            "step": 4,
+                            "type": "guided_example",
+                            "title": "같이 해석하기",
+                            "problem": "산점도의 점들이 오른쪽 위로 퍼지면 두 자료는 어떤 관계일까?",
+                            "hint": "x가 커질수록 y도 커지는지 보자.",
+                            "solution": "양의 상관관계"
+                        },
+                        {
+                            "step": 5,
+                            "type": "quiz",
+                            "title": "적용 퀴즈",
+                            "items": [
+                                {
+                                    "q": "상자그림에서 중앙의 상자 길이가 길수록 뜻하는 것은?",
+                                    "choices": [
+                                        "중앙 부분 자료가 더 넓게 퍼져 있다",
+                                        "자료 수가 많다",
+                                        "평균이 크다"
+                                    ],
+                                    "answer": 0,
+                                    "feedback_correct": "가운데 50% 자료의 퍼짐이 크다는 뜻이야.",
+                                    "feedback_wrong": "상자 길이는 퍼짐과 관련 있어."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

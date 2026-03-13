@@ -1,0 +1,197 @@
+{
+  "unit_id": "0701",
+  "title": "통계",
+  "source_file": "[신사고 김화경 중3] 07 통계.pdf",
+  "lessons": [
+    {
+      "lesson_id": "0701-01",
+      "title": "대푯값",
+      "goal": "평균, 중앙값, 최빈값을 이해하고 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "평균 복습",
+          "prompt": "3, 5, 7의 평균은?",
+          "reveal_answer": "5"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "평균은 자료의 총합을 자료 수로 나눈 값이다.",
+            "중앙값은 크기순으로 나열했을 때 가운데 값이다.",
+            "최빈값은 가장 많이 나타나는 값이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "구별하기",
+          "examples": [
+            {
+              "data": "1,2,2,5",
+              "mean": "2.5",
+              "median": "2",
+              "mode": "2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구하기",
+          "problem": "2, 3, 3, 4, 8의 평균, 중앙값, 최빈값을 구하자.",
+          "hint": "정렬된 상태라 가운데를 바로 볼 수 있어.",
+          "solution": {
+            "평균": "4",
+            "중앙값": "3",
+            "최빈값": "3"
+          }
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "자료 1,2,2,4,9의 최빈값은?",
+              "choices": [
+                "2",
+                "4",
+                "9"
+              ],
+              "answer": 0,
+              "feedback_correct": "가장 많이 나온 값이 2야.",
+              "feedback_wrong": "몇 번 나왔는지 세어 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-02",
+      "title": "산포도와 분산",
+      "goal": "자료의 흩어진 정도를 이해하고 분산, 표준편차를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "퍼짐 비교",
+          "prompt": "평균이 같아도 자료가 더 퍼져 있을 수 있을까?",
+          "reveal_answer": "응, 그럴 수 있어"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "자료가 평균 주변에 얼마나 흩어져 있는지를 산포도라고 한다.",
+            "분산은 편차 제곱의 평균, 표준편차는 분산의 제곱근이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "계산 흐름",
+          "examples": [
+            {
+              "step_flow": "평균 → 편차 → 편차 제곱 → 평균"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 보기",
+          "problem": "자료 4, 4, 4는 산포가 클까, 작을까?",
+          "hint": "모두 평균과 같은지 보자.",
+          "solution": "아주 작다. 편차가 모두 0이다."
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "표준편차가 크다는 뜻은?",
+              "choices": [
+                "자료가 평균 근처에 몰려 있다",
+                "자료가 더 넓게 퍼져 있다",
+                "자료 수가 많다"
+              ],
+              "answer": 1,
+              "feedback_correct": "표준편차가 클수록 퍼짐이 커.",
+              "feedback_wrong": "표준편차는 흩어진 정도를 말해."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0701-03",
+      "title": "상자그림과 자료 해석",
+      "goal": "상자그림과 산점도를 해석해 자료의 특징을 파악한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "중앙값 보기",
+          "prompt": "상자그림의 가운데 선은 무엇을 나타낼까?",
+          "reveal_answer": "중앙값"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "상자그림은 자료의 분포를 사분위수와 중앙값으로 나타낸다.",
+            "산점도는 두 자료 사이의 관계를 점으로 나타낸다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "해석하기",
+          "examples": [
+            {
+              "chart": "상자그림",
+              "focus": "중앙값, 퍼짐"
+            },
+            {
+              "chart": "산점도",
+              "focus": "양의 상관, 음의 상관"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해석하기",
+          "problem": "산점도의 점들이 오른쪽 위로 퍼지면 두 자료는 어떤 관계일까?",
+          "hint": "x가 커질수록 y도 커지는지 보자.",
+          "solution": "양의 상관관계"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "상자그림에서 중앙의 상자 길이가 길수록 뜻하는 것은?",
+              "choices": [
+                "중앙 부분 자료가 더 넓게 퍼져 있다",
+                "자료 수가 많다",
+                "평균이 크다"
+              ],
+              "answer": 0,
+              "feedback_correct": "가운데 50% 자료의 퍼짐이 크다는 뜻이야.",
+              "feedback_wrong": "상자 길이는 퍼짐과 관련 있어."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

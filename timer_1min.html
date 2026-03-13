@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1분 모래시계 타이머</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --glass-top: #e2e8f0;
+            --sand: #fbbf24;
+        }
+
+        body {
+            font-family: ' Nanum Square Round', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .timer-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Hourglass Design */
+        .hourglass {
+            position: relative;
+            width: 100px;
+            height: 160px;
+            margin: 0 auto 30px;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+        }
+
+        .hourglass.flipping {
+            transform: rotate(180deg);
+        }
+
+        /* Wooden Frame */
+        .hourglass::before, .hourglass::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 110px;
+            height: 8px;
+            background: linear-gradient(to bottom, #8b4513, #5d2e0d);
+            border-radius: 4px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .hourglass::before { top: -8px; }
+        .hourglass::after { bottom: -8px; }
+
+        /* Glass Body */
+        .glass-part {
+            position: absolute;
+            left: 50%;
+            width: 90px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(1px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transform: translateX(-50%);
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        /* Reflection Effect */
+        .glass-part::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 15%;
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0));
+            transform: skewX(-20deg);
+            pointer-events: none;
+        }
+
+        .glass-top {
+            top: 0;
+            border-radius: 10px 10px 50% 50% / 10px 10px 100% 100%;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
+
+        .glass-bottom {
+            bottom: 0;
+            border-radius: 50% 50% 10px 10px / 100% 100% 10px 10px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* Sand */
+        .sand-top {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at bottom, #fcd34d, #d97706);
+            transition: height 1s linear;
+        }
+
+        .sand-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 120%;
+            height: 0%;
+            background: radial-gradient(circle at top, #fcd34d, #d97706);
+            transition: height 1s linear;
+            transform: translateX(-50%);
+            border-radius: 50% 50% 0 0; /* Heap shape */
+        }
+
+        /* Sand Stream */
+        .sand-stream {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            width: 3px;
+            height: 10px;
+            background: #d97706;
+            transform: translateX(-50%);
+            display: none;
+            z-index: 5;
+        }
+
+        .sand-stream.active {
+            display: block;
+            animation: streaming 0.5s infinite linear;
+        }
+
+        @keyframes streaming {
+            0% { height: 0; }
+            100% { height: 15px; }
+        }
+
+        .time-display {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 15px;
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-start { background: var(--primary); color: white; }
+        .btn-reset { background: #e2e8f0; color: #475569; }
+
+        .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+        .btn:active { transform: scale(0.95); }
+
+    </style>
+</head>
+<body>
+
+    <div class="timer-container">
+        <div class="hourglass" id="hourglass">
+            <div class="glass-part glass-top">
+                <div class="sand-top" id="sand-top"></div>
+            </div>
+            <div class="sand-stream" id="sand-stream"></div>
+            <div class="glass-part glass-bottom">
+                <div class="sand-bottom" id="sand-bottom"></div>
+            </div>
+        </div>
+
+        <div class="time-display" id="timer">01:00</div>
+
+        <div class="controls">
+            <button class="btn btn-start" id="startBtn">시작하기</button>
+            <button class="btn btn-reset" id="resetBtn">리셋</button>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 60;
+        let timerId = null;
+        let isRunning = false;
+
+        const timerEl = document.getElementById('timer');
+        const sandTop = document.getElementById('sand-top');
+        const sandBottom = document.getElementById('sand-bottom');
+        const sandStream = document.getElementById('sand-stream');
+        const hourglass = document.getElementById('hourglass');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        function updateDisplay() {
+            const mins = Math.floor(timeLeft / 60);
+            const secs = timeLeft % 60;
+            timerEl.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            
+            // Sand heights
+            const percentage = (timeLeft / 60) * 100;
+            sandTop.style.height = `${percentage}%`;
+            sandBottom.style.height = `${100 - percentage}%`;
+        }
+
+        function startTimer() {
+            if (isRunning) {
+                clearInterval(timerId);
+                isRunning = false;
+                startBtn.textContent = '다시 시작';
+                sandStream.classList.remove('active');
+            } else {
+                if (timeLeft <= 0) return;
+                isRunning = true;
+                startBtn.textContent = '일시 정지';
+                sandStream.classList.add('active');
+                
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timerId);
+                        isRunning = false;
+                        startBtn.textContent = '완료!';
+                        sandStream.classList.remove('active');
+                        alert('시간이 다 되었습니다! ⌛');
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerId);
+            isRunning = false;
+            timeLeft = 60;
+            startBtn.textContent = '시작하기';
+            sandStream.classList.remove('active');
+            
+            // Flip effect
+            hourglass.classList.add('flipping');
+            setTimeout(() => {
+                hourglass.classList.remove('flipping');
+                updateDisplay();
+            }, 600);
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        // Init
+        updateDisplay();
+    </script>
+</body>
+</html>

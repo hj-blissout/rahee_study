@@ -171,24 +171,17 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="env.js"></script>
+    <script src="assets/js/supabase_service.js"></script>
     <script>
-        const SUPABASE_URL = 'https://gvgarbiuzgxppbhenhxj.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd2Z2FyYml1emd4cHBiaGVuaHhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyODM5NzEsImV4cCI6MjA4ODg1OTk3MX0.knjJf3RP6uSxaRRhpA4q1CCglRqfQKje1uROhLuK7yI';
-
-        const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
-            auth: { persistSession: true, autoRefreshToken: true }
-        });
-
-        let currentTab = 'login';
+        const sbClient = getSupabase();
 
         // 이미 로그인된 경우 리디렉트
-        sbClient.auth.getSession().then(({ data }) => {
-            if (data.session) {
-                redirectAfterLogin();
-            }
+        getSession().then(session => {
+            if (session) redirectAfterLogin();
         });
 
-        // 아이디 → 내부 이메일 변환 (Supabase Auth는 이메일 필요)
+        // 아이디 → 내부 이메일 변환
         function toEmail(username) {
             return `${username.toLowerCase()}@study.local`;
         }
@@ -210,16 +203,14 @@
                 showAlert('success', `환영해요, ${username}! 🎉 공부방으로 이동 중...`);
                 setTimeout(redirectAfterLogin, 1000);
             } catch (error) {
-                const msg = translateError(error.message);
-                showAlert('error', msg);
+                showAlert('error', translateError(error.message));
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> 로그인';
             }
         }
 
         function redirectAfterLogin() {
-            // 돌아갈 URL이 있으면 그쪽으로, 없으면 기본 수학 페이지
-            const returnTo = new URLSearchParams(window.location.search).get('returnTo') || 'math/math_1/index.html';
+            const returnTo = new URLSearchParams(window.location.search).get('returnTo') || 'index.html';
             window.location.href = returnTo;
         }
 

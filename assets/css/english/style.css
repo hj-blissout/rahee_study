@@ -167,7 +167,7 @@ header h1 {
 
 .word-item.checked .check-icon { color: var(--success); }
 
-.word-en-list { color: var(--primary); font-weight: 700; }
+.word-en-list { color: var(--primary); font-weight: 700; margin-right: 8px; }
 .word-ko-list { color: var(--secondary); font-size: 0.85rem; }
 
 .btn-start-test {
@@ -295,7 +295,35 @@ header h1 {
 
 #word-ko { font-size: 2.2rem; font-weight: 800; color: var(--success); margin-bottom: 12px; }
 #word-desc { font-size: 1rem; color: var(--primary); margin-bottom: 20px; line-height: 1.5; }
-#word-example { font-size: 0.95rem; color: var(--secondary); background: white; padding: 15px; border-radius: 16px; width: 100%; }
+
+.example-container {
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+#word-example { font-size: 0.95rem; color: var(--secondary); text-align: left; flex: 1; }
+
+.btn-tts-small {
+    background: #f1f5f9;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+.btn-tts-small:hover { background: var(--success-soft); color: var(--success); }
 
 .controls {
     display: flex; gap: 16px; width: 100%; max-width: 480px;
@@ -357,8 +385,39 @@ header h1 {
     cursor: pointer;
 }
 
+#test-viewer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.test-controls {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.test-controls button {
+    flex: 1;
+    padding: 16px;
+    border-radius: 16px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#btn-test-exit { background: #f1f5f9; color: var(--secondary); }
+#btn-test-next { background: var(--accent); color: white; }
+#btn-test-exit:hover { background: #e2e8f0; }
+#btn-test-next:hover { opacity: 0.9; transform: translateY(-2px); }
+
 /* ─── Results ─── */
 #result-view {
+    display: none;
     padding: 60px 40px;
     text-align: center;
 }

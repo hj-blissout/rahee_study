@@ -1,0 +1,202 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0402",
+  "title": "일차함수와 일차방정식의 관계",
+  "lessons": [
+    {
+      "lesson_id": "0402-01",
+      "title": "일차방정식과 그래프",
+      "goal": "일차방정식을 그래프로 나타내는 생각을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "식을 그래프로",
+          "prompt": "x+y=4를 y에 대하여 정리하면?",
+          "reveal_answer": "y = -x + 4"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "일차방정식은 y에 대하여 정리하면 일차함수의 그래프로 볼 수 있다.",
+            "방정식의 해는 그래프 위의 점으로 나타난다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "식 바꾸기",
+          "examples": [
+            {
+              "equation": "x+y=4",
+              "function": "y=-x+4"
+            },
+            {
+              "equation": "2x-y=3",
+              "function": "y=2x-3"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 연결하기",
+          "problem": "x-y=1을 그래프로 생각하려면 y에 대해 정리해보자.",
+          "hint": "y를 한쪽에 남겨.",
+          "solution": "y=x-1"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "2x+y=5를 y에 대하여 정리하면?",
+              "choices": [
+                "y=2x-5",
+                "y=-2x+5",
+                "y=-2x-5"
+              ],
+              "answer": 1,
+              "feedback_correct": "y=5-2x, 즉 y=-2x+5",
+              "feedback_wrong": "y만 남기도록 정리하자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0402-02",
+      "title": "두 그래프의 교점과 연립방정식의 해",
+      "goal": "두 일차함수 그래프의 교점이 연립방정식의 해임을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "둘 다 만족하는 점",
+          "prompt": "두 직선이 만나는 점은 두 식에 대해 어떤 의미일까?",
+          "reveal_answer": "두 식을 동시에 만족하는 점"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "두 직선의 교점의 좌표는 두 일차방정식을 동시에 만족한다.",
+            "즉, 교점은 연립일차방정식의 해이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "상황 이해",
+          "examples": [
+            {
+              "case": "교점 1개",
+              "meaning": "해 1개"
+            },
+            {
+              "case": "평행",
+              "meaning": "해 없음"
+            },
+            {
+              "case": "일치",
+              "meaning": "해가 무수히 많음"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 해석하기",
+          "problem": "두 직선이 한 점에서 만나면 연립방정식의 해는 몇 개일까?",
+          "hint": "만나는 점 수를 생각해.",
+          "solution": "1개"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "두 그래프가 서로 만나지 않으면 연립방정식의 해는?",
+              "choices": [
+                "1개",
+                "없다",
+                "무수히 많다"
+              ],
+              "answer": 1,
+              "feedback_correct": "교점이 없으니 동시에 만족하는 값도 없어.",
+              "feedback_wrong": "교점과 해의 개수는 같다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0402-03",
+      "title": "그래프로 연립방정식 해결하기",
+      "goal": "그래프를 이용해 연립일차방정식의 해를 구한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "두 직선 그리기",
+          "prompt": "연립방정식을 그래프로 풀려면 무엇을 각각 그려야 할까?",
+          "reveal_answer": "각 식의 그래프"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "각 식을 일차함수 꼴로 바꾸고 그래프를 그린다.",
+            "교점의 좌표를 읽어 해를 구한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "풀이 흐름",
+          "examples": [
+            {
+              "system": [
+                "x+y=4",
+                "x-y=2"
+              ],
+              "flow": "y=-x+4, y=x-2 → 교점 (3,1)"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 풀기",
+          "problem": "x+y=6, x-y=2를 그래프로 생각해 해를 구하자.",
+          "hint": "두 식을 y= 꼴로 바꿔.",
+          "solution": "y=-x+6, y=x-2 → 교점 (4,2)"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "그래프로 연립방정식의 해를 찾을 때 보는 것은?",
+              "choices": [
+                "기울기만",
+                "y절편만",
+                "교점의 좌표"
+              ],
+              "answer": 2,
+              "feedback_correct": "교점이 바로 두 식을 동시에 만족하는 값이야.",
+              "feedback_wrong": "최종 답은 교점의 좌표야."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

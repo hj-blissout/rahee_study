@@ -1,0 +1,207 @@
+{
+  "curriculum": "중2 수학",
+  "unit_id": "0502",
+  "title": "사각형의 성질",
+  "lessons": [
+    {
+      "lesson_id": "0502-01",
+      "title": "평행사변형의 성질",
+      "goal": "평행사변형의 기본 성질을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "마주 보는 변",
+          "prompt": "두 쌍의 대변이 서로 평행한 사각형을 무엇이라고 할까?",
+          "reveal_answer": "평행사변형"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "평행사변형의 두 쌍의 대변의 길이는 각각 같다.",
+            "평행사변형의 두 쌍의 대각의 크기는 각각 같다.",
+            "평행사변형의 두 대각선은 서로를 이등분한다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "대표 성질",
+          "examples": [
+            {
+              "property": "AB=CD, BC=AD"
+            },
+            {
+              "property": "∠A=∠C, ∠B=∠D"
+            },
+            {
+              "property": "대각선의 교점에서 서로 반씩 나뉨"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 보기",
+          "problem": "평행사변형의 대각선이 만나는 점을 O라 할 때, AO와 CO의 길이는 어떤 관계일까?",
+          "hint": "대각선은 서로를 이등분해.",
+          "solution": "AO = CO"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "기초 확인",
+          "items": [
+            {
+              "q": "평행사변형의 성질로 옳은 것은?",
+              "choices": [
+                "대각선의 길이가 항상 같다",
+                "두 대각선은 서로를 이등분한다",
+                "네 변의 길이가 모두 같다"
+              ],
+              "answer": 1,
+              "feedback_correct": "이건 평행사변형의 대표 성질이야.",
+              "feedback_wrong": "직사각형, 마름모와 헷갈리지 말자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0502-02",
+      "title": "평행사변형의 판별",
+      "goal": "사각형이 평행사변형이 되는 조건을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "조건으로 판단하기",
+          "prompt": "두 쌍의 대변의 길이가 각각 같은 사각형은 무엇일까?",
+          "reveal_answer": "평행사변형"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "두 쌍의 대변의 길이가 각각 같으면 평행사변형이다.",
+            "두 쌍의 대각의 크기가 각각 같으면 평행사변형이다.",
+            "두 대각선이 서로를 이등분하면 평행사변형이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "판별 조건",
+          "examples": [
+            {
+              "condition": "대변의 길이가 각각 같음",
+              "result": "평행사변형"
+            },
+            {
+              "condition": "대각선이 서로를 이등분함",
+              "result": "평행사변형"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 판단하기",
+          "problem": "사각형의 두 대각선이 서로를 이등분하면 이 사각형은 무엇일까?",
+          "hint": "판별 조건을 떠올려 봐.",
+          "solution": "평행사변형"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "확인 퀴즈",
+          "items": [
+            {
+              "q": "다음 중 평행사변형의 판별 조건은?",
+              "choices": [
+                "대각선이 서로를 이등분한다",
+                "대각선 길이가 같다",
+                "한 각이 직각이다"
+              ],
+              "answer": 0,
+              "feedback_correct": "이등분 여부는 강력한 판별 조건이야.",
+              "feedback_wrong": "성질과 판별을 구분해서 보자."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_id": "0502-03",
+      "title": "직사각형, 마름모, 정사각형",
+      "goal": "특수한 평행사변형의 성질을 이해한다.",
+      "steps": [
+        {
+          "step": 1,
+          "type": "recall",
+          "title": "평행사변형의 특별한 모습",
+          "prompt": "네 각이 모두 직각인 평행사변형은?",
+          "reveal_answer": "직사각형"
+        },
+        {
+          "step": 2,
+          "type": "concept",
+          "title": "핵심 개념",
+          "concepts": [
+            "직사각형의 두 대각선의 길이는 같다.",
+            "마름모의 두 대각선은 서로 수직이다.",
+            "정사각형은 직사각형이면서 마름모인 도형이다."
+          ]
+        },
+        {
+          "step": 3,
+          "type": "pattern",
+          "title": "비교하기",
+          "examples": [
+            {
+              "shape": "직사각형",
+              "feature": "대각선 길이 같음"
+            },
+            {
+              "shape": "마름모",
+              "feature": "대각선 서로 수직"
+            },
+            {
+              "shape": "정사각형",
+              "feature": "직사각형+마름모 성질 모두 가짐"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "type": "guided_example",
+          "title": "같이 구별하기",
+          "problem": "대각선의 길이가 같고, 두 대각선이 서로 수직인 사각형을 떠올려 보자.",
+          "hint": "직사각형과 마름모의 성질을 동시에 만족해.",
+          "solution": "정사각형"
+        },
+        {
+          "step": 5,
+          "type": "quiz",
+          "title": "적용 퀴즈",
+          "items": [
+            {
+              "q": "마름모의 성질로 옳은 것은?",
+              "choices": [
+                "대각선 길이가 항상 같다",
+                "대각선이 서로 수직이다",
+                "네 각이 모두 직각이다"
+              ],
+              "answer": 1,
+              "feedback_correct": "마름모의 대표 성질이야.",
+              "feedback_wrong": "직사각형과의 차이를 보자."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
