@@ -420,7 +420,7 @@
         async function loadMathData(grade) {
             currentGrade = grade;
             await syncMathDrillFromSupabase();
-            const filename = `../../math/data/middle${grade}_math_sets.json`;
+            const filename = `data/middle${grade}_math_sets.json`;
             try {
                 const response = await fetch(filename);
                 mathData = await response.json();
