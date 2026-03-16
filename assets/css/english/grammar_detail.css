@@ -81,11 +81,26 @@ header h1 {
 
 .grammar-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 15px;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px dashed #eee;
+}
+
+.grammar-header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.grammar-category {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    background: #f0f4f8;
+    padding: 6px 12px;
+    border-radius: 8px;
 }
 
 .unit-badge {
@@ -112,14 +127,55 @@ header h1 {
     font-size: 1.1rem;
 }
 
+.concept-box .concept-situation,
+.concept-box .concept-core,
+.concept-box .concept-explanation {
+    margin-bottom: 18px;
+}
+
+.concept-box .concept-situation:last-child,
+.concept-box .concept-core:last-child,
+.concept-box .concept-explanation:last-child {
+    margin-bottom: 0;
+}
+
+.concept-box .concept-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.concept-box .concept-situation .concept-label { color: #6c5ce7; }
+.concept-box .concept-core .concept-label { color: #f1c40f; }
+.concept-box .concept-explanation .concept-label { color: var(--primary-color); }
+
+.concept-box .concept-situation p,
+.concept-box .concept-core p,
+.concept-box .concept-explanation p {
+    margin: 0;
+    padding-left: 24px;
+    line-height: 1.7;
+}
+
 .example-section {
     margin-bottom: 30px;
+}
+
+.example-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .example-section h3 {
     font-size: 1.5rem;
     color: var(--text-main);
-    margin-bottom: 15px;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -152,6 +208,31 @@ header h1 {
 .ko-text {
     font-size: 1rem;
     color: var(--text-light);
+}
+
+.btn-play-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-play-all:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.btn-play-all:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .btn-show-ko {

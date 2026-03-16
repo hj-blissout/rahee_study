@@ -7,18 +7,42 @@ let currentUnit = null;
 let currentLesson = null;
 let confettiFired = false;
 
-async function initViewer(grade) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const targetUnitId = urlParams.get('unit') || '0101';
-    
+async function initViewer() {
+    const url = new URL(window.location.href);
+    const gradeFromUrl = url.searchParams.get('grade');
+    const unitFromUrl = url.searchParams.get('unit');
+    const grade = gradeFromUrl || sessionStorage.getItem('math_grade') || '1';
+    const targetUnitId = unitFromUrl || sessionStorage.getItem('math_unit') || '0101';
+    // URL에 파라미터가 있으면 sessionStorage 동기화 (다음 방문 시 stale 방지)
+    if (gradeFromUrl) sessionStorage.setItem('math_grade', gradeFromUrl);
+    if (unitFromUrl) sessionStorage.setItem('math_unit', unitFromUrl);
+    window.currentGrade = grade;
+
+    await pullFromSupabase();
+
     try {
-        const response = await fetch(`../data/math_${grade}/unit_${targetUnitId}.json`);
-        const unitData = await response.json();
+        const pathname = window.location.pathname;
+        const mathMatch = pathname.match(/^(.*\/math)\/?/);
+        const basePath = mathMatch ? mathMatch[1] + '/' : pathname.replace(/\/[^/]*$/, '/');
+        const dataUrl = `${window.location.origin}${basePath}data/math_${grade}/unit_${targetUnitId}.json`;
+        const indexUrl = `${window.location.origin}${basePath}data/math_${grade}/index.json`;
+
+        const [unitRes, indexRes] = await Promise.all([fetch(dataUrl), fetch(indexUrl)]);
+        const unitData = await unitRes.json();
+        let indexData = null;
+        try { indexData = await indexRes.json(); } catch (_) {}
+
         fullData = unitData;
         currentUnit = unitData;
 
-        document.getElementById('unit-title').innerText = `${unitData.curriculum} > ${unitData.title}`;
-        
+        const curriculumLabel = unitData.curriculum || `중${grade} 수학`;
+        document.getElementById('unit-title').innerText = `${curriculumLabel} > ${unitData.title}`;
+        const backBtn = document.getElementById('btn-back-list');
+        if (backBtn) backBtn.href = `../?grade=${grade}`;
+
+        const unitMeta = indexData?.units?.find(u => u.unit_id === targetUnitId);
+        renderYoutubeLinks(unitMeta?.youtube);
+
         renderLessonNav();
         loadLesson(0);
         
@@ -34,14 +58,28 @@ async function initViewer(grade) {
     }
 }
 
+function renderYoutubeLinks(urls) {
+    const container = document.getElementById('youtube-links');
+    if (!container) return;
+    if (!urls || !Array.isArray(urls) || urls.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    container.innerHTML = urls.map((url, i) =>
+        `<a href="${url}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> 영상 ${i + 1}</a>`
+    ).join('');
+    container.style.display = 'flex';
+}
+
 function renderLessonNav() {
     const nav = document.getElementById('lesson-nav');
     if (!nav) return;
     nav.innerHTML = '';
     currentUnit.lessons.forEach((lesson, idx) => {
         const isDone = isLessonComplete(currentUnit.unit_id, lesson.lesson_id);
+        const isActive = currentLesson ? currentLesson.lesson_id === lesson.lesson_id : (idx === 0);
         const item = document.createElement('div');
-        item.className = 'nav-item' + (idx === 0 ? ' active' : '');
+        item.className = 'nav-item' + (isActive ? ' active' : '');
         
         const checkMark = isDone ? ' <i class="fas fa-check-circle" style="color:var(--secondary-color); margin-left:5px;"></i>' : '';
         item.innerHTML = `${lesson.title}${checkMark}`;
@@ -56,9 +94,21 @@ function renderLessonNav() {
     });
 }
 
+function updateLessonTitle() {
+    const titleEl = document.getElementById('lesson-title');
+    if (!titleEl || !currentLesson) return;
+    titleEl.textContent = '';
+    titleEl.appendChild(document.createTextNode(currentLesson.title));
+    if (isLessonComplete(currentUnit.unit_id, currentLesson.lesson_id)) {
+        const check = document.createElement('span');
+        check.innerHTML = ' <i class="fas fa-check-circle" style="color:var(--secondary-color); margin-left:6px;"></i>';
+        titleEl.appendChild(check);
+    }
+}
+
 function loadLesson(index) {
     currentLesson = currentUnit.lessons[index];
-    document.getElementById('lesson-title').innerText = currentLesson.title;
+    updateLessonTitle();
     confettiFired = false;
     
     for(let i=1; i<=5; i++) {
@@ -177,6 +227,10 @@ window.addEventListener('mathLessonComplete', () => {
     const btnContainer = document.getElementById('completion-buttons');
     if (!completionNav || !btnContainer) return;
 
+    // 콘페티 + 박지훈 응원 모달
+    if (typeof fireConfetti === 'function') fireConfetti();
+    setTimeout(showMathLessonCelebration, 1200);
+
     const lessonIdx = currentUnit.lessons.findIndex(l => l.lesson_id === currentLesson.lesson_id);
     const hasNextLesson = lessonIdx !== -1 && lessonIdx < currentUnit.lessons.length - 1;
 
@@ -188,12 +242,41 @@ window.addEventListener('mathLessonComplete', () => {
 
     btnContainer.innerHTML = buttonsHtml;
     completionNav.style.display = 'block';
+    updateLessonTitle();
     renderLessonNav();
     
     setTimeout(() => {
         completionNav.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 500);
 });
+
+function showMathLessonCelebration() {
+    let overlay = document.getElementById('math-celebration-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'math-celebration-overlay';
+        overlay.className = 'celebration-overlay';
+        const imgPath = '../assets/images/pjh.jpeg';
+        overlay.innerHTML = `
+            <div class="celebration-content">
+                <div class="celebration-text">내 마음속에 저장~ 📸</div>
+                <img src="${imgPath}" alt="박지훈" class="celebration-img">
+                <div class="celebration-subtext">라희야, 수학도 완벽하게 마스터했어! 진짜 멋지다! 👍</div>
+                <button class="btn-close-celebration" onclick="closeMathCelebration()">오빠랑 또 공부하자!</button>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+    }
+    overlay.style.display = 'flex';
+    setTimeout(() => overlay.classList.add('show'), 50);
+}
+
+window.closeMathCelebration = function() {
+    const ov = document.getElementById('math-celebration-overlay');
+    if (!ov) return;
+    ov.classList.remove('show');
+    setTimeout(() => { ov.style.display = 'none'; }, 500);
+};
 
 function handleLessonNavigation(type) {
     if (type === 'next') {
@@ -204,6 +287,7 @@ function handleLessonNavigation(type) {
             document.getElementById('completion-nav').style.display = 'none';
         }
     } else {
-        location.href = 'index.html';
+        const grade = window.currentGrade || '1';
+        location.href = `../?grade=${grade}`;
     }
 }

@@ -53,8 +53,8 @@ function showSuccessCelebration() {
         overlay.id = 'celebration-overlay';
         overlay.className = 'celebration-overlay';
         
-        // 이미지 경로: English/ 폴더 아래에서 실행되므로
-        const imgPath = '../math/data/pjh.jpeg';
+        // 이미지 경로: english/ 폴더 아래에서 실행되므로
+        const imgPath = '../assets/images/pjh.jpeg';
         
         overlay.innerHTML = `
             <div class="celebration-content">

@@ -1,76 +1,71 @@
 {
   "curriculum": "중3 수학",
-  "version": "1.0",
+  "version": "1.1",
   "units": [
     {
       "unit_id": "0101",
       "title": "제곱근과 실수",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0101-01",
-        "0101-02",
-        "0101-03"
+      "lesson_ids": ["0101-01", "0101-02", "0101-03"],
+      "youtube": [
+        "https://www.youtube.com/watch?v=5shf9ab9nGE",
+        "https://www.youtube.com/watch?v=gWuykLl6auk"
       ]
     },
     {
       "unit_id": "0201",
       "title": "다항식의 곱셈과 인수분해",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0201-01",
-        "0201-02",
-        "0201-03"
+      "lesson_ids": ["0201-01", "0201-02", "0201-03"],
+      "youtube": [
+        "https://www.youtube.com/playlist?list=PLraYM6paW-C1ezcpLtYaIgaij0f28rgso"
       ]
     },
     {
       "unit_id": "0301",
       "title": "이차방정식",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0301-01",
-        "0301-02",
-        "0301-03"
+      "lesson_ids": ["0301-01", "0301-02", "0301-03"],
+      "youtube": [
+        "https://www.youtube.com/watch?v=C6buQsgsDhY",
+        "https://www.youtube.com/watch?v=fmUnn3JR_wk"
       ]
     },
     {
       "unit_id": "0401",
       "title": "이차함수",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0401-01",
-        "0401-02",
-        "0401-03"
+      "lesson_ids": ["0401-01", "0401-02", "0401-03"],
+      "youtube": [
+        "https://www.youtube.com/watch?v=LLWucAoYLRY",
+        "https://www.youtube.com/watch?v=yhLYkDcYIpQ",
+        "https://www.youtube.com/watch?v=A6MDR3vNHpo"
       ]
     },
     {
       "unit_id": "0501",
       "title": "삼각비",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0501-01",
-        "0501-02",
-        "0501-03"
+      "lesson_ids": ["0501-01", "0501-02", "0501-03"],
+      "youtube": [
+        "https://www.youtube.com/playlist?list=PLraYM6paW-C1o12zNw1nt4a1fxFaWyAPr"
       ]
     },
     {
       "unit_id": "0601",
       "title": "원의 성질",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0601-01",
-        "0601-02",
-        "0601-03"
+      "lesson_ids": ["0601-01", "0601-02", "0601-03"],
+      "youtube": [
+        "https://www.youtube.com/channel/UCZC_OcpmiV6b6Y2YpLPziXg"
       ]
     },
     {
       "unit_id": "0701",
       "title": "통계",
       "total_lessons": 3,
-      "lesson_ids": [
-        "0701-01",
-        "0701-02",
-        "0701-03"
-      ]
+      "lesson_ids": ["0701-01", "0701-02", "0701-03"],
+      "youtube": []
     }
   ]
 }

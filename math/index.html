@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학 | 전체 차례</title>
+    <link rel="stylesheet" href="../assets/css/math_common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="header-nav" style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <a href="../index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 학년 선택으로 돌아가기</a>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:0.9rem; color:#64748b; font-weight:700;">
+                    <i class="fas fa-user-circle" style="color:#2563eb;"></i>
+                    <span id="current-user-name">가져오는 중...</span>
+                </span>
+                <button onclick="signOut()" style="background:#f1f5f9; border:none; padding:8px 14px; border-radius:10px; cursor:pointer; font-weight:700; color:#64748b; font-size:0.85rem;">
+                    <i class="fas fa-sign-out-alt"></i> 로그아웃
+                </button>
+                <button onclick="openCalendar()" title="공부 히스토리" style="background:#f1f5f9; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; color:#2563eb; font-size:1rem;">
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grade-tabs" style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
+            <a href="#" class="grade-tab" data-grade="1" style="padding:10px 20px; border-radius:12px; font-weight:700; text-decoration:none; background:#f1f5f9; color:#64748b; border:2px solid transparent;">중1</a>
+            <a href="#" class="grade-tab" data-grade="2" style="padding:10px 20px; border-radius:12px; font-weight:700; text-decoration:none; background:#f1f5f9; color:#64748b; border:2px solid transparent;">중2</a>
+            <a href="#" class="grade-tab" data-grade="3" style="padding:10px 20px; border-radius:12px; font-weight:700; text-decoration:none; background:#f1f5f9; color:#64748b; border:2px solid transparent;">중3</a>
+        </div>
+        <section class="hero" style="margin-bottom: 16px;">
+            <div class="pill" id="hero-pill">로딩 중...</div>
+            <h1 id="hero-title">로딩 중...</h1>
+            <p id="hero-desc">로딩 중...</p>
+            <div class="tutor-box">
+                <img class="tutor-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png" alt="박지훈">
+                <div class="tutor-msg" id="tutor-msg">로딩 중...</div>
+            </div>
+        </section>
+
+        <div class="progress-container">
+            <div class="progress-text" id="progress-text">로딩 중...</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                <img class="progress-icon" id="progress-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/251219_Park_Ji-hoon.png/500px-251219_Park_Ji-hoon.png" alt="박지훈 진행도" style="left: 0%;">
+            </div>
+        </div>
+
+        <div id="unit-cards"></div>
+    </div>
+
+    <!-- Calendar Panel -->
+    <div id="cal-overlay" class="cal-overlay" onclick="closeCalendar()"></div>
+    <div id="cal-panel" class="cal-panel">
+        <div class="cal-header">
+            <div class="cal-header-top">
+                <h2>공부 히스토리</h2>
+                <button class="cal-close" onclick="closeCalendar()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cal-month-nav">
+                <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                <span id="cal-month-label"></span>
+                <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div id="cal-body" class="cal-body"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="../env.js"></script>
+    <script src="../assets/js/supabase_service.js"></script>
+    <script src="../assets/js/app_utils.js"></script>
+    <script src="../assets/js/calendar_module.js"></script>
+    <script src="../assets/js/math_logic.js"></script>
+    <script>
+        const GRADE_META = {
+            "1": { pill: "중1 수학", title: "중학교 수학의 기초, 여기서부터!", desc: "초등학교 때 배운 내용을 바탕으로 새로운 개념을 차근차근 익혀보아요.", tutor: "<b>라희야!</b> 중1 수학 차례야. 첫 단추가 진짜 중요하거든!<br>오빠가 끝까지 옆에서 응원할게! 어떤 단원부터 시작해볼까?", progressDefault: "로딩 중..." },
+            "2": { pill: "중2 수학", title: "중학교 수학의 도약, 오빠랑 가보자!", desc: "1학년 때 배운 기초를 탄탄히 해서, 중2 수학도 완벽하게 정복해봐요.", tutor: "<b>라희야!</b> 중2 수학 차례야. 2학년 수학이 진짜 중요하거든!<br>오라버니가 딱 붙어서 도와줄게. 같이 시작해볼까?", progressDefault: "중2 수학 시작! 오빠랑 한 걸음씩 가보자! 💪" },
+            "3": { pill: "중3 수학", title: "중학교 수학의 완성, 오빠랑 가보자!", desc: "2학년 때 배운 내용를 탄탄히 해서, 중3 수학도 완벽하게 정복해봐요.", tutor: "<b>라희야!</b> 중3 수학 차례야. 3학년 수학이 고등학교 수학의 기초거든!<br>오라버니가 딱 붙어서 도와줄게. 같이 시작해볼까?", progressDefault: "중3 수학 시작! 오빠랑 한 걸음씩 가보자! 💪" }
+        };
+
+        async function initMathIndex() {
+            const url = new URL(window.location.href);
+            let grade = url.searchParams.get('grade') || '1';
+            if (!['1','2','3'].includes(grade)) grade = '1';
+            window.currentGrade = grade;
+
+            document.querySelectorAll('.grade-tab').forEach((tab, i) => {
+                tab.classList.toggle('active', String(i + 1) === grade);
+                tab.style.background = (String(i + 1) === grade) ? '#eff6ff' : '#f1f5f9';
+                tab.style.color = (String(i + 1) === grade) ? '#1d4ed8' : '#64748b';
+                tab.style.borderColor = (String(i + 1) === grade) ? '#2563eb' : 'transparent';
+            });
+
+            const meta = GRADE_META[grade] || GRADE_META["1"];
+            document.title = meta.pill + " | 전체 차례";
+            document.getElementById('hero-pill').textContent = meta.pill;
+            document.getElementById('hero-title').textContent = meta.title;
+            document.getElementById('hero-desc').textContent = meta.desc;
+            document.getElementById('tutor-msg').innerHTML = meta.tutor;
+            document.getElementById('progress-text').textContent = meta.progressDefault;
+
+            const pathname = window.location.pathname;
+            const mathMatch = pathname.match(/^(.*\/math)\/?/);
+            const basePath = mathMatch ? mathMatch[1] + '/' : (pathname.includes('.') ? pathname.replace(/\/[^/]*$/, '/') : pathname + '/');
+            const indexUrl = `${window.location.origin}${basePath}data/math_${grade}/index.json`;
+
+            document.querySelectorAll('.grade-tab').forEach((tab) => {
+                const g = tab.dataset.grade;
+                tab.href = `${basePath}?grade=${g}`;
+            });
+
+            try {
+                const res = await fetch(indexUrl);
+                const data = await res.json();
+                const container = document.getElementById('unit-cards');
+                let html = '';
+                data.units.forEach((u, idx) => {
+                    html += `
+                        <div class="card" data-unit="${u.unit_id}" data-total-lessons="${u.total_lessons}">
+                            <div class="status-badge not-started">아직 안 했어 💤</div>
+                            <h2>${idx + 1}. ${u.title}</h2>
+                            <div class="completed-date"></div>
+                            <div class="lesson-list"></div>
+                            <a class="chapter" href="${window.location.origin}${basePath}viewer.html?grade=${grade}&unit=${u.unit_id}" onclick="event.preventDefault(); sessionStorage.setItem('math_grade','${grade}'); sessionStorage.setItem('math_unit','${u.unit_id}'); window.location.href=this.href;">시작하기 🚀</a>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+                await pullFromSupabase();
+                loadMathProgress();
+            } catch (e) {
+                document.getElementById('unit-cards').innerHTML = '<p style="color:#be123c;">단원 목록을 불러오지 못했어요.</p>';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => initMathIndex());
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted && document.querySelectorAll('.card[data-unit]').length) {
+                loadMathProgress();
+            }
+        });
+    </script>
+</body>
+</html>

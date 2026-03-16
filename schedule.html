@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스케줄 관리 | Rahee's Study</title>
+    <link rel="stylesheet" href="assets/css/main_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Square+Round:wght@400;700;800&family=Do+Hyeon&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        .schedule-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .schedule-home-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--primary-math); color: white; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+        .schedule-home-btn:hover { opacity: 0.9; }
+        .schedule-nav { display: flex; align-items: center; gap: 12px; }
+        .schedule-nav span { font-size: 1.2rem; font-weight: 800; min-width: 180px; text-align: center; }
+        .schedule-nav button { background: var(--primary-math); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1rem; }
+        .schedule-grid-wrap { overflow-x: auto; overflow-y: auto; max-height: 70vh; border: 1px solid #e2e8f0; border-radius: 12px; background: white; }
+        .schedule-table { border-collapse: collapse; min-width: 700px; table-layout: fixed; width: 100%; }
+        .schedule-table th, .schedule-table td { padding: 8px; border: 1px solid #f1f5f9; font-size: 0.85rem; vertical-align: top; }
+        .schedule-table th { background: #f8fafc; font-weight: 800; color: var(--text-light); }
+        .schedule-table .time-col { background: #f8fafc; font-weight: 700; color: var(--text-light); width: 60px; }
+        .schedule-table .block-cell { cursor: pointer; transition: background 0.2s; min-width: 0; overflow: hidden; }
+        .schedule-table .block-cell:hover { background: #eff6ff; }
+        .schedule-table .has-content { background: #eff6ff; }
+        .schedule-table .has-content.math { background: #eff6ff; border-left: 3px solid var(--primary-math); }
+        .schedule-table .has-content.english { background: #f5f3ff; border-left: 3px solid var(--primary-eng); }
+        .schedule-table td.block-cell-merged { min-width: 0; overflow: hidden; }
+        .schedule-table .block-entry { cursor: pointer; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .schedule-table .block-entry:last-child { border-bottom: none; }
+        .schedule-table .block-entry:hover { background: rgba(59, 130, 246, 0.1); margin: 0 -4px; padding: 4px; }
+        .schedule-table .block-entry-add { cursor: pointer; padding: 4px 0 0; margin-top: 4px; font-size: 0.75rem; color: var(--text-light); border-top: 1px dashed rgba(0,0,0,0.08); }
+        .schedule-table .block-entry-add:hover { color: var(--primary-math); }
+        .schedule-table .block-content { font-weight: 700; margin-bottom: 2px; overflow: hidden; text-overflow: ellipsis; word-break: break-word; }
+        .schedule-table .block-place { font-size: 0.75rem; color: var(--text-light); overflow: hidden; text-overflow: ellipsis; }
+        .schedule-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+        .schedule-modal.open { display: flex; }
+        .schedule-modal-content { background: white; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; }
+        .schedule-modal h3 { margin-bottom: 16px; font-size: 1.2rem; }
+        .schedule-modal label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+        .schedule-modal input, .schedule-modal select, .schedule-modal textarea { width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px; }
+        .schedule-modal textarea { min-height: 80px; resize: vertical; }
+        .schedule-modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+        .schedule-modal-actions button { flex: 1; padding: 12px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
+        .schedule-modal-actions .btn-save { background: var(--primary-math); color: white; }
+        .schedule-modal-actions .btn-delete { background: #fee2e2; color: #dc2626; }
+        .schedule-modal-actions .btn-cancel { background: #f1f5f9; color: var(--text-main); }
+        .time-row { display: flex; gap: 16px; align-items: flex-end; margin-bottom: 12px; }
+        .time-row .time-group { flex: 1; }
+        .time-row label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+        .time-row select { width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 0; }
+        .duration-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .duration-chips .chip, .duration-more-wrap .chip { padding: 8px 14px; border: 2px solid #e2e8f0; border-radius: 20px; background: white; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+        .duration-chips .chip:hover, .duration-more-wrap .chip:hover { border-color: var(--primary-math); background: #eff6ff; }
+        .duration-chips .chip.selected, .duration-more-wrap .chip.selected { border-color: var(--primary-math); background: var(--primary-math); color: white; }
+        .duration-chips .chip-more { border-style: dashed; color: var(--text-light); }
+        .duration-chips .chip-more:hover { border-color: var(--primary-math); color: var(--primary-math); }
+        .duration-more-wrap { display: none; }
+        .duration-more-wrap.expanded { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero" style="margin-bottom: 24px;">
+            <div class="hero-info" style="padding: 24px 30px;">
+                <a href="index.html" class="back-btn" style="position: static; margin-bottom: 12px; display: inline-flex;"><i class="fas fa-arrow-left"></i> 홈으로</a>
+                <h1 style="font-size: 1.8rem; margin: 0;">📅 스케줄 관리</h1>
+                <p style="margin: 8px 0 0; color: var(--text-light);">시간대별로 뭐 했는지 기록해요</p>
+            </div>
+        </header>
+
+        <div class="schedule-header">
+            <a href="index.html" class="schedule-home-btn"><i class="fas fa-home"></i> 메인으로</a>
+            <div class="schedule-nav">
+                <button onclick="changeWeek(-1)"><i class="fas fa-chevron-left"></i></button>
+                <span id="week-label">로딩 중...</span>
+                <button onclick="changeWeek(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="schedule-grid-wrap">
+            <table class="schedule-table" id="schedule-grid">
+                <thead id="schedule-thead"></thead>
+                <tbody id="schedule-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="schedule-modal" class="schedule-modal">
+        <div class="schedule-modal-content">
+            <h3 id="modal-title">시간 블럭 기록</h3>
+            <label>날짜</label>
+            <input type="date" id="modal-date">
+            <div class="time-row">
+                <div class="time-group">
+                    <label>시작 시간</label>
+                    <select id="modal-time"></select>
+                </div>
+                <div class="time-group">
+                    <label>종료 시간</label>
+                    <select id="modal-end-time"></select>
+                </div>
+            </div>
+            <label>소요 시간</label>
+            <div id="duration-chips-container">
+            <div class="duration-chips" id="modal-duration-chips">
+                <button type="button" class="chip selected" data-value="1">1시간</button>
+                <button type="button" class="chip" data-value="2">2시간</button>
+                <button type="button" class="chip" data-value="3">3시간</button>
+                <button type="button" class="chip chip-more" id="duration-more-btn" data-value="more">더보기</button>
+            </div>
+            <div class="duration-more-wrap" id="duration-more-wrap">
+                <button type="button" class="chip" data-value="4">4시간</button>
+                <button type="button" class="chip" data-value="5">5시간</button>
+                <button type="button" class="chip" data-value="6">6시간</button>
+                <button type="button" class="chip" data-value="7">7시간</button>
+                <button type="button" class="chip" data-value="8">8시간</button>
+                <button type="button" class="chip" data-value="9">9시간</button>
+                <button type="button" class="chip" data-value="10">10시간</button>
+                <button type="button" class="chip" data-value="11">11시간</button>
+                <button type="button" class="chip" data-value="12">12시간</button>
+                <button type="button" class="chip" data-value="13">13시간</button>
+                <button type="button" class="chip" data-value="14">14시간</button>
+                <button type="button" class="chip" data-value="15">15시간</button>
+                <button type="button" class="chip" data-value="16">16시간</button>
+                <button type="button" class="chip" data-value="17">17시간</button>
+                <button type="button" class="chip" data-value="18">18시간</button>
+            </div>
+            </div>
+            <label>무엇을 했나요?</label>
+            <textarea id="modal-content" placeholder="예: 중1 수학 1단원 풀었어요"></textarea>
+            <label>일과</label>
+            <select id="modal-subject">
+                <option value="class">수업</option>
+                <option value="academy">학원</option>
+                <option value="healing">힐링</option>
+                <option value="reading">독서</option>
+                <option value="movie">영화</option>
+                <option value="tv">티비</option>
+                <option value="youtube">유튜브</option>
+                <option value="other">기타</option>
+            </select>
+            <label>장소</label>
+            <select id="modal-place">
+                <option value="school">학교</option>
+                <option value="company">회사</option>
+                <option value="home">집</option>
+                <option value="cafe">카페</option>
+                <option value="countryside">시골</option>
+                <option value="other">기타</option>
+            </select>
+            <div class="schedule-modal-actions">
+                <button type="button" class="btn-save" onclick="saveBlock()">저장</button>
+                <button type="button" class="btn-delete" id="btn-delete" onclick="deleteBlock()" style="display:none;">삭제</button>
+                <button type="button" class="btn-cancel" onclick="closeModal()">취소</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="env.js"></script>
+    <script src="assets/js/supabase_service.js"></script>
+    <script>
+        getSession().then(s => { if (!s) location.href = 'login.html'; });
+
+        const PLACES = { school: '학교', company: '회사', home: '집', cafe: '카페', countryside: '시골', other: '기타' };
+        const SUBJECTS = { class: '수업', academy: '학원', healing: '힐링', reading: '독서', movie: '영화', tv: '티비', youtube: '유튜브', other: '기타' };
+        const SUBJECT_EMOJIS = { class: '📚', academy: '🏫', healing: '🌿', reading: '📖', movie: '🎬', tv: '📺', youtube: '▶️', other: '📌' };
+        const TIME_BLOCKS = [];
+        for (let h = 6; h <= 23; h++) {
+            TIME_BLOCKS.push(`${String(h).padStart(2,'0')}:00`);
+        }
+        TIME_BLOCKS.forEach(tb => {
+            const opt = document.createElement('option');
+            opt.value = tb;
+            opt.textContent = tb;
+            document.getElementById('modal-time').appendChild(opt);
+        });
+
+        function populateEndTimeOptions() {
+            const startTime = document.getElementById('modal-time').value;
+            const startIdx = TIME_BLOCKS.indexOf(startTime);
+            const sel = document.getElementById('modal-end-time');
+            sel.innerHTML = '';
+            let options = startIdx >= 0 ? TIME_BLOCKS.slice(startIdx + 1) : [];
+            if (startIdx >= 0) options.push('24:00');
+            options.forEach(tb => {
+                const opt = document.createElement('option');
+                opt.value = tb;
+                opt.textContent = tb;
+                sel.appendChild(opt);
+            });
+            return startIdx;
+        }
+
+        let weekStart = getMonday(new Date());
+        let modalGroupIds = [];
+        let scheduleData = {};
+
+        function getMonday(d) {
+            const x = new Date(d);
+            x.setHours(0,0,0,0);
+            const day = x.getDay();
+            const diff = day === 0 ? -6 : 1 - day;
+            x.setDate(x.getDate() + diff);
+            return x;
+        }
+
+        function changeWeek(dir) {
+            weekStart.setDate(weekStart.getDate() + dir * 7);
+            render();
+        }
+
+        function dateKey(d) {
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${y}-${m}-${day}`;
+        }
+
+        async function render() {
+            const mon = new Date(weekStart);
+            const sun = new Date(mon);
+            sun.setDate(sun.getDate() + 6);
+            document.getElementById('week-label').textContent =
+                `${mon.getMonth()+1}/${mon.getDate()} ~ ${sun.getMonth()+1}/${sun.getDate()} (${mon.getMonth()+1}월)`;
+
+            const start = dateKey(mon);
+            const end = dateKey(sun);
+            const rows = await pullSchedule(start, end);
+            scheduleData = {};
+            rows.forEach(r => {
+                const k = `${r.date}_${r.time_block}`;
+                if (!scheduleData[k]) scheduleData[k] = [];
+                scheduleData[k].push(r);
+            });
+
+            const dayNames = ['일','월','화','수','목','금','토'];
+            let headHtml = '<tr><th></th>';
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(mon);
+                d.setDate(d.getDate() + i);
+                const isToday = d.toDateString() === new Date().toDateString();
+                headHtml += `<th>${d.getMonth()+1}/${d.getDate()} (${dayNames[d.getDay()]})${isToday ? ' ★' : ''}</th>`;
+            }
+            headHtml += '</tr>';
+            document.getElementById('schedule-thead').innerHTML = headHtml;
+
+            let bodyHtml = '';
+            TIME_BLOCKS.forEach((tb) => {
+                bodyHtml += '<tr><th class="time-col">' + tb + '</th>';
+                for (let i = 0; i < 7; i++) {
+                    const d = new Date(mon);
+                    d.setDate(d.getDate() + i);
+                    const dk = dateKey(d);
+                    const k = `${dk}_${tb}`;
+                    const recs = scheduleData[k] || [];
+                    let cellClass = 'block-cell';
+                    if (recs.length > 0) cellClass += ' has-content';
+                    let entriesHtml = '';
+                    recs.forEach(rec => {
+                        const subj = rec.subject || 'other';
+                        const place = PLACES[rec.place] || '';
+                        const activityLabel = SUBJECTS[subj] || subj;
+                        const activityEmoji = SUBJECT_EMOJIS[subj] || '📌';
+                        entriesHtml += `<div class="block-entry" data-id="${rec.id}" onclick="event.stopPropagation(); openBlock('${dk}','${tb}','${rec.id}')">
+                            <div class="block-content">${escapeHtml(rec.content)}</div>
+                            <div class="block-place">${activityEmoji} ${activityLabel}${place ? ' 📍 ' + place : ''}</div>
+                        </div>`;
+                    });
+                    if (recs.length > 0) entriesHtml += `<div class="block-entry-add" onclick="event.stopPropagation(); openBlock('${dk}','${tb}')">+ 추가</div>`;
+                    bodyHtml += `<td class="${cellClass}" onclick="openBlock('${dk}','${tb}')">${entriesHtml}</td>`;
+                }
+                bodyHtml += '</tr>';
+            });
+            document.getElementById('schedule-tbody').innerHTML = bodyHtml;
+        }
+
+        function escapeHtml(s) {
+            const div = document.createElement('div');
+            div.textContent = s;
+            return div.innerHTML;
+        }
+
+        function findRecById(id) {
+            for (const k of Object.keys(scheduleData)) {
+                const arr = scheduleData[k];
+                const r = arr.find(x => x.id === id);
+                if (r) return { key: k, rec: r };
+            }
+            return null;
+        }
+
+        function findGroup(date, time, rec) {
+            if (!rec) return { startTime: time, blockCount: 1, ids: [] };
+            const idx = TIME_BLOCKS.indexOf(time);
+            if (idx < 0) return { startTime: time, blockCount: 1, ids: [rec.id] };
+            const sig = r => `${r.content}|${r.subject || ''}|${r.place || ''}`;
+            const targetSig = sig(rec);
+            const hasMatch = (arr) => arr && arr.some(r => sig(r) === targetSig);
+            let startIdx = idx;
+            while (startIdx > 0) {
+                const arr = scheduleData[`${date}_${TIME_BLOCKS[startIdx - 1]}`];
+                if (!hasMatch(arr)) break;
+                startIdx--;
+            }
+            let endIdx = idx;
+            while (endIdx < TIME_BLOCKS.length - 1) {
+                const arr = scheduleData[`${date}_${TIME_BLOCKS[endIdx + 1]}`];
+                if (!hasMatch(arr)) break;
+                endIdx++;
+            }
+            const ids = [];
+            for (let i = startIdx; i <= endIdx; i++) {
+                const arr = scheduleData[`${date}_${TIME_BLOCKS[i]}`] || [];
+                arr.filter(r => sig(r) === targetSig).forEach(r => ids.push(r.id));
+            }
+            return { startTime: TIME_BLOCKS[startIdx], blockCount: endIdx - startIdx + 1, ids };
+        }
+
+        function openBlock(date, time, recordId) {
+            document.getElementById('modal-date').value = date;
+            const k = `${date}_${time}`;
+            let rec = null;
+            if (recordId) {
+                const found = findRecById(recordId);
+                rec = found ? found.rec : null;
+            }
+            const group = rec ? findGroup(date, time, rec) : { startTime: time, blockCount: 1, ids: [] };
+            document.getElementById('modal-time').value = group.startTime;
+            setDurationChip(Math.min(group.blockCount, MAX_DURATION));
+            populateEndTimeOptions();
+            syncFromStartAndDuration();
+            modalGroupIds = group.ids;
+            document.getElementById('modal-content').value = rec ? rec.content : '';
+            document.getElementById('modal-subject').value = rec && rec.subject && SUBJECTS[rec.subject] ? rec.subject : 'other';
+            document.getElementById('modal-place').value = rec ? (rec.place || 'home') : 'home';
+            document.getElementById('btn-delete').style.display = rec ? 'block' : 'none';
+            document.getElementById('schedule-modal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('schedule-modal').classList.remove('open');
+        }
+
+        function getDurationValue() {
+            const chip = document.querySelector('#duration-chips-container .chip.selected:not([data-value="more"])');
+            return chip ? parseInt(chip.dataset.value, 10) : 1;
+        }
+        function setDurationChip(val) {
+            const moreWrap = document.getElementById('duration-more-wrap');
+            const moreBtn = document.getElementById('duration-more-btn');
+            document.querySelectorAll('#duration-chips-container .chip').forEach(c => {
+                if (c.dataset.value === 'more') return;
+                c.classList.toggle('selected', parseInt(c.dataset.value, 10) === val);
+            });
+            if (val >= 4) {
+                moreWrap.classList.add('expanded');
+                moreBtn.textContent = '접기';
+            } else {
+                moreWrap.classList.remove('expanded');
+                moreBtn.textContent = '더보기';
+            }
+        }
+        function syncFromStartAndDuration() {
+            const startTime = document.getElementById('modal-time').value;
+            const blockCount = getDurationValue();
+            const startIdx = TIME_BLOCKS.indexOf(startTime);
+            const endSel = document.getElementById('modal-end-time');
+            if (startIdx < 0) return;
+            const endIdx = startIdx + blockCount;
+            const endTime = endIdx < TIME_BLOCKS.length ? TIME_BLOCKS[endIdx] : '24:00';
+            if (Array.from(endSel.options).some(o => o.value === endTime)) endSel.value = endTime;
+        }
+        const MAX_DURATION = 18;
+        function syncFromStartAndEnd() {
+            const startTime = document.getElementById('modal-time').value;
+            const endTime = document.getElementById('modal-end-time').value;
+            const startIdx = TIME_BLOCKS.indexOf(startTime);
+            const endIdx = endTime === '24:00' ? TIME_BLOCKS.length : TIME_BLOCKS.indexOf(endTime);
+            const blockCount = Math.min(Math.max(endIdx > startIdx ? endIdx - startIdx : 1, 1), MAX_DURATION);
+            setDurationChip(blockCount);
+        }
+
+        document.getElementById('modal-time').onchange = () => {
+            populateEndTimeOptions();
+            syncFromStartAndDuration();
+        };
+        document.getElementById('modal-end-time').onchange = syncFromStartAndEnd;
+        document.getElementById('duration-chips-container').onclick = e => {
+            const chip = e.target.closest('.chip');
+            if (!chip) return;
+            if (chip.dataset.value === 'more') {
+                const wrap = document.getElementById('duration-more-wrap');
+                const btn = document.getElementById('duration-more-btn');
+                wrap.classList.toggle('expanded');
+                btn.textContent = wrap.classList.contains('expanded') ? '접기' : '더보기';
+                return;
+            }
+            const val = parseInt(chip.dataset.value, 10);
+            if (!isNaN(val)) { setDurationChip(val); syncFromStartAndDuration(); }
+        };
+
+        async function saveBlock() {
+            const content = document.getElementById('modal-content').value.trim();
+            if (!content) { alert('내용을 입력해주세요.'); return; }
+            const date = document.getElementById('modal-date').value;
+            const startTime = document.getElementById('modal-time').value;
+            const blockCount = getDurationValue();
+            const subject = document.getElementById('modal-subject').value;
+            const place = document.getElementById('modal-place').value;
+            const startIdx = TIME_BLOCKS.indexOf(startTime);
+            if (startIdx < 0) { alert('시작 시간을 확인해주세요.'); return; }
+            const blocksToSave = TIME_BLOCKS.slice(startIdx, startIdx + blockCount);
+            for (const id of modalGroupIds) {
+                const { error } = await deleteSchedule(id);
+                if (error) console.warn('Delete old block:', error);
+            }
+            for (const tb of blocksToSave) {
+                const { error } = await pushSchedule({ date, time_block: tb, content, subject, place });
+                if (error) { alert('저장 실패: ' + (error.message || '네트워크 확인')); return; }
+            }
+            modalGroupIds = [];
+            closeModal();
+            render();
+        }
+
+        async function deleteBlock() {
+            if (modalGroupIds.length === 0) return;
+            if (!confirm('이 기록을 삭제할까요?')) return;
+            for (const id of modalGroupIds) {
+                const { error } = await deleteSchedule(id);
+                if (error) { alert('삭제 실패'); return; }
+            }
+            modalGroupIds = [];
+            closeModal();
+            render();
+        }
+
+        document.getElementById('schedule-modal').onclick = e => {
+            if (e.target.id === 'schedule-modal') closeModal();
+        };
+
+        render();
+    </script>
+</body>
+</html>

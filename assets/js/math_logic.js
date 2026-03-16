@@ -19,7 +19,7 @@ async function requireAuth() {
     const session = await getSession();
     if (!session) {
         const returnTo = encodeURIComponent(window.location.pathname + window.location.search);
-        const root = window.location.pathname.includes('/math/') ? '../../' : './';
+        const root = window.location.pathname.includes('/math_') ? '../../' : window.location.pathname.includes('/math/') ? '../' : './';
         window.location.href = `${root}login.html?returnTo=${returnTo}`;
         return false;
     }
@@ -38,15 +38,22 @@ async function signOut() {
 }
 
 /**
- * Sync Progress
+ * Math Progress: Supabase 기반 (in-memory cache)
  */
+const _mathProgressCache = {};
+
+function getMathProgress(key) {
+    return _mathProgressCache[key] || null;
+}
+
 async function pullFromSupabase() {
     const rows = await pullProgress();
     let updated = 0;
     rows.forEach(row => {
-        const local = localStorage.getItem(row.storage_key);
-        if (!local || new Date(row.completed_at) > new Date(local)) {
-            localStorage.setItem(row.storage_key, row.completed_at);
+        if (!row.storage_key || !row.storage_key.startsWith('math_tutor_')) return;
+        const prev = _mathProgressCache[row.storage_key];
+        if (!prev || new Date(row.completed_at) > new Date(prev)) {
+            _mathProgressCache[row.storage_key] = row.completed_at;
             updated++;
         }
     });
@@ -54,7 +61,8 @@ async function pullFromSupabase() {
 }
 
 async function syncProgress(key, date) {
-    localStorage.setItem(key, date);
+    if (!key.startsWith('math_tutor_')) return;
+    _mathProgressCache[key] = date;
     const { error } = await pushProgress(key, date);
     if (!error) {
         showToast("✅ 학습 기록이 안전하게 저장되었습니다!");
@@ -71,8 +79,14 @@ async function getUnitInfo(grade, unitId) {
     const key = `${grade}_${unitId}`;
     if (_unitCache[key]) return _unitCache[key];
 
-    const isSubDir = window.location.pathname.includes('/math_');
-    const path = isSubDir ? `../data/math_${grade}/unit_${unitId}.json` : `./math/data/math_${grade}/unit_${unitId}.json`;
+    const pathname = window.location.pathname;
+    let path;
+    if (pathname.includes('/math')) {
+        const basePath = pathname.includes('.') ? pathname.replace(/\/[^/]*$/, '/') : (pathname.endsWith('/') ? pathname : pathname + '/');
+        path = `${window.location.origin}${basePath}data/math_${grade}/unit_${unitId}.json`;
+    } else {
+        path = `./math/data/math_${grade}/unit_${unitId}.json`;
+    }
 
     try {
         const res = await fetch(path);
@@ -105,17 +119,10 @@ function loadMathProgress() {
         for (let i = 1; i <= totalLessons; i++) {
             const lessonId = `${unitId}-${i < 10 ? '0' + i : i}`;
             const key = `math_tutor_math_${grade}_unit${unitId}_lesson${lessonId}`;
-            const date = localStorage.getItem(key);
+            const date = getMathProgress(key);
             if (date) {
                 completedInUnit++;
                 if (!lastDate || new Date(date) > new Date(lastDate)) lastDate = date;
-            }
-        }
-
-        // Legacy check
-        if (localStorage.getItem(`math_tutor_math_${grade}_unit${unitId}`) || localStorage.getItem(`math_tutor_math_${grade}_ch${index+1}`)) {
-            if (completedInUnit < totalLessons) {
-                completedInUnit = totalLessons;
             }
         }
 
@@ -157,12 +164,9 @@ async function renderLessonList(card, grade, unitId) {
 
     container.innerHTML = data.lessons.map(lesson => {
         const storageKey = `math_tutor_math_${grade}_unit${unitId}_lesson${lesson.lesson_id}`;
-        const isDone = localStorage.getItem(storageKey);
+        const isDone = getMathProgress(storageKey);
         return `
-            <div class="lesson-item ${isDone ? 'completed' : ''}" style="display:flex; justify-content:space-between; padding:8px 12px; margin-bottom:4px; background:#f8fafc; border-radius:10px;">
-                <span style="font-weight:700; color:${isDone ? '#059669' : '#64748b'}">${lesson.title}</span>
-                <i class="${isDone ? 'fas fa-check-circle' : 'far fa-circle'}" style="color:${isDone ? '#10b981' : '#cbd5e1'}"></i>
-            </div>
+            <span class="lesson-chip ${isDone ? 'completed' : ''}">${lesson.title}${isDone ? ' <i class="fas fa-check-circle" style="font-size:0.75em; margin-left:4px;"></i>' : ''}</span>
         `;
     }).join('');
 }
@@ -180,6 +184,112 @@ function updateOverallProgressUI(done, total) {
         fireConfetti();
     } else if (percent > 0) {
         text.textContent = `벌써 ${done}개 단원 완료! 라희야 조금만 더 힘내자! 🚀`;
+    }
+}
+
+/**
+ * Viewer: Lesson completion check (viewer_logic.js에서 사용)
+ */
+function isLessonComplete(unitId, lessonId) {
+    const grade = window.currentGrade;
+    if (!grade) return false;
+    const key = `math_tutor_math_${grade}_unit${unitId}_lesson${lessonId}`;
+    return !!getMathProgress(key);
+}
+
+/**
+ * Viewer: 진행률 바 업데이트
+ */
+function updateViewerProgress(percent) {
+    const el = document.getElementById('main-progress');
+    if (el) el.style.width = (typeof percent === 'number' ? percent : 20) + '%';
+}
+
+/**
+ * Viewer: 터치 시 정답/힌트 표시
+ */
+function reveal(el) {
+    if (!el) return;
+    const hint = el.querySelector('.tap-hint');
+    const hidden = el.querySelector('.hidden-content');
+    if (hint) hint.style.display = 'none';
+    if (hidden) hidden.style.display = 'block';
+    const card = el.closest('.step-card');
+    if (card) {
+        const btn = card.querySelector('.action-btn');
+        const interactives = card.querySelectorAll('.interactive-box, .flashcard-container');
+        const allRevealed = Array.from(interactives).every(box => {
+            const h = box.querySelector('.hidden-content');
+            return !h || h.style.display === 'block';
+        });
+        if (btn && allRevealed && btn.dataset.originalText) {
+            btn.disabled = false;
+            btn.innerHTML = btn.dataset.originalText;
+        }
+    }
+}
+
+/**
+ * Viewer: 퀴즈 정답 체크
+ */
+function checkAnswer(btn, isCorrect, feedbackId) {
+    if (!btn) return;
+    btn.classList.add(isCorrect ? 'correct' : 'wrong');
+    btn.disabled = true;
+    const feedback = document.getElementById(feedbackId);
+    if (feedback) {
+        feedback.textContent = isCorrect ? '✅ 정답이야!' : '❌ 다시 생각해봐!';
+        feedback.style.color = isCorrect ? '#059669' : '#be123c';
+    }
+    const container = btn.closest('.step-card');
+    if (container && isCorrect) {
+        // 문항별로 하나씩 선택하므로, 각 퀴즈 컨테이너에서 선택된 답이 정답인지 확인
+        const quizContainers = container.querySelectorAll('[data-quiz-q]');
+        let allAnswered = quizContainers.length > 0;
+        let allCorrect = true;
+        for (const qc of quizContainers) {
+            const chosen = qc.querySelector('.option-btn:disabled');
+            if (!chosen) {
+                allAnswered = false;
+                break;
+            }
+            if (!chosen.classList.contains('correct')) {
+                allCorrect = false;
+                break;
+            }
+        }
+        if (allAnswered && allCorrect) {
+            const stepBtn = container.querySelector('.action-btn');
+            if (stepBtn && stepBtn.disabled) {
+                stepBtn.disabled = false;
+                stepBtn.innerHTML = stepBtn.dataset.originalText || stepBtn.innerHTML;
+            }
+            if (container.id === 'step5') {
+                markChapterComplete();
+                window.dispatchEvent(new Event('mathLessonComplete'));
+            }
+        }
+    }
+}
+
+/**
+ * Viewer: 단계 완료 → 다음 단계로
+ */
+function completeStep(stepNum) {
+    const card = document.getElementById('step' + stepNum);
+    if (!card) return;
+    card.classList.add('completed');
+    card.classList.remove('active');
+    const nextCard = document.getElementById('step' + (stepNum + 1));
+    if (nextCard) {
+        nextCard.classList.add('active');
+        nextCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    const percent = (stepNum / 5) * 100;
+    updateViewerProgress(percent);
+    if (stepNum === 5) {
+        markChapterComplete();
+        window.dispatchEvent(new Event('mathLessonComplete'));
     }
 }
 
@@ -211,9 +321,9 @@ function markChapterComplete() {
     }
 }
 
-// Lifecycle
-document.addEventListener('DOMContentLoaded', () => {
-    requireAuth();
+// Lifecycle: Supabase에서 먼저 pull 후 렌더
+document.addEventListener('DOMContentLoaded', async () => {
+    await requireAuth();
+    await pullFromSupabase();
     loadMathProgress();
-    pullFromSupabase();
 });

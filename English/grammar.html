@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/english/grammar.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../env.js"></script>
     <script src="../assets/js/supabase_service.js"></script>
     <script src="../assets/js/app_utils.js"></script>
 </head>
@@ -44,15 +45,31 @@
     </div>
 
     <script>
+        // Supabase에서 문법 완료 내역 가져와 localStorage에 반영
+        async function syncGrammarFromSupabase() {
+            const rows = await pullProgress();
+            const completed = new Set(JSON.parse(localStorage.getItem('rahee_grammar_completed') || '[]'));
+            rows.forEach(row => {
+                const m = row.storage_key && row.storage_key.match(/^rahee_grammar_unit_(\d+)$/);
+                if (m) completed.add(m[1]);
+            });
+            localStorage.setItem('rahee_grammar_completed', JSON.stringify([...completed]));
+        }
+
         // 마크다운 텍스트를 파싱해서 HTML로 그려주는 스크립트
         async function loadGrammarData() {
             try {
-                const response = await fetch('./data/Basic Grammar in Use.md');
+                await syncGrammarFromSupabase();
+                const baseDir = window.location.href.replace(/\/[^/]*(\?.*)?$/, '/');
+                const fetchUrl = baseDir + 'data/Basic Grammar in Use.md';
+                
+                const response = await fetch(fetchUrl);
+                if (!response.ok) throw new Error("File not found");
                 const text = await response.text();
                 parseAndRender(text);
             } catch (error) {
                 console.error("데이터를 불러오지 못했습니다.", error);
-                document.getElementById('loading').innerText = "데이터를 불러오는데 실패했습니다 😢";
+                document.getElementById('loading').innerText = "데이터를 불러오는데 실패했습니다 😢 (404)";
             }
         }
 
@@ -92,8 +109,8 @@
                 else if (/^\d+\./.test(line)) {
                     const match = line.match(/^(\d+)\.\s*(.+)/);
                     if (match && currentGrid) {
-                        const chapterNum = match[1];
-                        const chapterTitleText = match[2];
+                        const chapterNum = match[1].trim();
+                        const chapterTitleText = match[2].trim();
                         
                         const card = document.createElement('div');
                         card.className = 'chapter-card';
@@ -108,9 +125,9 @@
                             <div class="chapter-title">${chapterTitleText}</div>
                         `;
                         
-                        // 상세 학습 페이지로 이동 (URL 파라미터로 정보 전달)
+                        // 상세 학습 페이지로 이동 (해시로 전달 - 리다이렉트 시에도 유지됨)
                         card.addEventListener('click', () => {
-                            window.location.href = `grammar_detail.html?unit=${chapterNum}&title=${encodeURIComponent(chapterTitleText)}`;
+                            window.location.href = `grammar_detail.html#unit=${chapterNum}&title=${encodeURIComponent(chapterTitleText)}`;
                         });
 
                         currentGrid.appendChild(card);

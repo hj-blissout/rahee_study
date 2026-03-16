@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/english/celebration.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../env.js"></script>
     <script src="../assets/js/supabase_service.js"></script>
     <script src="../assets/js/app_utils.js"></script>
 </head>
@@ -24,8 +25,11 @@
     <div class="container">
         <div class="grammar-content-box">
             <div class="grammar-header">
-                <div class="unit-badge" id="unit-badge">Unit ?</div>
-                <h2 class="grammar-title" id="grammar-title">로딩 중...</h2>
+                <div class="grammar-header-left">
+                    <div class="unit-badge" id="unit-badge">Unit ?</div>
+                    <h2 class="grammar-title" id="grammar-title">로딩 중...</h2>
+                </div>
+                <div class="grammar-category" id="grammar-category" style="display:none;"></div>
             </div>
             
             <div class="concept-box" id="concept-box">
@@ -34,7 +38,12 @@
             </div>
 
             <div class="example-section" id="example-section">
-                <h3><i class="fas fa-lightbulb" style="color:#f1c40f"></i> 필수 예문 연습</h3>
+                <div class="example-section-header">
+                    <h3><i class="fas fa-lightbulb" style="color:#f1c40f"></i> 필수 예문 연습</h3>
+                    <button type="button" class="btn-play-all" id="btn-play-all" style="display:none;">
+                        <i class="fas fa-play-circle"></i> 예문 전체 듣기
+                    </button>
+                </div>
                 <div id="examples-container">
                     <!-- 예문들이 JS에 의해 여기에 들어갑니다. -->
                 </div>
@@ -62,10 +71,10 @@
     </div>
 
     <script>
-        // URL에서 파라미터 읽어오기
-        const urlParams = new URLSearchParams(window.location.search);
-        const unitNum = urlParams.get('unit') || '0';
-        const rawTitle = urlParams.get('title') || '학습할 챕터를 선택해주세요';
+        // 해시에서 unit 읽기 (#unit=1&title=... - 리다이렉트 시에도 유지됨)
+        const hashParams = new URLSearchParams(window.location.hash.slice(1));
+        const unitNum = hashParams.get('unit') || '0';
+        const rawTitle = hashParams.get('title') || '학습할 챕터를 선택해주세요';
         
         // 화면 초기 업데이트
         document.getElementById('unit-badge').innerText = `Unit ${unitNum}`;
@@ -77,6 +86,7 @@
         let typedStatus = [];
         let currentTypingIndex = -1;
         let currentTargetText = '';
+        let currentExamples = [];  // 예문 배열 (순차 재생용)
 
         // 시작 시 완료 버튼 비활성화
         document.getElementById('btn-complete').disabled = true;
@@ -121,6 +131,49 @@
             window.speechSynthesis.speak(utterance);
         }
 
+        // 예문 전체 순차 재생
+        function playAllExamplesSequentially() {
+            if (currentExamples.length === 0) return;
+            const btn = document.getElementById('btn-play-all');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 재생 중...';
+
+            window.speechSynthesis.cancel();
+            let index = 0;
+
+            function resetBtn() {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-play-circle"></i> 예문 전체 듣기';
+            }
+
+            function playNext() {
+                if (index >= currentExamples.length) {
+                    resetBtn();
+                    return;
+                }
+                const text = currentExamples[index].en;
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.85;
+                utterance.pitch = 1.1;
+                if (voices.length === 0) voices = window.speechSynthesis.getVoices();
+                if (!preferredVoice && voices.length) {
+                    preferredVoice = voices.find(v => v.name === 'Google US English') ||
+                        voices.find(v => v.name === 'Samantha') ||
+                        voices.find(v => v.lang === 'en-US' && v.name.includes('Female')) ||
+                        voices.find(v => v.lang === 'en-US');
+                }
+                if (preferredVoice) utterance.voice = preferredVoice;
+                utterance.onend = () => {
+                    index++;
+                    setTimeout(playNext, 400);  // 문장 사이 간격
+                };
+                utterance.onerror = resetBtn;
+                window.speechSynthesis.speak(utterance);
+            }
+            playNext();
+        }
+
         // 뜻 보기 토글 함수
         function toggleKo(btn, event) {
             // 모달 열리는 것 방지
@@ -138,19 +191,68 @@
 
         // JSON 데이터 불러와서 화면에 채우기
         async function loadGrammarDetail() {
-            if (unitNum === '0') return; // 에러 상태
+            if (unitNum === '0') {
+                document.getElementById('concept-box').innerHTML = `
+                    <p>목차에서 학습할 챕터를 선택해주세요.</p>
+                    <a href="grammar.html" class="btn btn-complete" style="display:inline-block; margin-top:1rem; text-decoration:none;">
+                        <i class="fas fa-list"></i> 목차로 이동
+                    </a>
+                `;
+                document.getElementById('example-section').style.display = 'none';
+                return;
+            }
 
             try {
-                const response = await fetch('./data/grammar_data.json');
+                const baseDir = window.location.href.replace(/\/[^/]*(\?.*)?$/, '/');
+                const fetchUrl = baseDir + 'data/grammar_data_rewritten.json';
+                
+                const response = await fetch(fetchUrl);
+                if (!response.ok) throw new Error("File not found");
                 const data = await response.json();
                 
                 const unitData = data[unitNum];
                 if (unitData) {
-                    // 타이틀 업데이트 (JSON 데이터 기반으로 덮어쓰기)
+                    // 타이틀, 카테고리 업데이트
                     document.getElementById('grammar-title').innerText = unitData.title;
+                    const catEl = document.getElementById('grammar-category');
+                    if (unitData.category) {
+                        catEl.textContent = unitData.category;
+                        catEl.style.display = 'block';
+                    } else {
+                        catEl.style.display = 'none';
+                    }
                     
-                    // 개념 설명 업데이트
-                    document.getElementById('concept-box').innerHTML = unitData.concept;
+                    // 개념 설명 업데이트 (rewritten: object / 기존: HTML string)
+                    const conceptBox = document.getElementById('concept-box');
+                    if (typeof unitData.concept === 'object' && unitData.concept !== null) {
+                        const c = unitData.concept;
+                        conceptBox.innerHTML = `
+                            <div class="concept-situation">
+                                <span class="concept-label"><i class="fas fa-film"></i> 상황</span>
+                                <p>${c.situation || ''}</p>
+                            </div>
+                            <div class="concept-explanation">
+                                <span class="concept-label"><i class="fas fa-book-open"></i> 설명</span>
+                                <p>${c.explanation || ''}</p>
+                            </div>
+                            <div class="concept-core">
+                                <span class="concept-label"><i class="fas fa-lightbulb"></i> 핵심</span>
+                                <p>${c.core_feeling || ''}</p>
+                            </div>
+                        `;
+                    } else {
+                        conceptBox.innerHTML = unitData.concept || '';
+                    }
+
+                    // 예문 전체 듣기 버튼 표시
+                    currentExamples = unitData.examples;
+                    const btnPlayAll = document.getElementById('btn-play-all');
+                    if (currentExamples.length > 0) {
+                        btnPlayAll.style.display = 'inline-flex';
+                        btnPlayAll.onclick = playAllExamplesSequentially;
+                    } else {
+                        btnPlayAll.style.display = 'none';
+                    }
                     
                     // 예문 업데이트
                     const examplesContainer = document.getElementById('examples-container');
@@ -294,6 +396,8 @@
             if (!completed.includes(unitNum)) {
                 completed.push(unitNum);
                 localStorage.setItem('rahee_grammar_completed', JSON.stringify(completed));
+                // Supabase에 저장
+                pushProgress('rahee_grammar_unit_' + unitNum, new Date().toISOString());
             }
 
             playCuteSound();

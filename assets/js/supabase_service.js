@@ -38,24 +38,26 @@ async function getSession() {
 async function logout() {
     const sb = getSupabase();
     if (sb) await sb.auth.signOut();
-    const root = window.location.pathname.includes('/math/') || window.location.pathname.includes('/English/') ? '../../' : './';
+    const root = window.location.pathname.includes('/math_') || window.location.pathname.includes('/english/') ? '../../' : (window.location.pathname.includes('/math/') ? '../' : './');
     window.location.href = root + 'login.html';
 }
 
 // Database / Progress Functions
-async function pushProgress(storageKey, completedAt) {
+async function pushProgress(storageKey, completedAt, payload = null) {
     try {
         const sb = getSupabase();
-        if (!sb) return;
+        if (!sb) return { error: new Error('No Supabase') };
         const user = await getCurrentUser();
-        if (!user) return;
+        if (!user) return { error: new Error('No user') };
 
-        const { error } = await sb.from('rahee_progress').upsert({
+        const row = {
             user_id: user.id,
             storage_key: storageKey,
             completed_at: completedAt
-        }, { onConflict: 'user_id,storage_key' });
+        };
+        if (payload != null) row.payload = payload;
 
+        const { error } = await sb.from('rahee_progress').upsert(row, { onConflict: 'user_id,storage_key' });
         return { error };
     } catch (e) {
         console.warn('Supabase Push Error:', e);
@@ -72,7 +74,7 @@ async function pullProgress() {
 
         const { data, error } = await sb
             .from('rahee_progress')
-            .select('storage_key, completed_at')
+            .select('storage_key, completed_at, payload')
             .eq('user_id', user.id);
 
         if (error) throw error;
@@ -80,5 +82,60 @@ async function pullProgress() {
     } catch (e) {
         console.warn('Supabase Pull Error:', e);
         return [];
+    }
+}
+
+// Schedule (시간 블럭) Functions
+async function pushSchedule(row) {
+    try {
+        const sb = getSupabase();
+        if (!sb) return { error: new Error('No Supabase') };
+        const user = await getCurrentUser();
+        if (!user) return { error: new Error('No user') };
+
+        const { error } = await sb.from('rahee_schedule').insert({
+            ...row,
+            user_id: user.id
+        });
+        return { error };
+    } catch (e) {
+        console.warn('Supabase Schedule Push Error:', e);
+        return { error: e };
+    }
+}
+
+async function pullSchedule(dateStart, dateEnd) {
+    try {
+        const sb = getSupabase();
+        if (!sb) return [];
+        const user = await getCurrentUser();
+        if (!user) return [];
+
+        let query = sb.from('rahee_schedule')
+            .select('*')
+            .eq('user_id', user.id)
+            .gte('date', dateStart)
+            .lte('date', dateEnd)
+            .order('date', { ascending: true })
+            .order('time_block', { ascending: true });
+
+        const { data, error } = await query;
+        if (error) throw error;
+        return data || [];
+    } catch (e) {
+        console.warn('Supabase Schedule Pull Error:', e);
+        return [];
+    }
+}
+
+async function deleteSchedule(id) {
+    try {
+        const sb = getSupabase();
+        if (!sb) return { error: new Error('No Supabase') };
+        const { error } = await sb.from('rahee_schedule').delete().eq('id', id);
+        return { error };
+    } catch (e) {
+        console.warn('Supabase Schedule Delete Error:', e);
+        return { error: e };
     }
 }

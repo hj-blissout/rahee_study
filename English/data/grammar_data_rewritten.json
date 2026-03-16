@@ -1,0 +1,3618 @@
+{
+  "1": {
+    "unit": 1,
+    "title": "am/is/are",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "새 학기 첫날 자기소개 시간이다.",
+      "core_feeling": "사람이나 사물의 정체, 상태, 위치를 말할 때는 be동사(am/is/are)를 쓴다",
+      "explanation": "사람이나 사물의 정체, 상태, 위치를 말할 때는 be동사(am/is/are)를 쓴다. 움직임이 아니라 '어떤 상태인지'를 말하는 표현이다."
+    },
+    "examples": [
+      {
+        "en": "I am the class president this semester.",
+        "ko": "나는 이번 학기 반장이야."
+      },
+      {
+        "en": "My homeroom teacher is very kind.",
+        "ko": "우리 담임선생님은 아주 친절하셔."
+      },
+      {
+        "en": "The classroom is on the third floor.",
+        "ko": "교실은 3층에 있어."
+      },
+      {
+        "en": "We are ready for the first class.",
+        "ko": "우리는 첫 수업 준비가 됐어."
+      },
+      {
+        "en": "These notebooks are heavy.",
+        "ko": "이 공책들은 무거워."
+      }
+    ]
+  },
+  "2": {
+    "unit": 2,
+    "title": "am/is/are (questions)",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "처음 만난 짝꿍에게 기본 정보를 묻는 상황이다.",
+      "core_feeling": "be동사 의문문은 be동사를 주어 앞으로 보낸다",
+      "explanation": "be동사 의문문은 be동사를 주어 앞으로 보낸다. Yes/No 질문도, Wh-질문도 이 구조를 기본으로 한다."
+    },
+    "examples": [
+      {
+        "en": "Are you in Class 3-2?",
+        "ko": "너 3학년 2반이니?"
+      },
+      {
+        "en": "Is your locker near the window?",
+        "ko": "네 사물함은 창가 근처에 있니?"
+      },
+      {
+        "en": "Are your parents at school today?",
+        "ko": "오늘 네 부모님 학교에 오셨어?"
+      },
+      {
+        "en": "What is your favorite subject?",
+        "ko": "네가 가장 좋아하는 과목은 뭐야?"
+      },
+      {
+        "en": "Why are the desks so dirty?",
+        "ko": "책상들이 왜 이렇게 더러워?"
+      }
+    ]
+  },
+  "3": {
+    "unit": 3,
+    "title": "I am doing (present continuous)",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "점심시간에 지금 눈앞에서 일어나는 일을 말한다.",
+      "core_feeling": "말하는 순간 진행 중인 동작은 am/is/are + -ing로 표현한다",
+      "explanation": "말하는 순간 진행 중인 동작은 am/is/are + -ing로 표현한다. '지금 하고 있는 중'이라는 느낌이 중요하다."
+    },
+    "examples": [
+      {
+        "en": "I am eating lunch now.",
+        "ko": "나는 지금 점심을 먹고 있어."
+      },
+      {
+        "en": "Minji is studying in the library.",
+        "ko": "민지는 도서관에서 공부하고 있어."
+      },
+      {
+        "en": "The boys are playing basketball outside.",
+        "ko": "남자애들은 밖에서 농구하고 있어."
+      },
+      {
+        "en": "We are waiting for the bell.",
+        "ko": "우리는 종이 울리기를 기다리고 있어."
+      },
+      {
+        "en": "It is raining, so we are staying inside.",
+        "ko": "비가 오고 있어서 우리는 안에 머무르고 있어."
+      }
+    ]
+  },
+  "4": {
+    "unit": 4,
+    "title": "Are you doing? (present continuous questions)",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "친구가 지금 뭘 하는지 바로 묻는 상황이다.",
+      "core_feeling": "현재진행형 의문문은 be동사를 앞으로 보낸다",
+      "explanation": "현재진행형 의문문은 be동사를 앞으로 보낸다. 지금 이 순간 진행 중인 행동인지가 핵심이다."
+    },
+    "examples": [
+      {
+        "en": "Are you using your phone now?",
+        "ko": "너 지금 휴대폰 쓰고 있니?"
+      },
+      {
+        "en": "Is Jisoo doing her science homework?",
+        "ko": "지수가 과학 숙제를 하고 있니?"
+      },
+      {
+        "en": "Are they practicing for the school festival?",
+        "ko": "걔네 학교 축제 연습하고 있니?"
+      },
+      {
+        "en": "What are you looking for in your bag?",
+        "ko": "가방에서 뭘 찾고 있니?"
+      },
+      {
+        "en": "Why is the teacher talking to Tom?",
+        "ko": "선생님이 왜 톰이랑 이야기하고 계시니?"
+      }
+    ]
+  },
+  "5": {
+    "unit": 5,
+    "title": "I do/work/like (simple present)",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "평소 학교생활 습관을 소개한다.",
+      "core_feeling": "반복되는 습관, 시간표, 일반적인 사실은 단순현재를 쓴다",
+      "explanation": "반복되는 습관, 시간표, 일반적인 사실은 단순현재를 쓴다. today, now처럼 '지금만'의 느낌이 없을 때 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I get up at six thirty on school days.",
+        "ko": "나는 학교 가는 날에는 6시 30분에 일어나."
+      },
+      {
+        "en": "Our first class starts at eight forty.",
+        "ko": "우리 첫 수업은 8시 40분에 시작해."
+      },
+      {
+        "en": "I walk to school with my brother.",
+        "ko": "나는 형과 함께 걸어서 학교에 가."
+      },
+      {
+        "en": "My friend likes history very much.",
+        "ko": "내 친구는 역사를 아주 좋아해."
+      },
+      {
+        "en": "We wear uniforms every weekday.",
+        "ko": "우리는 평일마다 교복을 입어."
+      }
+    ]
+  },
+  "6": {
+    "unit": 6,
+    "title": "I don't... (simple present negative)",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "평소에 하지 않는 습관이나 학교 규칙을 말한다.",
+      "core_feeling": "단순현재 부정문은 do/does not + 동사원형이다",
+      "explanation": "단순현재 부정문은 do/does not + 동사원형이다. 3인칭 단수일 때는 doesn't를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I don't drink coffee before school.",
+        "ko": "나는 학교 가기 전에 커피를 마시지 않아."
+      },
+      {
+        "en": "We don't have classes on Saturday.",
+        "ko": "우리는 토요일에 수업이 없어."
+      },
+      {
+        "en": "My school doesn't have a swimming pool.",
+        "ko": "우리 학교에는 수영장이 없어."
+      },
+      {
+        "en": "He doesn't bring his tablet to class.",
+        "ko": "그는 수업에 태블릿을 가져오지 않아."
+      },
+      {
+        "en": "My friends don't like spicy 떡볶이.",
+        "ko": "내 친구들은 매운 떡볶이를 좋아하지 않아."
+      }
+    ]
+  },
+  "7": {
+    "unit": 7,
+    "title": "Do you...? (simple present questions)",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "친구의 평소 습관과 사실을 묻는다.",
+      "core_feeling": "단순현재 의문문은 Do/Does + 주어 + 동사원형이다",
+      "explanation": "단순현재 의문문은 Do/Does + 주어 + 동사원형이다. 평소 습관이나 일반적 사실을 물을 때 쓴다."
+    },
+    "examples": [
+      {
+        "en": "Do you usually eat breakfast at home?",
+        "ko": "너는 보통 집에서 아침을 먹니?"
+      },
+      {
+        "en": "Does your sister go to this school?",
+        "ko": "네 누나도 이 학교에 다니니?"
+      },
+      {
+        "en": "Do your classes end at four o'clock?",
+        "ko": "너희 수업은 4시에 끝나니?"
+      },
+      {
+        "en": "What time do you leave home?",
+        "ko": "너는 몇 시에 집에서 나오니?"
+      },
+      {
+        "en": "Does your best friend live nearby?",
+        "ko": "네 가장 친한 친구는 근처에 사니?"
+      }
+    ]
+  },
+  "8": {
+    "unit": 8,
+    "title": "present continuous and simple present",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "평소 습관과 오늘만 다른 행동을 비교한다.",
+      "core_feeling": "단순현재는 늘 그런 일, 현재진행형은 지금 또는 일시적으로 하는 일을 말한다",
+      "explanation": "단순현재는 늘 그런 일, 현재진행형은 지금 또는 일시적으로 하는 일을 말한다. 두 시제의 차이를 같이 봐야 한다."
+    },
+    "examples": [
+      {
+        "en": "I usually eat in the cafeteria, but today I am eating in the classroom.",
+        "ko": "나는 보통 급식실에서 먹지만, 오늘은 교실에서 먹고 있어."
+      },
+      {
+        "en": "She usually takes the bus, but this week she is walking to school.",
+        "ko": "그녀는 보통 버스를 타지만, 이번 주에는 걸어서 학교에 오고 있어."
+      },
+      {
+        "en": "We study English on Mondays, and we are studying it now.",
+        "ko": "우리는 월요일마다 영어를 공부하고, 지금도 영어를 공부하고 있어."
+      },
+      {
+        "en": "It often rains in July, but it isn't raining today.",
+        "ko": "7월에는 자주 비가 오지만, 오늘은 비가 오지 않아."
+      },
+      {
+        "en": "Why are you sitting here today? You usually sit in the back.",
+        "ko": "오늘은 왜 여기에 앉아 있니? 너는 보통 뒤에 앉잖아."
+      }
+    ]
+  },
+  "9": {
+    "unit": 9,
+    "title": "I have... and I've got...",
+    "category": "Present - 현재의 상태와 습관",
+    "concept": {
+      "situation": "소유하고 있는 물건이나 관계를 말한다.",
+      "core_feeling": "have와 have got은 소유를 말할 때 비슷하게 쓴다",
+      "explanation": "have와 have got은 소유를 말할 때 비슷하게 쓴다. 미국식에서는 have를, 영국식 구어에서는 have got을 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I have a math workbook in my bag.",
+        "ko": "내 가방에는 수학 문제집이 있어."
+      },
+      {
+        "en": "I've got two pens, so you can use one.",
+        "ko": "나 펜이 두 개 있어서 하나 빌려줄 수 있어."
+      },
+      {
+        "en": "Our classroom has a smart board.",
+        "ko": "우리 교실에는 전자칠판이 있어."
+      },
+      {
+        "en": "She's got a cold today.",
+        "ko": "그녀는 오늘 감기에 걸렸어."
+      },
+      {
+        "en": "Have you got your student ID card?",
+        "ko": "학생증 가지고 있니?"
+      }
+    ]
+  },
+  "10": {
+    "unit": 10,
+    "title": "was/were",
+    "category": "Past - 지난 일과 예전 습관",
+    "concept": {
+      "situation": "집에 와서 오늘 학교에서 어땠는지 말한다.",
+      "core_feeling": "현재의 am/is/are가 과거가 되면 was/were가 된다",
+      "explanation": "현재의 am/is/are가 과거가 되면 was/were가 된다. 과거의 상태, 위치, 날씨 등을 설명할 때 쓴다."
+    },
+    "examples": [
+      {
+        "en": "The math test was difficult.",
+        "ko": "수학 시험은 어려웠어."
+      },
+      {
+        "en": "I was tired after PE class.",
+        "ko": "나는 체육 수업 후에 피곤했어."
+      },
+      {
+        "en": "My friends were in the library after school.",
+        "ko": "내 친구들은 방과 후에 도서관에 있었어."
+      },
+      {
+        "en": "Was the cafeteria crowded today?",
+        "ko": "오늘 급식실은 붐볐니?"
+      },
+      {
+        "en": "The classrooms were very quiet during the exam.",
+        "ko": "시험 중에 교실들은 아주 조용했어."
+      }
+    ]
+  },
+  "11": {
+    "unit": 11,
+    "title": "worked/got/went (simple past)",
+    "category": "Past - 지난 일과 예전 습관",
+    "concept": {
+      "situation": "어제 학교에서 한 일을 순서대로 말한다.",
+      "core_feeling": "이미 끝난 과거의 행동은 동사의 과거형으로 쓴다",
+      "explanation": "이미 끝난 과거의 행동은 동사의 과거형으로 쓴다. 어제, last night, this morning 같은 시간이 자주 함께 온다."
+    },
+    "examples": [
+      {
+        "en": "I finished my art homework last night.",
+        "ko": "나는 어젯밤 미술 숙제를 끝냈어."
+      },
+      {
+        "en": "We went to the gym for assembly.",
+        "ko": "우리는 조회 때문에 체육관에 갔어."
+      },
+      {
+        "en": "My friend forgot her lunch box.",
+        "ko": "내 친구는 도시락을 두고 왔어."
+      },
+      {
+        "en": "The teacher gave us extra reading.",
+        "ko": "선생님은 우리에게 추가 읽기 과제를 주셨어."
+      },
+      {
+        "en": "I got home at five thirty.",
+        "ko": "나는 5시 30분에 집에 도착했어."
+      }
+    ]
+  },
+  "12": {
+    "unit": 12,
+    "title": "I didn't... Did you...?",
+    "category": "Past - 지난 일과 예전 습관",
+    "concept": {
+      "situation": "친구와 어제 한 일, 안 한 일을 확인한다.",
+      "core_feeling": "과거 부정문은 didn't + 동사원형, 과거 의문문은 Did + 주어 + 동사원형이다",
+      "explanation": "과거 부정문은 didn't + 동사원형, 과거 의문문은 Did + 주어 + 동사원형이다. did가 과거를 표시하므로 본동사는 원형으로 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I didn't bring my PE uniform today.",
+        "ko": "나는 오늘 체육복을 가져오지 않았어."
+      },
+      {
+        "en": "She didn't understand the last question.",
+        "ko": "그녀는 마지막 문제를 이해하지 못했어."
+      },
+      {
+        "en": "Did you watch the school news video?",
+        "ko": "너 학교 뉴스 영상 봤니?"
+      },
+      {
+        "en": "Did your team win the volleyball game?",
+        "ko": "너희 팀이 배구 경기에서 이겼니?"
+      },
+      {
+        "en": "Why didn't you answer my message yesterday?",
+        "ko": "어제 왜 내 메시지에 답 안 했니?"
+      }
+    ]
+  },
+  "13": {
+    "unit": 13,
+    "title": "I was doing (past continuous)",
+    "category": "Past - 지난 일과 예전 습관",
+    "concept": {
+      "situation": "어떤 일이 일어났을 때 그 순간 진행 중이던 행동을 설명한다.",
+      "core_feeling": "과거의 특정 시점에 진행 중이던 동작은 was/were + -ing를 쓴다",
+      "explanation": "과거의 특정 시점에 진행 중이던 동작은 was/were + -ing를 쓴다. '그때 한창 하고 있었다'는 배경 느낌이다."
+    },
+    "examples": [
+      {
+        "en": "I was doing my homework at nine o'clock.",
+        "ko": "나는 9시에 숙제를 하고 있었어."
+      },
+      {
+        "en": "Mina was reading in the library when I saw her.",
+        "ko": "내가 미나를 봤을 때 그녀는 도서관에서 읽고 있었어."
+      },
+      {
+        "en": "The students were waiting for the teacher.",
+        "ko": "학생들은 선생님을 기다리고 있었어."
+      },
+      {
+        "en": "What were you doing during lunch break?",
+        "ko": "점심시간 동안 너는 뭐 하고 있었니?"
+      },
+      {
+        "en": "It was snowing when school ended.",
+        "ko": "학교가 끝났을 때 눈이 오고 있었어."
+      }
+    ]
+  },
+  "14": {
+    "unit": 14,
+    "title": "past continuous and simple past",
+    "category": "Past - 지난 일과 예전 습관",
+    "concept": {
+      "situation": "진행 중이던 행동과 그때 발생한 사건을 함께 말한다.",
+      "core_feeling": "과거진행형은 배경이 되는 동작, 단순과거는 그 사이에 일어난 사건을 말한다",
+      "explanation": "과거진행형은 배경이 되는 동작, 단순과거는 그 사이에 일어난 사건을 말한다. 두 시제를 함께 써서 장면을 만든다."
+    },
+    "examples": [
+      {
+        "en": "I was studying when my friend called me.",
+        "ko": "나는 공부하고 있었는데 친구가 전화했어."
+      },
+      {
+        "en": "We were eating lunch when the bell rang.",
+        "ko": "우리는 점심을 먹고 있었는데 종이 울렸어."
+      },
+      {
+        "en": "The teacher came in while we were talking.",
+        "ko": "우리가 이야기하고 있는 동안 선생님이 들어오셨어."
+      },
+      {
+        "en": "It started to rain when I was walking home.",
+        "ko": "내가 집에 걸어가고 있을 때 비가 오기 시작했어."
+      },
+      {
+        "en": "Jiyun hurt her ankle while she was playing badminton.",
+        "ko": "지윤이는 배드민턴을 치다가 발목을 다쳤어."
+      }
+    ]
+  },
+  "15": {
+    "unit": 15,
+    "title": "I used to...",
+    "category": "Past - 지난 일과 예전 습관",
+    "concept": {
+      "situation": "지금과 달라진 예전 습관이나 상태를 말한다.",
+      "core_feeling": "used to는 과거에는 그랬지만 지금은 아닐 수도 있는 습관이나 상태를 말한다",
+      "explanation": "used to는 과거에는 그랬지만 지금은 아닐 수도 있는 습관이나 상태를 말한다. 단순과거보다 '예전과 지금의 대비'가 강하다."
+    },
+    "examples": [
+      {
+        "en": "I used to be late for school, but now I leave home earlier.",
+        "ko": "나는 예전엔 학교에 자주 늦었지만, 지금은 더 일찍 집을 나서."
+      },
+      {
+        "en": "My brother used to study here.",
+        "ko": "우리 형은 예전에 여기서 공부했어."
+      },
+      {
+        "en": "We used to have Saturday classes.",
+        "ko": "우리는 예전에 토요일 수업이 있었어."
+      },
+      {
+        "en": "She didn't use to like English, but now she loves it.",
+        "ko": "그녀는 예전엔 영어를 좋아하지 않았지만 지금은 아주 좋아해."
+      },
+      {
+        "en": "Did you use to play the piano after school?",
+        "ko": "너는 예전에 방과 후에 피아노를 쳤니?"
+      }
+    ]
+  },
+  "16": {
+    "unit": 16,
+    "title": "Have you...?",
+    "category": "Present Perfect - 지금까지의 경험과 결과",
+    "concept": {
+      "situation": "친구에게 숙제나 경험을 이미 했는지 묻는다.",
+      "core_feeling": "현재완료 의문문은 Have/Has + 주어 + 과거분사이다",
+      "explanation": "현재완료 의문문은 Have/Has + 주어 + 과거분사이다. 과거 어느 시점보다 '지금까지'를 기준으로 본다."
+    },
+    "examples": [
+      {
+        "en": "Have you finished your English homework?",
+        "ko": "영어 숙제 끝냈니?"
+      },
+      {
+        "en": "Has the teacher checked our reports yet?",
+        "ko": "선생님이 우리 보고서를 벌써 확인하셨어?"
+      },
+      {
+        "en": "Have you seen my ruler anywhere?",
+        "ko": "내 자를 어디선가 본 적 있니?"
+      },
+      {
+        "en": "Have your parents met your homeroom teacher?",
+        "ko": "네 부모님이 담임선생님을 만나셨어?"
+      },
+      {
+        "en": "How many pages have you read so far?",
+        "ko": "지금까지 몇 쪽 읽었니?"
+      }
+    ]
+  },
+  "17": {
+    "unit": 17,
+    "title": "How long have you...?",
+    "category": "Present Perfect - 지금까지의 경험과 결과",
+    "concept": {
+      "situation": "얼마 동안 계속해 온 일인지 묻는다.",
+      "core_feeling": "How long have you",
+      "explanation": "How long have you ... ?는 과거에 시작해서 지금까지 이어지는 기간을 묻는다. 답은 for/since와 자주 이어진다."
+    },
+    "examples": [
+      {
+        "en": "How long have you lived near the school?",
+        "ko": "학교 근처에 얼마나 오래 살았니?"
+      },
+      {
+        "en": "How long have you known your desk mate?",
+        "ko": "짝꿍을 얼마나 오래 알고 지냈니?"
+      },
+      {
+        "en": "How long has your brother been in the soccer club?",
+        "ko": "네 형은 축구 동아리에 얼마나 오래 있었니?"
+      },
+      {
+        "en": "How long have you studied English?",
+        "ko": "영어를 얼마나 오래 공부했니?"
+      },
+      {
+        "en": "How long has the principal worked here?",
+        "ko": "교장선생님은 여기서 얼마나 오래 일하셨니?"
+      }
+    ]
+  },
+  "18": {
+    "unit": 18,
+    "title": "for / since / ago",
+    "category": "Present Perfect - 지금까지의 경험과 결과",
+    "concept": {
+      "situation": "기간과 시작점, 얼마나 전인지를 구분해 말한다.",
+      "core_feeling": "for는 기간, since는 시작 시점, ago는 지금으로부터 얼마나 전인지를 말한다",
+      "explanation": "for는 기간, since는 시작 시점, ago는 지금으로부터 얼마나 전인지를 말한다. 현재완료에는 for/since를, 단순과거에는 ago를 많이 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I have been in this class for two weeks.",
+        "ko": "나는 이 반에 2주 동안 있었어."
+      },
+      {
+        "en": "We have known each other since March.",
+        "ko": "우리는 3월부터 서로 알고 지냈어."
+      },
+      {
+        "en": "The school festival was three days ago.",
+        "ko": "학교 축제는 3일 전이었어."
+      },
+      {
+        "en": "She has had this backpack for a year.",
+        "ko": "그녀는 이 가방을 1년째 가지고 있어."
+      },
+      {
+        "en": "I started piano lessons six years ago.",
+        "ko": "나는 6년 전에 피아노 수업을 시작했어."
+      }
+    ]
+  },
+  "19": {
+    "unit": 19,
+    "title": "present perfect and past",
+    "category": "Present Perfect - 지금까지의 경험과 결과",
+    "concept": {
+      "situation": "경험을 말할 때와 정확한 과거 시간을 말할 때를 구분한다.",
+      "core_feeling": "현재완료는 경험, 결과, 계속을 말하고, 단순과거는 어제/지난주처럼 끝난 과거 시간을 말한다",
+      "explanation": "현재완료는 경험, 결과, 계속을 말하고, 단순과거는 어제/지난주처럼 끝난 과거 시간을 말한다. 정확한 과거 시간이 있으면 보통 단순과거를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I have visited the science museum twice.",
+        "ko": "나는 과학관에 두 번 가 본 적이 있어."
+      },
+      {
+        "en": "I visited the science museum last Friday.",
+        "ko": "나는 지난 금요일에 과학관에 갔어."
+      },
+      {
+        "en": "She has lost her student card.",
+        "ko": "그녀는 학생증을 잃어버렸어."
+      },
+      {
+        "en": "She lost her student card yesterday.",
+        "ko": "그녀는 어제 학생증을 잃어버렸어."
+      },
+      {
+        "en": "Have you eaten lunch yet, or did you eat earlier?",
+        "ko": "너는 아직 점심을 안 먹었니, 아니면 아까 먹었니?"
+      }
+    ]
+  },
+  "20": {
+    "unit": 20,
+    "title": "is done / was done (passive 1)",
+    "category": "Passive - 행동의 대상에 초점 두기",
+    "concept": {
+      "situation": "누가 했는지보다 '무엇이 되어졌는지'가 중요할 때 쓴다.",
+      "core_feeling": "수동태는 be동사 + 과거분사이다",
+      "explanation": "수동태는 be동사 + 과거분사이다. 행위자보다 결과나 대상에 초점을 둘 때 쓰며, 현재는 is/are done, 과거는 was/were done 형태다."
+    },
+    "examples": [
+      {
+        "en": "Our classroom is cleaned every morning.",
+        "ko": "우리 교실은 매일 아침 청소돼."
+      },
+      {
+        "en": "The school gate was closed at seven thirty.",
+        "ko": "학교 정문은 7시 30분에 닫혔어."
+      },
+      {
+        "en": "Lunch is served in the cafeteria.",
+        "ko": "점심은 급식실에서 제공돼."
+      },
+      {
+        "en": "The science posters were made by our class.",
+        "ko": "과학 포스터들은 우리 반이 만들었어."
+      },
+      {
+        "en": "These forms are checked by the office teacher.",
+        "ko": "이 서류들은 행정 선생님이 확인하셔."
+      }
+    ]
+  },
+  "21": {
+    "unit": 21,
+    "title": "is being done / has been done (passive 2)",
+    "category": "Passive - 행동의 대상에 초점 두기",
+    "concept": {
+      "situation": "지금 진행 중인 수동과 이미 완료된 수동을 구분한다.",
+      "core_feeling": "is being done은 '지금 진행 중인 수동', has been done은 '이미 완료된 수동'을 말한다",
+      "explanation": "is being done은 '지금 진행 중인 수동', has been done은 '이미 완료된 수동'을 말한다. 둘 다 행위의 주체보다 대상에 초점이 있다."
+    },
+    "examples": [
+      {
+        "en": "The gym is being cleaned now.",
+        "ko": "체육관은 지금 청소되고 있어."
+      },
+      {
+        "en": "Our new timetable is being printed.",
+        "ko": "우리의 새 시간표가 인쇄되고 있어."
+      },
+      {
+        "en": "The homework has been uploaded already.",
+        "ko": "숙제가 이미 업로드되었어."
+      },
+      {
+        "en": "The classroom lights have been turned off.",
+        "ko": "교실 불이 꺼졌어."
+      },
+      {
+        "en": "The stage is being decorated for the festival.",
+        "ko": "무대가 축제를 위해 장식되고 있어."
+      }
+    ]
+  },
+  "22": {
+    "unit": 22,
+    "title": "be / have / do in present and past tenses",
+    "category": "Verb Forms - 기본 동사와 과거형 정리",
+    "concept": {
+      "situation": "기본 동사 be, have, do의 현재형과 과거형을 정리한다.",
+      "core_feeling": "be, have, do는 시제를 만들고 문장을 꾸리는 핵심 동사다",
+      "explanation": "be, have, do는 시제를 만들고 문장을 꾸리는 핵심 동사다. 현재형과 과거형을 정확히 구별해야 다른 문법도 흔들리지 않는다."
+    },
+    "examples": [
+      {
+        "en": "I am busy today, but I was free yesterday.",
+        "ko": "나는 오늘 바쁘지만 어제는 한가했어."
+      },
+      {
+        "en": "We have a test today, and we had one yesterday too.",
+        "ko": "우리는 오늘 시험이 있고 어제도 하나 있었어."
+      },
+      {
+        "en": "I do my homework after dinner, and I did it early yesterday.",
+        "ko": "나는 저녁 먹고 숙제를 하고, 어제는 일찍 했어."
+      },
+      {
+        "en": "She is in the music room now, but she was in the art room before lunch.",
+        "ko": "그녀는 지금 음악실에 있지만 점심 전에는 미술실에 있었어."
+      },
+      {
+        "en": "Do you have your notebook now, or did you leave it at home?",
+        "ko": "지금 공책이 있니, 아니면 집에 두고 왔니?"
+      }
+    ]
+  },
+  "23": {
+    "unit": 23,
+    "title": "Regular and irregular verbs",
+    "category": "Verb Forms - 기본 동사와 과거형 정리",
+    "concept": {
+      "situation": "과거형 만드는 방식이 규칙적인 동사와 불규칙한 동사를 구별한다.",
+      "core_feeling": "regular verb는 -ed를 붙여 과거형을 만들지만, irregular verb는 형태가 달라진다",
+      "explanation": "regular verb는 -ed를 붙여 과거형을 만들지만, irregular verb는 형태가 달라진다. 자주 쓰는 불규칙 동사는 통째로 익혀야 한다."
+    },
+    "examples": [
+      {
+        "en": "We played dodgeball in PE class.",
+        "ko": "우리는 체육 시간에 피구를 했어."
+      },
+      {
+        "en": "I watched the school video last night.",
+        "ko": "나는 어젯밤 학교 영상을 봤어."
+      },
+      {
+        "en": "She went to the nurse's office.",
+        "ko": "그녀는 보건실에 갔어."
+      },
+      {
+        "en": "My friend wrote his name on the worksheet.",
+        "ko": "내 친구는 활동지에 자기 이름을 썼어."
+      },
+      {
+        "en": "The teacher took our phones before the test.",
+        "ko": "선생님이 시험 전에 우리 휴대폰을 가져가셨어."
+      }
+    ]
+  },
+  "24": {
+    "unit": 24,
+    "title": "What are you doing tomorrow?",
+    "category": "Future - 앞으로의 계획과 예측",
+    "concept": {
+      "situation": "미리 정해진 가까운 미래의 계획을 말한다.",
+      "core_feeling": "현재진행형은 가까운 미래에 이미 계획된 일을 말할 때도 쓴다",
+      "explanation": "현재진행형은 가까운 미래에 이미 계획된 일을 말할 때도 쓴다. 보통 tomorrow, this weekend 같은 미래 시간이 함께 온다."
+    },
+    "examples": [
+      {
+        "en": "I am meeting my study group tomorrow.",
+        "ko": "나는 내일 스터디 모임을 만날 거야."
+      },
+      {
+        "en": "We are having a class meeting after lunch.",
+        "ko": "우리는 점심 후에 학급회의를 할 거야."
+      },
+      {
+        "en": "What are you doing after school today?",
+        "ko": "오늘 방과 후에 뭐 할 거니?"
+      },
+      {
+        "en": "My sister is visiting our school next week.",
+        "ko": "내 누나는 다음 주에 우리 학교에 올 거야."
+      },
+      {
+        "en": "The art club is selling cookies on Friday.",
+        "ko": "미술 동아리는 금요일에 쿠키를 팔 거야."
+      }
+    ]
+  },
+  "25": {
+    "unit": 25,
+    "title": "I'm going to...",
+    "category": "Future - 앞으로의 계획과 예측",
+    "concept": {
+      "situation": "의도, 계획, 예상되는 미래를 말한다.",
+      "core_feeling": "be going to는 이미 마음먹은 계획이나 눈에 보이는 근거가 있는 예상을 말할 때 쓴다",
+      "explanation": "be going to는 이미 마음먹은 계획이나 눈에 보이는 근거가 있는 예상을 말할 때 쓴다. will보다 준비된 느낌이 강하다."
+    },
+    "examples": [
+      {
+        "en": "I am going to review math tonight.",
+        "ko": "나는 오늘 밤 수학을 복습할 거야."
+      },
+      {
+        "en": "We are going to start the project next week.",
+        "ko": "우리는 다음 주에 프로젝트를 시작할 거야."
+      },
+      {
+        "en": "Look at those clouds. It is going to rain.",
+        "ko": "저 구름들 봐. 비가 올 것 같아."
+      },
+      {
+        "en": "She is going to join the debate club.",
+        "ko": "그녀는 토론 동아리에 들어갈 거야."
+      },
+      {
+        "en": "Are you going to buy lunch or bring it from home?",
+        "ko": "너는 점심을 사 먹을 거니, 아니면 집에서 가져올 거니?"
+      }
+    ]
+  },
+  "26": {
+    "unit": 26,
+    "title": "will",
+    "category": "Future - 앞으로의 계획과 예측",
+    "concept": {
+      "situation": "즉석 결정, 단순 예측, 약속을 말한다.",
+      "core_feeling": "will은 그 자리에서 내리는 결정, 개인적인 예측, 약속과 제안을 나타낼 때 자주 쓴다",
+      "explanation": "will은 그 자리에서 내리는 결정, 개인적인 예측, 약속과 제안을 나타낼 때 자주 쓴다. 계획이 이미 정해졌다면 going to가 더 자연스러운 경우가 많다."
+    },
+    "examples": [
+      {
+        "en": "I will open the window.",
+        "ko": "내가 창문 열게."
+      },
+      {
+        "en": "I think our class will win the quiz contest.",
+        "ko": "내 생각에 우리 반이 퀴즈 대회에서 이길 거야."
+      },
+      {
+        "en": "Don't worry. I will help you with your homework.",
+        "ko": "걱정 마. 내가 네 숙제 도와줄게."
+      },
+      {
+        "en": "Will the teacher be late again?",
+        "ko": "선생님이 또 늦으실까?"
+      },
+      {
+        "en": "I will text you after the club meeting.",
+        "ko": "동아리 모임 끝나고 내가 문자할게."
+      }
+    ]
+  },
+  "27": {
+    "unit": 27,
+    "title": "might",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "확실하지 않은 가능성을 조심스럽게 말한다.",
+      "core_feeling": "might는 일어날 수도 있는 가능성을 말하지만 확신은 약하다",
+      "explanation": "might는 일어날 수도 있는 가능성을 말하지만 확신은 약하다. may보다 조금 더 조심스러운 느낌으로 들릴 때가 많다."
+    },
+    "examples": [
+      {
+        "en": "I might join the basketball club next semester.",
+        "ko": "나는 다음 학기에 농구 동아리에 들어갈지도 몰라."
+      },
+      {
+        "en": "It might snow tomorrow morning.",
+        "ko": "내일 아침에 눈이 올지도 몰라."
+      },
+      {
+        "en": "She might be late because of the traffic.",
+        "ko": "그녀는 교통 때문에 늦을지도 몰라."
+      },
+      {
+        "en": "We might have a surprise quiz today.",
+        "ko": "우리는 오늘 깜짝 퀴즈를 볼지도 몰라."
+      },
+      {
+        "en": "Take your umbrella. It might rain after school.",
+        "ko": "우산 챙겨. 방과 후에 비가 올지도 몰라."
+      }
+    ]
+  },
+  "28": {
+    "unit": 28,
+    "title": "can and could",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "능력, 가능, 부탁을 말한다.",
+      "core_feeling": "can은 현재의 능력과 가능, could는 과거의 능력이나 더 공손한 부탁에 자주 쓴다",
+      "explanation": "can은 현재의 능력과 가능, could는 과거의 능력이나 더 공손한 부탁에 자주 쓴다. 문맥에 따라 허가의 의미도 될 수 있다."
+    },
+    "examples": [
+      {
+        "en": "I can solve these math problems now.",
+        "ko": "나는 이제 이 수학 문제들을 풀 수 있어."
+      },
+      {
+        "en": "My friend can speak Japanese well.",
+        "ko": "내 친구는 일본어를 잘할 수 있어."
+      },
+      {
+        "en": "When I was younger, I could run faster.",
+        "ko": "나는 더 어렸을 때 더 빨리 뛸 수 있었어."
+      },
+      {
+        "en": "Could you pass me that dictionary?",
+        "ko": "저 사전 좀 건네줄래?"
+      },
+      {
+        "en": "We can't use our phones during class.",
+        "ko": "우리는 수업 시간에 휴대폰을 사용할 수 없어."
+      }
+    ]
+  },
+  "29": {
+    "unit": 29,
+    "title": "must",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "강한 필요, 의무, 규칙을 말한다.",
+      "core_feeling": "must는 화자의 강한 의무감이나 규칙을 나타낸다",
+      "explanation": "must는 화자의 강한 의무감이나 규칙을 나타낸다. mustn't는 금지를 뜻하며 '하지 않아도 된다'가 아니다."
+    },
+    "examples": [
+      {
+        "en": "I must finish this report tonight.",
+        "ko": "나는 오늘 밤 이 보고서를 끝내야 해."
+      },
+      {
+        "en": "Students must wear their ID cards at school.",
+        "ko": "학생들은 학교에서 학생증을 착용해야 해."
+      },
+      {
+        "en": "You must be quiet in the library.",
+        "ko": "도서관에서는 조용해야 해."
+      },
+      {
+        "en": "We mustn't run in the hallway.",
+        "ko": "우리는 복도에서 뛰면 안 돼."
+      },
+      {
+        "en": "I must remember my locker password.",
+        "ko": "나는 내 사물함 비밀번호를 꼭 기억해야 해."
+      }
+    ]
+  },
+  "30": {
+    "unit": 30,
+    "title": "should",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "조언, 추천, 가벼운 의무를 말한다.",
+      "core_feeling": "should는 꼭 해야 하는 강한 규칙보다는 조언이나 바람직한 행동을 말할 때 쓴다",
+      "explanation": "should는 꼭 해야 하는 강한 규칙보다는 조언이나 바람직한 행동을 말할 때 쓴다. must보다 부드럽다."
+    },
+    "examples": [
+      {
+        "en": "You should review the new words before the test.",
+        "ko": "너는 시험 전에 새 단어를 복습하는 게 좋겠어."
+      },
+      {
+        "en": "We should leave early to avoid traffic.",
+        "ko": "우리는 교통 체증을 피하려면 일찍 출발해야 해."
+      },
+      {
+        "en": "He should apologize to the teacher.",
+        "ko": "그는 선생님께 사과하는 게 좋겠어."
+      },
+      {
+        "en": "Should I bring my laptop tomorrow?",
+        "ko": "내일 노트북을 가져가는 게 좋을까?"
+      },
+      {
+        "en": "Students should keep their desks clean.",
+        "ko": "학생들은 책상을 깨끗하게 유지하는 게 좋아."
+      }
+    ]
+  },
+  "31": {
+    "unit": 31,
+    "title": "I have to...",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "외부 규칙이나 때문에 해야 하는 일을 말한다.",
+      "core_feeling": "have to는 학교 규정, 시간표, 부모님 말처럼 바깥 조건 때문에 해야 하는 의무를 말한다",
+      "explanation": "have to는 학교 규정, 시간표, 부모님 말처럼 바깥 조건 때문에 해야 하는 의무를 말한다. must보다 객관적으로 들리는 경우가 많다."
+    },
+    "examples": [
+      {
+        "en": "I have to submit my homework by Friday.",
+        "ko": "나는 금요일까지 숙제를 제출해야 해."
+      },
+      {
+        "en": "We have to be in the classroom before eight thirty.",
+        "ko": "우리는 8시 30분 전에 교실에 있어야 해."
+      },
+      {
+        "en": "My sister has to wear glasses in class.",
+        "ko": "내 여동생은 수업 때 안경을 써야 해."
+      },
+      {
+        "en": "Do you have to stay late today?",
+        "ko": "너는 오늘 늦게까지 남아 있어야 하니?"
+      },
+      {
+        "en": "I don't have to bring lunch tomorrow because the school provides it.",
+        "ko": "학교에서 제공해서 나는 내일 점심을 가져올 필요가 없어."
+      }
+    ]
+  },
+  "32": {
+    "unit": 32,
+    "title": "Would you like...? / I'd like...",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "공손하게 권하거나 원하는 것을 말한다.",
+      "core_feeling": "Would you like",
+      "explanation": "Would you like ... ?는 정중한 제안, I'd like ...는 공손한 희망 표현이다. want보다 부드럽고 예의 바르다."
+    },
+    "examples": [
+      {
+        "en": "Would you like some extra bread at lunch?",
+        "ko": "점심에 빵 좀 더 먹을래?"
+      },
+      {
+        "en": "I'd like to join the English club.",
+        "ko": "나는 영어 동아리에 들어가고 싶어."
+      },
+      {
+        "en": "Would you like to study together after school?",
+        "ko": "방과 후에 같이 공부할래?"
+      },
+      {
+        "en": "I'd like a seat near the front, please.",
+        "ko": "앞쪽 자리를 원해요."
+      },
+      {
+        "en": "What would you like to do this weekend?",
+        "ko": "이번 주말에 무엇을 하고 싶니?"
+      }
+    ]
+  },
+  "33": {
+    "unit": 33,
+    "title": "I'd rather...",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "둘 중 하나를 더 선호할 때 쓴다.",
+      "core_feeling": "would rather는 '~하는 편이 더 좋다'라는 선호를 나타낸다",
+      "explanation": "would rather는 '~하는 편이 더 좋다'라는 선호를 나타낸다. 뒤에는 동사원형이 온다."
+    },
+    "examples": [
+      {
+        "en": "I'd rather study at the library than at home.",
+        "ko": "나는 집보다 도서관에서 공부하는 편이 더 좋아."
+      },
+      {
+        "en": "She'd rather take the bus than walk.",
+        "ko": "그녀는 걷기보다 버스를 타는 편을 더 좋아해."
+      },
+      {
+        "en": "We'd rather eat after the club meeting.",
+        "ko": "우리는 동아리 모임 후에 먹는 편이 더 좋아."
+      },
+      {
+        "en": "I'd rather not talk during the movie.",
+        "ko": "나는 영화 보는 동안 말하고 싶지 않아."
+      },
+      {
+        "en": "Would you rather sit by the window or by the door?",
+        "ko": "창가 쪽에 앉을래, 아니면 문 쪽에 앉을래?"
+      }
+    ]
+  },
+  "34": {
+    "unit": 34,
+    "title": "Do this! Don't do that! Let's do this!",
+    "category": "Modals / Imperatives - 가능성, 의무, 제안",
+    "concept": {
+      "situation": "명령문, 금지문, 제안을 말한다.",
+      "core_feeling": "명령문은 동사원형으로 시작한다",
+      "explanation": "명령문은 동사원형으로 시작한다. Don't + 동사원형은 금지, Let's + 동사원형은 함께 하자는 제안이다."
+    },
+    "examples": [
+      {
+        "en": "Open your textbooks to page twenty.",
+        "ko": "교과서를 20쪽 펴세요."
+      },
+      {
+        "en": "Don't talk during the listening test.",
+        "ko": "듣기 시험 중에는 말하지 마."
+      },
+      {
+        "en": "Let's clean the classroom together.",
+        "ko": "우리 같이 교실 청소하자."
+      },
+      {
+        "en": "Please sit down quietly.",
+        "ko": "조용히 앉아 주세요."
+      },
+      {
+        "en": "Let's not be late for the meeting.",
+        "ko": "우리 회의에 늦지 말자."
+      }
+    ]
+  },
+  "35": {
+    "unit": 35,
+    "title": "there is / there are",
+    "category": "There and It - 존재와 상황 표현",
+    "concept": {
+      "situation": "무언가가 존재함을 소개한다.",
+      "core_feeling": "there is/are는 어떤 장소에 무엇이 있는지 처음 소개할 때 쓴다",
+      "explanation": "there is/are는 어떤 장소에 무엇이 있는지 처음 소개할 때 쓴다. 단수는 is, 복수는 are를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "There is a notice on the classroom door.",
+        "ko": "교실 문에 공지가 하나 있어."
+      },
+      {
+        "en": "There are thirty students in my class.",
+        "ko": "우리 반에는 학생이 30명 있어."
+      },
+      {
+        "en": "There is some milk in my lunch box.",
+        "ko": "내 도시락에 우유가 조금 있어."
+      },
+      {
+        "en": "Are there any empty seats here?",
+        "ko": "여기 빈자리가 있니?"
+      },
+      {
+        "en": "There isn't a printer in this room.",
+        "ko": "이 방에는 프린터가 없어."
+      }
+    ]
+  },
+  "36": {
+    "unit": 36,
+    "title": "there was/were / there has/have been / there will be",
+    "category": "There and It - 존재와 상황 표현",
+    "concept": {
+      "situation": "존재 표현을 시제에 따라 바꾼다.",
+      "core_feeling": "there be 구조도 시제에 따라 과거, 현재완료, 미래로 바꿀 수 있다",
+      "explanation": "there be 구조도 시제에 따라 과거, 현재완료, 미래로 바꿀 수 있다. 핵심은 '무엇이 있었다/있어 왔다/있을 것이다'를 말하는 것이다."
+    },
+    "examples": [
+      {
+        "en": "There was a long line at the cafeteria yesterday.",
+        "ko": "어제 급식실에 긴 줄이 있었어."
+      },
+      {
+        "en": "There were many parents at the open class.",
+        "ko": "공개수업에 부모님들이 많이 오셨어."
+      },
+      {
+        "en": "There has been a problem with the school website.",
+        "ko": "학교 웹사이트에 문제가 있었어."
+      },
+      {
+        "en": "There have been three quizzes this week.",
+        "ko": "이번 주에는 퀴즈가 세 번 있었어."
+      },
+      {
+        "en": "There will be a music contest next month.",
+        "ko": "다음 달에 음악 대회가 있을 거야."
+      }
+    ]
+  },
+  "37": {
+    "unit": 37,
+    "title": "it",
+    "category": "There and It - 존재와 상황 표현",
+    "concept": {
+      "situation": "시간, 날씨, 거리, 상황을 나타내는 it을 익힌다.",
+      "core_feeling": "it은 특정 사물을 가리킬 때도 쓰지만, 날씨, 시간, 날짜, 거리, 일반적인 상황을 말할 때도 쓴다",
+      "explanation": "it은 특정 사물을 가리킬 때도 쓰지만, 날씨, 시간, 날짜, 거리, 일반적인 상황을 말할 때도 쓴다."
+    },
+    "examples": [
+      {
+        "en": "It is sunny today.",
+        "ko": "오늘은 맑아."
+      },
+      {
+        "en": "It is eight ten now.",
+        "ko": "지금은 8시 10분이야."
+      },
+      {
+        "en": "It was hard to wake up this morning.",
+        "ko": "오늘 아침에 일어나기가 힘들었어."
+      },
+      {
+        "en": "How far is it from your house to school?",
+        "ko": "네 집에서 학교까지 얼마나 멀어?"
+      },
+      {
+        "en": "It is important to listen carefully in class.",
+        "ko": "수업 시간에 주의 깊게 듣는 것은 중요해."
+      }
+    ]
+  },
+  "38": {
+    "unit": 38,
+    "title": "I am, I don't, etc.",
+    "category": "Auxiliary Verbs - 짧은 대답과 부정",
+    "concept": {
+      "situation": "짧은 대답과 보조동사로 문장을 자연스럽게 받는다.",
+      "core_feeling": "앞 문장의 동사를 반복하지 않고 be, do, have 같은 보조 요소로 짧게 대답할 수 있다",
+      "explanation": "앞 문장의 동사를 반복하지 않고 be, do, have 같은 보조 요소로 짧게 대답할 수 있다. 회화에서 아주 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "Are you tired? Yes, I am.",
+        "ko": "너 피곤하니? 응, 피곤해."
+      },
+      {
+        "en": "Do you like science? No, I don't.",
+        "ko": "너 과학 좋아하니? 아니, 안 좋아해."
+      },
+      {
+        "en": "Have you finished? Yes, I have.",
+        "ko": "끝냈니? 응, 끝냈어."
+      },
+      {
+        "en": "Was the class noisy? No, it wasn't.",
+        "ko": "수업이 시끄러웠니? 아니, 그렇지 않았어."
+      },
+      {
+        "en": "Can she swim? Yes, she can.",
+        "ko": "그녀는 수영할 수 있니? 응, 할 수 있어."
+      }
+    ]
+  },
+  "39": {
+    "unit": 39,
+    "title": "You have? Have you? You are? Are you?",
+    "category": "Auxiliary Verbs - 짧은 대답과 부정",
+    "concept": {
+      "situation": "평서문과 의문문의 어순 차이를 익힌다.",
+      "core_feeling": "평서문에서는 주어 다음에 동사가 오고, 의문문에서는 보조동사나 be동사가 주어 앞으로 간다",
+      "explanation": "평서문에서는 주어 다음에 동사가 오고, 의문문에서는 보조동사나 be동사가 주어 앞으로 간다. 말하는 리듬까지 같이 익히면 좋다."
+    },
+    "examples": [
+      {
+        "en": "You are early today.",
+        "ko": "너 오늘 일찍 왔네."
+      },
+      {
+        "en": "Are you early today?",
+        "ko": "너 오늘 일찍 왔니?"
+      },
+      {
+        "en": "She has your notebook.",
+        "ko": "그녀가 네 공책을 가지고 있어."
+      },
+      {
+        "en": "Has she got your notebook?",
+        "ko": "그녀가 네 공책을 가지고 있니?"
+      },
+      {
+        "en": "They can join us later. Can they join us later?",
+        "ko": "그들은 나중에 합류할 수 있어. 그들이 나중에 합류할 수 있니?"
+      }
+    ]
+  },
+  "40": {
+    "unit": 40,
+    "title": "too/either / so am I / neither do I",
+    "category": "Auxiliary Verbs - 짧은 대답과 부정",
+    "concept": {
+      "situation": "동의와 공감을 자연스럽게 말한다.",
+      "core_feeling": "긍정에는 too와 so + 보조동사 + 주어, 부정에는 either와 neither + 보조동사 + 주어를 쓴다",
+      "explanation": "긍정에는 too와 so + 보조동사 + 주어, 부정에는 either와 neither + 보조동사 + 주어를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I like art class. Me too.",
+        "ko": "나는 미술 시간이 좋아. 나도 그래."
+      },
+      {
+        "en": "I'm tired today. So am I.",
+        "ko": "나 오늘 피곤해. 나도 그래."
+      },
+      {
+        "en": "I don't eat breakfast at school. I don't either.",
+        "ko": "나는 학교에서 아침 안 먹어. 나도 안 먹어."
+      },
+      {
+        "en": "She can't skate. Neither can her brother.",
+        "ko": "그녀는 스케이트를 못 타. 그녀의 남동생도 못 타."
+      },
+      {
+        "en": "We were late yesterday. So were they.",
+        "ko": "우리는 어제 늦었어. 그들도 그랬어."
+      }
+    ]
+  },
+  "41": {
+    "unit": 41,
+    "title": "isn't / haven't / don't (negatives)",
+    "category": "Auxiliary Verbs - 짧은 대답과 부정",
+    "concept": {
+      "situation": "짧은 부정형을 이용해 자연스럽게 말한다.",
+      "core_feeling": "be, have, do의 부정 축약형은 회화에서 아주 자주 나온다",
+      "explanation": "be, have, do의 부정 축약형은 회화에서 아주 자주 나온다. 의미에 따라 isn't, don't, haven't 등을 구분해야 한다."
+    },
+    "examples": [
+      {
+        "en": "He isn't in the classroom now.",
+        "ko": "그는 지금 교실에 없어."
+      },
+      {
+        "en": "We don't have Korean class today.",
+        "ko": "우리는 오늘 국어 수업이 없어."
+      },
+      {
+        "en": "I haven't done my homework yet.",
+        "ko": "나는 아직 숙제를 하지 못했어."
+      },
+      {
+        "en": "She can't come to school today.",
+        "ko": "그녀는 오늘 학교에 올 수 없어."
+      },
+      {
+        "en": "They weren't ready for the presentation.",
+        "ko": "그들은 발표 준비가 되어 있지 않았어."
+      }
+    ]
+  },
+  "42": {
+    "unit": 42,
+    "title": "questions 1",
+    "category": "Questions - 질문 만들기",
+    "concept": {
+      "situation": "be동사, have, do를 이용한 기본 의문문을 정리한다.",
+      "core_feeling": "질문의 종류에 따라 앞에 오는 동사가 달라진다",
+      "explanation": "질문의 종류에 따라 앞에 오는 동사가 달라진다. be동사 문장인지, have인지, 일반동사인지 먼저 보고 질문 형태를 만든다."
+    },
+    "examples": [
+      {
+        "en": "Is it your notebook?",
+        "ko": "그것은 네 공책이니?"
+      },
+      {
+        "en": "Have you got an extra eraser?",
+        "ko": "여분 지우개 있니?"
+      },
+      {
+        "en": "Do they study together after school?",
+        "ko": "그들은 방과 후에 함께 공부하니?"
+      },
+      {
+        "en": "Was the school gate open this morning?",
+        "ko": "오늘 아침 학교 정문이 열려 있었니?"
+      },
+      {
+        "en": "Did your brother call you?",
+        "ko": "네 형이 너에게 전화했니?"
+      }
+    ]
+  },
+  "43": {
+    "unit": 43,
+    "title": "Who saw you? Who did you see?",
+    "category": "Questions - 질문 만들기",
+    "concept": {
+      "situation": "주어를 묻는 질문과 목적어를 묻는 질문을 구분한다.",
+      "core_feeling": "Who가 주어이면 do/does/did가 필요 없지만, 목적어를 묻는다면 do/does/did를 쓴다",
+      "explanation": "Who가 주어이면 do/does/did가 필요 없지만, 목적어를 묻는다면 do/does/did를 쓴다. 질문 속에서 who의 역할을 봐야 한다."
+    },
+    "examples": [
+      {
+        "en": "Who opened the classroom door?",
+        "ko": "누가 교실 문을 열었니?"
+      },
+      {
+        "en": "Who did you meet after school?",
+        "ko": "너는 방과 후에 누구를 만났니?"
+      },
+      {
+        "en": "Who called the teacher?",
+        "ko": "누가 선생님을 부르셨니?"
+      },
+      {
+        "en": "Who did Mina help with the project?",
+        "ko": "미나는 프로젝트에서 누구를 도와줬니?"
+      },
+      {
+        "en": "Who ate my sandwich?",
+        "ko": "누가 내 샌드위치를 먹었니?"
+      }
+    ]
+  },
+  "44": {
+    "unit": 44,
+    "title": "Who is she talking to? What is it like?",
+    "category": "Questions - 질문 만들기",
+    "concept": {
+      "situation": "전치사가 뒤에 오는 의문문과 like의 질문을 익힌다.",
+      "core_feeling": "구어에서는 'Who is she talking to?'처럼 전치사를 끝에 두는 경우가 많다",
+      "explanation": "구어에서는 'Who is she talking to?'처럼 전치사를 끝에 두는 경우가 많다. What is it like?는 성격이나 모습, 느낌을 묻는다."
+    },
+    "examples": [
+      {
+        "en": "Who are you sitting next to?",
+        "ko": "너는 누구 옆에 앉아 있니?"
+      },
+      {
+        "en": "Who is the teacher speaking to?",
+        "ko": "선생님은 누구에게 말씀하고 계시니?"
+      },
+      {
+        "en": "What is your new classroom like?",
+        "ko": "새 교실은 어때?"
+      },
+      {
+        "en": "What is the new student like?",
+        "ko": "새로 온 학생은 어떤 애야?"
+      },
+      {
+        "en": "Who was Jihoon chatting with after class?",
+        "ko": "지훈이는 수업 후에 누구와 이야기하고 있었니?"
+      }
+    ]
+  },
+  "45": {
+    "unit": 45,
+    "title": "What...? Which...? How...?",
+    "category": "Questions - 질문 만들기",
+    "concept": {
+      "situation": "정보를 묻는 여러 의문사를 구별한다.",
+      "core_feeling": "what은 넓은 범위, which는 제한된 선택지, how는 방법/상태/정도를 묻는다",
+      "explanation": "what은 넓은 범위, which는 제한된 선택지, how는 방법/상태/정도를 묻는다. 질문의 초점을 보고 골라야 한다."
+    },
+    "examples": [
+      {
+        "en": "What do you want for lunch?",
+        "ko": "점심으로 뭐 먹고 싶니?"
+      },
+      {
+        "en": "Which club are you going to join, the band or the drama club?",
+        "ko": "밴드부랑 연극부 중 어느 동아리에 들어갈 거니?"
+      },
+      {
+        "en": "How do you get to school?",
+        "ko": "학교에 어떻게 가니?"
+      },
+      {
+        "en": "What time does the exam start?",
+        "ko": "시험은 몇 시에 시작하니?"
+      },
+      {
+        "en": "How was your presentation?",
+        "ko": "발표는 어땠니?"
+      }
+    ]
+  },
+  "46": {
+    "unit": 46,
+    "title": "How long does it take...?",
+    "category": "Questions - 질문 만들기",
+    "concept": {
+      "situation": "시간이 얼마나 걸리는지 묻는다.",
+      "core_feeling": "How long does it take",
+      "explanation": "How long does it take ... ?는 어떤 일에 걸리는 시간을 묻는다. it takes + 시간 + to부정사 형태로 대답할 수 있다."
+    },
+    "examples": [
+      {
+        "en": "How long does it take to get to school by bus?",
+        "ko": "버스로 학교에 가는 데 얼마나 걸리니?"
+      },
+      {
+        "en": "It takes me ten minutes to change for PE.",
+        "ko": "나는 체육복으로 갈아입는 데 10분 걸려."
+      },
+      {
+        "en": "How long does it take to finish this worksheet?",
+        "ko": "이 활동지를 끝내는 데 얼마나 걸리니?"
+      },
+      {
+        "en": "It took us an hour to decorate the classroom.",
+        "ko": "우리는 교실을 꾸미는 데 한 시간이 걸렸어."
+      },
+      {
+        "en": "Does it take long to walk to the library?",
+        "ko": "도서관까지 걸어가는 데 오래 걸리니?"
+      }
+    ]
+  },
+  "47": {
+    "unit": 47,
+    "title": "Do you know where...? / I don't know what...",
+    "category": "Questions - 질문 만들기",
+    "concept": {
+      "situation": "의문사가 들어 있는 간접의문문을 익힌다.",
+      "core_feeling": "간접의문문에서는 어순이 평서문처럼 바뀐다",
+      "explanation": "간접의문문에서는 어순이 평서문처럼 바뀐다. 'Do you know where he is?'처럼 쓴다. 직접 질문 어순을 그대로 쓰지 않는다."
+    },
+    "examples": [
+      {
+        "en": "Do you know where the nurse's office is?",
+        "ko": "보건실이 어디 있는지 아니?"
+      },
+      {
+        "en": "I don't know what this word means.",
+        "ko": "이 단어가 무슨 뜻인지 모르겠어."
+      },
+      {
+        "en": "Can you tell me when the club meeting starts?",
+        "ko": "동아리 모임이 언제 시작하는지 말해 줄래?"
+      },
+      {
+        "en": "She asked where I bought my notebook.",
+        "ko": "그녀는 내가 공책을 어디서 샀는지 물었다."
+      },
+      {
+        "en": "I wonder why the teacher is absent today.",
+        "ko": "나는 왜 오늘 선생님이 안 오셨는지 궁금해."
+      }
+    ]
+  },
+  "48": {
+    "unit": 48,
+    "title": "She said that... / He told me that...",
+    "category": "Reported Speech - 남의 말 전하기",
+    "concept": {
+      "situation": "남의 말을 전달하는 reported speech의 기초를 배운다.",
+      "core_feeling": "said that은 말을 전할 때, told + 사람 + that은 누구에게 말했는지 함께 전할 때 쓴다",
+      "explanation": "said that은 말을 전할 때, told + 사람 + that은 누구에게 말했는지 함께 전할 때 쓴다. school 상황에서도 전달사항을 옮길 때 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "The teacher said that the test was postponed.",
+        "ko": "선생님은 시험이 연기되었다고 말씀하셨어."
+      },
+      {
+        "en": "My friend told me that she was sick.",
+        "ko": "내 친구는 자기가 아프다고 내게 말했어."
+      },
+      {
+        "en": "He said that he couldn't come to club practice.",
+        "ko": "그는 동아리 연습에 올 수 없다고 말했어."
+      },
+      {
+        "en": "The principal told us that the ceremony would start at nine.",
+        "ko": "교장선생님은 행사가 9시에 시작한다고 우리에게 말씀하셨어."
+      },
+      {
+        "en": "Jina said that she had left her phone at home.",
+        "ko": "지나는 휴대폰을 집에 두고 왔다고 말했어."
+      }
+    ]
+  },
+  "49": {
+    "unit": 49,
+    "title": "work/working, go/going, do/doing",
+    "category": "-ing and to ... - 동사 뒤 형태",
+    "concept": {
+      "situation": "동사원형과 -ing형의 형태를 익힌다.",
+      "core_feeling": "동사는 상황에 따라 원형, 과거형, -ing형 등으로 바뀐다",
+      "explanation": "동사는 상황에 따라 원형, 과거형, -ing형 등으로 바뀐다. 철자 변화까지 함께 익혀야 문장을 자연스럽게 만들 수 있다."
+    },
+    "examples": [
+      {
+        "en": "work becomes working in the present continuous.",
+        "ko": "work는 현재진행형에서 working이 돼."
+      },
+      {
+        "en": "go becomes going, not goeing.",
+        "ko": "go는 goeing이 아니라 going이 돼."
+      },
+      {
+        "en": "do becomes doing.",
+        "ko": "do는 doing이 돼."
+      },
+      {
+        "en": "run becomes running with double n.",
+        "ko": "run은 n을 하나 더 써서 running이 돼."
+      },
+      {
+        "en": "write becomes writing without e.",
+        "ko": "write는 e를 빼고 writing이 돼."
+      }
+    ]
+  },
+  "50": {
+    "unit": 50,
+    "title": "to... and -ing",
+    "category": "-ing and to ... - 동사 뒤 형태",
+    "concept": {
+      "situation": "to부정사와 동명사를 취하는 동사를 구별한다.",
+      "core_feeling": "want, need, hope 뒤에는 to부정사가, enjoy, like, finish 뒤에는 -ing가 자주 온다",
+      "explanation": "want, need, hope 뒤에는 to부정사가, enjoy, like, finish 뒤에는 -ing가 자주 온다. 동사마다 뒤에 오는 형태가 다를 수 있다."
+    },
+    "examples": [
+      {
+        "en": "I want to join the science club.",
+        "ko": "나는 과학 동아리에 들어가고 싶어."
+      },
+      {
+        "en": "She needs to finish her report tonight.",
+        "ko": "그녀는 오늘 밤 보고서를 끝내야 해."
+      },
+      {
+        "en": "We enjoy playing badminton after school.",
+        "ko": "우리는 방과 후에 배드민턴 치는 것을 즐겨."
+      },
+      {
+        "en": "He likes reading web novels on the bus.",
+        "ko": "그는 버스에서 웹소설 읽는 것을 좋아해."
+      },
+      {
+        "en": "Did you remember to bring your workbook?",
+        "ko": "문제집 가져오는 것 기억했니?"
+      }
+    ]
+  },
+  "51": {
+    "unit": 51,
+    "title": "I want you to... / I told you to...",
+    "category": "-ing and to ... - 동사 뒤 형태",
+    "concept": {
+      "situation": "목적어 뒤에 to부정사를 쓰는 동사를 배운다.",
+      "core_feeling": "want, tell, ask, need 같은 동사는 '사람 + to부정사' 구조를 자주 만든다",
+      "explanation": "want, tell, ask, need 같은 동사는 '사람 + to부정사' 구조를 자주 만든다. 누군가에게 무엇을 하길 원하거나 시킬 때 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I want you to check my answers.",
+        "ko": "나는 네가 내 답을 확인해 주면 좋겠어."
+      },
+      {
+        "en": "The teacher told us to be quiet.",
+        "ko": "선생님은 우리에게 조용히 하라고 하셨어."
+      },
+      {
+        "en": "Mom asked me to clean my desk.",
+        "ko": "엄마는 나에게 책상을 정리하라고 하셨어."
+      },
+      {
+        "en": "Our coach wants us to practice every day.",
+        "ko": "우리 코치 선생님은 우리가 매일 연습하길 바라셔."
+      },
+      {
+        "en": "I told my brother to wake me up early.",
+        "ko": "나는 형에게 나를 일찍 깨워 달라고 말했어."
+      }
+    ]
+  },
+  "52": {
+    "unit": 52,
+    "title": "I went to the store to...",
+    "category": "-ing and to ... - 동사 뒤 형태",
+    "concept": {
+      "situation": "목적을 나타내는 to부정사를 배운다.",
+      "core_feeling": "to부정사는 '무엇을 하기 위해서'라는 목적을 나타낼 수 있다",
+      "explanation": "to부정사는 '무엇을 하기 위해서'라는 목적을 나타낼 수 있다. 왜 그 행동을 했는지 뒤에서 설명해 준다."
+    },
+    "examples": [
+      {
+        "en": "I went to the library to borrow a book.",
+        "ko": "나는 책을 빌리려고 도서관에 갔어."
+      },
+      {
+        "en": "She stayed after school to practice the piano.",
+        "ko": "그녀는 피아노를 연습하려고 방과 후에 남았어."
+      },
+      {
+        "en": "We met early to finish the poster.",
+        "ko": "우리는 포스터를 끝내려고 일찍 만났어."
+      },
+      {
+        "en": "I raised my hand to ask a question.",
+        "ko": "나는 질문하려고 손을 들었어."
+      },
+      {
+        "en": "He opened his tablet to check the timetable.",
+        "ko": "그는 시간표를 확인하려고 태블릿을 켰어."
+      }
+    ]
+  },
+  "53": {
+    "unit": 53,
+    "title": "go to... / go on... / go for... / go -ing",
+    "category": "Go / Get / Do / Make / Have",
+    "concept": {
+      "situation": "go와 함께 쓰는 여러 표현을 익힌다.",
+      "core_feeling": "go는 장소로 가다(go to), 여행/행사(go on), 잠깐 활동(go for), 운동/취미(go -ing)처럼 다양한 패턴으로 쓰인다",
+      "explanation": "go는 장소로 가다(go to), 여행/행사(go on), 잠깐 활동(go for), 운동/취미(go -ing)처럼 다양한 패턴으로 쓰인다."
+    },
+    "examples": [
+      {
+        "en": "I go to school by subway.",
+        "ko": "나는 지하철로 학교에 가."
+      },
+      {
+        "en": "Our class went on a field trip last month.",
+        "ko": "우리 반은 지난달 현장학습을 갔어."
+      },
+      {
+        "en": "Let's go for a walk after dinner.",
+        "ko": "저녁 먹고 산책하러 가자."
+      },
+      {
+        "en": "We go swimming every Saturday.",
+        "ko": "우리는 매주 토요일 수영하러 가."
+      },
+      {
+        "en": "My parents are going on a trip this weekend.",
+        "ko": "우리 부모님은 이번 주말 여행 가셔."
+      }
+    ]
+  },
+  "54": {
+    "unit": 54,
+    "title": "get",
+    "category": "Go / Get / Do / Make / Have",
+    "concept": {
+      "situation": "get의 다양한 뜻과 표현을 익힌다.",
+      "core_feeling": "get은 받다, 도착하다, 되다, 가져오다처럼 뜻이 매우 많다",
+      "explanation": "get은 받다, 도착하다, 되다, 가져오다처럼 뜻이 매우 많다. 문맥으로 의미를 파악하는 연습이 중요하다."
+    },
+    "examples": [
+      {
+        "en": "I got a good grade on my science test.",
+        "ko": "나는 과학 시험에서 좋은 점수를 받았어."
+      },
+      {
+        "en": "What time did you get home yesterday?",
+        "ko": "어제 몇 시에 집에 도착했니?"
+      },
+      {
+        "en": "It's getting cold, so close the window.",
+        "ko": "점점 추워지고 있으니 창문을 닫아."
+      },
+      {
+        "en": "Can you get me some water from the cooler?",
+        "ko": "정수기에서 물 좀 가져다줄래?"
+      },
+      {
+        "en": "I got sick after the trip.",
+        "ko": "나는 여행 후에 아팠어."
+      }
+    ]
+  },
+  "55": {
+    "unit": 55,
+    "title": "do and make",
+    "category": "Go / Get / Do / Make / Have",
+    "concept": {
+      "situation": "do와 make의 쓰임을 구별한다.",
+      "core_feeling": "do는 일, 숙제, 활동처럼 '하다'의 느낌이고, make는 음식, 소리, 계획처럼 '만들다'의 느낌이 강하다",
+      "explanation": "do는 일, 숙제, 활동처럼 '하다'의 느낌이고, make는 음식, 소리, 계획처럼 '만들다'의 느낌이 강하다. 함께 외워야 자연스럽다."
+    },
+    "examples": [
+      {
+        "en": "I do my homework right after dinner.",
+        "ko": "나는 저녁 먹자마자 숙제를 해."
+      },
+      {
+        "en": "We have to do a group project this week.",
+        "ko": "우리는 이번 주에 조별 과제를 해야 해."
+      },
+      {
+        "en": "My mom makes sandwiches for me.",
+        "ko": "엄마는 나를 위해 샌드위치를 만들어 주셔."
+      },
+      {
+        "en": "Don't make so much noise in the hallway.",
+        "ko": "복도에서 그렇게 큰 소리 내지 마."
+      },
+      {
+        "en": "Our class made a poster for Earth Day.",
+        "ko": "우리 반은 지구의 날 포스터를 만들었어."
+      }
+    ]
+  },
+  "56": {
+    "unit": 56,
+    "title": "have",
+    "category": "Go / Get / Do / Make / Have",
+    "concept": {
+      "situation": "have의 기본 뜻과 자주 쓰는 결합 표현을 익힌다.",
+      "core_feeling": "have는 소유뿐 아니라 식사하다, 수업이 있다, 쉬다, 시간을 보내다처럼 폭넓게 쓰인다",
+      "explanation": "have는 소유뿐 아니라 식사하다, 수업이 있다, 쉬다, 시간을 보내다처럼 폭넓게 쓰인다. 통째로 익히는 표현이 많다."
+    },
+    "examples": [
+      {
+        "en": "I have two pencils in my pencil case.",
+        "ko": "필통에 연필이 두 자루 있어."
+      },
+      {
+        "en": "We have English on Wednesdays.",
+        "ko": "우리는 수요일에 영어 수업이 있어."
+      },
+      {
+        "en": "Let's have lunch together.",
+        "ko": "우리 같이 점심 먹자."
+      },
+      {
+        "en": "She had a headache during class.",
+        "ko": "그녀는 수업 중에 두통이 있었어."
+      },
+      {
+        "en": "Did you have a good time at the festival?",
+        "ko": "축제에서 즐거운 시간 보냈니?"
+      }
+    ]
+  },
+  "57": {
+    "unit": 57,
+    "title": "I/me, he/him, they/them",
+    "category": "Pronouns and Possessives - 대명사와 소유",
+    "concept": {
+      "situation": "주격과 목적격 대명사를 구별한다.",
+      "core_feeling": "주어 자리에는 I/he/they 같은 주격, 동사나 전치사 뒤에는 me/him/them 같은 목적격을 쓴다",
+      "explanation": "주어 자리에는 I/he/they 같은 주격, 동사나 전치사 뒤에는 me/him/them 같은 목적격을 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I sit next to Yuna, and she helps me in math.",
+        "ko": "나는 유나 옆에 앉고, 그녀는 수학에서 나를 도와줘."
+      },
+      {
+        "en": "He called us after school.",
+        "ko": "그는 방과 후에 우리에게 전화했어."
+      },
+      {
+        "en": "They invited him to join the club.",
+        "ko": "그들은 그를 동아리에 초대했어."
+      },
+      {
+        "en": "Can you see her in the front row?",
+        "ko": "앞줄에서 그녀가 보이니?"
+      },
+      {
+        "en": "My teacher asked them to stay.",
+        "ko": "선생님은 그들에게 남으라고 하셨어."
+      }
+    ]
+  },
+  "58": {
+    "unit": 58,
+    "title": "my/his/their, etc.",
+    "category": "Pronouns and Possessives - 대명사와 소유",
+    "concept": {
+      "situation": "소유형용사로 누구의 것인지 말한다.",
+      "core_feeling": "my, your, his, her, our, their은 뒤에 명사를 꾸며 '누구의 ~'인지 알려 준다",
+      "explanation": "my, your, his, her, our, their은 뒤에 명사를 꾸며 '누구의 ~'인지 알려 준다."
+    },
+    "examples": [
+      {
+        "en": "My locker is near the stairs.",
+        "ko": "내 사물함은 계단 근처에 있어."
+      },
+      {
+        "en": "His notebook is on the desk.",
+        "ko": "그의 공책은 책상 위에 있어."
+      },
+      {
+        "en": "Their classroom is on the second floor.",
+        "ko": "그들의 교실은 2층에 있어."
+      },
+      {
+        "en": "Our teacher checked our homework.",
+        "ko": "우리 선생님이 우리 숙제를 검사하셨어."
+      },
+      {
+        "en": "Did you bring your lunch box?",
+        "ko": "너는 네 도시락을 가져왔니?"
+      }
+    ]
+  },
+  "59": {
+    "unit": 59,
+    "title": "Whose is this? It's mine/yours/hers...",
+    "category": "Pronouns and Possessives - 대명사와 소유",
+    "concept": {
+      "situation": "소유대명사로 명사 없이 '내 것'을 말한다.",
+      "core_feeling": "mine, yours, his, hers, ours, theirs는 명사 없이 단독으로 쓰인다",
+      "explanation": "mine, yours, his, hers, ours, theirs는 명사 없이 단독으로 쓰인다. whose 질문에 대답할 때 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "Whose pencil case is this? It's mine.",
+        "ko": "이 필통 누구 거야? 내 거야."
+      },
+      {
+        "en": "That blue umbrella is hers.",
+        "ko": "저 파란 우산은 그녀 거야."
+      },
+      {
+        "en": "These seats are ours.",
+        "ko": "이 자리들은 우리 거야."
+      },
+      {
+        "en": "Is this notebook yours?",
+        "ko": "이 공책 네 거니?"
+      },
+      {
+        "en": "The lockers at the end are theirs.",
+        "ko": "끝쪽 사물함들은 그들 거야."
+      }
+    ]
+  },
+  "60": {
+    "unit": 60,
+    "title": "I/me/my/mine",
+    "category": "Pronouns and Possessives - 대명사와 소유",
+    "concept": {
+      "situation": "주격, 목적격, 소유형용사, 소유대명사를 한꺼번에 비교한다.",
+      "core_feeling": "I-me-my-mine처럼 형태가 바뀌면 문장 속 역할도 바뀐다",
+      "explanation": "I-me-my-mine처럼 형태가 바뀌면 문장 속 역할도 바뀐다. 같은 사람을 가리켜도 자리마다 형태가 달라진다."
+    },
+    "examples": [
+      {
+        "en": "I forgot my workbook, so my friend lent me hers, but the red one is mine.",
+        "ko": "나는 내 문제집을 잊어버려서 친구가 자기 것을 빌려줬지만, 빨간 것은 내 거야."
+      },
+      {
+        "en": "She helped me with my project.",
+        "ko": "그녀는 내 프로젝트를 도와줬어."
+      },
+      {
+        "en": "This seat is mine, not yours.",
+        "ko": "이 자리는 내 거야, 네 것이 아니야."
+      },
+      {
+        "en": "My teacher knows me well.",
+        "ko": "우리 선생님은 나를 잘 아셔."
+      },
+      {
+        "en": "I put my bag under my desk.",
+        "ko": "나는 내 가방을 내 책상 아래에 뒀어."
+      }
+    ]
+  },
+  "61": {
+    "unit": 61,
+    "title": "myself/yourself/themselves",
+    "category": "Pronouns and Possessives - 대명사와 소유",
+    "concept": {
+      "situation": "재귀대명사를 쓴다.",
+      "core_feeling": "재귀대명사는 주어가 한 행동이 다시 자기 자신에게 돌아갈 때 쓴다",
+      "explanation": "재귀대명사는 주어가 한 행동이 다시 자기 자신에게 돌아갈 때 쓴다. by oneself는 혼자라는 뜻이 된다."
+    },
+    "examples": [
+      {
+        "en": "I cut myself with scissors in art class.",
+        "ko": "나는 미술 시간에 가위에 손을 베었어."
+      },
+      {
+        "en": "Did you make this poster yourself?",
+        "ko": "이 포스터 네가 직접 만들었니?"
+      },
+      {
+        "en": "They introduced themselves to the new teacher.",
+        "ko": "그들은 새 선생님께 자기소개를 했어."
+      },
+      {
+        "en": "She taught herself how to edit videos.",
+        "ko": "그녀는 영상 편집을 스스로 배웠어."
+      },
+      {
+        "en": "We enjoyed ourselves at the school festival.",
+        "ko": "우리는 학교 축제에서 즐거운 시간을 보냈어."
+      }
+    ]
+  },
+  "62": {
+    "unit": 62,
+    "title": "-'s",
+    "category": "Pronouns and Possessives - 대명사와 소유",
+    "concept": {
+      "situation": "'s를 붙여 소유를 나타낸다.",
+      "core_feeling": "사람이나 동물, 시간 표현 등에 's를 붙여 소유를 나타낸다",
+      "explanation": "사람이나 동물, 시간 표현 등에 's를 붙여 소유를 나타낸다. of보다 더 자연스러운 경우가 많다."
+    },
+    "examples": [
+      {
+        "en": "This is Mina's desk.",
+        "ko": "이것은 미나의 책상이야."
+      },
+      {
+        "en": "Our school's library is very big.",
+        "ko": "우리 학교 도서관은 아주 커."
+      },
+      {
+        "en": "My brother's uniform is too large for me.",
+        "ko": "우리 형 교복은 내게 너무 커."
+      },
+      {
+        "en": "Tomorrow's test is in the third period.",
+        "ko": "내일 시험은 3교시에 있어."
+      },
+      {
+        "en": "Is that the teacher's laptop?",
+        "ko": "저건 선생님 노트북이니?"
+      }
+    ]
+  },
+  "63": {
+    "unit": 63,
+    "title": "a/an",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "셀 수 있는 단수명사 앞의 기본 관사를 익힌다.",
+      "core_feeling": "처음 언급하는 셀 수 있는 단수명사 앞에는 a/an을 쓴다",
+      "explanation": "처음 언급하는 셀 수 있는 단수명사 앞에는 a/an을 쓴다. 모음 소리 앞에는 an을 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I need a pencil for the quiz.",
+        "ko": "나는 퀴즈를 위해 연필 한 자루가 필요해."
+      },
+      {
+        "en": "She bought an apple juice at the store.",
+        "ko": "그녀는 매점에서 사과주스 하나를 샀어."
+      },
+      {
+        "en": "We saw a new student in the hallway.",
+        "ko": "우리는 복도에서 새 학생 한 명을 봤어."
+      },
+      {
+        "en": "He wants an English dictionary.",
+        "ko": "그는 영어사전 하나를 원해."
+      },
+      {
+        "en": "I have a test in an hour.",
+        "ko": "나는 한 시간 후에 시험이 있어."
+      }
+    ]
+  },
+  "64": {
+    "unit": 64,
+    "title": "singular and plural",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "단수명사와 복수명사를 구별한다.",
+      "core_feeling": "하나면 단수, 둘 이상이면 복수형을 쓴다",
+      "explanation": "하나면 단수, 둘 이상이면 복수형을 쓴다. 일반적으로 -s/-es를 붙이지만 형태가 달라지는 경우도 있다."
+    },
+    "examples": [
+      {
+        "en": "There is one bus in front of the school.",
+        "ko": "학교 앞에 버스 한 대가 있어."
+      },
+      {
+        "en": "There are three buses after class.",
+        "ko": "수업 후에는 버스가 세 대 있어."
+      },
+      {
+        "en": "I have two notebooks and one pen.",
+        "ko": "나는 공책 두 권과 펜 한 자루가 있어."
+      },
+      {
+        "en": "The boxes are under the table.",
+        "ko": "상자들은 탁자 아래에 있어."
+      },
+      {
+        "en": "Many students carry lunch boxes.",
+        "ko": "많은 학생들이 도시락통을 들고 다녀."
+      }
+    ]
+  },
+  "65": {
+    "unit": 65,
+    "title": "count/noncount 1",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "셀 수 있는 명사와 셀 수 없는 명사를 구별한다.",
+      "core_feeling": "셀 수 있는 명사는 a/an이나 숫자와 함께 쓰지만, water, milk, homework처럼 셀 수 없는 명사는 보통 그대로 쓴다",
+      "explanation": "셀 수 있는 명사는 a/an이나 숫자와 함께 쓰지만, water, milk, homework처럼 셀 수 없는 명사는 보통 그대로 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I bought a bottle of water.",
+        "ko": "나는 물 한 병을 샀어."
+      },
+      {
+        "en": "There is some water in my bottle.",
+        "ko": "내 물병에 물이 조금 있어."
+      },
+      {
+        "en": "She has a sandwich and some juice.",
+        "ko": "그녀는 샌드위치 하나와 주스 조금이 있어."
+      },
+      {
+        "en": "We need more paper for the printer.",
+        "ko": "프린터에 종이가 더 필요해."
+      },
+      {
+        "en": "I have a lot of homework today.",
+        "ko": "나는 오늘 숙제가 많아."
+      }
+    ]
+  },
+  "66": {
+    "unit": 66,
+    "title": "count/noncount 2",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "같은 단어도 셀 수 있게 또는 셀 수 없게 쓰일 수 있음을 본다.",
+      "core_feeling": "cake, chicken, paper처럼 문맥에 따라 하나의 개체로도, 재료나 양으로도 쓸 수 있는 명사들이 있다",
+      "explanation": "cake, chicken, paper처럼 문맥에 따라 하나의 개체로도, 재료나 양으로도 쓸 수 있는 명사들이 있다."
+    },
+    "examples": [
+      {
+        "en": "We had a cake for Mina's birthday.",
+        "ko": "우리는 미나 생일에 케이크 한 개를 먹었어."
+      },
+      {
+        "en": "Would you like some cake?",
+        "ko": "케이크 좀 먹을래?"
+      },
+      {
+        "en": "There are some cakes in the bakery.",
+        "ko": "빵집에 케이크들이 몇 개 있어."
+      },
+      {
+        "en": "I wrote my answer on a paper.",
+        "ko": "나는 종이 한 장에 답을 썼어."
+      },
+      {
+        "en": "We need more paper for the posters.",
+        "ko": "우리는 포스터용 종이가 더 필요해."
+      }
+    ]
+  },
+  "67": {
+    "unit": 67,
+    "title": "a/an and the",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "처음 말할 때와 이미 알고 있는 것을 말할 때를 구분한다.",
+      "core_feeling": "처음 소개하는 것은 a/an, 이미 알고 있거나 특정한 것은 the를 쓴다",
+      "explanation": "처음 소개하는 것은 a/an, 이미 알고 있거나 특정한 것은 the를 쓴다. 문맥 안에서 서로 무엇을 말하는지 알고 있는지가 중요하다."
+    },
+    "examples": [
+      {
+        "en": "I saw a teacher in the hallway. The teacher was carrying a box.",
+        "ko": "나는 복도에서 한 선생님을 봤어. 그 선생님은 상자를 들고 계셨어."
+      },
+      {
+        "en": "We need a marker. Where is the marker?",
+        "ko": "우리는 마커 하나가 필요해. 그 마커 어디 있지?"
+      },
+      {
+        "en": "I opened a window because the room was hot.",
+        "ko": "방이 더워서 나는 창문 하나를 열었어."
+      },
+      {
+        "en": "The window near the door is broken.",
+        "ko": "문 근처 그 창문은 고장 났어."
+      },
+      {
+        "en": "She found a wallet, and the wallet was mine.",
+        "ko": "그녀는 지갑 하나를 찾았고, 그 지갑은 내 것이었어."
+      }
+    ]
+  },
+  "68": {
+    "unit": 68,
+    "title": "the",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "특정한 것, 모두가 아는 것을 말할 때 the를 쓴다.",
+      "core_feeling": "the는 하나뿐인 것, 문맥상 분명한 것, 이미 말한 것을 가리킨다",
+      "explanation": "the는 하나뿐인 것, 문맥상 분명한 것, 이미 말한 것을 가리킨다. 발음과 리듬도 함께 익혀 두면 좋다."
+    },
+    "examples": [
+      {
+        "en": "The principal spoke at the ceremony.",
+        "ko": "교장선생님이 그 행사에서 말씀하셨어."
+      },
+      {
+        "en": "Please close the door.",
+        "ko": "그 문 좀 닫아 줘."
+      },
+      {
+        "en": "The sun was very bright this morning.",
+        "ko": "오늘 아침 해가 아주 밝았어."
+      },
+      {
+        "en": "I left my bag in the library.",
+        "ko": "나는 내 가방을 도서관에 두고 왔어."
+      },
+      {
+        "en": "The students in our class are friendly.",
+        "ko": "우리 반 학생들은 친절해."
+      }
+    ]
+  },
+  "69": {
+    "unit": 69,
+    "title": "go to work, go home, go to the hospital",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "관사가 들어가는 경우와 빠지는 경우를 구분한다.",
+      "core_feeling": "go home처럼 home 앞에는 보통 the를 쓰지 않지만, go to the hospital처럼 특정 장소로 가는 표현은 관사가 필요할 수 있다",
+      "explanation": "go home처럼 home 앞에는 보통 the를 쓰지 않지만, go to the hospital처럼 특정 장소로 가는 표현은 관사가 필요할 수 있다."
+    },
+    "examples": [
+      {
+        "en": "I went home right after school.",
+        "ko": "나는 방과 후에 바로 집에 갔어."
+      },
+      {
+        "en": "My father goes to work at seven.",
+        "ko": "아빠는 7시에 출근하셔."
+      },
+      {
+        "en": "She went to the hospital because she was sick.",
+        "ko": "그녀는 아파서 병원에 갔어."
+      },
+      {
+        "en": "We stayed at school until six.",
+        "ko": "우리는 6시까지 학교에 남아 있었어."
+      },
+      {
+        "en": "He came home late after practice.",
+        "ko": "그는 연습 후에 늦게 집에 왔어."
+      }
+    ]
+  },
+  "70": {
+    "unit": 70,
+    "title": "I like music, I hate exams",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "일반적인 것을 말할 때 관사를 쓰지 않는 경우를 익힌다.",
+      "core_feeling": "music, soccer, homework, exams처럼 일반적인 의미로 말할 때는 보통 the를 쓰지 않는다",
+      "explanation": "music, soccer, homework, exams처럼 일반적인 의미로 말할 때는 보통 the를 쓰지 않는다. 특정한 대상을 말할 때만 the를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "I like music, especially K-pop.",
+        "ko": "나는 음악을 좋아해, 특히 케이팝을."
+      },
+      {
+        "en": "My brother hates exams.",
+        "ko": "우리 형은 시험을 싫어해."
+      },
+      {
+        "en": "We study history on Tuesdays.",
+        "ko": "우리는 화요일에 역사를 공부해."
+      },
+      {
+        "en": "She loves chocolate but doesn't like coffee.",
+        "ko": "그녀는 초콜릿을 좋아하지만 커피는 좋아하지 않아."
+      },
+      {
+        "en": "Students need sleep during exam week.",
+        "ko": "시험 기간에는 학생들에게 잠이 필요해."
+      }
+    ]
+  },
+  "71": {
+    "unit": 71,
+    "title": "the... (names of places)",
+    "category": "A and The - 관사와 명사",
+    "concept": {
+      "situation": "강, 바다, 호텔, 극장 등 장소 이름과 함께 쓰는 the를 익힌다.",
+      "core_feeling": "대부분의 도시학교 이름 앞에는 the를 쓰지 않지만, the Han River, the station 같은 표현은 정해져 있다",
+      "explanation": "대부분의 도시학교 이름 앞에는 the를 쓰지 않지만, the Han River, the station 같은 표현은 정해져 있다."
+    },
+    "examples": [
+      {
+        "en": "We walked along the Han River on our school trip.",
+        "ko": "우리는 수학여행에서 한강을 따라 걸었어."
+      },
+      {
+        "en": "Our class met at the station.",
+        "ko": "우리 반은 역에서 만났어."
+      },
+      {
+        "en": "My parents stayed at the hotel near the museum.",
+        "ko": "우리 부모님은 박물관 근처 그 호텔에 머무셨어."
+      },
+      {
+        "en": "The library is next to the post office.",
+        "ko": "도서관은 우체국 옆에 있어."
+      },
+      {
+        "en": "Have you ever visited the National Museum?",
+        "ko": "너는 국립박물관에 가 본 적 있니?"
+      }
+    ]
+  },
+  "72": {
+    "unit": 72,
+    "title": "this/that/these/those",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "가까운 것과 먼 것을 가리키는 표현을 익힌다.",
+      "core_feeling": "가까운 단수는 this, 먼 단수는 that, 가까운 복수는 these, 먼 복수는 those를 쓴다",
+      "explanation": "가까운 단수는 this, 먼 단수는 that, 가까운 복수는 these, 먼 복수는 those를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "This book is mine.",
+        "ko": "이 책은 내 거야."
+      },
+      {
+        "en": "That classroom is for seniors.",
+        "ko": "저 교실은 고학년용이야."
+      },
+      {
+        "en": "These cookies are from our class.",
+        "ko": "이 쿠키들은 우리 반에서 만든 거야."
+      },
+      {
+        "en": "Those students over there are from Class 2.",
+        "ko": "저기 있는 학생들은 2반이야."
+      },
+      {
+        "en": "Can I use this pen or that one?",
+        "ko": "이 펜을 써도 될까, 아니면 저 펜을 써도 될까?"
+      }
+    ]
+  },
+  "73": {
+    "unit": 73,
+    "title": "one/ones",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "같은 명사를 반복하지 않기 위해 one/ones를 쓴다.",
+      "core_feeling": "앞에 나온 명사를 다시 말하지 않고 one(단수), ones(복수)로 대신할 수 있다",
+      "explanation": "앞에 나온 명사를 다시 말하지 않고 one(단수), ones(복수)로 대신할 수 있다."
+    },
+    "examples": [
+      {
+        "en": "I need a red pen. Do you have one?",
+        "ko": "나는 빨간 펜이 필요해. 하나 있니?"
+      },
+      {
+        "en": "These worksheets are old. We need new ones.",
+        "ko": "이 활동지들은 오래됐어. 새 것들이 필요해."
+      },
+      {
+        "en": "Which backpack do you want, the black one or the blue one?",
+        "ko": "어느 가방을 원하니, 검은 거 아니면 파란 거?"
+      },
+      {
+        "en": "The bigger ones are for the art club.",
+        "ko": "더 큰 것들은 미술 동아리용이야."
+      },
+      {
+        "en": "I lost my eraser, so I borrowed one from Mina.",
+        "ko": "나는 지우개를 잃어버려서 미나에게 하나 빌렸어."
+      }
+    ]
+  },
+  "74": {
+    "unit": 74,
+    "title": "some and any",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "긍정문과 의문문/부정문에서 쓰는 양 표현을 익힌다.",
+      "core_feeling": "some은 주로 긍정문, any는 주로 부정문과 의문문에서 쓴다",
+      "explanation": "some은 주로 긍정문, any는 주로 부정문과 의문문에서 쓴다. 다만 권유나 요청의 의문문에서는 some을 쓰기도 한다."
+    },
+    "examples": [
+      {
+        "en": "I have some stickers for the poster.",
+        "ko": "나는 포스터용 스티커가 좀 있어."
+      },
+      {
+        "en": "Do you have any glue?",
+        "ko": "풀 조금 있니?"
+      },
+      {
+        "en": "We don't have any time left.",
+        "ko": "우리에겐 남은 시간이 없어."
+      },
+      {
+        "en": "Would you like some juice?",
+        "ko": "주스 좀 마실래?"
+      },
+      {
+        "en": "There aren't any empty desks.",
+        "ko": "빈 책상이 하나도 없어."
+      }
+    ]
+  },
+  "75": {
+    "unit": 75,
+    "title": "not + any / no / none",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "없음을 여러 방식으로 말한다.",
+      "core_feeling": "not any는 문장 속 부정, no는 명사 앞에서 '없는', none은 명사 없이 '아무것도 없음'을 말한다",
+      "explanation": "not any는 문장 속 부정, no는 명사 앞에서 '없는', none은 명사 없이 '아무것도 없음'을 말한다."
+    },
+    "examples": [
+      {
+        "en": "I don't have any money for snacks.",
+        "ko": "나는 간식 살 돈이 하나도 없어."
+      },
+      {
+        "en": "There is no milk in the fridge.",
+        "ko": "냉장고에 우유가 없어."
+      },
+      {
+        "en": "How many pencils do you have? None.",
+        "ko": "연필이 몇 자루 있니? 하나도 없어."
+      },
+      {
+        "en": "No students were late today.",
+        "ko": "오늘 늦은 학생은 한 명도 없었어."
+      },
+      {
+        "en": "We had no homework over the weekend.",
+        "ko": "주말 동안 숙제가 없었어."
+      }
+    ]
+  },
+  "76": {
+    "unit": 76,
+    "title": "not + anybody/anyone/anything / nobody/no one/nothing",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "사람, 사물에 대한 부정표현을 익힌다.",
+      "core_feeling": "not anybody/anything과 nobody/nothing은 비슷한 뜻이지만 문장 구조가 다르다",
+      "explanation": "not anybody/anything과 nobody/nothing은 비슷한 뜻이지만 문장 구조가 다르다. 이중부정을 만들지 않도록 조심한다."
+    },
+    "examples": [
+      {
+        "en": "I didn't tell anybody about the surprise party.",
+        "ko": "나는 그 깜짝 파티를 아무에게도 말하지 않았어."
+      },
+      {
+        "en": "Nobody answered the teacher's question.",
+        "ko": "아무도 선생님의 질문에 대답하지 않았어."
+      },
+      {
+        "en": "We didn't buy anything at the school store.",
+        "ko": "우리는 매점에서 아무것도 사지 않았어."
+      },
+      {
+        "en": "Nothing is in my locker now.",
+        "ko": "지금 내 사물함에는 아무것도 없어."
+      },
+      {
+        "en": "No one knew the last answer.",
+        "ko": "아무도 마지막 답을 몰랐어."
+      }
+    ]
+  },
+  "77": {
+    "unit": 77,
+    "title": "somebody/anything/nowhere, etc.",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "-body, -thing, -where 계열 대명사를 익힌다.",
+      "core_feeling": "somebody, anybody, nobody, something, anything, nothing, somewhere, anywhere, nowhere는 사람, 사물, 장소를 대신한다",
+      "explanation": "somebody, anybody, nobody, something, anything, nothing, somewhere, anywhere, nowhere는 사람, 사물, 장소를 대신한다."
+    },
+    "examples": [
+      {
+        "en": "Somebody left a water bottle on my desk.",
+        "ko": "누군가가 내 책상 위에 물병을 두고 갔어."
+      },
+      {
+        "en": "Did you see anything strange?",
+        "ko": "너 이상한 것을 뭐라도 봤니?"
+      },
+      {
+        "en": "There is nowhere to sit in the cafeteria.",
+        "ko": "급식실에는 앉을 곳이 없어."
+      },
+      {
+        "en": "Let's go somewhere quiet to study.",
+        "ko": "공부하러 조용한 곳으로 가자."
+      },
+      {
+        "en": "Anybody can join the clean-up day.",
+        "ko": "누구든지 환경정화의 날에 참여할 수 있어."
+      }
+    ]
+  },
+  "78": {
+    "unit": 78,
+    "title": "every and all",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "전체를 말하는 every와 all을 구분한다.",
+      "core_feeling": "every는 각각의 하나하나를, all은 전체를 한 덩어리로 본다",
+      "explanation": "every는 각각의 하나하나를, all은 전체를 한 덩어리로 본다. every는 보통 단수명사와 함께 온다."
+    },
+    "examples": [
+      {
+        "en": "Every student has a locker.",
+        "ko": "모든 학생은 사물함이 있어."
+      },
+      {
+        "en": "All students must wear uniforms.",
+        "ko": "모든 학생은 교복을 입어야 해."
+      },
+      {
+        "en": "I go to the library every day.",
+        "ko": "나는 매일 도서관에 가."
+      },
+      {
+        "en": "All of us were nervous before the presentation.",
+        "ko": "우리 모두는 발표 전에 긴장했어."
+      },
+      {
+        "en": "Every classroom has a clock.",
+        "ko": "모든 교실에는 시계가 있어."
+      }
+    ]
+  },
+  "79": {
+    "unit": 79,
+    "title": "all / most / some / any / no/none",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "양과 범위를 말하는 표현을 정리한다.",
+      "core_feeling": "all은 전부, most는 대부분, some은 일부, any는 어떤/아무, no/none은 없음이다",
+      "explanation": "all은 전부, most는 대부분, some은 일부, any는 어떤/아무, no/none은 없음이다. 문장의 의미 범위를 크게 바꾼다."
+    },
+    "examples": [
+      {
+        "en": "All of my friends passed the test.",
+        "ko": "내 친구들은 모두 시험에 합격했어."
+      },
+      {
+        "en": "Most students bring their own water bottles.",
+        "ko": "대부분의 학생들은 자기 물병을 가져와."
+      },
+      {
+        "en": "Some teachers use tablets in class.",
+        "ko": "몇몇 선생님들은 수업에서 태블릿을 사용하셔."
+      },
+      {
+        "en": "Do you have any questions?",
+        "ko": "질문이 있니?"
+      },
+      {
+        "en": "None of us understood the last example.",
+        "ko": "우리 중 아무도 마지막 예시를 이해하지 못했어."
+      }
+    ]
+  },
+  "80": {
+    "unit": 80,
+    "title": "both / either / neither",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "둘 중 둘 다, 하나, 아무도 아님을 표현한다.",
+      "core_feeling": "both는 둘 다, either는 둘 중 하나, neither는 둘 다 아님을 말한다",
+      "explanation": "both는 둘 다, either는 둘 중 하나, neither는 둘 다 아님을 말한다. either/neither 뒤의 동사 형태에도 주의한다."
+    },
+    "examples": [
+      {
+        "en": "Both of my sisters are in middle school.",
+        "ko": "내 여동생 둘 다 중학생이야."
+      },
+      {
+        "en": "You can sit on either side of me.",
+        "ko": "내 양쪽 중 어느 쪽에나 앉아도 돼."
+      },
+      {
+        "en": "Neither answer is correct.",
+        "ko": "두 답 다 맞지 않아."
+      },
+      {
+        "en": "Both teams played well.",
+        "ko": "두 팀 다 잘했어."
+      },
+      {
+        "en": "Neither of us had an umbrella.",
+        "ko": "우리 둘 다 우산이 없었어."
+      }
+    ]
+  },
+  "81": {
+    "unit": 81,
+    "title": "a lot / much / many",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "많음을 셀 수 있는지 없는지에 따라 구별한다.",
+      "core_feeling": "many는 셀 수 있는 복수명사, much는 셀 수 없는 명사, a lot of는 둘 다와 함께 자연스럽게 쓸 수 있다",
+      "explanation": "many는 셀 수 있는 복수명사, much는 셀 수 없는 명사, a lot of는 둘 다와 함께 자연스럽게 쓸 수 있다."
+    },
+    "examples": [
+      {
+        "en": "We have a lot of homework today.",
+        "ko": "우리는 오늘 숙제가 많아."
+      },
+      {
+        "en": "How many students are absent?",
+        "ko": "결석한 학생이 몇 명이니?"
+      },
+      {
+        "en": "How much water do you drink at school?",
+        "ko": "학교에서 물을 얼마나 마시니?"
+      },
+      {
+        "en": "There aren't many buses after six.",
+        "ko": "6시 이후에는 버스가 많지 않아."
+      },
+      {
+        "en": "She doesn't have much free time this week.",
+        "ko": "그녀는 이번 주에 자유 시간이 많지 않아."
+      }
+    ]
+  },
+  "82": {
+    "unit": 82,
+    "title": "(a) little / (a) few",
+    "category": "Determiners and Pronouns - 한정사와 수량",
+    "concept": {
+      "situation": "적은 양을 셀 수 있는지 없는지에 따라 구별한다.",
+      "core_feeling": "a few는 셀 수 있는 복수명사와, a little은 셀 수 없는 명사와 쓴다",
+      "explanation": "a few는 셀 수 있는 복수명사와, a little은 셀 수 없는 명사와 쓴다. a가 빠지면 더 부정적인 '거의 없는' 느낌이 난다."
+    },
+    "examples": [
+      {
+        "en": "I have a few questions about the project.",
+        "ko": "나는 그 프로젝트에 대해 질문이 몇 개 있어."
+      },
+      {
+        "en": "There are a few empty seats near the back.",
+        "ko": "뒤쪽에 빈자리가 몇 개 있어."
+      },
+      {
+        "en": "I need a little help with this homework.",
+        "ko": "나는 이 숙제에 약간의 도움이 필요해."
+      },
+      {
+        "en": "We have little time before the bell.",
+        "ko": "종이 울리기 전까지 시간이 거의 없어."
+      },
+      {
+        "en": "Only a few students joined the morning club.",
+        "ko": "아침 동아리에는 소수의 학생들만 참여했어."
+      }
+    ]
+  },
+  "83": {
+    "unit": 83,
+    "title": "adjectives",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "형용사는 사람이나 사물의 상태성질을 설명한다.",
+      "core_feeling": "형용사는 명사를 꾸미거나 be동사 뒤에서 상태를 설명한다",
+      "explanation": "형용사는 명사를 꾸미거나 be동사 뒤에서 상태를 설명한다. very, really 같은 말과도 잘 어울린다."
+    },
+    "examples": [
+      {
+        "en": "Our new teacher is friendly.",
+        "ko": "우리 새 선생님은 친절하셔."
+      },
+      {
+        "en": "I have a heavy backpack today.",
+        "ko": "나는 오늘 가방이 무거워."
+      },
+      {
+        "en": "The exam was difficult but fair.",
+        "ko": "시험은 어려웠지만 공정했어."
+      },
+      {
+        "en": "She is nervous before presentations.",
+        "ko": "그녀는 발표 전에 긴장해."
+      },
+      {
+        "en": "This classroom is bright and clean.",
+        "ko": "이 교실은 밝고 깨끗해."
+      }
+    ]
+  },
+  "84": {
+    "unit": 84,
+    "title": "adverbs",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "부사는 동사, 형용사, 다른 부사를 꾸민다.",
+      "core_feeling": "부사는 동작이 어떻게 일어나는지 설명한다",
+      "explanation": "부사는 동작이 어떻게 일어나는지 설명한다. 대부분 형용사에 -ly를 붙여 만들지만 예외도 있다."
+    },
+    "examples": [
+      {
+        "en": "He speaks English fluently.",
+        "ko": "그는 영어를 유창하게 말해."
+      },
+      {
+        "en": "The students listened carefully.",
+        "ko": "학생들은 주의 깊게 들었어."
+      },
+      {
+        "en": "Please write clearly on the board.",
+        "ko": "칠판에 또렷하게 써 주세요."
+      },
+      {
+        "en": "She finished the quiz quickly.",
+        "ko": "그녀는 퀴즈를 빨리 끝냈어."
+      },
+      {
+        "en": "My brother drives slowly near the school.",
+        "ko": "우리 형은 학교 근처에서 천천히 운전해."
+      }
+    ]
+  },
+  "85": {
+    "unit": 85,
+    "title": "old/older, expensive/more expensive",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "짧은 형용사는 -er, 긴 형용사는 more로 비교급을 만든다.",
+      "core_feeling": "old-olde r처럼 짧은 형용사는 -er, expensive-more expensive처럼 긴 형용사는 more를 쓴다",
+      "explanation": "old-olde r처럼 짧은 형용사는 -er, expensive-more expensive처럼 긴 형용사는 more를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "My classroom is older than yours.",
+        "ko": "우리 교실이 네 교실보다 더 오래됐어."
+      },
+      {
+        "en": "This backpack is more expensive than that one.",
+        "ko": "이 가방이 저 가방보다 더 비싸."
+      },
+      {
+        "en": "The new library is quieter.",
+        "ko": "새 도서관이 더 조용해."
+      },
+      {
+        "en": "Science is more interesting to me than history.",
+        "ko": "나에게 과학이 역사보다 더 흥미로워."
+      },
+      {
+        "en": "Her notes are clearer than mine.",
+        "ko": "그녀의 필기가 내 것보다 더 깔끔해."
+      }
+    ]
+  },
+  "86": {
+    "unit": 86,
+    "title": "older than..., more expensive than...",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "비교급 뒤에 than을 써서 둘을 비교한다.",
+      "core_feeling": "둘을 비교할 때는 비교급 + than을 쓴다",
+      "explanation": "둘을 비교할 때는 비교급 + than을 쓴다. 비교 대상이 무엇인지 문장에서 분명해야 한다."
+    },
+    "examples": [
+      {
+        "en": "Mina is taller than Jisu.",
+        "ko": "미나는 지수보다 키가 커."
+      },
+      {
+        "en": "This desk is bigger than that one.",
+        "ko": "이 책상이 저 책상보다 더 커."
+      },
+      {
+        "en": "Our test was easier than last week's test.",
+        "ko": "우리 시험은 지난주 시험보다 더 쉬웠어."
+      },
+      {
+        "en": "The school gym is more crowded than the library.",
+        "ko": "학교 체육관은 도서관보다 더 붐벼."
+      },
+      {
+        "en": "English homework takes longer than math homework.",
+        "ko": "영어 숙제는 수학 숙제보다 더 오래 걸려."
+      }
+    ]
+  },
+  "87": {
+    "unit": 87,
+    "title": "not as... as",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "두 대상이 같지 않음을 부드럽게 비교한다.",
+      "core_feeling": "not as",
+      "explanation": "not as ... as는 '만큼 ~하지는 않다'를 뜻한다. 비교급보다 덜 직접적이고 완곡하다."
+    },
+    "examples": [
+      {
+        "en": "This quiz is not as hard as the last one.",
+        "ko": "이 퀴즈는 지난번 것만큼 어렵지 않아."
+      },
+      {
+        "en": "My bag is not as heavy as yours.",
+        "ko": "내 가방은 네 가방만큼 무겁지 않아."
+      },
+      {
+        "en": "The cafeteria is not as crowded today as yesterday.",
+        "ko": "오늘 급식실은 어제만큼 붐비지 않아."
+      },
+      {
+        "en": "I'm not as sleepy as I was this morning.",
+        "ko": "나는 오늘 아침만큼 졸리지 않아."
+      },
+      {
+        "en": "Our classroom is not as bright as the art room.",
+        "ko": "우리 교실은 미술실만큼 밝지 않아."
+      }
+    ]
+  },
+  "88": {
+    "unit": 88,
+    "title": "the oldest, the most expensive",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "셋 이상 중에서 최고를 말하는 최상급을 익힌다.",
+      "core_feeling": "the + 최상급은 여러 개 중 가장 ~한 것을 말한다",
+      "explanation": "the + 최상급은 여러 개 중 가장 ~한 것을 말한다. 짧은 형용사는 -est, 긴 형용사는 most를 쓴다."
+    },
+    "examples": [
+      {
+        "en": "Jiho is the tallest student in our class.",
+        "ko": "지호는 우리 반에서 가장 키가 큰 학생이야."
+      },
+      {
+        "en": "This is the most difficult question on the test.",
+        "ko": "이것은 시험에서 가장 어려운 문제야."
+      },
+      {
+        "en": "The library is the quietest place in our school.",
+        "ko": "도서관은 우리 학교에서 가장 조용한 장소야."
+      },
+      {
+        "en": "Who is the most hardworking student in your group?",
+        "ko": "네 조에서 가장 성실한 학생은 누구니?"
+      },
+      {
+        "en": "Today was the busiest day of the week.",
+        "ko": "오늘은 이번 주에 가장 바쁜 날이었어."
+      }
+    ]
+  },
+  "89": {
+    "unit": 89,
+    "title": "enough",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "필요한 만큼 충분함을 말한다.",
+      "core_feeling": "enough는 명사 앞이나 형용사/부사 뒤에 와서 '충분한, 충분히'를 뜻한다",
+      "explanation": "enough는 명사 앞이나 형용사/부사 뒤에 와서 '충분한, 충분히'를 뜻한다."
+    },
+    "examples": [
+      {
+        "en": "Do we have enough chairs for everyone?",
+        "ko": "모두를 위한 의자가 충분히 있니?"
+      },
+      {
+        "en": "I am tall enough to reach the top shelf now.",
+        "ko": "나는 이제 맨 위 선반에 닿을 만큼 충분히 커."
+      },
+      {
+        "en": "She didn't study enough for the exam.",
+        "ko": "그녀는 시험을 위해 충분히 공부하지 않았어."
+      },
+      {
+        "en": "This room is big enough for our meeting.",
+        "ko": "이 방은 우리 회의를 하기 충분히 커."
+      },
+      {
+        "en": "We left early enough to catch the first bus.",
+        "ko": "우리는 첫 버스를 탈 수 있을 만큼 충분히 일찍 출발했어."
+      }
+    ]
+  },
+  "90": {
+    "unit": 90,
+    "title": "too",
+    "category": "Adjectives and Adverbs - 형용사와 부사",
+    "concept": {
+      "situation": "지나치게 많거나 강함을 말한다.",
+      "core_feeling": "too는 필요 이상으로 많거나 강해서 문제가 되는 상태를 말한다",
+      "explanation": "too는 필요 이상으로 많거나 강해서 문제가 되는 상태를 말한다. enough와 반대 느낌으로 볼 수 있다."
+    },
+    "examples": [
+      {
+        "en": "This bag is too heavy for me.",
+        "ko": "이 가방은 나에게 너무 무거워."
+      },
+      {
+        "en": "You are speaking too fast.",
+        "ko": "너는 너무 빨리 말하고 있어."
+      },
+      {
+        "en": "It is too late to start a new project now.",
+        "ko": "지금 새 프로젝트를 시작하기에는 너무 늦었어."
+      },
+      {
+        "en": "The music in the gym was too loud.",
+        "ko": "체육관 음악은 너무 시끄러웠어."
+      },
+      {
+        "en": "I ate too much at lunch.",
+        "ko": "나는 점심을 너무 많이 먹었어."
+      }
+    ]
+  },
+  "91": {
+    "unit": 91,
+    "title": "word order 1",
+    "category": "Word Order - 어순",
+    "concept": {
+      "situation": "영어 문장의 기본 어순을 익힌다.",
+      "core_feeling": "영어는 보통 주어 + 동사 + 목적어 + 장소/방법/시간 순서로 간다",
+      "explanation": "영어는 보통 주어 + 동사 + 목적어 + 장소/방법/시간 순서로 간다. 한국어식 순서와 다를 수 있어 자주 연습해야 한다."
+    },
+    "examples": [
+      {
+        "en": "He speaks English very well.",
+        "ko": "그는 영어를 아주 잘해."
+      },
+      {
+        "en": "I finished my homework at the library yesterday.",
+        "ko": "나는 어제 도서관에서 숙제를 끝냈어."
+      },
+      {
+        "en": "She plays the piano beautifully.",
+        "ko": "그녀는 피아노를 아름답게 연주해."
+      },
+      {
+        "en": "We watched a movie in class this morning.",
+        "ko": "우리는 오늘 아침 수업에서 영화를 봤어."
+      },
+      {
+        "en": "My teacher explained the rule clearly.",
+        "ko": "우리 선생님은 그 규칙을 분명하게 설명하셨어."
+      }
+    ]
+  },
+  "92": {
+    "unit": 92,
+    "title": "always/usually/often, etc.",
+    "category": "Word Order - 어순",
+    "concept": {
+      "situation": "빈도부사의 위치를 익힌다.",
+      "core_feeling": "always, usually, often, sometimes, never 같은 빈도부사는 보통 일반동사 앞, be동사 뒤에 온다",
+      "explanation": "always, usually, often, sometimes, never 같은 빈도부사는 보통 일반동사 앞, be동사 뒤에 온다."
+    },
+    "examples": [
+      {
+        "en": "I usually eat breakfast at home.",
+        "ko": "나는 보통 집에서 아침을 먹어."
+      },
+      {
+        "en": "She is always kind to new students.",
+        "ko": "그녀는 새 학생들에게 항상 친절해."
+      },
+      {
+        "en": "We often study together after school.",
+        "ko": "우리는 자주 방과 후에 함께 공부해."
+      },
+      {
+        "en": "He never forgets his ID card.",
+        "ko": "그는 학생증을 절대 잊지 않아."
+      },
+      {
+        "en": "The teacher is sometimes late on rainy days.",
+        "ko": "선생님은 비 오는 날 가끔 늦으셔."
+      }
+    ]
+  },
+  "93": {
+    "unit": 93,
+    "title": "still / yet / already",
+    "category": "Word Order - 어순",
+    "concept": {
+      "situation": "아직, 벌써, 이미의 차이를 익힌다.",
+      "core_feeling": "still은 여전히, yet은 아직(주로 부정/의문), already는 이미를 뜻한다",
+      "explanation": "still은 여전히, yet은 아직(주로 부정/의문), already는 이미를 뜻한다. 위치와 뉘앙스가 다르다."
+    },
+    "examples": [
+      {
+        "en": "I am still doing my homework.",
+        "ko": "나는 아직도 숙제를 하고 있어."
+      },
+      {
+        "en": "Have you finished your report yet?",
+        "ko": "보고서 아직 끝냈니?"
+      },
+      {
+        "en": "She has already left the classroom.",
+        "ko": "그녀는 이미 교실을 떠났어."
+      },
+      {
+        "en": "We still have twenty minutes before class.",
+        "ko": "수업 전까지 아직 20분이 있어."
+      },
+      {
+        "en": "The teacher hasn't arrived yet.",
+        "ko": "선생님은 아직 도착하지 않으셨어."
+      }
+    ]
+  },
+  "94": {
+    "unit": 94,
+    "title": "Give me that book! / Give it to me!",
+    "category": "Word Order - 어순",
+    "concept": {
+      "situation": "목적어가 대명사일 때 어순을 익힌다.",
+      "core_feeling": "동사 + 사람 + 사물 구조와 동사 + 사물 + to + 사람 구조를 쓸 수 있다",
+      "explanation": "동사 + 사람 + 사물 구조와 동사 + 사물 + to + 사람 구조를 쓸 수 있다. 대명사 it/them은 보통 동사 바로 뒤나 전치사와 함께 자연스럽게 배치한다."
+    },
+    "examples": [
+      {
+        "en": "Give me that worksheet, please.",
+        "ko": "그 활동지 나에게 줘."
+      },
+      {
+        "en": "Give it to me, please.",
+        "ko": "그것을 나에게 줘."
+      },
+      {
+        "en": "Show us your project.",
+        "ko": "우리에게 네 프로젝트를 보여 줘."
+      },
+      {
+        "en": "The teacher handed the papers to us.",
+        "ko": "선생님은 우리에게 시험지를 나눠 주셨어."
+      },
+      {
+        "en": "Can you send them to her tonight?",
+        "ko": "오늘 밤 그것들을 그녀에게 보내 줄 수 있니?"
+      }
+    ]
+  },
+  "95": {
+    "unit": 95,
+    "title": "and / but / or / so / because",
+    "category": "Conjunctions and Clauses - 접속사와 절",
+    "concept": {
+      "situation": "문장과 문장을 자연스럽게 연결한다.",
+      "core_feeling": "and는 그리고, but은 그러나, or는 또는, so는 그래서, because는 왜냐하면의 의미로 문장을 이어 준다",
+      "explanation": "and는 그리고, but은 그러나, or는 또는, so는 그래서, because는 왜냐하면의 의미로 문장을 이어 준다."
+    },
+    "examples": [
+      {
+        "en": "I was tired, so I went to bed early.",
+        "ko": "나는 피곤해서 일찍 잤어."
+      },
+      {
+        "en": "We wanted to play outside, but it rained.",
+        "ko": "우리는 밖에서 놀고 싶었지만 비가 왔어."
+      },
+      {
+        "en": "Do you want juice or milk?",
+        "ko": "주스 먹을래, 우유 먹을래?"
+      },
+      {
+        "en": "I studied hard because the test was important.",
+        "ko": "시험이 중요해서 나는 열심히 공부했어."
+      },
+      {
+        "en": "She brought scissors and glue for the poster.",
+        "ko": "그녀는 포스터를 위해 가위와 풀을 가져왔어."
+      }
+    ]
+  },
+  "96": {
+    "unit": 96,
+    "title": "When...",
+    "category": "Conjunctions and Clauses - 접속사와 절",
+    "concept": {
+      "situation": "when절로 때를 나타낸다.",
+      "core_feeling": "when은 '~할 때'를 뜻하며, 두 사건의 시간 관계를 자연스럽게 연결한다",
+      "explanation": "when은 '~할 때'를 뜻하며, 두 사건의 시간 관계를 자연스럽게 연결한다. 미래를 말할 때도 when절 안에서는 현재형을 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "Call me when you get home.",
+        "ko": "집에 도착하면 나에게 전화해."
+      },
+      {
+        "en": "When the bell rings, we have to be quiet.",
+        "ko": "종이 울리면 우리는 조용해야 해."
+      },
+      {
+        "en": "I met my teacher when I was walking to school.",
+        "ko": "나는 학교에 걸어가고 있을 때 선생님을 만났어."
+      },
+      {
+        "en": "What do you do when you feel sleepy in class?",
+        "ko": "수업 시간에 졸릴 때 너는 뭐 하니?"
+      },
+      {
+        "en": "When I finish this page, I will take a break.",
+        "ko": "이 페이지를 끝내면 나는 쉬는 시간을 가질 거야."
+      }
+    ]
+  },
+  "97": {
+    "unit": 97,
+    "title": "If we go... / If you see...",
+    "category": "Conjunctions and Clauses - 접속사와 절",
+    "concept": {
+      "situation": "가능성이 있는 조건문을 익힌다.",
+      "core_feeling": "if + 현재형, 주절의 will/can/명령문 구조는 실제로 일어날 수 있는 조건을 말한다",
+      "explanation": "if + 현재형, 주절의 will/can/명령문 구조는 실제로 일어날 수 있는 조건을 말한다."
+    },
+    "examples": [
+      {
+        "en": "If it rains tomorrow, we will stay inside.",
+        "ko": "내일 비가 오면 우리는 안에 있을 거야."
+      },
+      {
+        "en": "If you see Mina, tell her to call me.",
+        "ko": "미나를 보면 나에게 전화하라고 전해 줘."
+      },
+      {
+        "en": "We can finish early if everyone helps.",
+        "ko": "모두가 도우면 우리는 일찍 끝낼 수 있어."
+      },
+      {
+        "en": "If you study harder, you will improve.",
+        "ko": "더 열심히 공부하면 실력이 늘 거야."
+      },
+      {
+        "en": "If the bus is late, I take the subway.",
+        "ko": "버스가 늦으면 나는 지하철을 타."
+      }
+    ]
+  },
+  "98": {
+    "unit": 98,
+    "title": "If I had... / If we went...",
+    "category": "Conjunctions and Clauses - 접속사와 절",
+    "concept": {
+      "situation": "현실과 다른 상상, 가정의 기본을 익힌다.",
+      "core_feeling": "if + 과거형은 현재 사실과 다른 가정이나 상상을 나타낸다",
+      "explanation": "if + 과거형은 현재 사실과 다른 가정이나 상상을 나타낸다. 결과절에는 would를 자주 쓴다."
+    },
+    "examples": [
+      {
+        "en": "If I had more time, I would join another club.",
+        "ko": "시간이 더 있다면 나는 다른 동아리도 들 텐데."
+      },
+      {
+        "en": "If we went by taxi, we would arrive earlier.",
+        "ko": "택시로 가면 우리는 더 일찍 도착할 텐데."
+      },
+      {
+        "en": "If she were here, she would know the answer.",
+        "ko": "그녀가 여기 있다면 답을 알 텐데."
+      },
+      {
+        "en": "What would you do if you lost your phone at school?",
+        "ko": "학교에서 휴대폰을 잃어버리면 너는 어떻게 할 거니?"
+      },
+      {
+        "en": "If I were taller, I would try basketball.",
+        "ko": "내가 더 크다면 농구에 도전할 텐데."
+      }
+    ]
+  },
+  "99": {
+    "unit": 99,
+    "title": "a person who... / a thing that/which...",
+    "category": "Conjunctions and Clauses - 접속사와 절",
+    "concept": {
+      "situation": "관계대명사 who/that/which로 명사를 꾸민다.",
+      "core_feeling": "사람은 who, 사물은 that/which로 이어서 뒤에서 설명할 수 있다",
+      "explanation": "사람은 who, 사물은 that/which로 이어서 뒤에서 설명할 수 있다. 두 문장을 한 문장으로 자연스럽게 연결한다."
+    },
+    "examples": [
+      {
+        "en": "The student who sits next to me is very funny.",
+        "ko": "내 옆에 앉는 학생은 아주 재미있어."
+      },
+      {
+        "en": "I need a book that explains this grammar clearly.",
+        "ko": "나는 이 문법을 분명하게 설명하는 책이 필요해."
+      },
+      {
+        "en": "The laptop which the teacher uses is new.",
+        "ko": "선생님이 사용하시는 노트북은 새것이야."
+      },
+      {
+        "en": "Do you know the girl who won the speech contest?",
+        "ko": "말하기 대회에서 우승한 그 여자아이를 아니?"
+      },
+      {
+        "en": "This is the app that helps me organize my homework.",
+        "ko": "이것은 내가 숙제를 정리하는 데 도움을 주는 앱이야."
+      }
+    ]
+  },
+  "100": {
+    "unit": 100,
+    "title": "the people we met / the hotel you stayed at",
+    "category": "Conjunctions and Clauses - 접속사와 절",
+    "concept": {
+      "situation": "목적격 관계대명사가 생략되는 구조를 익힌다.",
+      "core_feeling": "목적어 역할의 관계대명사는 회화에서 자주 생략된다",
+      "explanation": "목적어 역할의 관계대명사는 회화에서 자주 생략된다. 전치사가 뒤에 남는 형태도 자연스럽다."
+    },
+    "examples": [
+      {
+        "en": "The students we met were very friendly.",
+        "ko": "우리가 만난 학생들은 아주 친절했어."
+      },
+      {
+        "en": "The teacher I talked to was my old homeroom teacher.",
+        "ko": "내가 이야기한 선생님은 예전 담임선생님이셨어."
+      },
+      {
+        "en": "The cafe we studied at was quiet.",
+        "ko": "우리가 공부했던 카페는 조용했어."
+      },
+      {
+        "en": "The movie we watched in class was interesting.",
+        "ko": "우리가 수업에서 본 영화는 흥미로웠어."
+      },
+      {
+        "en": "Is that the notebook you were looking for?",
+        "ko": "저것이 네가 찾고 있던 공책이니?"
+      }
+    ]
+  },
+  "101": {
+    "unit": 101,
+    "title": "at 8:00 / on Monday / in April",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "시간 전치사 at, on, in을 구별한다.",
+      "core_feeling": "at은 시각, on은 요일과 날짜, in은 달/계절/년/오전오후 같은 넓은 시간을 말한다",
+      "explanation": "at은 시각, on은 요일과 날짜, in은 달/계절/년/오전오후 같은 넓은 시간을 말한다."
+    },
+    "examples": [
+      {
+        "en": "Class starts at 8:40.",
+        "ko": "수업은 8시 40분에 시작해."
+      },
+      {
+        "en": "We have art on Monday.",
+        "ko": "우리는 월요일에 미술 수업이 있어."
+      },
+      {
+        "en": "Our school festival is in October.",
+        "ko": "우리 학교 축제는 10월에 있어."
+      },
+      {
+        "en": "I wake up at six every day.",
+        "ko": "나는 매일 6시에 일어나."
+      },
+      {
+        "en": "The final exam is on June 25.",
+        "ko": "기말고사는 6월 25일이야."
+      }
+    ]
+  },
+  "102": {
+    "unit": 102,
+    "title": "from... to / until / since / for",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "시간의 시작과 끝, 지속을 말한다.",
+      "core_feeling": "from A to B는 시작과 끝, until은 ~까지 계속, since/for는 현재완료와 함께 시작점과 기간을 말한다",
+      "explanation": "from A to B는 시작과 끝, until은 ~까지 계속, since/for는 현재완료와 함께 시작점과 기간을 말한다."
+    },
+    "examples": [
+      {
+        "en": "Our lunch break is from 12:20 to 1:10.",
+        "ko": "우리 점심시간은 12시 20분부터 1시 10분까지야."
+      },
+      {
+        "en": "I studied until midnight last night.",
+        "ko": "나는 어젯밤 자정까지 공부했어."
+      },
+      {
+        "en": "She has been absent since Monday.",
+        "ko": "그녀는 월요일부터 결석 중이야."
+      },
+      {
+        "en": "We practiced for two hours.",
+        "ko": "우리는 두 시간 동안 연습했어."
+      },
+      {
+        "en": "The library is open from nine to six.",
+        "ko": "도서관은 9시부터 6시까지 열어."
+      }
+    ]
+  },
+  "103": {
+    "unit": 103,
+    "title": "before / after / during / while",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "시점과 동시 진행을 나타내는 전치사와 접속사를 구별한다.",
+      "core_feeling": "before/after는 전후 관계, during은 '~동안'이라는 기간, while은 두 행동이 동시에 진행됨을 나타낸다",
+      "explanation": "before/after는 전후 관계, during은 '~동안'이라는 기간, while은 두 행동이 동시에 진행됨을 나타낸다."
+    },
+    "examples": [
+      {
+        "en": "Wash your hands before lunch.",
+        "ko": "점심 먹기 전에 손을 씻어."
+      },
+      {
+        "en": "I went to the library after school.",
+        "ko": "나는 방과 후에 도서관에 갔어."
+      },
+      {
+        "en": "Please stay quiet during the test.",
+        "ko": "시험 동안 조용히 해 주세요."
+      },
+      {
+        "en": "I listened to music while I was cleaning my room.",
+        "ko": "나는 방을 청소하는 동안 음악을 들었어."
+      },
+      {
+        "en": "Before the bell rang, everyone sat down.",
+        "ko": "종이 울리기 전에 모두 자리에 앉았어."
+      }
+    ]
+  },
+  "104": {
+    "unit": 104,
+    "title": "in / at / on (places 1)",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "장소 전치사 in, at, on의 기본 감각을 익힌다.",
+      "core_feeling": "in은 안에, at은 한 지점, on은 표면 위를 기본 감각으로 가진다",
+      "explanation": "in은 안에, at은 한 지점, on은 표면 위를 기본 감각으로 가진다. 장소를 떠올리며 익히면 쉽다."
+    },
+    "examples": [
+      {
+        "en": "My notebook is in my bag.",
+        "ko": "내 공책은 가방 안에 있어."
+      },
+      {
+        "en": "Let's meet at the school gate.",
+        "ko": "학교 정문에서 만나자."
+      },
+      {
+        "en": "Your pencil is on the desk.",
+        "ko": "네 연필은 책상 위에 있어."
+      },
+      {
+        "en": "There is a picture on the wall.",
+        "ko": "벽에 그림이 하나 있어."
+      },
+      {
+        "en": "She is waiting at the bus stop.",
+        "ko": "그녀는 버스 정류장에서 기다리고 있어."
+      }
+    ]
+  },
+  "105": {
+    "unit": 105,
+    "title": "in / at / on (places 2)",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "자주 헷갈리는 장소 표현을 더 익힌다.",
+      "core_feeling": "건물 안 전체는 in, 특정 지점이나 행사 장소는 at, 층/표면/노선 등은 on을 쓰는 경우가 많다",
+      "explanation": "건물 안 전체는 in, 특정 지점이나 행사 장소는 at, 층/표면/노선 등은 on을 쓰는 경우가 많다."
+    },
+    "examples": [
+      {
+        "en": "My teacher is in the teachers' room.",
+        "ko": "우리 선생님은 교무실에 계셔."
+      },
+      {
+        "en": "I saw him at the concert hall.",
+        "ko": "나는 그를 공연장에서 봤어."
+      },
+      {
+        "en": "Our classroom is on the second floor.",
+        "ko": "우리 교실은 2층에 있어."
+      },
+      {
+        "en": "There were many students at the festival.",
+        "ko": "축제에는 학생들이 많았어."
+      },
+      {
+        "en": "The notice is on the bulletin board.",
+        "ko": "공지문은 게시판에 붙어 있어."
+      }
+    ]
+  },
+  "106": {
+    "unit": 106,
+    "title": "to / in / at (places 3)",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "이동과 도착, 위치를 나타내는 전치사를 구분한다.",
+      "core_feeling": "go to는 '~로 가다', be in/at은 '~에 있다'를 말한다",
+      "explanation": "go to는 '~로 가다', be in/at은 '~에 있다'를 말한다. movement와 position을 구별하면 쉽다."
+    },
+    "examples": [
+      {
+        "en": "I go to school at seven fifty.",
+        "ko": "나는 7시 50분에 학교에 가."
+      },
+      {
+        "en": "She is in the science room now.",
+        "ko": "그녀는 지금 과학실에 있어."
+      },
+      {
+        "en": "We arrived at the station at nine.",
+        "ko": "우리는 9시에 역에 도착했어."
+      },
+      {
+        "en": "Come to the library after class.",
+        "ko": "수업 후에 도서관으로 와."
+      },
+      {
+        "en": "My brother stays in the gym after school.",
+        "ko": "우리 형은 방과 후에 체육관에 있어."
+      }
+    ]
+  },
+  "107": {
+    "unit": 107,
+    "title": "next to, between, under, etc.",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "위치 관계를 자세히 말하는 전치사를 익힌다.",
+      "core_feeling": "next to, between, under, behind, in front of 같은 표현은 물건이나 사람의 위치 관계를 분명하게 알려 준다",
+      "explanation": "next to, between, under, behind, in front of 같은 표현은 물건이나 사람의 위치 관계를 분명하게 알려 준다."
+    },
+    "examples": [
+      {
+        "en": "My seat is next to the window.",
+        "ko": "내 자리는 창문 옆이야."
+      },
+      {
+        "en": "The teacher is standing between two students.",
+        "ko": "선생님은 두 학생 사이에 서 계셔."
+      },
+      {
+        "en": "Your shoes are under the chair.",
+        "ko": "네 신발은 의자 아래에 있어."
+      },
+      {
+        "en": "The gym is behind the main building.",
+        "ko": "체육관은 본관 뒤에 있어."
+      },
+      {
+        "en": "There is a flower pot in front of the office.",
+        "ko": "행정실 앞에 화분이 있어."
+      }
+    ]
+  },
+  "108": {
+    "unit": 108,
+    "title": "up, over, through, etc.",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "움직임의 방향을 나타내는 전치사/부사를 익힌다.",
+      "core_feeling": "up, down, over, under, through, across 같은 말은 움직이는 방향과 경로를 생생하게 보여 준다",
+      "explanation": "up, down, over, under, through, across 같은 말은 움직이는 방향과 경로를 생생하게 보여 준다."
+    },
+    "examples": [
+      {
+        "en": "We ran up the stairs when the bell rang.",
+        "ko": "종이 울렸을 때 우리는 계단을 뛰어 올라갔어."
+      },
+      {
+        "en": "The ball went over the fence.",
+        "ko": "공이 울타리 너머로 넘어갔어."
+      },
+      {
+        "en": "He walked through the crowd.",
+        "ko": "그는 사람들 사이를 뚫고 걸어갔어."
+      },
+      {
+        "en": "We swam across the pool.",
+        "ko": "우리는 수영장을 가로질러 헤엄쳤어."
+      },
+      {
+        "en": "The cat jumped under the bench.",
+        "ko": "고양이가 벤치 아래로 뛰어들어 갔어."
+      }
+    ]
+  },
+  "109": {
+    "unit": 109,
+    "title": "on / at / by / with / about",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "다양한 전치사 묶음을 익힌다.",
+      "core_feeling": "전치사는 단어와 함께 외워야 한다",
+      "explanation": "전치사는 단어와 함께 외워야 한다. by bus, with my friend, talk about science처럼 짝으로 익히면 좋다."
+    },
+    "examples": [
+      {
+        "en": "I come to school by bus.",
+        "ko": "나는 버스로 학교에 와."
+      },
+      {
+        "en": "Let's meet at lunch.",
+        "ko": "점심시간에 만나자."
+      },
+      {
+        "en": "She went there with her cousin.",
+        "ko": "그녀는 사촌과 함께 거기에 갔어."
+      },
+      {
+        "en": "We talked about the festival all day.",
+        "ko": "우리는 하루 종일 축제에 대해 이야기했어."
+      },
+      {
+        "en": "The notice is on the front door.",
+        "ko": "공지문은 앞문에 붙어 있어."
+      }
+    ]
+  },
+  "110": {
+    "unit": 110,
+    "title": "afraid of..., good at... + -ing",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "형용사 뒤 전치사와 -ing형을 익힌다.",
+      "core_feeling": "be afraid of, be good at, be interested in처럼 형용사 뒤에는 특정 전치사가 따라오고, 그 뒤 동사는 -ing형이 온다",
+      "explanation": "be afraid of, be good at, be interested in처럼 형용사 뒤에는 특정 전치사가 따라오고, 그 뒤 동사는 -ing형이 온다."
+    },
+    "examples": [
+      {
+        "en": "I am good at solving math problems.",
+        "ko": "나는 수학 문제 푸는 것을 잘해."
+      },
+      {
+        "en": "She is interested in joining the band.",
+        "ko": "그녀는 밴드부에 들어가는 것에 관심이 있어."
+      },
+      {
+        "en": "My brother is afraid of speaking in public.",
+        "ko": "우리 형은 사람들 앞에서 말하는 것을 무서워해."
+      },
+      {
+        "en": "We are excited about going on a trip.",
+        "ko": "우리는 여행 가는 것에 신나 있어."
+      },
+      {
+        "en": "Are you tired of doing the same exercises?",
+        "ko": "같은 연습을 하는 것이 지겹니?"
+      }
+    ]
+  },
+  "111": {
+    "unit": 111,
+    "title": "listen to..., look at... (verb + preposition)",
+    "category": "Prepositions - 전치사",
+    "concept": {
+      "situation": "동사와 함께 꼭 붙는 전치사를 익힌다.",
+      "core_feeling": "listen to, look at, wait for, talk to 같은 표현은 동사와 전치사를 세트로 외워야 자연스럽다",
+      "explanation": "listen to, look at, wait for, talk to 같은 표현은 동사와 전치사를 세트로 외워야 자연스럽다."
+    },
+    "examples": [
+      {
+        "en": "Please listen to the teacher carefully.",
+        "ko": "선생님 말씀을 주의 깊게 들어."
+      },
+      {
+        "en": "Look at the board, everyone.",
+        "ko": "모두 칠판을 봐."
+      },
+      {
+        "en": "I am waiting for the bus now.",
+        "ko": "나는 지금 버스를 기다리고 있어."
+      },
+      {
+        "en": "She apologized to her friend.",
+        "ko": "그녀는 친구에게 사과했어."
+      },
+      {
+        "en": "We talked about our homework after class.",
+        "ko": "우리는 수업 후에 숙제에 대해 이야기했어."
+      }
+    ]
+  },
+  "112": {
+    "unit": 112,
+    "title": "phrasal verbs 1",
+    "category": "Phrasal Verbs - 구동사",
+    "concept": {
+      "situation": "동사 + 부사의 결합으로 뜻이 달라지는 구동사를 익힌다.",
+      "core_feeling": "go in, come out, sit down, run away처럼 구동사는 일상회화에 매우 많다",
+      "explanation": "go in, come out, sit down, run away처럼 구동사는 일상회화에 매우 많다. 한 단어처럼 의미를 익히는 것이 좋다."
+    },
+    "examples": [
+      {
+        "en": "Go in and take your seat.",
+        "ko": "들어가서 자리에 앉아."
+      },
+      {
+        "en": "Please sit down quietly.",
+        "ko": "조용히 앉아 주세요."
+      },
+      {
+        "en": "My dog ran away from the yard yesterday.",
+        "ko": "우리 강아지가 어제 마당에서 도망갔어."
+      },
+      {
+        "en": "The lights went out during the storm.",
+        "ko": "폭풍우 동안 불이 나갔어."
+      },
+      {
+        "en": "Hurry up, or we'll miss the bus.",
+        "ko": "서둘러, 아니면 버스를 놓칠 거야."
+      }
+    ]
+  },
+  "113": {
+    "unit": 113,
+    "title": "phrasal verbs 2",
+    "category": "Phrasal Verbs - 구동사",
+    "concept": {
+      "situation": "구동사의 목적어 위치를 익힌다.",
+      "core_feeling": "put on your shoes / put your shoes on처럼 명사 목적어는 중간/뒤 모두 가능하지만, 대명사 목적어는 꼭 중간에 둔다",
+      "explanation": "put on your shoes / put your shoes on처럼 명사 목적어는 중간/뒤 모두 가능하지만, 대명사 목적어는 꼭 중간에 둔다."
+    },
+    "examples": [
+      {
+        "en": "Put on your jacket before you go outside.",
+        "ko": "밖에 나가기 전에 재킷을 입어."
+      },
+      {
+        "en": "Put your jacket on before you go outside.",
+        "ko": "밖에 나가기 전에 재킷을 입어."
+      },
+      {
+        "en": "Put it on now.",
+        "ko": "그것을 지금 입어."
+      },
+      {
+        "en": "Turn off the light, please.",
+        "ko": "불 좀 꺼 줘."
+      },
+      {
+        "en": "Turn it off before you leave.",
+        "ko": "나가기 전에 그것을 꺼."
+      }
+    ]
+  }
+}

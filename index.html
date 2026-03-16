@@ -28,6 +28,17 @@
             </div>
         </header>
 
+        <!-- 스케줄 바로가기 -->
+        <section style="margin-bottom: 20px;">
+            <a href="schedule.html" class="weekly-card" style="display: block; text-decoration: none; color: inherit;">
+                <div class="weekly-header">
+                    <h3><i class="fas fa-calendar-day" style="color: var(--primary-eng);"></i> 스케줄 관리</h3>
+                    <span style="font-size: 0.9rem; color: var(--text-light);">시간대별 기록 →</span>
+                </div>
+                <p style="margin: 0; font-size: 0.95rem; color: var(--text-light);">이 시간에 뭐 했는지 기록해요 (학교·집·카페 등)</p>
+            </a>
+        </section>
+
         <!-- 학습 현황 -->
         <section class="weekly-status-section">
             <div class="weekly-card" onclick="openCalendar()">
@@ -53,9 +64,9 @@
                     <button class="cal-close" onclick="closeCalendar()"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="cal-month-nav">
-                    <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="changeMonth(-1)" title="이전 주"><i class="fas fa-chevron-left"></i></button>
                     <span id="cal-month-label"></span>
-                    <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+                    <button onclick="changeMonth(1)" title="다음 주"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
             <div id="cal-body" class="cal-body">
@@ -89,9 +100,9 @@
                     세상을 더 명쾌하게 보는 시야를 선물해줄 거예요.
                 </p>
                 <div class="btn-group">
-                    <a href="math/math_1/index.html" class="btn-enter" style="flex: 1; min-width: 80px;">중1 📊</a>
-                    <a href="math/math_2/index.html" class="btn-enter" style="flex: 1; min-width: 80px;">중2 📈</a>
-                    <a href="math/math_3/index.html" class="btn-enter" style="flex: 1; min-width: 80px;">중3 📐</a>
+                    <a href="math?grade=1" class="btn-enter" style="flex: 1; min-width: 80px;">중1 📊</a>
+                    <a href="math?grade=2" class="btn-enter" style="flex: 1; min-width: 80px;">중2 📈</a>
+                    <a href="math?grade=3" class="btn-enter" style="flex: 1; min-width: 80px;">중3 📐</a>
                     <a href="math/math_drill.html" class="btn-enter" style="flex: 1; min-width: 140px; background: var(--primary-eng); border-color: var(--primary-eng);">연산 마스터 🔢</a>
                 </div>
             </div>
@@ -147,9 +158,16 @@
             }
 
             const studyDates = new Set();
+            const rows = await pullProgress();
+            rows.forEach(row => {
+                if (row.storage_key && row.storage_key.startsWith('math_tutor_') && row.completed_at) {
+                    const date = new Date(row.completed_at);
+                    if (!isNaN(date.getTime())) studyDates.add(date.toISOString().split('T')[0]);
+                }
+            });
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
-                if (key.startsWith('math_tutor_') || key.startsWith('rahee_eng_learned_')) {
+                if (key.startsWith('rahee_eng_learned_')) {
                     const value = localStorage.getItem(key);
                     try {
                         const date = new Date(value);

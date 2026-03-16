@@ -7,52 +7,62 @@
         {
           "q": "25 ÷ 1",
           "solution": "25÷1=25",
-          "answer": 25
+          "answer": 25,
+          "id": "g1_s1_p1"
         },
         {
           "q": "14 ÷ 7",
           "solution": "14÷7=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s1_p2"
         },
         {
           "q": "20 × 31",
           "solution": "20×31=620",
-          "answer": 620
+          "answer": 620,
+          "id": "g1_s1_p3"
         },
         {
           "q": "38 - 14",
           "solution": "38-14=24",
-          "answer": 24
+          "answer": 24,
+          "id": "g1_s1_p4"
         },
         {
           "q": "19 + 9",
           "solution": "19+9=28",
-          "answer": 28
+          "answer": 28,
+          "id": "g1_s1_p5"
         },
         {
           "q": "40 - 17",
           "solution": "40-17=23",
-          "answer": 23
+          "answer": 23,
+          "id": "g1_s1_p6"
         },
         {
           "q": "20 + 7",
           "solution": "20+7=27",
-          "answer": 27
+          "answer": 27,
+          "id": "g1_s1_p7"
         },
         {
           "q": "36 ÷ 9",
           "solution": "36÷9=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s1_p8"
         },
         {
           "q": "6 ÷ 6",
           "solution": "6÷6=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s1_p9"
         },
         {
           "q": "40 - 41",
           "solution": "40-41=-1",
-          "answer": -1
+          "answer": -1,
+          "id": "g1_s1_p10"
         }
       ]
     },
@@ -62,52 +72,62 @@
         {
           "q": "36 ÷ 9",
           "solution": "36÷9=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s2_p1"
         },
         {
           "q": "17 + 4",
           "solution": "17+4=21",
-          "answer": 21
+          "answer": 21,
+          "id": "g1_s2_p2"
         },
         {
           "q": "6 ÷ 1",
           "solution": "6÷1=6",
-          "answer": 6
+          "answer": 6,
+          "id": "g1_s2_p3"
         },
         {
           "q": "40 × 32",
           "solution": "40×32=1280",
-          "answer": 1280
+          "answer": 1280,
+          "id": "g1_s2_p4"
         },
         {
           "q": "16 × 47",
           "solution": "16×47=752",
-          "answer": 752
+          "answer": 752,
+          "id": "g1_s2_p5"
         },
         {
           "q": "46 - 5",
           "solution": "46-5=41",
-          "answer": 41
+          "answer": 41,
+          "id": "g1_s2_p6"
         },
         {
           "q": "37 - 15",
           "solution": "37-15=22",
-          "answer": 22
+          "answer": 22,
+          "id": "g1_s2_p7"
         },
         {
           "q": "10 ÷ 2",
           "solution": "10÷2=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s2_p8"
         },
         {
           "q": "6 ÷ 2",
           "solution": "6÷2=3",
-          "answer": 3
+          "answer": 3,
+          "id": "g1_s2_p9"
         },
         {
           "q": "20 × 36",
           "solution": "20×36=720",
-          "answer": 720
+          "answer": 720,
+          "id": "g1_s2_p10"
         }
       ]
     },
@@ -117,52 +137,62 @@
         {
           "q": "46 × 8",
           "solution": "46×8=368",
-          "answer": 368
+          "answer": 368,
+          "id": "g1_s3_p1"
         },
         {
           "q": "35 × 14",
           "solution": "35×14=490",
-          "answer": 490
+          "answer": 490,
+          "id": "g1_s3_p2"
         },
         {
           "q": "24 ÷ 6",
           "solution": "24÷6=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s3_p3"
         },
         {
           "q": "37 × 16",
           "solution": "37×16=592",
-          "answer": 592
+          "answer": 592,
+          "id": "g1_s3_p4"
         },
         {
           "q": "12 - 13",
           "solution": "12-13=-1",
-          "answer": -1
+          "answer": -1,
+          "id": "g1_s3_p5"
         },
         {
           "q": "3 × 40",
           "solution": "3×40=120",
-          "answer": 120
+          "answer": 120,
+          "id": "g1_s3_p6"
         },
         {
           "q": "31 + 5",
           "solution": "31+5=36",
-          "answer": 36
+          "answer": 36,
+          "id": "g1_s3_p7"
         },
         {
           "q": "44 - 49",
           "solution": "44-49=-5",
-          "answer": -5
+          "answer": -5,
+          "id": "g1_s3_p8"
         },
         {
           "q": "10 + 3",
           "solution": "10+3=13",
-          "answer": 13
+          "answer": 13,
+          "id": "g1_s3_p9"
         },
         {
           "q": "45 ÷ 9",
           "solution": "45÷9=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s3_p10"
         }
       ]
     },
@@ -172,52 +202,62 @@
         {
           "q": "18 - 34",
           "solution": "18-34=-16",
-          "answer": -16
+          "answer": -16,
+          "id": "g1_s4_p1"
         },
         {
           "q": "10 ÷ 10",
           "solution": "10÷10=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s4_p2"
         },
         {
           "q": "18 ÷ 6",
           "solution": "18÷6=3",
-          "answer": 3
+          "answer": 3,
+          "id": "g1_s4_p3"
         },
         {
           "q": "6 + 21",
           "solution": "6+21=27",
-          "answer": 27
+          "answer": 27,
+          "id": "g1_s4_p4"
         },
         {
           "q": "32 × 38",
           "solution": "32×38=1216",
-          "answer": 1216
+          "answer": 1216,
+          "id": "g1_s4_p5"
         },
         {
           "q": "13 + 16",
           "solution": "13+16=29",
-          "answer": 29
+          "answer": 29,
+          "id": "g1_s4_p6"
         },
         {
           "q": "47 + 18",
           "solution": "47+18=65",
-          "answer": 65
+          "answer": 65,
+          "id": "g1_s4_p7"
         },
         {
           "q": "46 × 15",
           "solution": "46×15=690",
-          "answer": 690
+          "answer": 690,
+          "id": "g1_s4_p8"
         },
         {
           "q": "11 ÷ 1",
           "solution": "11÷1=11",
-          "answer": 11
+          "answer": 11,
+          "id": "g1_s4_p9"
         },
         {
           "q": "7 - 10",
           "solution": "7-10=-3",
-          "answer": -3
+          "answer": -3,
+          "id": "g1_s4_p10"
         }
       ]
     },
@@ -227,52 +267,62 @@
         {
           "q": "3 + 37",
           "solution": "3+37=40",
-          "answer": 40
+          "answer": 40,
+          "id": "g1_s5_p1"
         },
         {
           "q": "2 - 8",
           "solution": "2-8=-6",
-          "answer": -6
+          "answer": -6,
+          "id": "g1_s5_p2"
         },
         {
           "q": "39 + 37",
           "solution": "39+37=76",
-          "answer": 76
+          "answer": 76,
+          "id": "g1_s5_p3"
         },
         {
           "q": "26 × 6",
           "solution": "26×6=156",
-          "answer": 156
+          "answer": 156,
+          "id": "g1_s5_p4"
         },
         {
           "q": "8 + 3",
           "solution": "8+3=11",
-          "answer": 11
+          "answer": 11,
+          "id": "g1_s5_p5"
         },
         {
           "q": "13 + 12",
           "solution": "13+12=25",
-          "answer": 25
+          "answer": 25,
+          "id": "g1_s5_p6"
         },
         {
           "q": "31 + 14",
           "solution": "31+14=45",
-          "answer": 45
+          "answer": 45,
+          "id": "g1_s5_p7"
         },
         {
           "q": "40 ÷ 10",
           "solution": "40÷10=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s5_p8"
         },
         {
           "q": "7 + 17",
           "solution": "7+17=24",
-          "answer": 24
+          "answer": 24,
+          "id": "g1_s5_p9"
         },
         {
           "q": "15 × 5",
           "solution": "15×5=75",
-          "answer": 75
+          "answer": 75,
+          "id": "g1_s5_p10"
         }
       ]
     },
@@ -282,52 +332,62 @@
         {
           "q": "23 - 28",
           "solution": "23-28=-5",
-          "answer": -5
+          "answer": -5,
+          "id": "g1_s6_p1"
         },
         {
           "q": "4 ÷ 1",
           "solution": "4÷1=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s6_p2"
         },
         {
           "q": "36 ÷ 4",
           "solution": "36÷4=9",
-          "answer": 9
+          "answer": 9,
+          "id": "g1_s6_p3"
         },
         {
           "q": "10 ÷ 10",
           "solution": "10÷10=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s6_p4"
         },
         {
           "q": "11 - 45",
           "solution": "11-45=-34",
-          "answer": -34
+          "answer": -34,
+          "id": "g1_s6_p5"
         },
         {
           "q": "50 - 4",
           "solution": "50-4=46",
-          "answer": 46
+          "answer": 46,
+          "id": "g1_s6_p6"
         },
         {
           "q": "11 × 22",
           "solution": "11×22=242",
-          "answer": 242
+          "answer": 242,
+          "id": "g1_s6_p7"
         },
         {
           "q": "6 ÷ 3",
           "solution": "6÷3=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s6_p8"
         },
         {
           "q": "0 ÷ 10",
           "solution": "0÷10=0",
-          "answer": 0
+          "answer": 0,
+          "id": "g1_s6_p9"
         },
         {
           "q": "33 × 20",
           "solution": "33×20=660",
-          "answer": 660
+          "answer": 660,
+          "id": "g1_s6_p10"
         }
       ]
     },
@@ -337,52 +397,62 @@
         {
           "q": "25 × 43",
           "solution": "25×43=1075",
-          "answer": 1075
+          "answer": 1075,
+          "id": "g1_s7_p1"
         },
         {
           "q": "10 + 36",
           "solution": "10+36=46",
-          "answer": 46
+          "answer": 46,
+          "id": "g1_s7_p2"
         },
         {
           "q": "30 + 48",
           "solution": "30+48=78",
-          "answer": 78
+          "answer": 78,
+          "id": "g1_s7_p3"
         },
         {
           "q": "22 + 48",
           "solution": "22+48=70",
-          "answer": 70
+          "answer": 70,
+          "id": "g1_s7_p4"
         },
         {
           "q": "35 - 18",
           "solution": "35-18=17",
-          "answer": 17
+          "answer": 17,
+          "id": "g1_s7_p5"
         },
         {
           "q": "12 ÷ 6",
           "solution": "12÷6=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s7_p6"
         },
         {
           "q": "40 × 19",
           "solution": "40×19=760",
-          "answer": 760
+          "answer": 760,
+          "id": "g1_s7_p7"
         },
         {
           "q": "38 - 41",
           "solution": "38-41=-3",
-          "answer": -3
+          "answer": -3,
+          "id": "g1_s7_p8"
         },
         {
           "q": "42 ÷ 7",
           "solution": "42÷7=6",
-          "answer": 6
+          "answer": 6,
+          "id": "g1_s7_p9"
         },
         {
           "q": "42 + 6",
           "solution": "42+6=48",
-          "answer": 48
+          "answer": 48,
+          "id": "g1_s7_p10"
         }
       ]
     },
@@ -392,52 +462,62 @@
         {
           "q": "39 × 13",
           "solution": "39×13=507",
-          "answer": 507
+          "answer": 507,
+          "id": "g1_s8_p1"
         },
         {
           "q": "11 - 16",
           "solution": "11-16=-5",
-          "answer": -5
+          "answer": -5,
+          "id": "g1_s8_p2"
         },
         {
           "q": "40 ÷ 10",
           "solution": "40÷10=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s8_p3"
         },
         {
           "q": "20 ÷ 10",
           "solution": "20÷10=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s8_p4"
         },
         {
           "q": "27 + 50",
           "solution": "27+50=77",
-          "answer": 77
+          "answer": 77,
+          "id": "g1_s8_p5"
         },
         {
           "q": "11 + 29",
           "solution": "11+29=40",
-          "answer": 40
+          "answer": 40,
+          "id": "g1_s8_p6"
         },
         {
           "q": "17 - 45",
           "solution": "17-45=-28",
-          "answer": -28
+          "answer": -28,
+          "id": "g1_s8_p7"
         },
         {
           "q": "27 ÷ 9",
           "solution": "27÷9=3",
-          "answer": 3
+          "answer": 3,
+          "id": "g1_s8_p8"
         },
         {
           "q": "39 + 49",
           "solution": "39+49=88",
-          "answer": 88
+          "answer": 88,
+          "id": "g1_s8_p9"
         },
         {
           "q": "3 × 32",
           "solution": "3×32=96",
-          "answer": 96
+          "answer": 96,
+          "id": "g1_s8_p10"
         }
       ]
     },
@@ -447,52 +527,62 @@
         {
           "q": "20 + 30",
           "solution": "20+30=50",
-          "answer": 50
+          "answer": 50,
+          "id": "g1_s9_p1"
         },
         {
           "q": "27 + 13",
           "solution": "27+13=40",
-          "answer": 40
+          "answer": 40,
+          "id": "g1_s9_p2"
         },
         {
           "q": "47 + 9",
           "solution": "47+9=56",
-          "answer": 56
+          "answer": 56,
+          "id": "g1_s9_p3"
         },
         {
           "q": "24 ÷ 6",
           "solution": "24÷6=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s9_p4"
         },
         {
           "q": "1 + 14",
           "solution": "1+14=15",
-          "answer": 15
+          "answer": 15,
+          "id": "g1_s9_p5"
         },
         {
           "q": "46 + 49",
           "solution": "46+49=95",
-          "answer": 95
+          "answer": 95,
+          "id": "g1_s9_p6"
         },
         {
           "q": "44 + 34",
           "solution": "44+34=78",
-          "answer": 78
+          "answer": 78,
+          "id": "g1_s9_p7"
         },
         {
           "q": "13 - 8",
           "solution": "13-8=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s9_p8"
         },
         {
           "q": "20 - 18",
           "solution": "20-18=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s9_p9"
         },
         {
           "q": "6 ÷ 2",
           "solution": "6÷2=3",
-          "answer": 3
+          "answer": 3,
+          "id": "g1_s9_p10"
         }
       ]
     },
@@ -502,52 +592,62 @@
         {
           "q": "2 ÷ 2",
           "solution": "2÷2=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s10_p1"
         },
         {
           "q": "17 × 9",
           "solution": "17×9=153",
-          "answer": 153
+          "answer": 153,
+          "id": "g1_s10_p2"
         },
         {
           "q": "8 × 10",
           "solution": "8×10=80",
-          "answer": 80
+          "answer": 80,
+          "id": "g1_s10_p3"
         },
         {
           "q": "2 + 3",
           "solution": "2+3=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s10_p4"
         },
         {
           "q": "14 × 44",
           "solution": "14×44=616",
-          "answer": 616
+          "answer": 616,
+          "id": "g1_s10_p5"
         },
         {
           "q": "36 × 21",
           "solution": "36×21=756",
-          "answer": 756
+          "answer": 756,
+          "id": "g1_s10_p6"
         },
         {
           "q": "32 ÷ 8",
           "solution": "32÷8=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s10_p7"
         },
         {
           "q": "41 × 28",
           "solution": "41×28=1148",
-          "answer": 1148
+          "answer": 1148,
+          "id": "g1_s10_p8"
         },
         {
           "q": "35 - 12",
           "solution": "35-12=23",
-          "answer": 23
+          "answer": 23,
+          "id": "g1_s10_p9"
         },
         {
           "q": "25 × 38",
           "solution": "25×38=950",
-          "answer": 950
+          "answer": 950,
+          "id": "g1_s10_p10"
         }
       ]
     },
@@ -557,52 +657,62 @@
         {
           "q": "1 - 9",
           "solution": "1-9=-8",
-          "answer": -8
+          "answer": -8,
+          "id": "g1_s11_p1"
         },
         {
           "q": "18 × 22",
           "solution": "18×22=396",
-          "answer": 396
+          "answer": 396,
+          "id": "g1_s11_p2"
         },
         {
           "q": "24 + 46",
           "solution": "24+46=70",
-          "answer": 70
+          "answer": 70,
+          "id": "g1_s11_p3"
         },
         {
           "q": "22 + 50",
           "solution": "22+50=72",
-          "answer": 72
+          "answer": 72,
+          "id": "g1_s11_p4"
         },
         {
           "q": "3 - 18",
           "solution": "3-18=-15",
-          "answer": -15
+          "answer": -15,
+          "id": "g1_s11_p5"
         },
         {
           "q": "10 × 38",
           "solution": "10×38=380",
-          "answer": 380
+          "answer": 380,
+          "id": "g1_s11_p6"
         },
         {
           "q": "24 - 26",
           "solution": "24-26=-2",
-          "answer": -2
+          "answer": -2,
+          "id": "g1_s11_p7"
         },
         {
           "q": "16 ÷ 4",
           "solution": "16÷4=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s11_p8"
         },
         {
           "q": "4 - 20",
           "solution": "4-20=-16",
-          "answer": -16
+          "answer": -16,
+          "id": "g1_s11_p9"
         },
         {
           "q": "34 + 47",
           "solution": "34+47=81",
-          "answer": 81
+          "answer": 81,
+          "id": "g1_s11_p10"
         }
       ]
     },
@@ -612,52 +722,62 @@
         {
           "q": "20 × 26",
           "solution": "20×26=520",
-          "answer": 520
+          "answer": 520,
+          "id": "g1_s12_p1"
         },
         {
           "q": "20 + 27",
           "solution": "20+27=47",
-          "answer": 47
+          "answer": 47,
+          "id": "g1_s12_p2"
         },
         {
           "q": "0 ÷ 8",
           "solution": "0÷8=0",
-          "answer": 0
+          "answer": 0,
+          "id": "g1_s12_p3"
         },
         {
           "q": "22 + 22",
           "solution": "22+22=44",
-          "answer": 44
+          "answer": 44,
+          "id": "g1_s12_p4"
         },
         {
           "q": "28 ÷ 7",
           "solution": "28÷7=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s12_p5"
         },
         {
           "q": "3 × 20",
           "solution": "3×20=60",
-          "answer": 60
+          "answer": 60,
+          "id": "g1_s12_p6"
         },
         {
           "q": "48 - 44",
           "solution": "48-44=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s12_p7"
         },
         {
           "q": "10 ÷ 2",
           "solution": "10÷2=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s12_p8"
         },
         {
           "q": "5 - 6",
           "solution": "5-6=-1",
-          "answer": -1
+          "answer": -1,
+          "id": "g1_s12_p9"
         },
         {
           "q": "48 + 15",
           "solution": "48+15=63",
-          "answer": 63
+          "answer": 63,
+          "id": "g1_s12_p10"
         }
       ]
     },
@@ -667,52 +787,62 @@
         {
           "q": "25 + 1",
           "solution": "25+1=26",
-          "answer": 26
+          "answer": 26,
+          "id": "g1_s13_p1"
         },
         {
           "q": "26 × 36",
           "solution": "26×36=936",
-          "answer": 936
+          "answer": 936,
+          "id": "g1_s13_p2"
         },
         {
           "q": "29 - 32",
           "solution": "29-32=-3",
-          "answer": -3
+          "answer": -3,
+          "id": "g1_s13_p3"
         },
         {
           "q": "28 × 6",
           "solution": "28×6=168",
-          "answer": 168
+          "answer": 168,
+          "id": "g1_s13_p4"
         },
         {
           "q": "15 - 17",
           "solution": "15-17=-2",
-          "answer": -2
+          "answer": -2,
+          "id": "g1_s13_p5"
         },
         {
           "q": "28 × 13",
           "solution": "28×13=364",
-          "answer": 364
+          "answer": 364,
+          "id": "g1_s13_p6"
         },
         {
           "q": "8 + 5",
           "solution": "8+5=13",
-          "answer": 13
+          "answer": 13,
+          "id": "g1_s13_p7"
         },
         {
           "q": "34 - 29",
           "solution": "34-29=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s13_p8"
         },
         {
           "q": "5 ÷ 5",
           "solution": "5÷5=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s13_p9"
         },
         {
           "q": "14 + 42",
           "solution": "14+42=56",
-          "answer": 56
+          "answer": 56,
+          "id": "g1_s13_p10"
         }
       ]
     },
@@ -722,52 +852,62 @@
         {
           "q": "14 - 40",
           "solution": "14-40=-26",
-          "answer": -26
+          "answer": -26,
+          "id": "g1_s14_p1"
         },
         {
           "q": "7 ÷ 7",
           "solution": "7÷7=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s14_p2"
         },
         {
           "q": "24 - 35",
           "solution": "24-35=-11",
-          "answer": -11
+          "answer": -11,
+          "id": "g1_s14_p3"
         },
         {
           "q": "6 ÷ 3",
           "solution": "6÷3=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s14_p4"
         },
         {
           "q": "36 ÷ 9",
           "solution": "36÷9=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s14_p5"
         },
         {
           "q": "32 × 44",
           "solution": "32×44=1408",
-          "answer": 1408
+          "answer": 1408,
+          "id": "g1_s14_p6"
         },
         {
           "q": "32 - 32",
           "solution": "32-32=0",
-          "answer": 0
+          "answer": 0,
+          "id": "g1_s14_p7"
         },
         {
           "q": "35 - 40",
           "solution": "35-40=-5",
-          "answer": -5
+          "answer": -5,
+          "id": "g1_s14_p8"
         },
         {
           "q": "1 × 22",
           "solution": "1×22=22",
-          "answer": 22
+          "answer": 22,
+          "id": "g1_s14_p9"
         },
         {
           "q": "21 - 3",
           "solution": "21-3=18",
-          "answer": 18
+          "answer": 18,
+          "id": "g1_s14_p10"
         }
       ]
     },
@@ -777,52 +917,62 @@
         {
           "q": "17 - 39",
           "solution": "17-39=-22",
-          "answer": -22
+          "answer": -22,
+          "id": "g1_s15_p1"
         },
         {
           "q": "25 × 38",
           "solution": "25×38=950",
-          "answer": 950
+          "answer": 950,
+          "id": "g1_s15_p2"
         },
         {
           "q": "46 ÷ 2",
           "solution": "46÷2=23",
-          "answer": 23
+          "answer": 23,
+          "id": "g1_s15_p3"
         },
         {
           "q": "6 + 34",
           "solution": "6+34=40",
-          "answer": 40
+          "answer": 40,
+          "id": "g1_s15_p4"
         },
         {
           "q": "5 - 15",
           "solution": "5-15=-10",
-          "answer": -10
+          "answer": -10,
+          "id": "g1_s15_p5"
         },
         {
           "q": "3 + 20",
           "solution": "3+20=23",
-          "answer": 23
+          "answer": 23,
+          "id": "g1_s15_p6"
         },
         {
           "q": "49 × 29",
           "solution": "49×29=1421",
-          "answer": 1421
+          "answer": 1421,
+          "id": "g1_s15_p7"
         },
         {
           "q": "6 ÷ 6",
           "solution": "6÷6=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s15_p8"
         },
         {
           "q": "33 + 25",
           "solution": "33+25=58",
-          "answer": 58
+          "answer": 58,
+          "id": "g1_s15_p9"
         },
         {
           "q": "37 + 6",
           "solution": "37+6=43",
-          "answer": 43
+          "answer": 43,
+          "id": "g1_s15_p10"
         }
       ]
     },
@@ -832,52 +982,62 @@
         {
           "q": "48 - 28",
           "solution": "48-28=20",
-          "answer": 20
+          "answer": 20,
+          "id": "g1_s16_p1"
         },
         {
           "q": "16 ÷ 8",
           "solution": "16÷8=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s16_p2"
         },
         {
           "q": "25 - 39",
           "solution": "25-39=-14",
-          "answer": -14
+          "answer": -14,
+          "id": "g1_s16_p3"
         },
         {
           "q": "2 + 43",
           "solution": "2+43=45",
-          "answer": 45
+          "answer": 45,
+          "id": "g1_s16_p4"
         },
         {
           "q": "48 × 12",
           "solution": "48×12=576",
-          "answer": 576
+          "answer": 576,
+          "id": "g1_s16_p5"
         },
         {
           "q": "33 × 37",
           "solution": "33×37=1221",
-          "answer": 1221
+          "answer": 1221,
+          "id": "g1_s16_p6"
         },
         {
           "q": "20 ÷ 5",
           "solution": "20÷5=4",
-          "answer": 4
+          "answer": 4,
+          "id": "g1_s16_p7"
         },
         {
           "q": "14 ÷ 7",
           "solution": "14÷7=2",
-          "answer": 2
+          "answer": 2,
+          "id": "g1_s16_p8"
         },
         {
           "q": "25 - 4",
           "solution": "25-4=21",
-          "answer": 21
+          "answer": 21,
+          "id": "g1_s16_p9"
         },
         {
           "q": "42 - 9",
           "solution": "42-9=33",
-          "answer": 33
+          "answer": 33,
+          "id": "g1_s16_p10"
         }
       ]
     },
@@ -887,52 +1047,62 @@
         {
           "q": "19 × 47",
           "solution": "19×47=893",
-          "answer": 893
+          "answer": 893,
+          "id": "g1_s17_p1"
         },
         {
           "q": "0 ÷ 7",
           "solution": "0÷7=0",
-          "answer": 0
+          "answer": 0,
+          "id": "g1_s17_p2"
         },
         {
           "q": "10 + 32",
           "solution": "10+32=42",
-          "answer": 42
+          "answer": 42,
+          "id": "g1_s17_p3"
         },
         {
           "q": "44 - 45",
           "solution": "44-45=-1",
-          "answer": -1
+          "answer": -1,
+          "id": "g1_s17_p4"
         },
         {
           "q": "23 + 27",
           "solution": "23+27=50",
-          "answer": 50
+          "answer": 50,
+          "id": "g1_s17_p5"
         },
         {
           "q": "40 ÷ 8",
           "solution": "40÷8=5",
-          "answer": 5
+          "answer": 5,
+          "id": "g1_s17_p6"
         },
         {
           "q": "3 ÷ 3",
           "solution": "3÷3=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s17_p7"
         },
         {
           "q": "2 - 3",
           "solution": "2-3=-1",
-          "answer": -1
+          "answer": -1,
+          "id": "g1_s17_p8"
         },
         {
           "q": "41 + 21",
           "solution": "41+21=62",
-          "answer": 62
+          "answer": 62,
+          "id": "g1_s17_p9"
         },
         {
           "q": "45 × 36",
           "solution": "45×36=1620",
-          "answer": 1620
+          "answer": 1620,
+          "id": "g1_s17_p10"
         }
       ]
     },
@@ -942,52 +1112,62 @@
         {
           "q": "12 ÷ 2",
           "solution": "12÷2=6",
-          "answer": 6
+          "answer": 6,
+          "id": "g1_s18_p1"
         },
         {
           "q": "0 ÷ 10",
           "solution": "0÷10=0",
-          "answer": 0
+          "answer": 0,
+          "id": "g1_s18_p2"
         },
         {
           "q": "41 + 22",
           "solution": "41+22=63",
-          "answer": 63
+          "answer": 63,
+          "id": "g1_s18_p3"
         },
         {
           "q": "44 × 46",
           "solution": "44×46=2024",
-          "answer": 2024
+          "answer": 2024,
+          "id": "g1_s18_p4"
         },
         {
           "q": "9 × 25",
           "solution": "9×25=225",
-          "answer": 225
+          "answer": 225,
+          "id": "g1_s18_p5"
         },
         {
           "q": "48 + 44",
           "solution": "48+44=92",
-          "answer": 92
+          "answer": 92,
+          "id": "g1_s18_p6"
         },
         {
           "q": "34 + 13",
           "solution": "34+13=47",
-          "answer": 47
+          "answer": 47,
+          "id": "g1_s18_p7"
         },
         {
           "q": "26 × 29",
           "solution": "26×29=754",
-          "answer": 754
+          "answer": 754,
+          "id": "g1_s18_p8"
         },
         {
           "q": "48 ÷ 6",
           "solution": "48÷6=8",
-          "answer": 8
+          "answer": 8,
+          "id": "g1_s18_p9"
         },
         {
           "q": "41 + 5",
           "solution": "41+5=46",
-          "answer": 46
+          "answer": 46,
+          "id": "g1_s18_p10"
         }
       ]
     },
@@ -997,52 +1177,62 @@
         {
           "q": "3 × 32",
           "solution": "3×32=96",
-          "answer": 96
+          "answer": 96,
+          "id": "g1_s19_p1"
         },
         {
           "q": "2 - 34",
           "solution": "2-34=-32",
-          "answer": -32
+          "answer": -32,
+          "id": "g1_s19_p2"
         },
         {
           "q": "9 ÷ 9",
           "solution": "9÷9=1",
-          "answer": 1
+          "answer": 1,
+          "id": "g1_s19_p3"
         },
         {
           "q": "20 - 8",
           "solution": "20-8=12",
-          "answer": 12
+          "answer": 12,
+          "id": "g1_s19_p4"
         },
         {
           "q": "28 ÷ 2",
           "solution": "28÷2=14",
-          "answer": 14
+          "answer": 14,
+          "id": "g1_s19_p5"
         },
         {
           "q": "7 + 27",
           "solution": "7+27=34",
-          "answer": 34
+          "answer": 34,
+          "id": "g1_s19_p6"
         },
         {
           "q": "7 - 27",
           "solution": "7-27=-20",
-          "answer": -20
+          "answer": -20,
+          "id": "g1_s19_p7"
         },
         {
           "q": "42 ÷ 7",
           "solution": "42÷7=6",
-          "answer": 6
+          "answer": 6,
+          "id": "g1_s19_p8"
         },
         {
           "q": "44 + 27",
           "solution": "44+27=71",
-          "answer": 71
+          "answer": 71,
+          "id": "g1_s19_p9"
         },
         {
           "q": "32 × 21",
           "solution": "32×21=672",
-          "answer": 672
+          "answer": 672,
+          "id": "g1_s19_p10"
         }
       ]
     },
@@ -1052,52 +1242,62 @@
         {
           "q": "6 + 23",
           "solution": "6+23=29",
-          "answer": 29
+          "answer": 29,
+          "id": "g1_s20_p1"
         },
         {
           "q": "8 + 23",
           "solution": "8+23=31",
-          "answer": 31
+          "answer": 31,
+          "id": "g1_s20_p2"
         },
         {
           "q": "23 - 23",
           "solution": "23-23=0",
-          "answer": 0
+          "answer": 0,
+          "id": "g1_s20_p3"
         },
         {
           "q": "1 × 15",
           "solution": "1×15=15",
-          "answer": 15
+          "answer": 15,
+          "id": "g1_s20_p4"
         },
         {
           "q": "5 - 39",
           "solution": "5-39=-34",
-          "answer": -34
+          "answer": -34,
+          "id": "g1_s20_p5"
         },
         {
           "q": "14 - 1",
           "solution": "14-1=13",
-          "answer": 13
+          "answer": 13,
+          "id": "g1_s20_p6"
         },
         {
           "q": "43 + 44",
           "solution": "43+44=87",
-          "answer": 87
+          "answer": 87,
+          "id": "g1_s20_p7"
         },
         {
           "q": "48 × 1",
           "solution": "48×1=48",
-          "answer": 48
+          "answer": 48,
+          "id": "g1_s20_p8"
         },
         {
           "q": "24 + 45",
           "solution": "24+45=69",
-          "answer": 69
+          "answer": 69,
+          "id": "g1_s20_p9"
         },
         {
           "q": "39 - 15",
           "solution": "39-15=24",
-          "answer": 24
+          "answer": 24,
+          "id": "g1_s20_p10"
         }
       ]
     }

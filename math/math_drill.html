@@ -248,6 +248,70 @@
             display: none;
         }
 
+        .retry-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .retry-modal {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .retry-modal .jihun-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+
+        .retry-modal .jihun-name {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--kumon-blue);
+            margin-bottom: 20px;
+        }
+
+        .retry-modal .score-msg {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .retry-modal .encourage-msg {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .retry-modal .retry-btn {
+            margin-top: 24px;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            background: var(--kumon-blue);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .retry-modal .retry-btn:hover {
+            background: #0062cc;
+        }
+
         /* Responsive */
         @media (max-width: 650px) {
             .paper-container {
@@ -307,19 +371,55 @@
                 </div>
             </div>
         </div>
+
+        <!-- 틀렸을 때 박지훈 응원 모달 -->
+        <div id="retry-overlay" class="retry-overlay" style="display: none;">
+            <div class="retry-modal">
+                <img src="../../assets/images/pjh3.jpeg" alt="박지훈" class="jihun-img">
+                <div class="jihun-name">박지훈</div>
+                <div class="score-msg" id="retry-score-msg"></div>
+                <div class="encourage-msg">그것만으로도 대견해요! 👏</div>
+                <div class="encourage-msg">오빠랑 다시 풀어보자!</div>
+                <button class="retry-btn" onclick="resetAndRetry()">다시 풀기</button>
+            </div>
+        </div>
+
+        <!-- 다 맞췄을 때 박지훈 축하 모달 -->
+        <div id="success-overlay" class="retry-overlay" style="display: none;">
+            <div class="retry-modal">
+                <img src="../../assets/images/pjh.jpeg" alt="박지훈" class="jihun-img">
+                <div class="jihun-name">박지훈</div>
+                <div class="encourage-msg" id="success-msg">해냈어! 라희 대단해! 🎉</div>
+                <button class="retry-btn" onclick="closeSuccessAndBack()">다른 세트 풀기</button>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../env.js"></script>
+    <script src="../../assets/js/supabase_service.js"></script>
     <script>
         let currentGrade = 1;
         let mathData = null;
         let currentSet = null;
+        let isRetry = false;  // 틀린 뒤 다시 풀기 시 true
 
         document.getElementById('today-date').innerText = new Date().toLocaleDateString();
 
+        async function syncMathDrillFromSupabase() {
+            const rows = await pullProgress();
+            rows.forEach(row => {
+                if (row.storage_key && row.storage_key.startsWith('math_drill_')) {
+                    localStorage.setItem(row.storage_key, row.completed_at || '1');
+                }
+            });
+        }
+
         async function loadMathData(grade) {
             currentGrade = grade;
+            await syncMathDrillFromSupabase();
             const filename = `../../math/data/middle${grade}_math_sets.json`;
             try {
                 const response = await fetch(filename);
@@ -380,7 +480,10 @@
             document.getElementById('selector-screen').style.display = 'none';
             document.getElementById('practice-screen').style.display = 'block';
             document.getElementById('scoring-overlay').style.display = 'none';
+            document.getElementById('retry-overlay').style.display = 'none';
+            document.getElementById('success-overlay').style.display = 'none';
             document.getElementById('submit-btn').style.display = 'block';
+            isRetry = false;
             
             // Focus first input
             setTimeout(() => {
@@ -402,13 +505,15 @@
         function checkAnswers() {
             const inputs = document.querySelectorAll('.problem-input');
             let correctCount = 0;
-            
+            const EPSILON = 0.001;  // 소수 채점 시 부동소수점 오차 허용
+
             inputs.forEach(input => {
                 const userAnswer = parseFloat(input.value);
                 const correctAnswer = parseFloat(input.getAttribute('data-answer'));
                 const mark = input.parentElement.querySelector('.result-mark');
-                
-                if (userAnswer === correctAnswer) {
+                const isCorrect = !isNaN(userAnswer) && (userAnswer === correctAnswer || Math.abs(userAnswer - correctAnswer) < EPSILON);
+
+                if (isCorrect) {
                     input.classList.add('correct');
                     input.classList.remove('incorrect');
                     mark.className = 'result-mark correct';
@@ -421,9 +526,11 @@
             });
 
             const score = Math.round((correctCount / inputs.length) * 100);
+            const totalCount = inputs.length;
             const overlay = document.getElementById('scoring-overlay');
             overlay.innerText = score;
             overlay.style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'none';
 
             if (score === 100) {
                 confetti({
@@ -433,10 +540,43 @@
                 });
                 // Save progress
                 const setNum = parseInt(document.getElementById('display-set').innerText.replace('SET ', ''));
-                localStorage.setItem(`math_drill_g${currentGrade}_s${setNum}`, '1');
+                const key = `math_drill_g${currentGrade}_s${setNum}`;
+                const completedAt = new Date().toISOString();
+                localStorage.setItem(key, completedAt);
+                pushProgress(key, completedAt);
+                // 박지훈 축하 모달
+                const msgEl = document.getElementById('success-msg');
+                msgEl.innerText = isRetry ? '열심히 노력해서 결국 해냈어! 라희 대단해! 🎉' : '해냈어! 라희 대단해! 🎉';
+                setTimeout(() => {
+                    document.getElementById('success-overlay').style.display = 'flex';
+                }, 800);
+            } else {
+                // 틀렸을 때: 박지훈 모달 표시
+                document.getElementById('retry-score-msg').innerText = `${correctCount}문제 맞췄어요! (${correctCount}/${totalCount})`;
+                document.getElementById('retry-overlay').style.display = 'flex';
             }
+        }
 
-            document.getElementById('submit-btn').style.display = 'none';
+        function closeSuccessAndBack() {
+            document.getElementById('success-overlay').style.display = 'none';
+            backToSelector();
+        }
+
+        function resetAndRetry() {
+            document.getElementById('retry-overlay').style.display = 'none';
+            isRetry = true;
+            const inputs = document.querySelectorAll('.problem-input');
+            const marks = document.querySelectorAll('.result-mark');
+            inputs.forEach(input => {
+                input.value = '';
+                input.classList.remove('correct', 'incorrect');
+            });
+            marks.forEach(mark => {
+                mark.className = 'result-mark';
+            });
+            document.getElementById('scoring-overlay').style.display = 'none';
+            document.getElementById('submit-btn').style.display = 'block';
+            setTimeout(() => document.querySelector('.problem-input').focus(), 100);
         }
 
         function backToSelector() {
