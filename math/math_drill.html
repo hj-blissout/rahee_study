@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>연산 연습 | 구몬식 수학</title>
-    <link rel="stylesheet" href="../../assets/css/math_common.css">
+    <link rel="stylesheet" href="../assets/css/math_common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -330,7 +330,7 @@
 <body>
     <div class="wrap">
         <div class="header-nav">
-            <a href="../../index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 메인으로 돌아가기</a>
+            <a href="../index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 메인으로 돌아가기</a>
         </div>
 
         <div id="selector-screen" class="selector-screen">
@@ -375,7 +375,7 @@
         <!-- 틀렸을 때 박지훈 응원 모달 -->
         <div id="retry-overlay" class="retry-overlay" style="display: none;">
             <div class="retry-modal">
-                <img src="../../assets/images/pjh3.jpeg" alt="박지훈" class="jihun-img">
+                <img src="../assets/images/pjh3.jpeg" alt="박지훈" class="jihun-img">
                 <div class="jihun-name">박지훈</div>
                 <div class="score-msg" id="retry-score-msg"></div>
                 <div class="encourage-msg">그것만으로도 대견해요! 👏</div>
@@ -387,7 +387,7 @@
         <!-- 다 맞췄을 때 박지훈 축하 모달 -->
         <div id="success-overlay" class="retry-overlay" style="display: none;">
             <div class="retry-modal">
-                <img src="../../assets/images/pjh.jpeg" alt="박지훈" class="jihun-img">
+                <img src="../assets/images/pjh.jpeg" alt="박지훈" class="jihun-img">
                 <div class="jihun-name">박지훈</div>
                 <div class="encourage-msg" id="success-msg">해냈어! 라희 대단해! 🎉</div>
                 <button class="retry-btn" onclick="closeSuccessAndBack()">다른 세트 풀기</button>
@@ -398,8 +398,8 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="../../env.js"></script>
-    <script src="../../assets/js/supabase_service.js"></script>
+    <script src="../env.js"></script>
+    <script src="../assets/js/supabase_service.js"></script>
     <script>
         let currentGrade = 1;
         let mathData = null;
