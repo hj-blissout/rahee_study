@@ -160,14 +160,17 @@
             const studyDates = new Set();
             const rows = await pullProgress();
             rows.forEach(row => {
-                if (row.storage_key && row.storage_key.startsWith('math_tutor_') && row.completed_at) {
+                if (!row.storage_key || !row.completed_at) return;
+                if (row.storage_key.startsWith('math_tutor_') || row.storage_key.startsWith('math_drill_') ||
+                    row.storage_key.startsWith('eng_learned_v2_') || row.storage_key.startsWith('rahee_eng_') ||
+                    row.storage_key.startsWith('grammar_unit_') || row.storage_key.startsWith('rahee_grammar_')) {
                     const date = new Date(row.completed_at);
                     if (!isNaN(date.getTime())) studyDates.add(date.toISOString().split('T')[0]);
                 }
             });
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
-                if (key.startsWith('rahee_eng_learned_')) {
+                if (key.startsWith('eng_learned_v2_') || key.startsWith('rahee_eng_learned_')) {
                     const value = localStorage.getItem(key);
                     try {
                         const date = new Date(value);

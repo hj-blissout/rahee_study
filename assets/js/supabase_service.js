@@ -36,6 +36,7 @@ async function getSession() {
 }
 
 async function logout() {
+    invalidateProgressCache();
     const sb = getSupabase();
     if (sb) await sb.auth.signOut();
     const root = window.location.pathname.includes('/math_') || window.location.pathname.includes('/english/') ? '../../' : (window.location.pathname.includes('/math/') ? '../' : './');
@@ -43,7 +44,16 @@ async function logout() {
 }
 
 // Database / Progress Functions
-async function pushProgress(storageKey, completedAt, payload = null) {
+function inferSubjectFromKey(storageKey) {
+    if (!storageKey) return null;
+    if (storageKey.startsWith('math_tutor_')) return 'math_tutor';
+    if (storageKey.startsWith('math_drill_')) return 'math_drill';
+    if (storageKey.startsWith('eng_learned_v2_') || storageKey.startsWith('rahee_eng_')) return 'english_words';
+    if (storageKey.startsWith('grammar_unit_') || storageKey.startsWith('rahee_grammar_')) return 'english_grammar';
+    return null;
+}
+
+async function pushProgress(storageKey, completedAt, payload = null, subject = null) {
     try {
         const sb = getSupabase();
         if (!sb) return { error: new Error('No Supabase') };
@@ -56,8 +66,11 @@ async function pushProgress(storageKey, completedAt, payload = null) {
             completed_at: completedAt
         };
         if (payload != null) row.payload = payload;
+        const subj = subject || inferSubjectFromKey(storageKey);
+        if (subj) row.subject = subj;
 
         const { error } = await sb.from('rahee_progress').upsert(row, { onConflict: 'user_id,storage_key' });
+        if (!error) invalidateProgressCache();
         return { error };
     } catch (e) {
         console.warn('Supabase Push Error:', e);
@@ -65,24 +78,47 @@ async function pushProgress(storageKey, completedAt, payload = null) {
     }
 }
 
-async function pullProgress() {
-    try {
-        const sb = getSupabase();
-        if (!sb) return [];
-        const user = await getCurrentUser();
-        if (!user) return [];
+// Progress 캐시 (페이지 내 중복 조회 방지)
+let _progressCache = null;
+let _progressFetchPromise = null;
+const PROGRESS_CACHE_TTL = 60 * 1000; // 1분
 
-        const { data, error } = await sb
-            .from('rahee_progress')
-            .select('storage_key, completed_at, payload')
-            .eq('user_id', user.id);
+function invalidateProgressCache() {
+    _progressCache = null;
+    _progressFetchPromise = null;
+}
 
-        if (error) throw error;
-        return data || [];
-    } catch (e) {
-        console.warn('Supabase Pull Error:', e);
-        return [];
+async function pullProgress(forceRefresh = false) {
+    const now = Date.now();
+    if (!forceRefresh && _progressCache && (now - _progressCache.timestamp) < PROGRESS_CACHE_TTL) {
+        return _progressCache.data;
     }
+    if (_progressFetchPromise) return _progressFetchPromise;
+
+    _progressFetchPromise = (async () => {
+        try {
+            const sb = getSupabase();
+            if (!sb) return [];
+            const user = await getCurrentUser();
+            if (!user) return [];
+
+            const { data, error } = await sb
+                .from('rahee_progress')
+                .select('storage_key, completed_at, payload, subject')
+                .eq('user_id', user.id);
+
+            if (error) throw error;
+            const result = data || [];
+            _progressCache = { data: result, timestamp: Date.now() };
+            return result;
+        } catch (e) {
+            console.warn('Supabase Pull Error:', e);
+            return [];
+        } finally {
+            _progressFetchPromise = null;
+        }
+    })();
+    return _progressFetchPromise;
 }
 
 // Schedule (시간 블럭) Functions

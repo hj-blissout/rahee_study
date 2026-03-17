@@ -24,6 +24,8 @@
         .schedule-table .has-content { background: #eff6ff; }
         .schedule-table .has-content.math { background: #eff6ff; border-left: 3px solid var(--primary-math); }
         .schedule-table .has-content.english { background: #f5f3ff; border-left: 3px solid var(--primary-eng); }
+        .schedule-table .block-entry.progress-history { opacity: 0.9; }
+        .schedule-table .block-entry.progress-history .block-content { font-size: 0.8rem; }
         .schedule-table td.block-cell-merged { min-width: 0; overflow: hidden; }
         .schedule-table .block-entry { cursor: pointer; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
         .schedule-table .block-entry:last-child { border-bottom: none; }
@@ -217,6 +219,24 @@
             return `${y}-${m}-${day}`;
         }
 
+        function progressTitle(key) {
+            if (!key) return '학습 완료';
+            if (key.includes('math_drill_')) {
+                const m = key.match(/math_drill_g(\d)_s(\d+)/);
+                return m ? `연산 중${m[1]} SET${m[2]}` : '연산 연습';
+            }
+            if (key.includes('math_tutor_') && key.includes('unit')) {
+                const m = key.match(/unit(\d+)_lesson/);
+                return m ? `수학 ${m[1]}단원` : '수학 학습';
+            }
+            if (key.includes('grammar_unit_')) {
+                const m = key.match(/(?:rahee_)?grammar_unit_(\d+)/);
+                return m ? `영어 문법 ${m[1]}단원` : '영어 문법';
+            }
+            if (key.startsWith('eng_learned_v2_') || key.startsWith('rahee_eng_')) return '영어 학습';
+            return '학습 완료';
+        }
+
         async function render() {
             const mon = new Date(weekStart);
             const sun = new Date(mon);
@@ -226,12 +246,34 @@
 
             const start = dateKey(mon);
             const end = dateKey(sun);
-            const rows = await pullSchedule(start, end);
+            const [scheduleRows, progressRows] = await Promise.all([pullSchedule(start, end), pullProgress()]);
             scheduleData = {};
-            rows.forEach(r => {
+            scheduleRows.forEach(r => {
                 const k = `${r.date}_${r.time_block}`;
                 if (!scheduleData[k]) scheduleData[k] = [];
-                scheduleData[k].push(r);
+                scheduleData[k].push({ ...r, isProgress: false });
+            });
+            progressRows.forEach(row => {
+                if (!row.storage_key || !row.completed_at) return;
+                const dt = new Date(row.completed_at);
+                if (isNaN(dt.getTime())) return;
+                const dk = dateKey(dt);
+                if (dk < start || dk > end) return;
+                const hour = dt.getHours();
+                const tb = `${String(hour).padStart(2, '0')}:00`;
+                const k = `${dk}_${tb}`;
+                if (!scheduleData[k]) scheduleData[k] = [];
+                scheduleData[k].push({
+                    id: null,
+                    content: progressTitle(row.storage_key),
+                    subject: 'other',
+                    place: '',
+                    isProgress: true,
+                    storage_key: row.storage_key
+                });
+            });
+            Object.keys(scheduleData).forEach(k => {
+                scheduleData[k].sort((a, b) => (a.isProgress ? 1 : 0) - (b.isProgress ? 1 : 0));
             });
 
             const dayNames = ['일','월','화','수','목','금','토'];
@@ -245,19 +287,65 @@
             headHtml += '</tr>';
             document.getElementById('schedule-thead').innerHTML = headHtml;
 
+            function buildMergeMap(dayIdx) {
+                const d = new Date(mon);
+                d.setDate(d.getDate() + dayIdx);
+                const dk = dateKey(d);
+                const skip = [];
+                const startMap = {};
+                const sig = r => `${r.content}|${r.subject || ''}|${r.place || ''}`;
+                const hasProgress = (idx) => {
+                    const arr = scheduleData[`${dk}_${TIME_BLOCKS[idx]}`] || [];
+                    return arr.some(r => r.isProgress);
+                };
+                for (let ti = 0; ti < TIME_BLOCKS.length; ti++) {
+                    if (skip[ti]) continue;
+                    const recs = (scheduleData[`${dk}_${TIME_BLOCKS[ti]}`] || []).filter(r => !r.isProgress);
+                    const seen = new Set();
+                    for (const rec of recs) {
+                        const s = sig(rec);
+                        if (seen.has(s)) continue;
+                        seen.add(s);
+                        let endIdx = ti;
+                        while (endIdx < TIME_BLOCKS.length - 1) {
+                            const nextArr = scheduleData[`${dk}_${TIME_BLOCKS[endIdx + 1]}`] || [];
+                            if (hasProgress(endIdx + 1)) break;
+                            const hasSame = nextArr.some(r => !r.isProgress && sig(r) === s);
+                            if (!hasSame) break;
+                            endIdx++;
+                        }
+                        const rowspan = endIdx - ti + 1;
+                        if (!startMap[ti]) startMap[ti] = [];
+                        startMap[ti].push({ rec, rowspan });
+                        for (let j = ti + 1; j <= endIdx; j++) skip[j] = true;
+                    }
+                }
+                return { skip, startMap };
+            }
+
+            const mergeMaps = [];
+            for (let dayIdx = 0; dayIdx < 7; dayIdx++) mergeMaps[dayIdx] = buildMergeMap(dayIdx);
+
             let bodyHtml = '';
-            TIME_BLOCKS.forEach((tb) => {
+            for (let ti = 0; ti < TIME_BLOCKS.length; ti++) {
+                const tb = TIME_BLOCKS[ti];
                 bodyHtml += '<tr><th class="time-col">' + tb + '</th>';
-                for (let i = 0; i < 7; i++) {
+                for (let dayIdx = 0; dayIdx < 7; dayIdx++) {
                     const d = new Date(mon);
-                    d.setDate(d.getDate() + i);
+                    d.setDate(d.getDate() + dayIdx);
                     const dk = dateKey(d);
                     const k = `${dk}_${tb}`;
                     const recs = scheduleData[k] || [];
+                    const { skip, startMap } = mergeMaps[dayIdx];
+                    if (skip[ti]) continue;
+                    const startEntries = startMap[ti] || [];
+                    const maxRowspan = startEntries.length ? Math.max(...startEntries.map(x => x.rowspan)) : 1;
+                    const entriesToShow = startEntries.map(x => x.rec);
+                    const progressRecs = recs.filter(r => r.isProgress);
                     let cellClass = 'block-cell';
-                    if (recs.length > 0) cellClass += ' has-content';
+                    if (entriesToShow.length > 0 || progressRecs.length > 0) cellClass += ' has-content';
                     let entriesHtml = '';
-                    recs.forEach(rec => {
+                    entriesToShow.forEach(rec => {
                         const subj = rec.subject || 'other';
                         const place = PLACES[rec.place] || '';
                         const activityLabel = SUBJECTS[subj] || subj;
@@ -267,11 +355,19 @@
                             <div class="block-place">${activityEmoji} ${activityLabel}${place ? ' 📍 ' + place : ''}</div>
                         </div>`;
                     });
-                    if (recs.length > 0) entriesHtml += `<div class="block-entry-add" onclick="event.stopPropagation(); openBlock('${dk}','${tb}')">+ 추가</div>`;
-                    bodyHtml += `<td class="${cellClass}" onclick="openBlock('${dk}','${tb}')">${entriesHtml}</td>`;
+                    progressRecs.forEach(rec => {
+                        const emoji = rec.content.includes('수학') ? '📐' : rec.content.includes('영어') ? '📖' : rec.content.includes('연산') ? '🔢' : '📚';
+                        entriesHtml += `<div class="block-entry progress-history" onclick="event.stopPropagation();">
+                            <div class="block-content">${emoji} ${escapeHtml(rec.content)}</div>
+                            <div class="block-place">학습 이력</div>
+                        </div>`;
+                    });
+                    if (entriesToShow.length > 0 || progressRecs.length > 0) entriesHtml += `<div class="block-entry-add" onclick="event.stopPropagation(); openBlock('${dk}','${tb}')">+ 추가</div>`;
+                    const rowspanAttr = maxRowspan > 1 ? ` rowspan="${maxRowspan}"` : '';
+                    bodyHtml += `<td class="${cellClass} block-cell-merged"${rowspanAttr} onclick="openBlock('${dk}','${tb}')">${entriesHtml}</td>`;
                 }
                 bodyHtml += '</tr>';
-            });
+            }
             document.getElementById('schedule-tbody').innerHTML = bodyHtml;
         }
 
@@ -291,12 +387,12 @@
         }
 
         function findGroup(date, time, rec) {
-            if (!rec) return { startTime: time, blockCount: 1, ids: [] };
+            if (!rec || rec.isProgress) return { startTime: time, blockCount: 1, ids: [] };
             const idx = TIME_BLOCKS.indexOf(time);
             if (idx < 0) return { startTime: time, blockCount: 1, ids: [rec.id] };
             const sig = r => `${r.content}|${r.subject || ''}|${r.place || ''}`;
             const targetSig = sig(rec);
-            const hasMatch = (arr) => arr && arr.some(r => sig(r) === targetSig);
+            const hasMatch = (arr) => arr && arr.some(r => !r.isProgress && sig(r) === targetSig);
             let startIdx = idx;
             while (startIdx > 0) {
                 const arr = scheduleData[`${date}_${TIME_BLOCKS[startIdx - 1]}`];
@@ -312,7 +408,7 @@
             const ids = [];
             for (let i = startIdx; i <= endIdx; i++) {
                 const arr = scheduleData[`${date}_${TIME_BLOCKS[i]}`] || [];
-                arr.filter(r => sig(r) === targetSig).forEach(r => ids.push(r.id));
+                arr.filter(r => !r.isProgress && sig(r) === targetSig).forEach(r => { if (r.id) ids.push(r.id); });
             }
             return { startTime: TIME_BLOCKS[startIdx], blockCount: endIdx - startIdx + 1, ids };
         }

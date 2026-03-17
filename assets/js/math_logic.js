@@ -311,13 +311,15 @@ function initStepLock(step) {
 
 function markChapterComplete() {
     const urlParams = new URLSearchParams(window.location.search);
-    const unitId = urlParams.get('unit');
-    const grade = window.currentGrade;
+    const unitId = urlParams.get('unit') || window.currentUnit?.unit_id || sessionStorage.getItem('math_unit');
+    const grade = window.currentGrade || sessionStorage.getItem('math_grade') || '1';
     const lessonId = window.currentLesson?.lesson_id;
 
     if (grade && unitId && lessonId) {
         const key = `math_tutor_math_${grade}_unit${unitId}_lesson${lessonId}`;
         syncProgress(key, new Date().toISOString());
+    } else {
+        console.warn('markChapterComplete: 저장 실패', { grade, unitId, lessonId });
     }
 }
 

@@ -48,12 +48,17 @@
         // Supabase에서 문법 완료 내역 가져와 localStorage에 반영
         async function syncGrammarFromSupabase() {
             const rows = await pullProgress();
-            const completed = new Set(JSON.parse(localStorage.getItem('rahee_grammar_completed') || '[]'));
+            const legacy = localStorage.getItem('rahee_grammar_completed');
+            if (legacy) {
+                localStorage.setItem('grammar_completed', legacy);
+                localStorage.removeItem('rahee_grammar_completed');
+            }
+            const completed = new Set(JSON.parse(localStorage.getItem('grammar_completed') || '[]'));
             rows.forEach(row => {
-                const m = row.storage_key && row.storage_key.match(/^rahee_grammar_unit_(\d+)$/);
+                const m = row.storage_key && row.storage_key.match(/^(?:rahee_)?grammar_unit_(\d+)$/);
                 if (m) completed.add(m[1]);
             });
-            localStorage.setItem('rahee_grammar_completed', JSON.stringify([...completed]));
+            localStorage.setItem('grammar_completed', JSON.stringify([...completed]));
         }
 
         // 마크다운 텍스트를 파싱해서 HTML로 그려주는 스크립트
@@ -82,7 +87,7 @@
             let currentGrid = null;
 
             // 로컬 스토리지에서 진행도 불러오기 (나중에 구현을 위해)
-            const completedItems = JSON.parse(localStorage.getItem('rahee_grammar_completed') || '[]');
+            const completedItems = JSON.parse(localStorage.getItem('grammar_completed') || '[]');
 
             lines.forEach(line => {
                 line = line.trim();

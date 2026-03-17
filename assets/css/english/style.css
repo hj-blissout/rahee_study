@@ -172,6 +172,7 @@ header h1 {
 
 .btn-start-test {
     margin-top: 20px;
+    width: 100%;
     background: var(--primary);
     color: var(--white);
     border: none;
@@ -183,6 +184,60 @@ header h1 {
     transition: all 0.2s;
 }
 .btn-start-test:hover { background: var(--accent); }
+
+.btn-start-choice-quiz {
+    margin-top: 10px;
+    background: var(--success);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+.btn-start-choice-quiz:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* 4지선다 퀴즈 */
+.choice-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+    margin-top: 24px;
+}
+.choice-btn {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: inherit;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    background: white;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.choice-btn:hover:not(:disabled) {
+    border-color: var(--success);
+    background: var(--success-soft);
+}
+.choice-btn.correct {
+    border-color: var(--success);
+    background: var(--success-soft);
+    color: var(--success);
+}
+.choice-btn.wrong {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+.choice-btn:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
 
 /* Main Content */
 .main-content {
@@ -324,6 +379,41 @@ header h1 {
     flex-shrink: 0;
 }
 .btn-tts-small:hover { background: var(--success-soft); color: var(--success); }
+
+.flashcard-input-area {
+    width: 100%;
+    margin-top: 16px;
+}
+#flashcard-word-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: 2px solid #ccfbf1;
+    border-radius: 12px;
+    background: white;
+    color: var(--primary);
+    outline: none;
+    transition: border-color 0.2s;
+}
+#flashcard-word-input:focus {
+    border-color: var(--success);
+}
+#flashcard-word-input.input-error {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+#flashcard-word-input::placeholder {
+    color: var(--secondary);
+    opacity: 0.7;
+}
+.input-feedback {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    min-height: 1.2em;
+}
+.input-feedback.error { color: var(--accent); }
+.input-feedback.success { color: var(--success); }
 
 .controls {
     display: flex; gap: 16px; width: 100%; max-width: 480px;

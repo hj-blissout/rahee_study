@@ -96,7 +96,10 @@ function addActivityForWeek(activities, weekStart, key, val) {
     } else if (key.includes('unit')) {
         const match = key.match(/unit(\d+)_lesson([\w-]+)/);
         if (match) title = `수학 ${match[1]}단원`;
-    } else if (key.startsWith('rahee_eng_')) {
+    } else if (key.includes('grammar_unit_')) {
+        const m = key.match(/(?:rahee_)?grammar_unit_(\d+)/);
+        title = m ? `영어 문법 ${m[1]}단원` : "영어 문법";
+    } else if (key.startsWith('eng_learned_v2_') || key.startsWith('rahee_eng_')) {
         title = "영어 학습";
     }
     activities[dateKey].push({ title, key });
@@ -107,14 +110,17 @@ async function getActivitiesForWeek(weekStart) {
 
     const rows = await pullProgress();
     rows.forEach(row => {
-        if (row.storage_key && row.storage_key.startsWith('math_tutor_') && row.completed_at) {
+        if (!row.storage_key || !row.completed_at) return;
+        if (row.storage_key.startsWith('math_tutor_') || row.storage_key.startsWith('math_drill_') ||
+            row.storage_key.startsWith('eng_learned_v2_') || row.storage_key.startsWith('rahee_eng_') ||
+            row.storage_key.startsWith('grammar_unit_') || row.storage_key.startsWith('rahee_grammar_')) {
             addActivityForWeek(activities, weekStart, row.storage_key, row.completed_at);
         }
     });
 
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
-        if (!key.startsWith('rahee_eng_') && !key.startsWith('math_drill_')) continue;
+        if (!key.startsWith('eng_learned_v2_') && !key.startsWith('rahee_eng_') && !key.startsWith('math_drill_')) continue;
         const val = localStorage.getItem(key);
         try {
             const parsed = JSON.parse(val);

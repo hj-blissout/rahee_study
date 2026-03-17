@@ -34,6 +34,7 @@ async function initViewer() {
 
         fullData = unitData;
         currentUnit = unitData;
+        window.currentUnit = currentUnit;
 
         const curriculumLabel = unitData.curriculum || `중${grade} 수학`;
         document.getElementById('unit-title').innerText = `${curriculumLabel} > ${unitData.title}`;
@@ -41,7 +42,7 @@ async function initViewer() {
         if (backBtn) backBtn.href = `../?grade=${grade}`;
 
         const unitMeta = indexData?.units?.find(u => u.unit_id === targetUnitId);
-        renderYoutubeLinks(unitMeta?.youtube);
+        renderLectureLinks(unitMeta?.lectures || unitMeta?.youtube);
 
         renderLessonNav();
         loadLesson(0);
@@ -58,16 +59,25 @@ async function initViewer() {
     }
 }
 
-function renderYoutubeLinks(urls) {
+function renderLectureLinks(lecturesOrUrls) {
     const container = document.getElementById('youtube-links');
     if (!container) return;
-    if (!urls || !Array.isArray(urls) || urls.length === 0) {
+    const LABELS = { jungseungje: '정승제', quebon: '깨봉수학' };
+    let html = '';
+    if (lecturesOrUrls && typeof lecturesOrUrls === 'object' && !Array.isArray(lecturesOrUrls)) {
+        for (const [key, url] of Object.entries(lecturesOrUrls)) {
+            if (url) html += `<a href="${url}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> ${LABELS[key] || key}</a>`;
+        }
+    } else if (Array.isArray(lecturesOrUrls) && lecturesOrUrls.length > 0) {
+        html = lecturesOrUrls.map((url, i) =>
+            `<a href="${url}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> 영상 ${i + 1}</a>`
+        ).join('');
+    }
+    if (!html) {
         container.style.display = 'none';
         return;
     }
-    container.innerHTML = urls.map((url, i) =>
-        `<a href="${url}" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> 영상 ${i + 1}</a>`
-    ).join('');
+    container.innerHTML = html;
     container.style.display = 'flex';
 }
 
@@ -108,6 +118,7 @@ function updateLessonTitle() {
 
 function loadLesson(index) {
     currentLesson = currentUnit.lessons[index];
+    window.currentLesson = currentLesson;
     updateLessonTitle();
     confettiFired = false;
     

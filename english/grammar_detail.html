@@ -390,14 +390,14 @@
             if (unitNum === '0') return;
 
             // 저장소에서 완료 목록 가져오기
-            let completed = JSON.parse(localStorage.getItem('rahee_grammar_completed') || '[]');
+            let completed = JSON.parse(localStorage.getItem('grammar_completed') || '[]');
             
             // 아직 없으면 추가!
             if (!completed.includes(unitNum)) {
                 completed.push(unitNum);
-                localStorage.setItem('rahee_grammar_completed', JSON.stringify(completed));
+                localStorage.setItem('grammar_completed', JSON.stringify(completed));
                 // Supabase에 저장
-                pushProgress('rahee_grammar_unit_' + unitNum, new Date().toISOString());
+                pushProgress('grammar_unit_' + unitNum, new Date().toISOString());
             }
 
             playCuteSound();

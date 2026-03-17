@@ -44,7 +44,8 @@
                 <ul class="word-list" id="sidebar-word-list">
                     <!-- JS로 채워짐 -->
                 </ul>
-                <button class="btn-start-test" id="btn-start-test">✏️ 단어 테스트 보기</button>
+                <button class="btn-start-test" id="btn-start-test">✏️ 빈칸 채우기</button>
+                <button class="btn-start-choice-quiz" id="btn-start-choice-quiz">📝 4지선다 퀴즈</button>
             </div>
 
             <!-- 오른쪽: 플래시카드 & 테스트 메인 보드 -->
@@ -76,6 +77,10 @@
                                     <div id="word-example">I eat an apple.</div>
                                     <button class="btn-tts-small" id="btn-tts-example" title="예문 듣기"><i class="fas fa-volume-up"></i></button>
                                 </div>
+                                <div class="flashcard-input-area">
+                                    <input type="text" id="flashcard-word-input" placeholder="영단어를 입력하세요" autocomplete="off" spellcheck="false">
+                                    <div id="flashcard-input-feedback" class="input-feedback"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -88,13 +93,23 @@
                 <!-- 2-B. 단어 테스트 뷰어 -->
                 <div id="test-viewer">
                     <div class="test-card">
-                        <h3 class="test-title">단어 빈칸 채우기 퀴즈</h3>
+                        <h3 class="test-title" id="test-mode-title">단어 빈칸 채우기 퀴즈</h3>
                         <div id="test-ko">사과</div>
                         <div id="test-desc">설명</div>
-                        <div id="test-example">I eat an [     ].</div>
-                        <div class="test-input-area">
-                            <input type="text" id="test-input" placeholder="스펠링을 입력하세요" autocomplete="off">
-                            <button id="btn-test-submit">확인</button>
+                        <!-- 빈칸 채우기 모드 -->
+                        <div id="test-blank-area">
+                            <div id="test-example">I eat an [     ].</div>
+                            <div class="test-input-area">
+                                <input type="text" id="test-input" placeholder="스펠링을 입력하세요" autocomplete="off">
+                                <button id="btn-test-submit">확인</button>
+                            </div>
+                        </div>
+                        <!-- 4지선다 모드 -->
+                        <div id="test-choice-area" class="choice-options" style="display:none;">
+                            <button class="choice-btn" data-choice="0">A</button>
+                            <button class="choice-btn" data-choice="1">B</button>
+                            <button class="choice-btn" data-choice="2">C</button>
+                            <button class="choice-btn" data-choice="3">D</button>
                         </div>
                         <div id="test-feedback"></div>
                     </div>
@@ -128,10 +143,12 @@
         let learnedWordIds = []; 
         
         let isTestMode = false;
+        let testMode = 'blank'; // 'blank' | 'choice'
         let testQuestionsList = [];
         let currentTestIndex = 0;
+        let currentChoiceOptions = []; // 4지선다 현재 보기들
 
-        const KEY_PREFIX = 'rahee_eng_learned_v2_'; // 각 Day 별 외운 단어 ID 배열 저장용
+        const KEY_PREFIX = 'eng_learned_v2_'; // 각 Day 별 외운 단어 ID 배열 저장용
 
         // DOM Elements
         const loadingEl = document.getElementById('loading');
@@ -153,13 +170,23 @@
 
         // Supabase에서 단어 완료 내역 가져와 localStorage에 반영
         async function syncEngWordsFromSupabase() {
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (k && k.startsWith('rahee_eng_learned_v2_')) {
+                    const v = localStorage.getItem(k);
+                    localStorage.setItem(k.replace('rahee_eng_learned_v2_', 'eng_learned_v2_'), v);
+                    localStorage.removeItem(k);
+                }
+            }
             const rows = await pullProgress();
             rows.forEach(row => {
-                if (row.storage_key && row.storage_key.startsWith('rahee_eng_learned_v2_') && row.payload && Array.isArray(row.payload.word_ids)) {
-                    const stored = localStorage.getItem(row.storage_key);
+                const engKey = row.storage_key && (row.storage_key.startsWith('eng_learned_v2_') || row.storage_key.startsWith('rahee_eng_learned_v2_'));
+                if (engKey && row.payload && Array.isArray(row.payload.word_ids)) {
+                    const newKey = row.storage_key.replace(/^rahee_eng_learned_v2_/, 'eng_learned_v2_');
+                    const stored = localStorage.getItem(newKey);
                     const localIds = stored ? JSON.parse(stored) : [];
                     const merged = [...new Set([...localIds, ...row.payload.word_ids])];
-                    localStorage.setItem(row.storage_key, JSON.stringify(merged));
+                    localStorage.setItem(newKey, JSON.stringify(merged));
                 }
             });
         }
@@ -168,10 +195,14 @@
         async function initApp() {
             try {
                 await syncEngWordsFromSupabase();
-                // english 폴더 내에서 실행되므로 상대경로 data/words.json 사용
-                const fetchUrl = 'data/words.json';
+                let path = window.location.pathname;
+                if (path.match(/\.[^/]+$/)) {
+                    path = path.replace(/\/[^/]*$/, '/');
+                } else {
+                    path = path.endsWith('/') ? path : path + '/';
+                }
+                const fetchUrl = window.location.origin + path + 'data/words.json';
                 
-                console.log("Fetching from:", fetchUrl);
                 const response = await fetch(fetchUrl);
                 
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -181,7 +212,9 @@
                 renderDaySelector();
             } catch (error) {
                 console.error("Fetch Error:", error);
-                loadingEl.innerHTML = `<div style="color:red; padding:20px;">데이터 로딩 실패! (404)<br>words.json 파일을 확인해 주세요.</div>`;
+                const isFile = window.location.protocol === 'file:';
+                const hint = isFile ? '<br><small>file://로 열면 fetch가 차단됩니다. 터미널에서 <code>npx serve</code> 실행 후 접속하세요.</small>' : '';
+                loadingEl.innerHTML = `<div style="color:red; padding:20px;">데이터 로딩 실패! (404)<br>words.json 파일을 확인해 주세요.${hint}</div>`;
             }
         }
 
@@ -359,6 +392,10 @@
             document.getElementById('word-ko').innerText = word.ko || "";
             document.getElementById('word-desc').innerText = word.desc || "";
             document.getElementById('word-example').innerText = word.example || "";
+            const inputEl = document.getElementById('flashcard-word-input');
+            const feedbackEl = document.getElementById('flashcard-input-feedback');
+            if (inputEl) { inputEl.value = ""; inputEl.classList.remove('input-error'); }
+            if (feedbackEl) { feedbackEl.textContent = ""; feedbackEl.className = "input-feedback"; }
         }
 
         // --- 플래시카드 조작 ---
@@ -366,27 +403,50 @@
             cardEl.classList.toggle('is-flipped');
             if (cardEl.classList.contains('is-flipped')) {
                 controlsEl.classList.add('visible');
+                setTimeout(() => document.getElementById('flashcard-word-input')?.focus(), 350);
             } else {
                 controlsEl.classList.remove('visible');
             }
         });
 
-        // 다 외웠어요 버튼
-        document.getElementById('btn-success').addEventListener('click', (e) => {
-            e.stopPropagation();
-            const wordId = currentWordsList[currentWordIndex].id;
-            
+        // 다 외웠어요 버튼 (정답 입력 시에만 처리)
+        function tryMarkAsLearned() {
+            const word = currentWordsList[currentWordIndex];
+            const inputEl = document.getElementById('flashcard-word-input');
+            const feedbackEl = document.getElementById('flashcard-input-feedback');
+            const userInput = (inputEl?.value || "").trim().toLowerCase();
+            const correct = (word.en || "").trim().toLowerCase();
+            if (userInput !== correct) {
+                feedbackEl.textContent = "틀렸어요. 다시 입력해보세요!";
+                feedbackEl.className = "input-feedback error";
+                inputEl?.classList.add('input-error');
+                inputEl?.focus();
+                return;
+            }
+            feedbackEl.textContent = "";
+            feedbackEl.className = "input-feedback";
+            inputEl?.classList.remove('input-error');
+            const wordId = word.id;
             if (!learnedWordIds.includes(wordId)) {
                 learnedWordIds.push(wordId);
-                // 로컬 스토리지에 저장
                 localStorage.setItem(KEY_PREFIX + currentDayKey, JSON.stringify(learnedWordIds));
-                // Supabase에 저장 (payload에 word_ids 배열)
                 pushProgress(KEY_PREFIX + currentDayKey, new Date().toISOString(), { word_ids: learnedWordIds });
             }
-            // 사이드바 다시 그리고 다음 단어 찾기
             renderSidebar();
             moveToNextUnlearned();
+        }
+        document.getElementById('btn-success').addEventListener('click', (e) => {
+            e.stopPropagation();
+            tryMarkAsLearned();
         });
+        const flashcardInputEl = document.getElementById('flashcard-word-input');
+        flashcardInputEl.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                tryMarkAsLearned();
+            }
+        });
+        document.querySelector('.flashcard-input-area')?.addEventListener('click', (e) => e.stopPropagation());
 
         // 몰라요 버튼
         document.getElementById('btn-fail').addEventListener('click', (e) => {
@@ -424,28 +484,77 @@
 
         // --- 단어 테스트 로직 ---
         document.getElementById('btn-start-test').addEventListener('click', startTestMode);
+        document.getElementById('btn-start-choice-quiz').addEventListener('click', startChoiceQuiz);
         document.getElementById('btn-test-exit').addEventListener('click', exitTestMode);
+        
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
         
         function startTestMode() {
             isTestMode = true;
-            testQuestionsList = [...currentWordsList]; // 문제 리스트 (원하면 섞기 기능(shuffle)도 추가 가능)
+            testMode = 'blank';
+            testQuestionsList = [...currentWordsList];
             currentTestIndex = 0;
-            
             flashcardViewerEl.style.display = 'none';
             testViewerEl.style.display = 'flex';
-            
-            progressBarEl.style.width = '0%'; // 테스트 전용 게이지 초기화
+            document.getElementById('test-mode-title').innerText = '단어 빈칸 채우기 퀴즈';
+            document.getElementById('test-blank-area').style.display = 'block';
+            document.getElementById('test-choice-area').style.display = 'none';
+            progressBarEl.style.width = '0%';
             loadTestQuestion();
+        }
+        
+        function startChoiceQuiz() {
+            isTestMode = true;
+            testMode = 'choice';
+            testQuestionsList = shuffle([...currentWordsList]);
+            currentTestIndex = 0;
+            flashcardViewerEl.style.display = 'none';
+            testViewerEl.style.display = 'flex';
+            document.getElementById('test-mode-title').innerText = '4지선다 퀴즈';
+            document.getElementById('test-blank-area').style.display = 'none';
+            document.getElementById('test-choice-area').style.display = 'grid';
+            progressBarEl.style.width = '0%';
+            loadChoiceQuestion();
         }
         
         function exitTestMode() {
             isTestMode = false;
+            testMode = 'blank';
             testViewerEl.style.display = 'none';
             flashcardViewerEl.style.display = 'flex';
-            updateProgress(); // 기존 학습 진행도 복구
+            updateProgress();
             selectWord(currentWordIndex);
         }
 
+        function loadChoiceQuestion() {
+            const word = testQuestionsList[currentTestIndex];
+            document.getElementById('test-ko').innerText = word.ko;
+            document.getElementById('test-desc').innerText = word.desc;
+            testFeedbackEl.innerHTML = '';
+            const wrongPool = [...new Set(
+                currentWordsList
+                    .filter(w => w.en.toLowerCase() !== word.en.toLowerCase())
+                    .map(w => w.en)
+            )];
+            const wrong3 = shuffle(wrongPool).slice(0, 3);
+            currentChoiceOptions = shuffle([word.en, ...wrong3]);
+            const btns = document.querySelectorAll('.choice-btn');
+            btns.forEach((btn, i) => {
+                btn.textContent = currentChoiceOptions[i] || '';
+                btn.style.display = currentChoiceOptions[i] ? 'block' : 'none';
+                btn.disabled = false;
+                btn.className = 'choice-btn';
+            });
+            progressBarEl.style.width = `${(currentTestIndex / testQuestionsList.length) * 100}%`;
+        }
+        
         function loadTestQuestion() {
             const word = testQuestionsList[currentTestIndex];
             
@@ -526,12 +635,43 @@
             }
         }
 
+        document.querySelectorAll('.choice-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (testMode !== 'choice' || btn.disabled) return;
+                const idx = parseInt(btn.dataset.choice, 10);
+                checkChoiceAnswer(idx);
+            });
+        });
+
+        function checkChoiceAnswer(clickedIndex) {
+            const word = testQuestionsList[currentTestIndex];
+            const selected = currentChoiceOptions[clickedIndex];
+            const isCorrect = selected.toLowerCase() === word.en.toLowerCase();
+            const btns = document.querySelectorAll('.choice-btn');
+            btns.forEach((b, i) => {
+                b.disabled = true;
+                if (currentChoiceOptions[i]?.toLowerCase() === word.en.toLowerCase()) {
+                    b.classList.add('correct');
+                } else if (i === clickedIndex && !isCorrect) {
+                    b.classList.add('wrong');
+                }
+            });
+            if (isCorrect) {
+                testFeedbackEl.innerHTML = '<span class="feedback-success">✅ 정답입니다! 훌륭해요!</span>';
+                playTTS(word.en);
+            } else {
+                testFeedbackEl.innerHTML = `<span class="feedback-error">❌ 틀렸어요. 정답: <strong>${word.en}</strong></span>`;
+            }
+            btnTestNextEl.style.display = 'block';
+            btnTestNextEl.focus();
+        }
+
         btnTestNextEl.addEventListener('click', () => {
             currentTestIndex++;
             if (currentTestIndex < testQuestionsList.length) {
-                loadTestQuestion();
+                if (testMode === 'choice') loadChoiceQuestion();
+                else loadTestQuestion();
             } else {
-                // 테스트 완료
                 progressBarEl.style.width = '100%';
                 testFeedbackEl.innerHTML = '<span class="feedback-success">🎉 모든 테스트를 완료했습니다!</span>';
                 btnTestNextEl.style.display = 'none';

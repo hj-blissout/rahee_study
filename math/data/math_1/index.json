@@ -1,6 +1,6 @@
 {
   "curriculum": "중1 수학",
-  "version": "1.0",
+  "version": "1.1",
   "design_principles": {
     "lesson_flow": [
       "1단계 기억 깨우기",
@@ -25,6 +25,10 @@
     {
       "unit_id": "0101",
       "title": "소인수분해",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+소인수분해",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+소인수분해"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0101-01",
@@ -36,6 +40,10 @@
     {
       "unit_id": "0102",
       "title": "정수와 유리수",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+정수+유리수",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+정수"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0102-01",
@@ -47,6 +55,10 @@
     {
       "unit_id": "0201",
       "title": "문자와 식",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+문자와+식",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+문자+식"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0201-01",
@@ -57,6 +69,10 @@
     {
       "unit_id": "0202",
       "title": "일차방정식",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+일차방정식",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+방정식"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0202-01",
@@ -68,6 +84,10 @@
     {
       "unit_id": "0301",
       "title": "좌표평면과 그래프",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+좌표평면",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+좌표"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0301-01",
@@ -79,6 +99,10 @@
     {
       "unit_id": "0302",
       "title": "정비례와 반비례",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+정비례+반비례",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+비례"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0302-01",
@@ -90,6 +114,10 @@
     {
       "unit_id": "0401",
       "title": "기본 도형",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+기본도형",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+도형"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0401-01",
@@ -100,6 +128,10 @@
     {
       "unit_id": "0402",
       "title": "작도와 합동",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+작도+합동",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+삼각형+합동"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0402-01",
@@ -110,6 +142,10 @@
     {
       "unit_id": "0501",
       "title": "다각형",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+다각형",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+다각형"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0501-01",
@@ -120,6 +156,10 @@
     {
       "unit_id": "0502",
       "title": "원과 부채꼴",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+원+부채꼴",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+원"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0502-01",
@@ -130,6 +170,10 @@
     {
       "unit_id": "0601",
       "title": "다면체와 회전체",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+다면체+회전체",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+입체도형"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0601-01",
@@ -140,6 +184,10 @@
     {
       "unit_id": "0602",
       "title": "입체도형의 겉넓이와 부피",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+겉넓이+부피",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+부피"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0602-01",
@@ -150,6 +198,10 @@
     {
       "unit_id": "0701",
       "title": "자료의 정리와 해석",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+통계",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+통계"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0701-01",

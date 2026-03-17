@@ -1,10 +1,14 @@
 {
   "curriculum": "중2 수학",
-  "version": "1.0",
+  "version": "1.1",
   "units": [
     {
       "unit_id": "0101",
       "title": "유리수와 소수",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+유리수+소수",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+유리수"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0101-01",
@@ -15,6 +19,10 @@
     {
       "unit_id": "0201",
       "title": "단항식의 계산",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+단항식+계산",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+단항식"
+      },
       "total_lessons": 2,
       "lesson_ids": [
         "0201-01",
@@ -24,6 +32,10 @@
     {
       "unit_id": "0202",
       "title": "다항식의 계산",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+다항식+계산",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+다항식"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0202-01",
@@ -34,6 +46,10 @@
     {
       "unit_id": "0301",
       "title": "일차부등식",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+일차부등식",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+부등식"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0301-01",
@@ -44,6 +60,10 @@
     {
       "unit_id": "0302",
       "title": "연립일차방정식",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+연립일차방정식",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+연립방정식"
+      },
       "total_lessons": 4,
       "lesson_ids": [
         "0302-01",
@@ -55,6 +75,10 @@
     {
       "unit_id": "0401",
       "title": "일차함수와 그래프",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+일차함수",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+일차함수"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0401-01",
@@ -65,6 +89,10 @@
     {
       "unit_id": "0402",
       "title": "일차함수와 일차방정식의 관계",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+일차함수+일차방정식",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+함수+방정식"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0402-01",
@@ -75,6 +103,10 @@
     {
       "unit_id": "0501",
       "title": "삼각형의 성질",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+삼각형+성질",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+삼각형"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0501-01",
@@ -85,6 +117,10 @@
     {
       "unit_id": "0502",
       "title": "사각형의 성질",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+사각형+성질",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+사각형"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0502-01",
@@ -95,6 +131,10 @@
     {
       "unit_id": "0601",
       "title": "도형의 닮음",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+닮음",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+닮음"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0601-01",
@@ -105,6 +145,10 @@
     {
       "unit_id": "0602",
       "title": "닮음의 응용",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+닮음+응용",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+닮음+비례"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0602-01",
@@ -115,6 +159,10 @@
     {
       "unit_id": "0701",
       "title": "피타고라스 정리",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+피타고라스",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+피타고라스"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0701-01",
@@ -125,6 +173,10 @@
     {
       "unit_id": "0801",
       "title": "경우의 수",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+경우의+수",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+경우의수"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0801-01",
@@ -135,6 +187,10 @@
     {
       "unit_id": "0802",
       "title": "확률",
+      "lectures": {
+        "jungseungje": "https://www.youtube.com/results?search_query=정승제+중학+확률",
+        "quebon": "https://www.youtube.com/results?search_query=깨봉수학+확률"
+      },
       "total_lessons": 3,
       "lesson_ids": [
         "0802-01",
